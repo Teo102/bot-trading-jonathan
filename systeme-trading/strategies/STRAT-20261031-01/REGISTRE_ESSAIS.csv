@@ -1,0 +1,12 @@
+id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire
+E01,,STRAT-20261031-01,base (20/10/2.0/200),developpement,20210101-20240630,0.0005,,,,,,,
+E02,,STRAT-20261031-01,base,validation,20240701-20250731,0.0005,,,,,,,
+E03,,STRAT-20261031-01,entry 16,dev+val,20210101-20250731,0.0005,,,,,,,robustesse - jamais retenue a la place de la base
+E04,,STRAT-20261031-01,entry 24,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
+E05,,STRAT-20261031-01,exit 8,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
+E06,,STRAT-20261031-01,exit 12,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
+E07,,STRAT-20261031-01,atr_mult 1.6,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
+E08,,STRAT-20261031-01,atr_mult 2.4,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
+E09,,STRAT-20261031-01,base,dev+val frais doubles,20210101-20250731,0.0010,,,,,,,stress des couts
+E10,,STRAT-20261031-01,base,HORS ECHANTILLON (une seule fois),20250801-20261031,0.0005,,,,,,,verdict
+E11,,STRAT-20261031-01,base,hors echantillon frais doubles,20250801-20261031,0.0010,,,,,,,meme regles - stress des couts

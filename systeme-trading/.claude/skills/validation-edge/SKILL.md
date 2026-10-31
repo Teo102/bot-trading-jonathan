@@ -1,0 +1,99 @@
+---
+name: validation-edge
+description: "Porte d'entrée du moteur autonome de Jonathan : toute stratégie candidate (crypto, perps, alts, règles de bot freqtrade ou autre) y passe par backtest honnête, contrôle des biais, correction des tests multiples, hors échantillon, papier, puis dossier de promotion. Chaîne V1 de cerveau-trading ; s'ouvre sur le mot VALIDER, sur toute idée de stratégie automatisable, de bot, de backtest, d'optimisation, de « stratégie qui marche » vue en ligne, et sur toute modification d'une stratégie existante."
+---
+
+# Validation d'un edge (version 1.1)
+
+Le skill répond à une seule question : cette stratégie a-t-elle un edge qui survit aux frais, au hasard et au temps ? Il ne cherche pas à rendre une stratégie bonne ; il cherche à la faire échouer avant le capital. Une stratégie qui échoue ici coûte du temps, pas d'argent.
+
+## Ouverture
+
+Ouvert directement, ce skill ouvre d'abord `cerveau-trading`, qui choisit la chaîne et ouvre `commun-trading`. Ouvert dans une chaîne en cours, il ne rouvre pas le cerveau. Les valeurs propres à Jonathan (risque, coupe-circuits, plateformes, moteur) se lisent dans `commun-trading` ; aucune n'est recopiée ici.
+
+## 1. Fiche de stratégie
+
+Identifiant `STRAT-AAAAMMJJ-NN`. Contenu écrit **avant** tout test :
+
+- hypothèse économique en une phrase (pourquoi cet edge existerait, et qui perd en face) ;
+- règles exactes d'entrée, de sortie, de stop, de taille ; marchés et unité de temps ;
+- paramètres et leurs valeurs ; nombre de paramètres libres ;
+- critère d'échec annoncé à l'avance.
+
+Une stratégie sans hypothèse économique (« l'indicateur a bien marché ») se marque [fragile] : elle reste testable, mais l'avocat du diable en tient compte.
+
+## 2. Données
+
+- Historique d'au moins 2 ans, si possible plus, couvrant hausse, baisse et range ; source et dates notées.
+- Frais réels de la plateforme cible, glissement estimé à partir de la profondeur de carnet, financement des perpétuels inclus.
+- Univers figé à la date de chaque trade : aucune paire choisie parce qu'elle a bien monté depuis (biais du survivant).
+
+## 3. Découpage
+
+| Bloc | Part de l'historique | Usage |
+|---|---|---|
+| Développement | ≈ 60 % | Réglage des paramètres |
+| Validation | ≈ 20 % | Choix entre variantes |
+| Hors échantillon | ≈ 20 %, la période la plus récente | Ouvert **une seule fois**, pour le verdict |
+
+Un test glissant (walk-forward) remplace ce découpage quand l'historique le permet. Un hors échantillon regardé deux fois n'en est plus un : il redevient de la validation.
+
+## 4. Contrôles obligatoires
+
+1. **Biais d'anticipation** : `freqtrade lookahead-analysis` et `recursive-analysis` propres, ou contrôle équivalent hors freqtrade.
+2. **Registre des essais** : chaque variante testée est comptée, y compris les abandonnées. Le nombre total d'essais figure dans le dossier.
+3. **Correction des tests multiples** : Sharpe déflaté, ou comparaison avec la distribution du meilleur Sharpe obtenu par autant de stratégies aléatoires (repère : environ 3,0 pour 500 essais sans edge sur un an).
+4. **Robustesse** : paramètres voisins (±20 %) encore rentables ; résultat stable sur chaque sous-période ; aucun mois ou trade unique ne porte l'essentiel du gain.
+5. **Coûts stressés** : frais et glissement doublés, espérance encore positive.
+
+## 5. Critères de passage au papier
+
+Tous sont requis, sur le bloc hors échantillon :
+
+| Critère | Seuil |
+|---|---|
+| Nombre de trades | ≥ 100 (développement + validation + hors échantillon), dont ≥ 30 hors échantillon |
+| Espérance nette par trade | > 0,2 R après coûts réels ; > 0 avec coûts doublés |
+| Drawdown maximal | < 20 % au risque prévu ; le drawdown du 95e centile (Monte Carlo sur l'ordre des trades) est noté, il sert au coupe-circuit « moteur » |
+| Tests multiples | Sharpe hors échantillon au-dessus du repère du § 4.3 pour le nombre d'essais déclaré |
+| Compatibilité | Risque par trade et exposition conformes à `commun-trading` § 3 et § 8 |
+
+## 6. Avocat du diable
+
+Le dossier passe par `avocat-du-diable` avant tout verdict : hypothèse économique, surajustement, dépendance à un régime, capacité (taille du marché face à la taille visée), risque de plateforme. Un verdict « rejetée » arrête la stratégie.
+
+## 7. Papier
+
+- Durée de 8 à 12 semaines en dry-run ou sur réseau de test, sur la plateforme cible.
+- Le papier est réussi si l'espérance réalisée reste dans l'intervalle à 90 % issu du backtest et si le drawdown reste sous le drawdown du 95e centile.
+- Un écart de comportement (glissement, fréquence des trades, remplissages) se documente ; un écart important renvoie au § 2.
+
+## 8. Statuts et promotion
+
+`recherche` → `backtest` → `papier` → `réel réduit` → `réel` ; `suspendue` ou `rejetée` à tout moment.
+
+| Passage | Condition | Accord |
+|---|---|---|
+| backtest → papier | § 5 et § 6 satisfaits | Automatique, inscrit au journal |
+| papier → réel réduit | § 7 satisfait | Porte humaine : « promu STRAT-… au statut réel réduit » |
+| réel réduit → réel | ≥ 30 trades réels, comportement conforme au papier | Porte humaine |
+| tout statut → suspendue | Coupe-circuit « moteur », anomalie de supervision, décision de Jonathan | Automatique |
+
+En réel réduit, le risque par trade vaut le quart du risque prévu (valeur prudente).
+
+## 9. Sortie
+
+Dossier `STRAT-…` : fiche, données, découpage, registre des essais, résultats par bloc, contrôles, verdict de l'avocat du diable, statut proposé, drawdown du 95e centile, paramètres figés (fichier de configuration du moteur). Ligne au journal ; registre des stratégies de `commun-trading` § 8 mis à jour.
+
+## 10. Exécution
+
+- **Dans Claude Code** (environnement principal, `cerveau-trading` § 0 bis) : le skill exécute lui-même toute la procédure, dans l'ordre du registre : installation de freqtrade si absente, téléchargement des données, blocs de développement et de validation, `lookahead-analysis` et `recursive-analysis`, variantes de robustesse, coûts doublés, puis hors échantillon une seule fois. Après chaque essai, il remplit le registre ; à la fin, il rend le verdict du § 5 et passe le dossier à `avocat-du-diable`.
+- **Dans claude.ai** : le skill prépare la fiche, le code, la configuration et une mission Claude Code ; il ne présente aucun résultat simulé comme un backtest.
+- Dans les deux cas, un arrêt de la procédure (biais détecté, données manquantes, erreur) se consigne avec sa cause ; il ne se contourne pas en changeant la stratégie.
+
+## Règles communes
+
+- Aucun ordre, aucune clé de trading manipulée, aucune promesse de gain.
+- Chaque chiffre porte sa source et sa période ; une donnée non vérifiée se marque entre crochets.
+- Le risque et le drawdown passent avant le rendement.
+- Français, phrases courtes, aucun impératif, aucune certitude sur l'avenir.
