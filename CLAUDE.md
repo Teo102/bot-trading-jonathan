@@ -9,7 +9,10 @@ Ce dépôt est l'environnement d'exécution et de recherche principal du systèm
   - Claude ne passe aucun ordre direct et ne manipule aucune clé privée.
   - Les fichiers `.env` et le dossier `secrets/` ne sont jamais lus ni versionnés.
   - Mode simulation / `dry_run: true` permanent tant qu'une stratégie n'a pas validé les 11 phases statistiques (E01 à E11).
-- **Persistance** : Toute action importante est consignée dans `systeme-trading/journal/JOURNAL-TRADING.md` et les fiches associées.
+- **Persistance & Synchronisation GitHub** :
+  - Toute action importante est consignée dans `systeme-trading/journal/JOURNAL-TRADING.md` et les fiches de stratégies.
+  - À la fin de chaque session de travail ou étape franchie (backtest, analyse, fiche), exécuter automatiquement un commit et push sur GitHub :
+    `git add . && git commit -m "update: [description courte]" && git push origin main`
 - **Style de rédaction** : Français soigné, phrases courtes, chiffres sourcés et datés, esprit critique acéré (avocat du diable).
 
 Première action opérationnelle : « VALIDER STRAT-20261031-01 » d'après `systeme-trading/strategies/STRAT-20261031-01/`.

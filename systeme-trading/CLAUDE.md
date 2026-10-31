@@ -8,6 +8,7 @@ Ce dossier est l'environnement d'exécution principal du système (`cerveau-trad
 - Aucun mode qui contourne les demandes de permission.
 - Toute configuration du moteur garde `dry_run: true` tant qu'aucune stratégie n'est promue au statut réel.
 - Dossiers : `strategies/STRAT-…/` (dossiers de validation), `journal/JOURNAL-TRADING.md`, `veille/`, `revues/`.
+- Synchronisation GitHub automatique : après chaque étape clé de backtest ou mise à jour du journal, exécuter `git add . && git commit -m "update: [description]" && git push origin main`.
 - Rédaction en français, phrases courtes, chiffres sourcés et datés, aucune certitude sur l'avenir.
 
 Première tâche prévue : « VALIDER STRAT-20261031-01 », d'après `strategies/STRAT-20261031-01/`.
