@@ -3,13 +3,32 @@ name: validation-edge
 description: "Porte d'entrée du moteur autonome de Jonathan : toute stratégie candidate (crypto, perps, alts, règles de bot freqtrade ou autre) y passe par backtest honnête, contrôle des biais, correction des tests multiples, hors échantillon, papier, puis dossier de promotion. Chaîne V1 de cerveau-trading ; s'ouvre sur le mot VALIDER, sur toute idée de stratégie automatisable, de bot, de backtest, d'optimisation, de « stratégie qui marche » vue en ligne, et sur toute modification d'une stratégie existante."
 ---
 
-# Validation d'un edge (version 1.1)
+# Validation d'un edge (version 1.2, 01/11/2026)
 
 Le skill répond à une seule question : cette stratégie a-t-elle un edge qui survit aux frais, au hasard et au temps ? Il ne cherche pas à rendre une stratégie bonne ; il cherche à la faire échouer avant le capital. Une stratégie qui échoue ici coûte du temps, pas d'argent.
 
 ## Ouverture
 
 Ouvert directement, ce skill ouvre d'abord `cerveau-trading`, qui choisit la chaîne et ouvre `commun-trading`. Ouvert dans une chaîne en cours, il ne rouvre pas le cerveau. Les valeurs propres à Jonathan (risque, coupe-circuits, plateformes, moteur) se lisent dans `commun-trading` ; aucune n'est recopiée ici.
+
+## 0 bis. Tri en 10 minutes (avant toute fiche)
+
+Ajouté le 01/11/2026 sur décision de Jonathan et Téo. Toute idée passe ce tri **avant** qu'une fiche soit ouverte ou qu'une ligne de code soit écrite. Un seul « non » écarte l'idée ; le compte rendu nomme le critère en cause en une phrase. Une idée écartée ici ne consomme aucun essai et ne s'inscrit au journal que si Jonathan le demande.
+
+| N° | Question | Écarte si |
+|---|---|---|
+| T1 | Qui perd en face, et pourquoi continue-t-il ? | Aucune contrepartie nommée et contrainte (liquidée, forcée, mal informée, payée pour porter un risque) |
+| T2 | Le mouvement espéré dépasse-t-il trois fois le coût d'un aller-retour (frais, écart, glissement, financement) ? | Non, ou ordre de grandeur inconnu |
+| T3 | Peut-on obtenir au moins 100 décisions en développement et 30 hors échantillon ? | Non : intestable (cas de STRAT-20261031-04) |
+| T4 | Les données existent-elles telles qu'elles étaient connues à la date (univers, calendriers, intérêt ouvert) ? | Non : biais non corrigible |
+| T5 | L'edge demande-t-il de la vitesse (moins d'une seconde, colocalisation, course aux ordres) ? | Oui |
+| T6 | L'exécution est-elle possible : vente à découvert, accès depuis le pays de résidence (`commun-trading` § 1), règles de risque du § 3 ? | Non |
+| T7 | La perte maximale est-elle bornée sans couverture qui mange l'edge ? | Non (vente de volatilité nue, martingale, moyenne à la baisse) |
+| T8 | Plus de 5 paramètres réglés, ou idée arrivée avec un backtest flatteur vu en ligne ? | Oui : présomption de surapprentissage, passage par `avocat-du-diable` avant toute fiche |
+| T9 | Est-ce une stratégie déjà rejetée sous un autre nom, ou du bêta marché déguisé ? | Oui (voir `commun-trading` § 8.4) |
+| T10 | L'idée ne marche-t-elle que dans un régime précis (hausse de 2021 par exemple) ? | Oui |
+
+Une idée qui passe les dix questions ouvre la fiche du § 1. Le tri ne dit rien de l'edge : il élimine seulement les impasses à coût nul.
 
 ## 1. Fiche de stratégie
 
