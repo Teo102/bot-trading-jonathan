@@ -1,6 +1,6 @@
 # Avenant avant E10 de STRAT-20261031-01
 
-Statut : proposé, à valider par Jonathan avant E10.
+Statut : validé par Jonathan et Téo le 01/11/2026 avant l'ouverture de E10, selon le § 8. Les points non cités dans leur message sont signalés.
 
 Rédigé le 01/11/2026. Résultats de recherche, aucune promesse de gain, aucune recommandation. Rien dans cet avenant n'est appliqué à la stratégie. `TrendDonchianV1.py`, `config_strat01.json` et la fiche restent intacts, le statut reste `backtest` et `dry_run` reste à true. E10 et E11 n'ont pas été lancés.
 
@@ -72,17 +72,33 @@ Nous proposons un correctif qui compare à la date de la bougie d'entrée, sans 
 
 | Point | Proposition | Décision |
 |---|---|---|
-| Ordre de la whitelist | Ordre actuel figé, déclaré comme règle de priorité et sixième paramètre libre | [à valider] |
-| Intervalle à 90 % | Blocs circulaires de 10 trades, 50 000 tirages, graine 20261101, iid en comparaison | [à valider] |
-| Drawdown du critère | Équité réévaluée, seuil de 20 % inchangé | [à valider] |
-| DSR | Série réévaluée, N = 15, V réévaluée mise à l'échelle, seuil de lecture 0,95 non éliminatoire | [à valider] |
-| Sharpe du § 5 | Sharpe réévalué comparé au repère pour N = 15 et T = 457 jours | [à valider] |
-| Permutations d'ordre | Lancées après le verdict, à titre de lecture et hors N | [à valider] |
-| Régime connu | Signalé dans le verdict, E10 non présenté comme aveugle | [à valider] |
-| Correctif de stop | Nouvel essai avant le papier, aucun effet sur E10 et E11 | [à valider] |
-| Biais de sélection de l'univers | DOGE et TRX n'étaient pas parmi les plus liquides fin 2020 ([rangs 42 et 19], `resultats/RAPPORT_E01_E09.md`). L'univers figé reste inchangé. Le point est porté à `avocat-du-diable` avant le verdict, avec l'ordre de la whitelist et l'attribution des places | [à valider] |
-| Calcul de V pour le DSR | Seuls `resultats/brut/registre_dsr.py` et `--sr-var-reevalue` font foi. Le mode `--agreger-registre` inclut E01 et E02 dans V et compte E10 et E11 dans N, il donne donc une autre valeur | [à valider] |
+| Ordre de la whitelist | Ordre actuel figé, déclaré comme règle de priorité et sixième paramètre libre | Validé, cité |
+| Intervalle à 90 % | Blocs circulaires de 10 trades, 50 000 tirages, graine 20261101, iid en comparaison | Validé, cité |
+| Drawdown du critère | Équité réévaluée, seuil de 20 % inchangé | Validé, cité |
+| DSR | Série réévaluée, N = 15, V réévaluée mise à l'échelle, seuil de lecture 0,95 non éliminatoire | Validé, cité pour la série et N = 15. V et seuil de lecture appliqués comme proposé |
+| Sharpe du § 5 | Sharpe réévalué comparé au repère pour N = 15 et T = 457 jours | Non cité, appliqué comme proposé car le run est demandé |
+| Permutations d'ordre | Lancées après le verdict, à titre de lecture et hors N | Non cité, donc non lancé : ces rejeux relisent le hors échantillon |
+| Régime connu | Signalé dans le verdict, E10 non présenté comme aveugle | Validé, cité |
+| Correctif de stop | Nouvel essai avant le papier, aucun effet sur E10 et E11 | Non cité, reste à décider, sans effet sur E10 et E11 |
+| Biais de sélection de l'univers | DOGE et TRX n'étaient pas parmi les plus liquides fin 2020 ([rangs 42 et 19], `resultats/RAPPORT_E01_E09.md`). L'univers figé reste inchangé. Le point est porté à `avocat-du-diable` avant le verdict, avec l'ordre de la whitelist et l'attribution des places | Non cité, appliqué car l'avocat du diable est demandé |
+| Calcul de V pour le DSR | Seuls `resultats/brut/registre_dsr.py` et `--sr-var-reevalue` font foi. Le mode `--agreger-registre` inclut E01 et E02 dans V et compte E10 et E11 dans N, il donne donc une autre valeur | Non cité, appliqué comme proposé |
 
 Le téléchargement des données d'août 2025 à octobre 2026 n'aura lieu qu'après cette validation. Une validation partielle laisse E10 fermé sur les points restants.
+
+## 9. Critères figés avant l'ouverture
+
+Écrits le 01/11/2026 avant tout téléchargement du bloc. E10 est rejeté si un seul critère échoue.
+
+| Critère | Mesure | Échec si |
+|---|---|---|
+| Espérance nette | E10, R nominal | ≤ 0,2 R |
+| Borne basse de l'intervalle à 90 % | E10, blocs circulaires de 10 trades, 50 000 tirages, graine 20261101 | ≤ 0 |
+| Drawdown | E10, équité réévaluée | > 20 % |
+| Coûts doublés | E11, espérance | ≤ 0 R |
+| Trades hors échantillon | E10 | < 30 |
+| Trades au total | E00-ref + E10 | < 100 |
+| Sharpe du § 5 de `validation-edge` | E10, Sharpe réévalué | sous le repère de 1,58 pour N = 15 et T = 457 jours |
+
+Le DSR à 0,95 est un seuil de lecture. Le run est unique. Seul un échec technique sans résultat exporté autorise une relance, et il serait consigné. Aucun rejet ne donne lieu à une variante retestée sur ce bloc.
 
 Sources : `resultats/RAPPORT_E01_E09.md`, `resultats/controles/sorties/ic_sensibilite.json`, `resultats/controles/sorties/t5_resume.json`, `resultats/controles/sorties/avenant_reperes.json`, exports freqtrade 2026.10 du 31/10/2026. Toutes ces sorties ont été exécutées le 01/11/2026, sauf les backtests freqtrade réels de l'ordre (2026-10-31 entre 23:50Z et 23:52Z).
