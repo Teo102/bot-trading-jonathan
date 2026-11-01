@@ -1,0 +1,26 @@
+2026-11-01T08:50:02Z
+$ freqtrade backtesting -c config_strat01.json -s TrendDonchianV1 --timerange 20250801-20261031 --fee  --export trades --backtest-directory user_data/backtest_results/E10 0.0005 --userdir user_data
+usage: freqtrade backtesting [-h] [-v] [--no-color] [--logfile FILE] [-V]
+                             [-c PATH] [-d PATH] [--userdir PATH] [-s NAME]
+                             [--strategy-path PATH]
+                             [--recursive-strategy-search]
+                             [--freqaimodel NAME] [--freqaimodel-path PATH]
+                             [-i TIMEFRAME] [--timerange TIMERANGE]
+                             [--data-format-ohlcv {json,jsongz,feather,parquet}]
+                             [--max-open-trades INT]
+                             [--stake-amount STAKE_AMOUNT] [--fee FLOAT]
+                             [-p PAIRS [PAIRS ...]] [--eps]
+                             [--enable-protections]
+                             [--enable-dynamic-pairlist]
+                             [--dry-run-wallet DRY_RUN_WALLET]
+                             [--timeframe-detail TIMEFRAME_DETAIL]
+                             [--strategy-list STRATEGY_LIST [STRATEGY_LIST ...]]
+                             [--export {none,trades,signals}]
+                             [--backtest-filename PATH]
+                             [--backtest-directory PATH]
+                             [--breakdown {day,week,month,year,weekday} [{day,week,month,year,weekday} ...]]
+                             [--cache {none,day,week,month}]
+                             [--freqai-backtest-live-models] [--notes TEXT]
+freqtrade backtesting: error: argument --fee: expected one argument
+exit=0
+2026-11-01T08:50:02Z

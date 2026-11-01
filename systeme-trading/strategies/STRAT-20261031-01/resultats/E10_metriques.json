@@ -1,0 +1,254 @@
+{
+  "essai": "E10",
+  "strategie": "TrendDonchianV1",
+  "statut_document": "Résultats de recherche. Aucune promesse de gain, aucune recommandation.",
+  "tracabilite": {
+    "commande": "python analyse_strat.py user_data/backtest_results/E10/backtest-result-2026-11-01_08-50-27.zip --essai E10 --start 2025-08-01 --end 2026-10-31 --n-trials 15 --sr-var 0.0004147722100656455 --sr-var-reevalue 0.0005560603764310167",
+    "horodatage_utc": "2026-11-01T08:50:29+00:00",
+    "export": "user_data/backtest_results/E10/backtest-result-2026-11-01_08-50-27.zip",
+    "donnees_bougies": "user_data/data/binance/futures",
+    "membre_analyse": "backtest-result-2026-11-01_08-50-27.json",
+    "sha256_export": "d214eebb4d2c3448872ee0ec7a6085ec40debb41515cf0e83f99527bb8ca2912",
+    "freqtrade_version_export": null,
+    "freqtrade_version_environnement_analyse": "2026.10",
+    "backtest_execute_le_utc": "2026-11-01T08:50:26+00:00"
+  },
+  "plage": {
+    "start": "2025-08-01",
+    "end": "2026-10-31",
+    "timerange_analyse": "20250801-20261031",
+    "timerange_export": "20250801-20261031",
+    "backtest_start": "2025-08-01 00:00:00",
+    "backtest_end": "2026-10-31 00:00:00"
+  },
+  "execution": {
+    "wallet": 10000.0,
+    "risk": 0.005,
+    "sims": 5000,
+    "seed": 0,
+    "sims_blocs": 50000,
+    "seed_blocs": 20261101,
+    "bloc_trades": 10,
+    "bloc_jours": 30,
+    "frais_par_cote": 0.0005,
+    "trading_mode": "futures",
+    "sorties_force_exit": 2
+  },
+  "trades": {
+    "trades": 46,
+    "longs": 21,
+    "shorts": 25,
+    "capital_final": 10309.2963024,
+    "taux_reussite": 0.32608695652173914,
+    "gain_moyen_R": 2.000369011959441,
+    "perte_moyenne_R": -0.7499243280911214,
+    "esperance_R": 0.1469104567079752,
+    "esperance_hors_force_exit_R": 0.16137205386598513,
+    "trades_force_exit": 2,
+    "pnl_force_exit": -17.76398736,
+    "ic90_bas": -0.23177848642554688,
+    "ic90_haut": 0.5759568948624482,
+    "esperance_frais_doubles_R_approx": 0.1345985595028388,
+    "esperance_frais_et_financement_doubles_R_approx": 0.11228021201734903,
+    "dd_95": 0.05774008804187643,
+    "dd_sequentiel_R": 0.03709137866641532,
+    "part_meilleur_trade_R": 1.0883391059739176,
+    "part_meilleur_trade_pnl": 1.1690288984198351,
+    "r_min": -1.0732662632908285,
+    "r_max": 7.354866175141772
+  },
+  "intervalles_dependance": {
+    "tirages": 50000,
+    "graine": 20261101,
+    "longueur_bloc_trades": 10,
+    "statut": "calcule",
+    "motif": null,
+    "iid": {
+      "bas": -0.22771509344088622,
+      "haut": 0.5705952784011156
+    },
+    "blocs": {
+      "bas": -0.37639075810929123,
+      "haut": 0.7439997411007787
+    },
+    "episodes": {
+      "bas": -0.517928614823155,
+      "haut": 0.6150426652386762,
+      "grappes": 10
+    },
+    "mois": {
+      "bas": -0.31288587798735334,
+      "haut": 0.703320184066379,
+      "grappes": 14
+    }
+  },
+  "monte_carlo_blocs": {
+    "tirages": 50000,
+    "graine": 20261101,
+    "longueur_bloc_jours": 30,
+    "base": "reevaluee",
+    "dd_50": 0.07582121619158845,
+    "dd_95": 0.14813744984960128
+  },
+  "metriques_quotidiennes": {
+    "base": "équité réalisée à la clôture des trades, sans les pertes latentes",
+    "T": 457,
+    "jours_sans_cloture": 422,
+    "rendement_total": 0.03092963023999995,
+    "rendement_annualise": 0.024627125657221915,
+    "sharpe_quotidien": 0.025394556419192603,
+    "sharpe_annualise": 0.48516231916808833,
+    "sortino_annualise": 1.1194193608989444,
+    "calmar": 0.6703153882900854,
+    "dd_reel": 0.03673960957399995,
+    "taux_reussite": 0.32608695652173914
+  },
+  "metriques_reevaluees": {
+    "statut": "calcule",
+    "motif": null,
+    "base": "équité réévaluée chaque jour au prix de clôture 1d, hors frais et financement latents",
+    "T": 457,
+    "rendement_total": 0.030929630240000616,
+    "rendement_annualise": 0.02462712565722236,
+    "sharpe_quotidien": 0.01850441971721916,
+    "sharpe_annualise": 0.3535264423079529,
+    "sortino_annualise": 0.4730123141952475,
+    "calmar": 0.3988430718333102,
+    "dd_reevalue": 0.061746404529536,
+    "date_creux": "2026-10-31",
+    "g3_asymetrie": -1.7315457076250715,
+    "g4_kurtosis": 27.015752459887928
+  },
+  "par_sens": {
+    "longs": {
+      "trades": 21,
+      "taux_reussite": 0.23809523809523808,
+      "esperance_R": -0.2394054854968356,
+      "pnl": -248.29806339000004,
+      "frais": 16.630464485,
+      "financement_paye": 33.64822597212445,
+      "financement_recu": 6.747497047464824,
+      "financement_net_paye": 26.900728924659628
+    },
+    "shorts": {
+      "trades": 25,
+      "taux_reussite": 0.4,
+      "esperance_R": 0.4714158481600163,
+      "pnl": 557.5943657899999,
+      "frais": 12.04558057,
+      "financement_paye": 18.639426904444555,
+      "financement_recu": 12.667493281001647,
+      "financement_net_paye": 5.97193362344291
+    },
+    "total": {
+      "trades": 46,
+      "taux_reussite": 0.32608695652173914,
+      "esperance_R": 0.1469104567079752,
+      "pnl": 309.29630239999983,
+      "frais": 28.676045055000003,
+      "financement_paye": 52.28765287656901,
+      "financement_recu": 19.41499032846647,
+      "financement_net_paye": 32.87266254810254
+    }
+  },
+  "semestres": {
+    "semestres": [
+      {
+        "semestre": "2025-S2",
+        "partiel": true,
+        "sharpe_significatif": true,
+        "pnl_reevalue": -132.11157365999497,
+        "jours": 153,
+        "trades": 13,
+        "esperance_R": -0.3875792465513624,
+        "sharpe_annualise": -1.9793190189430474,
+        "dd": 0.029823999831000036,
+        "pnl": -250.49513366000002
+      },
+      {
+        "semestre": "2026-S1",
+        "partiel": false,
+        "sharpe_significatif": true,
+        "pnl_reevalue": 780.5866695000004,
+        "jours": 181,
+        "trades": 16,
+        "esperance_R": 0.6106212309597772,
+        "sharpe_annualise": 1.9711431124182504,
+        "dd": 0.011990451174971712,
+        "pnl": 477.9831295
+      },
+      {
+        "semestre": "2026-S2",
+        "partiel": true,
+        "sharpe_significatif": true,
+        "pnl_reevalue": -339.17879343999994,
+        "jours": 123,
+        "trades": 17,
+        "esperance_R": 0.11920420696341973,
+        "sharpe_annualise": 0.3504841352320312,
+        "dd": 0.033808601863696615,
+        "pnl": 81.80830655999999
+      }
+    ],
+    "n_semestres": 3,
+    "n_positifs": 2,
+    "n_avec_trades": 3,
+    "part_positifs": 0.6666666666666666,
+    "n_semestres_hors_partiel": 1,
+    "n_positifs_hors_partiel": 1,
+    "n_positifs_reevalue": 1,
+    "n_positifs_reevalue_hors_partiel": 1
+  },
+  "dsr": {
+    "source": "options --n-trials et --sr-var",
+    "n_essais": 15,
+    "v_sr_quotidien": 0.0004147722100656455,
+    "sr_quotidien": 0.025394556419192603,
+    "t": 457,
+    "g3_asymetrie": 6.8104402302071545,
+    "g4_kurtosis": 79.56261206681806,
+    "psr_sr0_nul": 0.7229992539697244,
+    "sr0_quotidien": 0.036061665964922565,
+    "sr0_annualise": 0.6889571608891687,
+    "dsr": 0.40184365799021254,
+    "statut": "calcule",
+    "motif": null
+  },
+  "dsr_reevalue": {
+    "source": "options --n-trials et --sr-var, V de la série réévaluée",
+    "n_essais": 15,
+    "v_sr_quotidien": 0.0005560603764310167,
+    "sr_quotidien": 0.01850441971721916,
+    "t": 457,
+    "g3_asymetrie": -1.7315457076250715,
+    "g4_kurtosis": 27.015752459887928,
+    "psr_sr0_nul": 0.6511936081907264,
+    "sr0_quotidien": 0.041754370020861825,
+    "sr0_annualise": 0.7977161191684993,
+    "dsr": 0.3127080446205727,
+    "statut": "calcule",
+    "motif": null
+  },
+  "comparaison_freqtrade": {
+    "sharpe_trades": 0.15796551635284528,
+    "sortino_trades": 0.84355439164871,
+    "calmar_trades": 3.5271325503175603,
+    "sharpe_wallet": 0.513002651739207,
+    "sortino_wallet": 0.5165344965310382,
+    "calmar_wallet": 3.7379054860754093,
+    "dd_compte": 0.03673960957399995,
+    "dd_wallet": 0.03673960957399995,
+    "final_balance": 10309.2963024,
+    "capital_final_calcule": 10309.2963024,
+    "taux_reussite": 0.32608695652173914,
+    "total_trades": 46
+  },
+  "avertissements": [],
+  "notes_methode": [
+    "Deux bases sont affichées. La base réalisée ne voit pas les pertes latentes des positions ouvertes, ce qui regroupe le P&L le jour de la clôture, flatte le Sortino et peut sous-estimer le drawdown. La base réévaluée, retenue comme principale, ajoute le latent au prix de clôture 1d, hors frais et financement latents. Elle ignore aussi les extrêmes intrajournaliers.",
+    "Le R est nominal. Il rapporte le profit au risque prévu sur l'équité de référence, pas au risque effectif du trade.",
+    "L'intervalle iid et le drawdown par permutation traitent les trades comme indépendants et successifs. Les positions se chevauchent et les actifs sont corrélés. Ces deux chiffres sont donc probablement trop optimistes et restent affichés pour comparaison. L'intervalle par blocs et le Monte Carlo par blocs temporels gardent une partie de la dépendance, sans capter l'instabilité due à l'ordre de la whitelist ni à l'attribution des places.",
+    "Les espérances avec coûts doublés sont une approximation. Elles retirent une seconde fois les coûts à trajectoire inchangée, sans recalculer tailles, stops ni composition. Le glissement n'y figure que s'il est inclus dans le paramètre de frais. Seul un nouveau backtest avec --fee doublé (E09, E11) mesure réellement ce stress.",
+    "Le DSR suppose des essais indépendants et comparables. Des variantes voisines ne sont pas indépendantes, et des essais sur des périodes différentes mesurent aussi un effet de régime dans V[SR]. N et V sont à lire avec cette limite. Sur la série réalisée, le regroupement du P&L à la clôture crée une forte asymétrie (g3) qui écrase le dénominateur du PSR. Le DSR réalisé n'est donc pas comparable d'un essai à l'autre, et le DSR réévalué sert de calcul principal."
+  ]
+}
