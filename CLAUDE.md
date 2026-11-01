@@ -4,7 +4,8 @@ Ce dépôt est l'environnement d'exécution et de recherche principal du systèm
 
 - **Skills disponibles** : Les 14 skills sont situés dans `.claude/skills/` (et `systeme-trading/.claude/skills/`).
 - **Orchestration** : Toute demande d'analyse de marché, de trade, d'audit de ressource, de stratégie, de backtest ou de revue commence par l'ouverture du skill `cerveau-trading`, qui sélectionne la chaîne d'outils appropriée.
-- **Mots déclencheurs** : `TRADE`, `VALIDER`, `MOTEUR`, `CONSEIL TRADING`, `AUDIT`.
+- **Mots déclencheurs** : `TRADE`, `VALIDER`, `MOTEUR`, `CONSEIL TRADING`, `AUDIT`, `WALLETS`.
+- **Mission Spéciale DEX / Wallets** : Consulter `MISSION_REVERSE_ENGINEERING_WALLETS.md` pour le mandat complet d'analyse médico-légale des portefeuilles Solana et modélisation systématique sur le serveur Scaleway 24/7 (`ssh trading-bot`).
 - **Règles de sécurité** :
   - Claude ne passe aucun ordre direct et ne manipule aucune clé privée.
   - Les fichiers `.env` et le dossier `secrets/` ne sont jamais lus ni versionnés.
