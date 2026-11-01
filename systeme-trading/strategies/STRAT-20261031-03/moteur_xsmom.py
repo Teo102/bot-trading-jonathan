@@ -40,7 +40,8 @@ class Params:
     glissement_stop: float = 0.0030
     facteur: str = "BTC"
     exclus: frozenset = field(default_factory=frozenset)
-    anciennete_continue: bool = False  # D6 b : aucun jour à volume nul sur la fenêtre d'ancienneté
+    anciennete_continue: bool = False  # D6 b : historique continu sur la fenêtre d'ancienneté
+    trou_max_jours: int = 0  # 0 : un seul jour nul ou absent exclut ; n > 0 : seule une interruption de plus de n jours exclut
     volume_min: float = 0.0  # D6 c : médiane de volume minimale (USDT), appliquée après le classement
     min_noms: int = 6  # sous ce nombre de noms classés, la semaine reste vide
 
@@ -52,6 +53,15 @@ def nom_de_base(symbole: str) -> str:
         if b.startswith(pre) and len(b) > len(pre):
             return b[len(pre):]
     return b
+
+
+def plus_long_trou(actif: np.ndarray) -> int:
+    """Plus longue suite de jours inactifs (volume nul ou ligne absente)."""
+    plus, cour = 0, 0
+    for a in actif:
+        cour = 0 if a else cour + 1
+        plus = max(plus, cour)
+    return plus
 
 
 def est_exclu(symbole: str, exclus) -> bool:
@@ -115,7 +125,7 @@ def candidats_classes(jours: dict, t: pd.Timestamp, p: Params) -> list[tuple[str
             continue
         if p.anciennete_continue:
             fen_a = pd.date_range(t - pd.Timedelta(days=p.anciennete), veille, freq="D")
-            if not (v.reindex(fen_a).fillna(0) > 0).all():
+            if plus_long_trou(v.reindex(fen_a).fillna(0).to_numpy() > 0) > p.trou_max_jours:
                 continue
         if veille not in v.index or not (v.get(veille, 0) or 0) > 0:
             continue

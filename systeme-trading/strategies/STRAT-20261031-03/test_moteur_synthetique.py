@@ -279,6 +279,18 @@ class FiltresD6(unittest.TestCase):
         self.assertNotIn("S08", m.univers(j, t, p))
         self.assertIn("S08", m.univers(j, t, m.Params(taille_univers=100, anciennete=180)))
 
+    def test_trou_tolere(self):
+        j, h, f = marche(graine=24)
+        t = pd.Timestamp("2022-09-05")
+        j["volume"].loc[pd.Timestamp("2022-05-01"):pd.Timestamp("2022-05-03"), "S09"] = np.nan  # 3 jours absents
+        j["volume"].loc[pd.Timestamp("2022-06-01"):pd.Timestamp("2022-06-08"), "S10"] = 0.0     # 8 jours nuls
+        strict = m.Params(taille_univers=100, anciennete=180, anciennete_continue=True)
+        tol = m.Params(taille_univers=100, anciennete=180, anciennete_continue=True, trou_max_jours=7)
+        self.assertNotIn("S09", m.univers(j, t, strict))
+        self.assertIn("S09", m.univers(j, t, tol))
+        self.assertNotIn("S10", m.univers(j, t, tol))
+        self.assertEqual(m.plus_long_trou(np.array([1, 0, 0, 1, 0, 0, 0, 1], bool)), 3)
+
     def test_seuil_de_volume_et_semaine_vide(self):
         j, h, f = marche(graine=23)
         t = pd.Timestamp("2022-06-06")
