@@ -6,7 +6,22 @@ import requests
 
 ICI = Path(__file__).resolve().parent
 BASE = Path(os.environ.get("DEX_DONNEES", ICI / "donnees"))
-RPC = "https://api.mainnet-beta.solana.com"
+FICHIER_CLE = Path(os.environ.get("DEX_CLE_HELIUS", "/root/.helius_env"))
+
+
+def adresse_rpc():
+    """RPC Helius si une clé est déposée sur la machine, RPC public sinon. L'adresse contient la clé : elle ne s'affiche jamais."""
+    try:
+        for ligne in FICHIER_CLE.read_text().splitlines():
+            if ligne.startswith("HELIUS_API_KEY=") and ligne.split("=", 1)[1].strip():
+                return "https://mainnet.helius-rpc.com/?api-key=" + ligne.split("=", 1)[1].strip(), 8.0
+    except OSError:
+        pass
+    return "https://api.mainnet-beta.solana.com", 2.5
+
+
+RPC, RPC_PAR_S = adresse_rpc()
+VERSION_TX = 1  # les transactions de version 1 représentaient 12 sur 43 d'un échantillon du 01/11/2026 ; une valeur plus basse les refuse
 GECKO = "https://api.geckoterminal.com/api/v2"
 WSOL = "So11111111111111111111111111111111111111112"
 STABLES = {"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"}
@@ -27,7 +42,7 @@ class Limiteur:
             time.sleep(attente)
 
 
-LIM_RPC = Limiteur(float(os.environ.get("DEX_RPC_PAR_S", "2.5")))
+LIM_RPC = Limiteur(float(os.environ.get("DEX_RPC_PAR_S", RPC_PAR_S)))
 LIM_GECKO = Limiteur(float(os.environ.get("DEX_GECKO_PAR_MIN", "25")) / 60)
 SESSION = requests.Session()
 
@@ -45,7 +60,7 @@ def rpc(methode, params, essais=6):
                     return corps.get("result")
         except (requests.RequestException, ValueError):
             pass
-        time.sleep(min(60, 4 * 2 ** i))
+        time.sleep(min(30, 2 * 2 ** i))
     raise RuntimeError(f"RPC en échec après {essais} essais : {methode}")
 
 

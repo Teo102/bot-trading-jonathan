@@ -27,7 +27,7 @@ Le tri écarterait l'idée sur T4 et sans doute sur T9. Le travail se poursuit u
 
 **Réserve de l'étude par les tokens.** `recherche/dex_faisabilite/` gardait septembre 2025 à octobre 2026 comme réserve non lue. Ce pilote lit octobre 2026 sur un échantillon de jetons. Ce mois n'est donc plus aveugle pour cette étude.
 
-**Sources.** Aucune clé Dune, Helius ou Solscan n'est disponible. pump.fun et Solscan refusent l'accès public (403 et 401, 01/11/2026 12:58 UTC, depuis le serveur). Les sources réelles sont le RPC public Solana et GeckoTerminal. Le RPC met environ 3,6 s par `getTransaction` (60 appels en 217,8 s). Un classement des meilleurs wallets sur 90 jours n'est donc pas atteignable. Le pilote porte sur 30 jours et sur un tirage aléatoire.
+**Sources.** Aucune clé Dune, Helius ou Solscan n'est disponible. pump.fun et Solscan refusent l'accès public (403 et 401, 01/11/2026 12:58 UTC, depuis le serveur). Les sources réelles sont le RPC public Solana et GeckoTerminal. Le RPC met environ 3,6 s par `getTransaction` (60 appels en 217,8 s). Un classement de tous les wallets sur 90 jours n'est donc pas atteignable. Le pilote porte sur un tirage aléatoire (période au § 9).
 
 ## 2. Cohorte
 
@@ -77,3 +77,23 @@ Verdict préliminaire : hypothèse **affaiblie**.
 2. Une même personne peut utiliser plusieurs wallets, et les transferts faussent les coûts.
 3. Un petit nombre de gains extrêmes domine les rendements memecoin. La médiane et la moyenne divergent fortement.
 4. Sur 30 jours, un rentable peut être chanceux. Le taux de base de la radiographie (84 % de perdants sur Polymarket) ne se transpose pas sans preuve, mais il rappelle l'ordre de grandeur attendu.
+
+## 9. Avenant du 01/11/2026, avant toute lecture de transaction
+
+Une clé Helius gratuite déposée sur le serveur remplace le RPC public, à 8 requêtes par seconde. Aucune transaction n'avait été lue et aucun gain n'avait été calculé au moment de ces changements.
+
+| Point | Avant | Après |
+|---|---|---|
+| Période | 30 jours | 90 jours |
+| Plafond par wallet | 400 signatures | 1 000 signatures, la page entière du RPC |
+| Budget | 8 000 transactions | 40 000 transactions, wallets lus dans l'ordre du tirage |
+| Recherche du déployeur | 3 pages | 10 pages |
+| Persistance | A = J-30 à J-16, B = J-15 à J | A = J-90 à J-46, B = J-45 à J |
+| Prix du SOL | Barres horaires | Barres journalières au-delà de 41 jours, écart toléré de 24 h |
+
+**Contexte horaire limité.** GeckoTerminal donne 1 000 barres horaires, soit environ 41 jours. Le volume horaire et la cassure ou le repli restent donc inconnus pour les positions plus anciennes, et le taux de couverture est publié.
+
+**Défaut corrigé avant usage.** Le script demandait les transactions en version 0. Or 12 transactions sur 43 d'un échantillon étaient en version 1 et étaient refusées (Helius, 01/11/2026). Le paramètre passe à 1. Le tirage des 400 wallets reste celui de la graine 20261101.
+
+**Réserve de l'étude par les tokens.** Août à octobre 2026 ne sont plus aveugles pour cette étude, au lieu du seul mois d'octobre annoncé au § 1.
+

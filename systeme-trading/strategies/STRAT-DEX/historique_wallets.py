@@ -2,9 +2,9 @@
 Reprise possible : ce qui est déjà en base n'est pas relu. Usage : historique_wallets.py [graines|signatures|transactions|tout]"""
 import datetime as D, json, random, sys, time
 from concurrent.futures import ThreadPoolExecutor
-from dex_commun import base, gecko, lire_transaction, rpc
+from dex_commun import VERSION_TX, base, gecko, lire_transaction, rpc
 
-GRAINE, N_WALLETS, BUDGET_TX, MAX_SIG, JOURS, MIN_USD = 20261101, 400, 8000, 400, 30, 50
+GRAINE, N_WALLETS, BUDGET_TX, MAX_SIG, JOURS, MIN_USD = 20261101, 400, 40000, 1000, 90, 50
 DEXES = (("pumpswap", 5), ("pump-fun", 2), ("raydium", 2))
 
 
@@ -95,7 +95,7 @@ def transactions(c):
     def lire(s):
         sig, w, t = s
         try:
-            tx = rpc("getTransaction", [sig, {"maxSupportedTransactionVersion": 0, "encoding": "json"}])
+            tx = rpc("getTransaction", [sig, {"maxSupportedTransactionVersion": VERSION_TX, "encoding": "json"}])
         except RuntimeError:
             return s, "erreur"
         return s, (lire_transaction(tx, w) if tx else None)
@@ -109,7 +109,7 @@ def transactions(c):
         reste = c.execute("SELECT sig, wallet, ts FROM signatures s WHERE wallet=? AND NOT EXISTS("
                           "SELECT 1 FROM mouvements m WHERE m.sig=s.sig AND m.wallet=s.wallet)", (w,)).fetchall()
         erreurs = 0
-        with ThreadPoolExecutor(6) as ex:
+        with ThreadPoolExecutor(8) as ex:
             for (sig, wa, t), r in ex.map(lire, reste):
                 if r == "erreur":
                     erreurs += 1
@@ -128,9 +128,13 @@ if __name__ == "__main__":
     c = base()
     if etape in ("graines", "tout"):
         graines(c)
-    if etape in ("signatures", "tout"):
+    if etape == "reprise":
+        c.execute("UPDATE wallets SET statut='tire', n_sig=NULL, max_par_min=NULL, lu_le=NULL")
+        c.execute("DELETE FROM signatures")
+        c.commit()
+    if etape in ("signatures", "tout", "reprise"):
         signatures(c)
-    if etape in ("transactions", "tout"):
+    if etape in ("transactions", "tout", "reprise"):
         transactions(c)
     resume = dict(c.execute("SELECT statut, COUNT(*) FROM wallets GROUP BY statut").fetchall())
     print(maintenant(), "FIN", json.dumps(resume), flush=True)
