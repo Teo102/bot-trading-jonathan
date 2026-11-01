@@ -1,0 +1,213 @@
+2026-10-31T22:48:25Z
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+/private/tmp/claude-501/-Users-teobrondel-Bot-Trading-Jonathan/ec0a8bfb-2b77-410c-ba66-6e74e06faff3/scratchpad/s01/controles.py:80: UserWarning: obj.round has no effect with datetime, timedelta, or period dtypes. Use obj.dt.round(...) instead.
+  print(" pires\n"+w.round(3).to_string(index=False)); print(" meilleurs\n"+b.round(3).to_string(index=False))
+## 1. Exports : stratégie, valeurs figées, frais, config, dernière clôture
+E01 TrendDonchianV1 surcharge aucune (base) fee 0.0005 dry_run True derniere_cloture 2024-06-30 00:00:00+00:00 trades 135 sha256 024811d1a688a82e
+E02 TrendDonchianV1 surcharge aucune (base) fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 46 sha256 0bd9f1a786b8924f
+E00-ref TrendDonchianV1 surcharge aucune (base) fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 178 sha256 bae5c5708265ab4f
+E03 TrendDonchianV1_E03 surcharge [('entry_period', '16')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 178 sha256 2711cb18e1c245ac
+E04 TrendDonchianV1_E04 surcharge [('entry_period', '24')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 177 sha256 1f94800394e89cef
+E05 TrendDonchianV1_E05 surcharge [('exit_period', '8')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 188 sha256 8dbf5c78f1dba86f
+E06 TrendDonchianV1_E06 surcharge [('exit_period', '12')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 171 sha256 20cd993d1cce6961
+E07 TrendDonchianV1_E07 surcharge [('atr_mult', '1.6')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 186 sha256 5879cd5c1b66b1db
+E08 TrendDonchianV1_E08 surcharge [('atr_mult', '2.4')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 165 sha256 ff2140f9b21302dc
+E09 TrendDonchianV1 surcharge aucune (base) fee 0.001 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 178 sha256 512e8df35df155d7
+R01 TrendDonchianV1_R01 surcharge [('entry_period', '15')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 176 sha256 8620cfc2ec2411c4
+R02 TrendDonchianV1_R02 surcharge [('entry_period', '30')] fee 0.0005 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 171 sha256 33d65eb42ccf8ae8
+R03 TrendDonchianV1 surcharge aucune (base) fee 0.0015 dry_run True derniere_cloture 2025-07-31 00:00:00+00:00 trades 178 sha256 f2e491dadbdc2fbf
+
+## 2. Financement recalculé depuis les fichiers (taux x mark x quantité, bornes incluses)
+E01 somme export -665.282 somme recalculée -665.282 écart abs moyen 0.0 écart abs max 0.0 trades non nuls 134 / 135
+E00-ref somme export -768.379 somme recalculée -768.379 écart abs moyen 0.0 écart abs max 0.0 trades non nuls 177 / 178
+
+## 3. Rappels custom_stake_amount et custom_stoploss (non couverts par lookahead-analysis)
+E00-ref mise/cible ATR précédent, paires à petit prix: médiane 0.9899 p5 0.9875 p95 0.99 n 66
+E00-ref mise/cible ATR courant, mêmes paires: médiane 0.9995 p5 0.9571 p95 1.1569
+E00-ref mise/cible toutes paires (ATR précédent): médiane 0.9897 min 0.8981 max 0.99
+E00-ref distance de stop / (mult x ATR précédent): médiane 0.99986 min 0.9978 max 1.0 trades hors 0,99-1,01: 0
+E00-ref plafond 20 % atteint: 0 distance prévue > 30 % (filet): 3 mise moyenne en part d'équité 0.0471 max 0.1376
+E07 mise/cible ATR précédent, paires à petit prix: médiane 0.9899 p5 0.9867 p95 0.99 n 70
+E07 mise/cible ATR courant, mêmes paires: médiane 1.0006 p5 0.9571 p95 1.1644
+E07 mise/cible toutes paires (ATR précédent): médiane 0.9898 min 0.9247 max 0.99
+E07 distance de stop / (mult x ATR précédent): médiane 0.99978 min 0.9961 max 1.0 trades hors 0,99-1,01: 0
+E07 plafond 20 % atteint: 0 distance prévue > 30 % (filet): 0 mise moyenne en part d'équité 0.0587 max 0.1696
+
+## 4. Risque réalisé par motif de sortie (R nominal)
+E01 channel_exit n 77 moy 0.937 med 0.188 min -0.91 max 10.639
+E01 force_exit n 2 moy 0.825 med 0.825 min 0.757 max 0.892
+E01 stop_loss n 56 moy -0.994 med -0.983 min -1.257 max -0.914
+E01 stops: part frais 0.009 R, financement net -0.017 R, prix seul -0.968 R, part > 1 R: 0.179 > 1,5 R: 0 > 2 R: 0
+ pires
+         pair                 open_date                close_date  is_short exit_reason      r  fund_r
+ETH/USDT:USDT 2023-12-05 00:00:00+00:00 2024-01-03 00:00:00+00:00     False   stop_loss -1.257  -0.284
+LTC/USDT:USDT 2021-01-04 00:00:00+00:00 2021-01-11 00:00:00+00:00     False   stop_loss -1.160  -0.176
+XRP/USDT:USDT 2021-10-10 00:00:00+00:00 2021-10-27 00:00:00+00:00     False   stop_loss -1.117  -0.135
+ meilleurs
+          pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+LINK/USDT:USDT 2023-09-20 00:00:00+00:00 2024-01-04 00:00:00+00:00     False channel_exit 10.639  -0.938
+ BCH/USDT:USDT 2023-06-22 00:00:00+00:00 2023-07-18 00:00:00+00:00     False channel_exit  8.498   0.586
+ ETH/USDT:USDT 2021-01-03 00:00:00+00:00 2021-03-23 00:00:00+00:00     False channel_exit  6.090  -3.109
+E02 channel_exit n 27 moy 1.261 med -0.04 min -0.858 max 13.535
+E02 force_exit n 3 moy 2.611 med 2.929 min 1.055 max 3.85
+E02 stop_loss n 16 moy -0.969 med -0.977 min -1.002 max -0.9
+E02 stops: part frais 0.01 R, financement net 0.001 R, prix seul -0.959 R, part > 1 R: 0.062 > 1,5 R: 0 > 2 R: 0
+ pires
+          pair                 open_date                close_date  is_short exit_reason      r  fund_r
+ LTC/USDT:USDT 2025-01-17 00:00:00+00:00 2025-01-27 00:00:00+00:00     False   stop_loss -1.002  -0.020
+ BCH/USDT:USDT 2025-03-29 00:00:00+00:00 2025-04-12 00:00:00+00:00      True   stop_loss -0.999  -0.017
+LINK/USDT:USDT 2024-12-13 00:00:00+00:00 2024-12-19 00:00:00+00:00     False   stop_loss -0.993  -0.009
+ meilleurs
+          pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+DOGE/USDT:USDT 2024-10-19 00:00:00+00:00 2024-12-19 00:00:00+00:00     False channel_exit 13.535  -0.714
+ ADA/USDT:USDT 2024-11-08 00:00:00+00:00 2024-12-10 00:00:00+00:00     False channel_exit 13.484  -0.447
+ BTC/USDT:USDT 2024-10-16 00:00:00+00:00 2025-02-03 00:00:00+00:00     False channel_exit  5.623  -0.708
+E00-ref channel_exit n 106 moy 1.021 med 0.163 min -0.91 max 13.537
+E00-ref force_exit n 3 moy 2.611 med 2.929 min 1.05 max 3.855
+E00-ref stop_loss n 69 moy -0.99 med -0.983 min -1.257 max -0.914
+E00-ref stops: part frais 0.009 R, financement net -0.014 R, prix seul -0.967 R, part > 1 R: 0.159 > 1,5 R: 0 > 2 R: 0
+ pires
+         pair                 open_date                close_date  is_short exit_reason      r  fund_r
+ETH/USDT:USDT 2023-12-05 00:00:00+00:00 2024-01-03 00:00:00+00:00     False   stop_loss -1.257  -0.284
+LTC/USDT:USDT 2021-01-04 00:00:00+00:00 2021-01-11 00:00:00+00:00     False   stop_loss -1.160  -0.176
+XRP/USDT:USDT 2021-10-10 00:00:00+00:00 2021-10-27 00:00:00+00:00     False   stop_loss -1.117  -0.135
+ meilleurs
+          pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+DOGE/USDT:USDT 2024-10-19 00:00:00+00:00 2024-12-19 00:00:00+00:00     False channel_exit 13.537  -0.714
+ ADA/USDT:USDT 2024-11-08 00:00:00+00:00 2024-12-10 00:00:00+00:00     False channel_exit 13.484  -0.447
+LINK/USDT:USDT 2023-09-20 00:00:00+00:00 2024-01-04 00:00:00+00:00     False channel_exit 10.639  -0.938
+E07 channel_exit n 101 moy 1.888 med 0.346 min -1.129 max 31.672
+E07 force_exit n 3 moy 3.24 med 3.645 min 1.277 max 4.797
+E07 stop_loss n 82 moy -0.979 med -0.977 min -1.038 max -0.896
+E07 stops: part frais 0.012 R, financement net -0.004 R, prix seul -0.963 R, part > 1 R: 0.146 > 1,5 R: 0 > 2 R: 0
+ pires
+         pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+BCH/USDT:USDT 2021-01-04 00:00:00+00:00 2021-01-28 00:00:00+00:00     False channel_exit -1.129  -0.314
+XRP/USDT:USDT 2021-10-10 00:00:00+00:00 2021-10-17 00:00:00+00:00     False    stop_loss -1.038  -0.057
+XRP/USDT:USDT 2021-01-31 00:00:00+00:00 2021-02-02 00:00:00+00:00     False    stop_loss -1.031  -0.048
+ meilleurs
+          pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+ ADA/USDT:USDT 2021-01-04 00:00:00+00:00 2021-05-20 00:00:00+00:00     False channel_exit 31.672  -9.632
+ BNB/USDT:USDT 2021-02-02 00:00:00+00:00 2021-03-26 00:00:00+00:00     False channel_exit 27.578  -3.914
+DOGE/USDT:USDT 2024-10-19 00:00:00+00:00 2024-12-19 00:00:00+00:00     False channel_exit 16.845  -0.888
+E08 channel_exit n 113 moy 0.723 med 0.037 min -0.841 max 11.315
+E08 force_exit n 3 moy 2.188 med 2.448 min 0.883 max 3.231
+E08 stop_loss n 49 moy -0.99 med -0.989 min -1.131 max -0.852
+E08 stops: part frais 0.008 R, financement net -0.013 R, prix seul -0.969 R, part > 1 R: 0.306 > 1,5 R: 0 > 2 R: 0
+ pires
+          pair                 open_date                close_date  is_short exit_reason      r  fund_r
+ LTC/USDT:USDT 2021-01-04 00:00:00+00:00 2021-01-11 00:00:00+00:00     False   stop_loss -1.131  -0.147
+ XRP/USDT:USDT 2021-10-10 00:00:00+00:00 2021-10-27 00:00:00+00:00     False   stop_loss -1.096  -0.112
+DOGE/USDT:USDT 2021-10-29 00:00:00+00:00 2021-11-10 00:00:00+00:00     False   stop_loss -1.058  -0.074
+ meilleurs
+          pair                 open_date                close_date  is_short  exit_reason      r  fund_r
+DOGE/USDT:USDT 2024-10-19 00:00:00+00:00 2024-12-19 00:00:00+00:00     False channel_exit 11.315  -0.597
+ ADA/USDT:USDT 2024-11-08 00:00:00+00:00 2024-12-10 00:00:00+00:00     False channel_exit 11.274  -0.374
+LINK/USDT:USDT 2023-09-20 00:00:00+00:00 2024-01-04 00:00:00+00:00     False channel_exit  8.898  -0.785
+
+## 5. Par paire
+E01
+                trades  esp_R   som_R      pnl  fin_net_paye  reussite     premier
+pair                                                                              
+LINK/USDT:USDT      11  1.059  11.649  597.847        91.952     0.545  2021-01-16
+ADA/USDT:USDT       10  0.817   8.167  425.148        29.559     0.700  2021-05-14
+BTC/USDT:USDT       15  0.455   6.824  355.436        94.934     0.467  2021-01-03
+ETH/USDT:USDT       16  0.360   5.754  282.035       264.452     0.312  2021-01-03
+BCH/USDT:USDT       17  0.167   2.841  133.395        -7.639     0.176  2021-01-04
+XRP/USDT:USDT       17  0.008   0.129   -6.276       140.431     0.353  2021-01-31
+BNB/USDT:USDT        8 -0.044  -0.355  -16.247       -13.355     0.375  2021-05-04
+TRX/USDT:USDT       14 -0.058  -0.805  -52.024        42.340     0.286  2021-04-01
+DOGE/USDT:USDT       9 -0.500  -4.504 -237.749         6.497     0.222  2021-10-29
+LTC/USDT:USDT       18 -0.645 -11.606 -604.633        16.110     0.111  2021-01-04
+E02
+                trades  esp_R   som_R      pnl  fin_net_paye  reussite     premier
+pair                                                                              
+DOGE/USDT:USDT       2  6.597  13.193  634.173        34.196     0.500  2024-10-19
+ADA/USDT:USDT        4  2.873  11.494  544.475        19.938     0.250  2024-09-04
+ETH/USDT:USDT        5  1.086   5.430  291.103         0.904     0.600  2024-07-05
+BTC/USDT:USDT        7  0.649   4.545  225.272        45.079     0.429  2024-07-05
+BCH/USDT:USDT        6  0.029   0.172   16.266        -1.213     0.333  2024-07-29
+TRX/USDT:USDT        6  0.017   0.100    8.937        -4.416     0.500  2024-07-02
+LTC/USDT:USDT        3 -0.353  -1.058  -57.401        -0.883     0.000  2024-08-03
+LINK/USDT:USDT       4 -0.405  -1.618  -88.088         0.436     0.250  2024-08-03
+BNB/USDT:USDT        3 -0.795  -2.386 -121.785        -0.539     0.000  2024-08-23
+XRP/USDT:USDT        6 -0.583  -3.496 -183.257         1.754     0.000  2024-07-05
+E00-ref
+                trades  esp_R   som_R      pnl  fin_net_paye  reussite     premier
+pair                                                                              
+ADA/USDT:USDT       14  1.348  18.878  984.684        51.191     0.571  2021-05-14
+ETH/USDT:USDT       20  0.607  12.142  656.649       266.750     0.400  2021-01-03
+BTC/USDT:USDT       22  0.515  11.339  604.177       144.667     0.455  2021-01-03
+LINK/USDT:USDT      15  0.642   9.623  478.308        91.151     0.467  2021-01-16
+DOGE/USDT:USDT      11  0.790   8.691  463.619        44.315     0.273  2021-10-29
+BCH/USDT:USDT       23  0.131   3.013  151.376        -8.982     0.217  2021-01-04
+TRX/USDT:USDT       19  0.097   1.836   96.399        35.195     0.421  2021-04-01
+BNB/USDT:USDT       11 -0.248  -2.732 -150.441       -13.948     0.273  2021-05-04
+XRP/USDT:USDT       22 -0.109  -2.399 -155.503       142.906     0.273  2021-01-31
+LTC/USDT:USDT       21 -0.603 -12.664 -668.102        15.133     0.095  2021-01-04
+
+## 6. Concentration
+E01 {'esp': 0.134, 'esp_sans_1': 0.056, 'esp_sans_3': -0.054, 'rmax': 10.639, 'meilleur': 'LINK/USDT:USDT 2023-09-20 long', 'part_top1_pnl': 0.622, 'part_top3_pnl': 1.457, 'meilleur_mois': '2024-01', 'part_meilleur_mois': 0.516, 'mois_pos': 18, 'mois_avec_cloture': 38, 'pnl_total': 876.931}
+E02 {'esp': 0.573, 'esp_sans_1': 0.285, 'esp_sans_3': -0.146, 'rmax': 13.535, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.514, 'part_top3_pnl': 1.239, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.985, 'mois_pos': 5, 'mois_avec_cloture': 13, 'pnl_total': 1269.697}
+E00-ref {'esp': 0.268, 'esp_sans_1': 0.193, 'esp_sans_3': 0.058, 'rmax': 13.537, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.293, 'part_top3_pnl': 0.806, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.562, 'mois_pos': 24, 'mois_avec_cloture': 51, 'pnl_total': 2461.165}
+E03 {'esp': 0.485, 'esp_sans_1': 0.235, 'esp_sans_3': 0.128, 'rmax': 44.796, 'meilleur': 'XRP/USDT:USDT 2024-11-08 long', 'part_top1_pnl': 0.541, 'part_top3_pnl': 0.764, 'meilleur_mois': '2025-02', 'part_meilleur_mois': 0.595, 'mois_pos': 25, 'mois_avec_cloture': 51, 'pnl_total': 4780.789}
+E04 {'esp': 0.19, 'esp_sans_1': 0.115, 'esp_sans_3': -0.023, 'rmax': 13.536, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.415, 'part_top3_pnl': 1.144, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.796, 'mois_pos': 22, 'mois_avec_cloture': 52, 'pnl_total': 1642.751}
+E05 {'esp': 0.254, 'esp_sans_1': 0.183, 'esp_sans_3': 0.055, 'rmax': 13.538, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.292, 'part_top3_pnl': 0.799, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.559, 'mois_pos': 24, 'mois_avec_cloture': 51, 'pnl_total': 2453.107}
+E06 {'esp': 0.058, 'esp_sans_1': -0.004, 'esp_sans_3': -0.075, 'rmax': 10.54, 'meilleur': 'ADA/USDT:USDT 2024-11-08 long', 'part_top1_pnl': 1.229, 'part_top3_pnl': 2.67, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 1.799, 'mois_pos': 20, 'mois_avec_cloture': 50, 'pnl_total': 399.712}
+E07 {'esp': 0.646, 'esp_sans_1': 0.478, 'esp_sans_3': 0.241, 'rmax': 31.672, 'meilleur': 'ADA/USDT:USDT 2021-01-04 long', 'part_top1_pnl': 0.228, 'part_top3_pnl': 0.593, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.327, 'mois_pos': 22, 'mois_avec_cloture': 54, 'pnl_total': 6915.304}
+E08 {'esp': 0.241, 'esp_sans_1': 0.174, 'esp_sans_3': 0.051, 'rmax': 11.315, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.295, 'part_top3_pnl': 0.812, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.56, 'mois_pos': 24, 'mois_avec_cloture': 50, 'pnl_total': 2042.387}
+E09 {'esp': 0.259, 'esp_sans_1': 0.184, 'esp_sans_3': 0.049, 'rmax': 13.519, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.303, 'part_top3_pnl': 0.834, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.58, 'mois_pos': 23, 'mois_avec_cloture': 51, 'pnl_total': 2364.414}
+R01 {'esp': 0.524, 'esp_sans_1': 0.271, 'esp_sans_3': 0.163, 'rmax': 44.796, 'meilleur': 'XRP/USDT:USDT 2024-11-08 long', 'part_top1_pnl': 0.506, 'part_top3_pnl': 0.713, 'meilleur_mois': '2025-02', 'part_meilleur_mois': 0.562, 'mois_pos': 24, 'mois_avec_cloture': 51, 'pnl_total': 5211.299}
+R02 {'esp': 0.207, 'esp_sans_1': 0.128, 'esp_sans_3': -0.026, 'rmax': 13.537, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.403, 'part_top3_pnl': 1.179, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.772, 'mois_pos': 19, 'mois_avec_cloture': 51, 'pnl_total': 1703.309}
+R03 {'esp': 0.25, 'esp_sans_1': 0.175, 'esp_sans_3': 0.04, 'rmax': 13.505, 'meilleur': 'DOGE/USDT:USDT 2024-10-19 long', 'part_top1_pnl': 0.314, 'part_top3_pnl': 0.864, 'meilleur_mois': '2024-12', 'part_meilleur_mois': 0.601, 'mois_pos': 23, 'mois_avec_cloture': 51, 'pnl_total': 2264.509}
+
+## 7. Drawdown réévalué chaque jour (prix de clôture 1d, frais et financement latents non inclus)
+E01 {'dd_mtm': 0.12752779600846492, 'dd_realise': 0.10932324427259867, 'date_creux': '2023-06-09', 'sharpe_mtm': 0.3099317121021145}
+E02 {'dd_mtm': 0.0833689251508329, 'dd_realise': 0.03756994840499992, 'date_creux': '2025-06-24', 'sharpe_mtm': 1.1514093771267115}
+E00-ref {'dd_mtm': 0.12752779600846492, 'dd_realise': 0.10932324427259867, 'date_creux': '2023-06-09', 'sharpe_mtm': 0.5628929818885409}
+E09 {'dd_mtm': 0.12977226137672077, 'dd_realise': 0.11106282109924077, 'date_creux': '2023-06-09', 'sharpe_mtm': 0.5441829329713667}
+
+## 8. Semestres (depuis les métriques)
+E01 4 / 7
+semestre  partiel  jours  trades  esperance_R  sharpe_annualise    dd      pnl
+ 2021-S1    False    181      11        0.788             1.434 0.015  432.934
+ 2021-S2    False    184      24       -0.080            -0.359 0.044 -110.833
+ 2022-S1    False    181       9        0.855             2.142 0.005  399.019
+ 2022-S2    False    184      23       -0.302            -1.537 0.059 -380.643
+ 2023-S1    False    181      26       -0.311            -2.620 0.055 -409.292
+ 2023-S2    False    184      18        0.191             0.504 0.024  162.731
+ 2024-S1    False    182      24        0.636             1.648 0.017  783.015
+E02 2 / 3
+semestre  partiel  jours  trades  esperance_R  sharpe_annualise    dd     pnl
+ 2024-S2    False    184      23        0.800             1.354 0.038 875.099
+ 2025-S1    False    181      19        0.015            -0.065 0.021 -21.934
+ 2025-S2     True     31       4        1.920             3.360 0.001 416.532
+E00-ref 6 / 10
+semestre  partiel  jours  trades  esperance_R  sharpe_annualise    dd      pnl
+ 2021-S1    False    181      11        0.788             1.434 0.015  432.934
+ 2021-S2    False    184      24       -0.080            -0.359 0.044 -110.833
+ 2022-S1    False    181       9        0.855             2.142 0.005  399.019
+ 2022-S2    False    184      23       -0.302            -1.537 0.059 -380.643
+ 2023-S1    False    181      26       -0.311            -2.620 0.055 -409.292
+ 2023-S2    False    184      18        0.191             0.504 0.024  162.731
+ 2024-S1    False    182      22        0.619             1.481 0.017  693.345
+ 2024-S2    False    184      22        1.060             1.740 0.018 1238.075
+ 2025-S1    False    181      19        0.015            -0.067 0.021  -24.772
+ 2025-S2     True     31       4        1.920             3.360 0.001  460.602

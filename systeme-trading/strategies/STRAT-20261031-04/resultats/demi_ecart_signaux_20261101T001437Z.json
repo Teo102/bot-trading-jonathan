@@ -1,0 +1,37 @@
+{
+ "debut_utc": "2026-11-01T00:14:37+00:00",
+ "fichier_signaux": "signaux_sans_rendement_20261031T232359Z.csv",
+ "avertissement": "Aucun rendement lu. Fenêtres limitées à T - 15 min et T + 10 min.",
+ "signaux": 76,
+ "signaux_mesures": 26,
+ "dernier_signal_mesure": "2024-02-28 17:45:00+00:00",
+ "par_classe": {
+  "BTC_ETH": {
+   "signaux_mesures": 9,
+   "demi_ecart_entree_mediane_pct_mediane": 0.0002,
+   "demi_ecart_entree_mediane_pct_q90": 0.0003,
+   "demi_ecart_entree_q95_pct_mediane": 0.0003,
+   "demi_ecart_entree_q95_pct_q90": 0.0015,
+   "demi_ecart_bougie_mediane_pct_mediane": 0.0002,
+   "demi_ecart_bougie_mediane_pct_q90": 0.0005,
+   "demi_ecart_bougie_q95_pct_mediane": 0.0021,
+   "demi_ecart_bougie_q95_pct_q90": 0.0089,
+   "demi_ecart_bougie_max_pct_mediane": 0.0457,
+   "demi_ecart_bougie_max_pct_q90": 0.1471
+  },
+  "autres": {
+   "signaux_mesures": 17,
+   "demi_ecart_entree_mediane_pct_mediane": 0.0074,
+   "demi_ecart_entree_mediane_pct_q90": 0.0101,
+   "demi_ecart_entree_q95_pct_mediane": 0.0093,
+   "demi_ecart_entree_q95_pct_q90": 0.021,
+   "demi_ecart_bougie_mediane_pct_mediane": 0.0072,
+   "demi_ecart_bougie_mediane_pct_q90": 0.0091,
+   "demi_ecart_bougie_q95_pct_mediane": 0.0239,
+   "demi_ecart_bougie_q95_pct_q90": 0.0471,
+   "demi_ecart_bougie_max_pct_mediane": 0.1738,
+   "demi_ecart_bougie_max_pct_q90": 0.3165
+  }
+ },
+ "fin_utc": "2026-11-01T00:17:22+00:00"
+}

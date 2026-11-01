@@ -1,0 +1,24 @@
+debut 2026-11-01T00:12:43Z
+$ python -B t6_signaux_troncature.py
+BTC dL 0 dS 0 dxL 0 dxS 0 atr rel max 7.771561172376096e-16 L&S 0 tag ok True nL 95 nS 32 sigL&exL 0 sigS&exS 0 sigL&exS 95 sigS&exL 32
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 1.1291105272981383e-08, 4.440892098500626e-16), ('2024-07-01', 9.36223598646535e-09, 4.440892098500626e-16)]
+ETH dL 0 dS 0 dxL 0 dxS 0 atr rel max 7.771561172376096e-16 L&S 0 tag ok True nL 98 nS 37 sigL&exL 0 sigS&exS 0 sigL&exS 98 sigS&exL 37
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 5.56331902767937e-09, 4.440892098500626e-16), ('2024-07-01', 6.376798866725153e-09, 4.440892098500626e-16)]
+XRP dL 0 dS 0 dxL 0 dxS 0 atr rel max 7.771561172376096e-16 L&S 0 tag ok True nL 71 nS 38 sigL&exL 0 sigS&exS 0 sigL&exS 71 sigS&exL 38
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 5.042129380683491e-09, 0.0), ('2024-07-01', 1.407590095592326e-07, 3.3306690738754696e-16)]
+LTC dL 0 dS 0 dxL 0 dxS 0 atr rel max 8.881784197001252e-16 L&S 0 tag ok True nL 63 nS 44 sigL&exL 0 sigS&exS 0 sigL&exS 63 sigS&exL 44
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 6.57813714610711e-09, 4.440892098500626e-16), ('2024-07-01', 3.748811638892846e-08, 3.3306690738754696e-16)]
+BCH dL 0 dS 0 dxL 0 dxS 0 atr rel max 6.661338147750939e-16 L&S 0 tag ok True nL 64 nS 53 sigL&exL 0 sigS&exS 0 sigL&exS 64 sigS&exL 53
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 1.5305572254042943e-08, 4.440892098500626e-16), ('2024-07-01', 2.176194791037034e-08, 3.3306690738754696e-16)]
+LINK dL 0 dS 0 dxL 0 dxS 0 atr rel max 7.771561172376096e-16 L&S 0 tag ok True nL 67 nS 55 sigL&exL 0 sigS&exS 0 sigL&exS 67 sigS&exL 55
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 7.328026851993741e-09, 4.440892098500626e-16), ('2024-07-01', 5.928171165070495e-08, 2.220446049250313e-16)]
+ADA dL 0 dS 0 dxL 0 dxS 0 atr rel max 8.881784197001252e-16 L&S 0 tag ok True nL 72 nS 48 sigL&exL 0 sigS&exS 0 sigL&exS 72 sigS&exL 48
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 7.63312546503414e-09, 4.440892098500626e-16), ('2024-07-01', 3.8836939442177254e-08, 3.3306690738754696e-16)]
+BNB dL 0 dS 0 dxL 0 dxS 0 atr rel max 9.992007221626409e-16 L&S 0 tag ok True nL 98 nS 35 sigL&exL 0 sigS&exS 0 sigL&exS 98 sigS&exL 35
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 1.2449852593299227e-08, 3.3306690738754696e-16), ('2024-07-01', 3.162005113299671e-08, 2.220446049250313e-16)]
+DOGE dL 0 dS 0 dxL 0 dxS 0 atr rel max 9.992007221626409e-16 L&S 0 tag ok True nL 48 nS 43 sigL&exL 0 sigS&exS 0 sigL&exS 48 sigS&exL 43
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 0.0, 0.0), ('2024-07-01', 2.6597164026753717e-08, 2.220446049250313e-16)]
+TRX dL 0 dS 0 dxL 0 dxS 0 atr rel max 8.881784197001252e-16 L&S 0 tag ok True nL 104 nS 28 sigL&exL 0 sigS&exS 0 sigL&exS 104 sigS&exL 28
+   troncature ecarts 0 / 1500  variance relative atr, sma [('2021-01-01', 1.490640477719296e-08, 3.3306690738754696e-16), ('2024-07-01', 6.758984705257376e-09, 2.220446049250313e-16)]
+exit=0
+fin 2026-11-01T00:12:58Z

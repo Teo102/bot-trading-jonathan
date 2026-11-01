@@ -117,6 +117,9 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 
 | Identifiant | Description courte | Statut | Drawdown 95e centile (backtest) | Seuil coupe-circuit moteur | Dernière décision |
 |---|---|---|---|---|---|
-| — | aucune stratégie enregistrée | — | — | — | — |
+| STRAT-20261031-01 | Tendance Donchian, 10 perpétuels | backtest, E10-E11 verrouillés | — | — | Avenant avant E10 [à valider] |
+| STRAT-20261031-02 | Portage de financement delta neutre | recherche, rejet proposé | — | — | [en attente de Jonathan] |
+| STRAT-20261031-03 | Momentum transversal | recherche, aucun test | — | — | [en attente de Jonathan] |
+| STRAT-20261031-04 | Retour à la moyenne après cascades | recherche, non testable en l'état | — | — | [en attente de Jonathan] |
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.

@@ -1,0 +1,4 @@
+id_essai,date,variante,regle_top,horodatage_collecte,instantanes,panier_n,plafond_corr,statut,commentaire
+U01,2026-10-31,base,volume_24h,22:24 a 22:40 UTC,[non verifie],13,0.85,ecarte,PUMPUSDT passait a tort pour absent de Bybit qui le nomme PUMPFUNUSDT - fichiers non conserves dans le depot - correspondance avec U01 deduite du script
+U02,2026-10-31,alias PUMPFUN corrige,volume_24h,20261031T224232Z,6,13,0.85,remplace par U03,panier 13 paires - rapport RAPPORT_UNIVERS_20261031T224232Z.md conserve et marque remplace
+U03,2026-11-01,entree au top 30 sur volume median 30 j,volume_median_30j,20261101T001138Z,6,15,0.85,retenu,panier 15 paires fige par son horodatage - seule l'entree au classement change - ponderations seuils et plafond 15 inchanges - temoin volume 24 h sur la meme collecte 13 paires - aucun rendement consulte

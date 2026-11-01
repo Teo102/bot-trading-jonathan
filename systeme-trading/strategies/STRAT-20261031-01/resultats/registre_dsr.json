@@ -1,0 +1,143 @@
+{
+  "essais": [
+    {
+      "id": "E00-ref",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "bae5c5708265ab4fd0bb191e04e442ab68189feeeed3d6d9869e53b1d304571b",
+      "sharpe_quotidien": 0.03720341071804201,
+      "sharpe_quotidien_reevalue": 0.029463165257860344
+    },
+    {
+      "id": "E03",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "2711cb18e1c245acc37133c5c83813fa521816565b8100e68936089f2addd741",
+      "sharpe_quotidien": 0.037051457418926584,
+      "sharpe_quotidien_reevalue": 0.04574011328246773
+    },
+    {
+      "id": "E04",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "1f94800394e89cef1a3c4a1431a2174bdfccf0fe9b6105fae79d8ca4f565b246",
+      "sharpe_quotidien": 0.02753478950994024,
+      "sharpe_quotidien_reevalue": 0.021233375618303952
+    },
+    {
+      "id": "E05",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "8dbf5c78f1dba86f9e90da8f6b8c1b7b3336dc03156ef6723e2b8857f5acd1b8",
+      "sharpe_quotidien": 0.037355315285096426,
+      "sharpe_quotidien_reevalue": 0.029927773646690983
+    },
+    {
+      "id": "E06",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "20cd993d1cce6961021c1bf618b6b31fef8fe84054271f91b056fe71256e266c",
+      "sharpe_quotidien": 0.009559916117331292,
+      "sharpe_quotidien_reevalue": 0.007298434646144425
+    },
+    {
+      "id": "E07",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "5879cd5c1b66b1dbdd4cf2b540c2d53e1a3427d1b88581a6ff858eb4d96ddc3a",
+      "sharpe_quotidien": 0.05287962362311069,
+      "sharpe_quotidien_reevalue": 0.04563228096993498
+    },
+    {
+      "id": "E08",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "ff2140f9b21302dccff0f15f8785617a372dbbcdded07f4b9f958ac4109408d3",
+      "sharpe_quotidien": 0.03747755953008307,
+      "sharpe_quotidien_reevalue": 0.02922770000919944
+    },
+    {
+      "id": "E09",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.001,
+      "T": 1673,
+      "sha256_export": "512e8df35df155d779bb38c50881eb3771d9c3a43df9d5518588cf7507bb54fc",
+      "sharpe_quotidien": 0.03596898577695014,
+      "sharpe_quotidien_reevalue": 0.028483836538252053
+    },
+    {
+      "id": "R01",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "8620cfc2ec2411c41cefb0398519919d1d0969c02f20d8e3db62524ec3a0236b",
+      "sharpe_quotidien": 0.03919943981162445,
+      "sharpe_quotidien_reevalue": 0.048876315297005625
+    },
+    {
+      "id": "R02",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0005,
+      "T": 1673,
+      "sha256_export": "33d65eb42ccf8ae85972bfaae9d0acfc659030e5f713c523715ab5640967c7e1",
+      "sharpe_quotidien": 0.026073351954124545,
+      "sharpe_quotidien_reevalue": 0.021581029169786485
+    },
+    {
+      "id": "R03",
+      "statut": "exporte",
+      "timerange": "20210101-20250731",
+      "frais": 0.0015,
+      "T": 1673,
+      "sha256_export": "f2e491dadbdc2fbfa2db14c001290e57fe8b10aa32fa797abe1bddccbb7b24ea",
+      "sharpe_quotidien": 0.03467326844673943,
+      "sharpe_quotidien_reevalue": 0.02746317474010561
+    },
+    {
+      "id": "E01",
+      "statut": "exporte",
+      "timerange": "20210101-20240630",
+      "frais": 0.0005,
+      "T": 1277,
+      "sha256_export": "024811d1a688a82ec99c7b7f3a069494ce5e0a9aef29aa5f98c1ccdbb1efd32c",
+      "sharpe_quotidien": null,
+      "sharpe_quotidien_hors_V": 0.022758470635385525,
+      "sharpe_quotidien_reevalue": null,
+      "sharpe_quotidien_reevalue_hors_V": 0.016222567248359004,
+      "note": "Compté dans N. Exclu de V car période différente."
+    },
+    {
+      "id": "E02",
+      "statut": "exporte",
+      "timerange": "20240701-20250731",
+      "frais": 0.0005,
+      "T": 396,
+      "sha256_export": "0bd9f1a786b8924f44d3e5c8797ac0ac8e122dbc6d323be3e00781d793c50e39",
+      "sharpe_quotidien": null,
+      "sharpe_quotidien_hors_V": 0.059983142556006216,
+      "sharpe_quotidien_reevalue": null,
+      "sharpe_quotidien_reevalue_hors_V": 0.060267521268282186,
+      "note": "Compté dans N. Exclu de V car période différente."
+    }
+  ],
+  "n_essais_declares": 13,
+  "note": "N = 13 lancés (E01 à E09, R01 à R03, E00-ref). V sur les 11 essais de la période 20210101-20250731, calculée à part pour la série réalisée et pour la série réévaluée. Les 6 contrôles de format de 3 paires ne sont pas comptés (voir REGISTRE_ESSAIS.csv, N = 19 en sensibilité). E10 et E11 non lancés, non comptés.",
+  "agrege_le_utc": "2026-11-01T00:28:54+00:00"
+}

@@ -1,0 +1,116 @@
+debut 2026-11-01T00:29:24Z
+$ python -B verif1.py
+=== A. recalcul indépendant vs JSON vs CSV
+E01 {'trades': 135.0, 'longs': 70.0, 'esp': 0.134, 'win': 0.3333, 'sharpe': 0.4348, 'sortino': 1.0902, 'calmar': 0.2224, 'dd': 0.1093, 'final': 10876.9311, 'cagr': 0.0243}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': -2e-05, 'dd': -2e-05, 'sharpe': 0.0002} | ft final 10876.9311 ft total_trades 135 ft fee 0.0005 | timerange 20210101-20240630 | force_exit 2 | derniere cloture 2024-06-30 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+   2021-S1 jours 181 trades 11 espR 0.788 sharpe 1.434 pnl 432.93 accord_JSON True
+   2021-S2 jours 184 trades 24 espR -0.08 sharpe -0.359 pnl -110.83 accord_JSON True
+   2022-S1 jours 181 trades 9 espR 0.855 sharpe 2.142 pnl 399.02 accord_JSON True
+   2022-S2 jours 184 trades 23 espR -0.302 sharpe -1.537 pnl -380.64 accord_JSON True
+   2023-S1 jours 181 trades 26 espR -0.311 sharpe -2.620 pnl -409.29 accord_JSON True
+   2023-S2 jours 184 trades 18 espR 0.191 sharpe 0.504 pnl 162.73 accord_JSON True
+   2024-S1 jours 182 trades 24 espR 0.636 sharpe 1.648 pnl 783.02 accord_JSON True
+   positifs 4 / 7 JSON 4 / 7
+E02 {'trades': 46.0, 'longs': 26.0, 'esp': 0.5734, 'win': 0.3043, 'sharpe': 1.146, 'sortino': 4.8971, 'calmar': 3.1002, 'dd': 0.0376, 'final': 11269.6967, 'cagr': 0.1165}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': 1e-05, 'dd': 3e-05, 'sharpe': 2e-05} | ft final 11269.6967 ft total_trades 46 ft fee 0.0005 | timerange 20240701-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+   2024-S2 jours 184 trades 23 espR 0.8 sharpe 1.354 pnl 875.10 accord_JSON True
+   2025-S1 jours 181 trades 19 espR 0.015 sharpe -0.065 pnl -21.93 accord_JSON True
+   2025-S2 jours 31 trades 4 espR 1.92 sharpe 3.360 pnl 416.53 accord_JSON True
+   positifs 2 / 3 JSON 2 / 3
+E03 {'trades': 178.0, 'longs': 96.0, 'esp': 0.4853, 'win': 0.3764, 'sharpe': 0.7079, 'sortino': 4.15, 'calmar': 1.0165, 'dd': 0.0875, 'final': 14780.7885, 'cagr': 0.089}
+   ecart max JSON 1.82e-12 | CSV {'trades': 0.0, 'esp': 4e-05, 'dd': -5e-05, 'sharpe': 0.00013} | ft final 14780.7885 ft total_trades 178 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E04 {'trades': 177.0, 'longs': 93.0, 'esp': 0.1904, 'win': 0.3164, 'sharpe': 0.5261, 'sortino': 1.5735, 'calmar': 0.2916, 'dd': 0.1157, 'final': 11642.7514, 'cagr': 0.0337}
+   ecart max JSON 7.28e-12 | CSV {'trades': 0.0, 'esp': 0.0, 'dd': -0.0, 'sharpe': -5e-05} | ft final 11642.7514 ft total_trades 177 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E05 {'trades': 188.0, 'longs': 100.0, 'esp': 0.2543, 'win': 0.3457, 'sharpe': 0.7137, 'sortino': 2.23, 'calmar': 0.471, 'dd': 0.1041, 'final': 12453.1071, 'cagr': 0.049}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': 1e-05, 'dd': 2e-05, 'sharpe': 0.00033} | ft final 12453.1071 ft total_trades 188 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E06 {'trades': 171.0, 'longs': 89.0, 'esp': 0.0577, 'win': 0.3216, 'sharpe': 0.1826, 'sortino': 0.4197, 'calmar': 0.0642, 'dd': 0.1338, 'final': 10399.7124, 'cagr': 0.0086}
+   ecart max JSON 1.82e-12 | CSV {'trades': 0.0, 'esp': 2e-05, 'dd': 4e-05, 'sharpe': 0.00036} | ft final 10399.7124 ft total_trades 171 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E07 {'trades': 186.0, 'longs': 94.0, 'esp': 0.6458, 'win': 0.3387, 'sharpe': 1.0103, 'sortino': 5.2132, 'calmar': 1.0089, 'dd': 0.1204, 'final': 16915.3039, 'cagr': 0.1215}
+   ecart max JSON 1.09e-11 | CSV {'trades': 0.0, 'esp': -4e-05, 'dd': -4e-05, 'sharpe': -0.00026} | ft final 16915.3039 ft total_trades 186 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E08 {'trades': 165.0, 'longs': 88.0, 'esp': 0.241, 'win': 0.3697, 'sharpe': 0.716, 'sortino': 2.1402, 'calmar': 0.6383, 'dd': 0.0648, 'final': 12042.3873, 'cagr': 0.0414}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': -4e-05, 'dd': -3e-05, 'sharpe': -1e-05} | ft final 12042.3873 ft total_trades 165 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E09 {'trades': 178.0, 'longs': 95.0, 'esp': 0.2592, 'win': 0.3371, 'sharpe': 0.6872, 'sortino': 2.0744, 'calmar': 0.4267, 'dd': 0.1111, 'final': 12364.4143, 'cagr': 0.0474}
+   ecart max JSON 5.46e-12 | CSV {'trades': 0.0, 'esp': -3e-05, 'dd': 4e-05, 'sharpe': -0.00019} | ft final 12364.4143 ft total_trades 178 ft fee 0.001 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+   2021-S1 jours 181 trades 11 espR 0.781 sharpe 1.423 pnl 429.14 accord_JSON True
+   2021-S2 jours 184 trades 24 espR -0.083 sharpe -0.371 pnl -113.89 accord_JSON True
+   2022-S1 jours 181 trades 9 espR 0.849 sharpe 2.130 pnl 395.88 accord_JSON True
+   2022-S2 jours 184 trades 23 espR -0.309 sharpe -1.570 pnl -389.52 accord_JSON True
+   2023-S1 jours 181 trades 26 espR -0.321 sharpe -2.697 pnl -421.87 accord_JSON True
+   2023-S2 jours 184 trades 18 espR 0.178 sharpe 0.472 pnl 151.01 accord_JSON True
+   2024-S1 jours 182 trades 22 espR 0.607 sharpe 1.456 pnl 677.58 accord_JSON True
+   2024-S2 jours 184 trades 22 espR 1.047 sharpe 1.719 pnl 1214.00 accord_JSON True
+   2025-S1 jours 181 trades 19 espR 0.008 sharpe -0.095 pnl -32.17 accord_JSON True
+   2025-S2 jours 31 trades 4 espR 1.908 sharpe 3.357 pnl 454.28 accord_JSON True
+   positifs 6 / 10 JSON 6 / 10
+R01 {'trades': 176.0, 'longs': 96.0, 'esp': 0.5243, 'win': 0.3864, 'sharpe': 0.7489, 'sortino': 4.6425, 'calmar': 1.3822, 'dd': 0.0693, 'final': 15211.299, 'cagr': 0.0958}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': 2e-05, 'dd': -3e-05, 'sharpe': 0.0001} | ft final 15211.299 ft total_trades 176 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+R02 {'trades': 171.0, 'longs': 91.0, 'esp': 0.2066, 'win': 0.2865, 'sharpe': 0.4981, 'sortino': 1.5221, 'calmar': 0.2597, 'dd': 0.1344, 'final': 11703.3087, 'cagr': 0.0349}
+   ecart max JSON 1.46e-11 | CSV {'trades': 0.0, 'esp': -2e-05, 'dd': -1e-05, 'sharpe': -0.00013} | ft final 11703.3087 ft total_trades 171 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+R03 {'trades': 178.0, 'longs': 95.0, 'esp': 0.25, 'win': 0.3371, 'sharpe': 0.6624, 'sortino': 1.9772, 'calmar': 0.4035, 'dd': 0.1129, 'final': 12264.509, 'cagr': 0.0455}
+   ecart max JSON 1.27e-11 | CSV {'trades': 0.0, 'esp': 1e-05, 'dd': 5e-05, 'sharpe': -0.00043} | ft final 12264.509 ft total_trades 178 ft fee 0.0015 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+E00-ref {'trades': 178.0, 'longs': 95.0, 'esp': 0.2681, 'win': 0.3371, 'sharpe': 0.7108, 'sortino': 2.1687, 'calmar': 0.4498, 'dd': 0.1093, 'final': 12461.1654, 'cagr': 0.0492}
+   ecart max JSON 3.64e-12 | CSV {'trades': 0.0, 'esp': -3e-05, 'dd': -2e-05, 'sharpe': 0.00023} | ft final 12461.1654 ft total_trades 178 ft fee 0.0005 | timerange 20210101-20250731 | force_exit 3 | derniere cloture 2025-07-31 00:00:00+00:00 | left_open None
+   recomposition profit_abs: ecart abs max 0.0 somme 0.0
+   2021-S1 jours 181 trades 11 espR 0.788 sharpe 1.434 pnl 432.93 accord_JSON True
+   2021-S2 jours 184 trades 24 espR -0.08 sharpe -0.359 pnl -110.83 accord_JSON True
+   2022-S1 jours 181 trades 9 espR 0.855 sharpe 2.142 pnl 399.02 accord_JSON True
+   2022-S2 jours 184 trades 23 espR -0.302 sharpe -1.537 pnl -380.64 accord_JSON True
+   2023-S1 jours 181 trades 26 espR -0.311 sharpe -2.620 pnl -409.29 accord_JSON True
+   2023-S2 jours 184 trades 18 espR 0.191 sharpe 0.504 pnl 162.73 accord_JSON True
+   2024-S1 jours 182 trades 22 espR 0.619 sharpe 1.481 pnl 693.34 accord_JSON True
+   2024-S2 jours 184 trades 22 espR 1.06 sharpe 1.740 pnl 1238.08 accord_JSON True
+   2025-S1 jours 181 trades 19 espR 0.015 sharpe -0.067 pnl -24.77 accord_JSON True
+   2025-S2 jours 31 trades 4 espR 1.92 sharpe 3.360 pnl 460.60 accord_JSON True
+   positifs 6 / 10 JSON 6 / 10
+
+=== B. DSR indépendant vs JSON vs CSV
+V11 0.00011325909512076567 liste {'E00-ref': np.float64(0.0372), 'E03': np.float64(0.03705), 'E04': np.float64(0.02753), 'E05': np.float64(0.03736), 'E06': np.float64(0.00956), 'E07': np.float64(0.05288), 'E08': np.float64(0.03748), 'E09': np.float64(0.03597), 'R01': np.float64(0.0392), 'R02': np.float64(0.02607), 'R03': np.float64(0.03467)}
+Exemple papier (de mémoire: SR0=0.1132, DSR=0.9004): (0.11317200186513217, 0.9003968344493902, 1.530591649025257)
+emax(13) 1.7033335471496842 SR0 annualisé 0.3463240694089313
+registre_dsr: n_essais_declares 13 len 13 Sharpe connus 11
+E01 T 1277 SR 0.02276 g3 9.032 g4 127.95 den 0.8109 SR0 0.01813 DSR 0.5729 | JSON N 13 V 1.1326e-04 g3 9.032 g4 127.95 DSR 0.5729 | CSV 0.573 | zeros 1163
+E02 T 396 SR 0.05998 g3 9.959 g4 114.85 den 0.5050 SR0 0.01813 DSR 0.8791 | JSON N 13 V 1.1326e-04 g3 9.959 g4 114.85 DSR 0.8791 | CSV 0.879 | zeros 361
+E03 T 1673 SR 0.03705 g3 29.198 g4 1028.52 den 0.2708 SR0 0.01813 DSR 0.9315 | JSON N 13 V 1.1326e-04 g3 29.198 g4 1028.52 DSR 0.9315 | CSV 0.931 | zeros 1528
+E04 T 1673 SR 0.02753 g3 11.519 g4 182.40 den 0.7172 SR0 0.01813 DSR 0.6752 | JSON N 13 V 1.1326e-04 g3 11.519 g4 182.40 DSR 0.6752 | CSV 0.675 | zeros 1527
+E05 T 1673 SR 0.03736 g3 10.795 g4 158.75 den 0.6518 SR0 0.01813 DSR 0.8349 | JSON N 13 V 1.1326e-04 g3 10.795 g4 158.75 DSR 0.8349 | CSV 0.835 | zeros 1521
+E06 T 1673 SR 0.00956 g3 8.408 g4 116.72 den 0.9223 SR0 0.01813 DSR 0.3576 | JSON N 13 V 1.1326e-04 g3 8.408 g4 116.72 DSR 0.3576 | CSV 0.358 | zeros 1531
+E07 T 1673 SR 0.05288 g3 14.810 g4 270.36 den 0.4052 SR0 0.01813 DSR 0.9872 | JSON N 13 V 1.1326e-04 g3 14.810 g4 270.36 DSR 0.9872 | CSV 0.987 | zeros 1517
+E08 T 1673 SR 0.03748 g3 10.732 g4 159.18 den 0.6534 SR0 0.01813 DSR 0.8362 | JSON N 13 V 1.1326e-04 g3 10.732 g4 159.18 DSR 0.8362 | CSV 0.836 | zeros 1540
+E09 T 1673 SR 0.03597 g3 10.652 g4 156.15 den 0.6670 SR0 0.01813 DSR 0.8141 | JSON N 13 V 1.1326e-04 g3 10.652 g4 156.15 DSR 0.8141 | CSV 0.814 | zeros 1526
+R01 T 1673 SR 0.03920 g3 29.304 g4 1032.28 den 0.2475 SR0 0.01813 DSR 0.9584 | JSON N 13 V 1.1326e-04 g3 29.304 g4 1032.28 DSR 0.9584 | CSV 0.958 | zeros 1532
+R02 T 1673 SR 0.02607 g3 11.304 g4 169.69 den 0.7339 SR0 0.01813 DSR 0.6478 | JSON N 13 V 1.1326e-04 g3 11.304 g4 169.69 DSR 0.6478 | CSV 0.648 | zeros 1526
+R03 T 1673 SR 0.03467 g3 10.615 g4 155.64 den 0.6784 SR0 0.01813 DSR 0.7943 | JSON N 13 V 1.1326e-04 g3 10.615 g4 155.64 DSR 0.7943 | CSV 0.794 | zeros 1526
+E00-ref T 1673 SR 0.03720 g3 10.684 g4 156.51 den 0.6563 SR0 0.01813 DSR 0.8322 | JSON N 13 V 1.1326e-04 g3 10.684 g4 156.51 DSR 0.8322 | CSV 0.832 | zeros 1526
+
+=== C. registre <-> sortie brute
+E01 | strategy TrendDonchianV1 | variante CSV base (20/10/2.0/200) | fichiers .py 1 | params source {'entry_period': '20', 'exit_period': '10', 'atr_period': '14', 'atr_mult': '2.0', 'regime_period': '200'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20240630 zip 20210101-20240630 | sha ok True | dry_run True | ic -0.1146 -0.1146 0.4084 0.4084 | dd95 0.1093 0.1093
+E02 | strategy TrendDonchianV1 | variante CSV base | fichiers .py 1 | params source {'entry_period': '20', 'exit_period': '10', 'atr_period': '14', 'atr_mult': '2.0', 'regime_period': '200'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20240701-20250731 zip 20240701-20250731 | sha ok True | dry_run True | ic -0.0943 -0.0943 1.4002 1.4002 | dd95 0.0552 0.0552
+E03 | strategy TrendDonchianV1_E03 | variante CSV entry 16 | fichiers .py 1 | params source {'entry_period': '16'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic 0.0743 0.0743 1.0024 1.0024 | dd95 0.0953 0.0953
+E04 | strategy TrendDonchianV1_E04 | variante CSV entry 24 | fichiers .py 1 | params source {'entry_period': '24'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0639 -0.0639 0.4650 0.465 | dd95 0.1168 0.1168
+E05 | strategy TrendDonchianV1_E05 | variante CSV exit 8 | fichiers .py 1 | params source {'exit_period': '8'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic 0.0103 0.0103 0.5198 0.5198 | dd95 0.1024 0.1024
+E06 | strategy TrendDonchianV1_E06 | variante CSV exit 12 | fichiers .py 1 | params source {'exit_period': '12'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.1488 -0.1488 0.2823 0.2823 | dd95 0.1320 0.132
+E07 | strategy TrendDonchianV1_E07 | variante CSV atr_mult 1.6 | fichiers .py 1 | params source {'atr_mult': '1.6'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic 0.2090 0.209 1.1623 1.1623 | dd95 0.1052 0.1052
+E08 | strategy TrendDonchianV1_E08 | variante CSV atr_mult 2.4 | fichiers .py 1 | params source {'atr_mult': '2.4'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0038 -0.0038 0.5018 0.5018 | dd95 0.0927 0.0927
+E09 | strategy TrendDonchianV1 | variante CSV base | fichiers .py 1 | params source {'entry_period': '20', 'exit_period': '10', 'atr_period': '14', 'atr_mult': '2.0', 'regime_period': '200'} | fee CSV 0.0010 zip 0.001 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0115 -0.0115 0.5530 0.553 | dd95 0.1108 0.1108
+R01 | strategy TrendDonchianV1_R01 | variante CSV entry 15 | fichiers .py 1 | params source {'entry_period': '15'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic 0.1067 0.1067 1.0540 1.054 | dd95 0.0885 0.0885
+R02 | strategy TrendDonchianV1_R02 | variante CSV entry 30 | fichiers .py 1 | params source {'entry_period': '30'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0865 -0.0865 0.5139 0.5139 | dd95 0.1308 0.1308
+R03 | strategy TrendDonchianV1 | variante CSV base | fichiers .py 1 | params source {'entry_period': '20', 'exit_period': '10', 'atr_period': '14', 'atr_mult': '2.0', 'regime_period': '200'} | fee CSV 0.0015 zip 0.0015 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0209 -0.0209 0.5440 0.544 | dd95 0.1132 0.1132
+E00-ref | strategy TrendDonchianV1 | variante CSV base | fichiers .py 1 | params source {'entry_period': '20', 'exit_period': '10', 'atr_period': '14', 'atr_mult': '2.0', 'regime_period': '200'} | fee CSV 0.0005 zip 0.0005 | timerange CSV 20210101-20250731 zip 20210101-20250731 | sha ok True | dry_run True | ic -0.0030 -0.003 0.5622 0.5622 | dd95 0.1086 0.1086
+sha py embarqué base: {'E01': ['072c0e3b4d6f2df9'], 'E02': ['072c0e3b4d6f2df9'], 'E09': ['072c0e3b4d6f2df9'], 'R03': ['072c0e3b4d6f2df9'], 'E00-ref': ['072c0e3b4d6f2df9'], 'E03': ['d4eabae57a23fee6']}
+E10/E11: {'E10': {'date': '', 'trades': '', 'esperance_R': '', 'sharpe_realise': '', 'dsr': '', 'commentaire': 'verdict', 'statut': 'verrouillé'}, 'E11': {'date': '', 'trades': '', 'esperance_R': '', 'sharpe_realise': '', 'dsr': '', 'commentaire': 'meme regles - stress des couts', 'statut': 'verrouillé'}}
+dossiers E10/E11 présents: False False False
+Lignes CSV hors préenregistrement: {'R01': True, 'R02': True, 'R03': True, 'E00-ref': True}
+exit=0
+fin 2026-11-01T00:29:25Z

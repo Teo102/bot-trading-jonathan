@@ -1,0 +1,8 @@
+{
+ "horodatage_utc": "20261101T001348Z",
+ "mode": "controle_financement",
+ "script_sha256": "979d335e9f99b8d5a0db14b73ac5651d58c1e022ccc6826760da555b29647dbe",
+ "execution_de_reference": "20261031T224137Z",
+ "donnees": {},
+ "note": "Pas un essai du registre : aucune règle testée, aucun paramètre modifié."
+}

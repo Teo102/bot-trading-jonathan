@@ -1,0 +1,17 @@
+debut 2026-11-01T00:12:17Z
+$ python -B verif3.py
+E01      seed0: lo -0.1146 hi 0.4084 dd95 0.1093 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.1168 sd 0.0041 min -0.1283 max -0.1103 part>0 0.00 | sans force_exit esp +0.124 (force n 2 R [0.89, 0.76]) | R effectif moyen +0.142 mediane stop -1.017
+E02      seed0: lo -0.0943 hi 1.4002 dd95 0.0552 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.1019 sd 0.0077 min -0.1181 max -0.0842 part>0 0.00 | sans force_exit esp +0.431 (force n 3 R [2.93, 1.06, 3.85]) | R effectif moyen +0.598 mediane stop -1.008
+E03      seed0: lo 0.0743 hi 1.0024 dd95 0.0953 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.0791 sd 0.0055 min +0.0674 max +0.0917 part>0 1.00 | sans force_exit esp +0.452 (force n 3 R [3.57, 2.7, 1.04]) | R effectif moyen +0.505 mediane stop -1.017
+E04      seed0: lo -0.0639 hi 0.4650 dd95 0.1168 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.0605 sd 0.0034 min -0.0677 max -0.0529 part>0 0.00 | sans force_exit esp +0.147 (force n 3 R [1.02, 3.86, 3.27]) | R effectif moyen +0.202 mediane stop -1.015
+E05      seed0: lo 0.0103 hi 0.5198 dd95 0.1024 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.0104 sd 0.0035 min +0.0016 max +0.0182 part>0 1.00 | sans force_exit esp +0.216 (force n 3 R [2.93, 1.05, 3.86]) | R effectif moyen +0.266 mediane stop -1.015
+E06      seed0: lo -0.1488 hi 0.2823 dd95 0.1320 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.1482 sd 0.0040 min -0.1564 max -0.1409 part>0 0.00 | sans force_exit esp +0.012 (force n 3 R [2.93, 1.03, 3.87]) | R effectif moyen +0.062 mediane stop -1.014
+E07      seed0: lo 0.2090 hi 1.1623 dd95 0.1052 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.1994 sd 0.0063 min +0.1885 max +0.2151 part>0 1.00 | sans force_exit esp +0.603 (force n 3 R [3.65, 1.28, 4.8]) | R effectif moyen +0.671 mediane stop -1.016
+E08      seed0: lo -0.0038 hi 0.5018 dd95 0.0927 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.0008 sd 0.0037 min -0.0063 max +0.0081 part>0 0.55 | sans force_exit esp +0.205 (force n 3 R [2.45, 0.88, 3.23]) | R effectif moyen +0.250 mediane stop -1.016
+E09      seed0: lo -0.0115 hi 0.5530 dd95 0.1108 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.0060 sd 0.0044 min -0.0166 max +0.0029 part>0 0.07 | sans force_exit esp +0.219 (force n 3 R [2.92, 1.04, 3.84]) | R effectif moyen +0.272 mediane stop -1.024
+R01      seed0: lo 0.1067 hi 1.0540 dd95 0.0885 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.1116 sd 0.0049 min +0.1016 max +0.1241 part>0 1.00 | sans force_exit esp +0.483 (force n 3 R [3.57, 1.32, 3.86]) | R effectif moyen +0.544 mediane stop -1.017
+R02      seed0: lo -0.0865 hi 0.5139 dd95 0.1308 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.0800 sd 0.0045 min -0.0883 max -0.0689 part>0 0.00 | sans force_exit esp +0.167 (force n 3 R [1.01, 3.27, 2.96]) | R effectif moyen +0.212 mediane stop -1.014
+R03      seed0: lo -0.0209 hi 0.5440 dd95 0.1132 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy -0.0152 sd 0.0044 min -0.0260 max -0.0063 part>0 0.00 | sans force_exit esp +0.210 (force n 3 R [2.91, 1.02, 3.84]) | R effectif moyen +0.262 mediane stop -1.031
+E00-ref  seed0: lo -0.0030 hi 0.5622 dd95 0.1086 ecart JSON 0.0e+00 0.0e+00 0.0e+00 | 40 graines: lo moy +0.0029 sd 0.0043 min -0.0076 max +0.0116 part>0 0.70 | sans force_exit esp +0.228 (force n 3 R [2.93, 1.05, 3.86]) | R effectif moyen +0.282 mediane stop -1.014
+exit=0
+fin 2026-11-01T00:12:22Z

@@ -1,0 +1,7 @@
+debut 2026-11-01T00:12:36Z
+$ python -B t3_rejeu_portefeuille.py
+E01 export 135 sim 135 communs 135 seul export [] seul sim [] rejetes sim 432 rejetes export 432 pnl export 876.9 pnl sim 896.5 {'n': 135, 'exp': np.float64(0.136), 'pnl': np.float64(896.5), 'L': np.float64(0.337), 'S': np.float64(-0.08)}
+E02 export 46 sim 46 communs 46 seul export [] seul sim [] rejetes sim 142 rejetes export 142 pnl export 1269.7 pnl sim 1282.2 {'n': 46, 'exp': np.float64(0.547), 'pnl': np.float64(1282.2), 'L': np.float64(1.182), 'S': np.float64(-0.279)}
+E00-ref export 178 sim 178 communs 178 seul export [] seul sim [] rejetes sim 575 rejetes export 575 pnl export 2461.2 pnl sim 2498.6 {'n': 178, 'exp': np.float64(0.263), 'pnl': np.float64(2498.6), 'L': np.float64(0.598), 'S': np.float64(-0.121)}
+exit=0
+fin 2026-11-01T00:12:43Z

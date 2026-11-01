@@ -1,0 +1,33 @@
+{
+  "strategie": "STRAT-20261031-04",
+  "version": "base-v1",
+  "gele_le_utc": "2026-10-31T22:24:52Z",
+  "note": "Figé avant tout comptage de signaux et avant toute lecture de rendement. Toute modification crée une nouvelle version et un nouvel essai au registre.",
+  "unite_de_temps": "15m",
+  "sens": "long uniquement",
+  "univers": ["BTCUSDT","ETHUSDT","XRPUSDT","LTCUSDT","BCHUSDT","LINKUSDT","ADAUSDT","BNBUSDT","DOGEUSDT","TRXUSDT"],
+  "fenetre_oi_bougies": 4,
+  "seuil_chute_oi": -0.05,
+  "ratio_meche_min": 0.5,
+  "multiple_amplitude_atr": 3.0,
+  "horizon_reference_bougies": 96,
+  "multiple_volume_median": 3.0,
+  "financement_max_par_8h": 0.0003,
+  "tampon_stop_atr": 0.25,
+  "retracement_objectif": 0.5,
+  "delai_publication_oi_minutes": 5,
+  "risque_par_trade": 0.005,
+  "plafond_par_actif": 0.20,
+  "positions_max": 3,
+  "frais_taker_par_cote": 0.0005,
+  "glissement_base": {
+    "BTC_ETH": {"entree": 0.0015, "stop": 0.0030, "sortie_temps": 0.0005, "objectif": 0.0},
+    "autres":  {"entree": 0.0030, "stop": 0.0060, "sortie_temps": 0.0010, "objectif": 0.0}
+  },
+  "multiples_stress_glissement": [2, 4],
+  "decoupage": {
+    "developpement": ["2021-12-01", "2024-10-31"],
+    "validation": ["2024-11-01", "2025-09-30"],
+    "hors_echantillon": ["2025-10-01", "2026-10-31"]
+  }
+}

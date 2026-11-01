@@ -1,12 +1,18 @@
-id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire
-E01,,STRAT-20261031-01,base (20/10/2.0/200),developpement,20210101-20240630,0.0005,,,,,,,
-E02,,STRAT-20261031-01,base,validation,20240701-20250731,0.0005,,,,,,,
-E03,,STRAT-20261031-01,entry 16,dev+val,20210101-20250731,0.0005,,,,,,,robustesse - jamais retenue a la place de la base
-E04,,STRAT-20261031-01,entry 24,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
-E05,,STRAT-20261031-01,exit 8,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
-E06,,STRAT-20261031-01,exit 12,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
-E07,,STRAT-20261031-01,atr_mult 1.6,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
-E08,,STRAT-20261031-01,atr_mult 2.4,dev+val,20210101-20250731,0.0005,,,,,,,robustesse
-E09,,STRAT-20261031-01,base,dev+val frais doubles,20210101-20250731,0.0010,,,,,,,stress des couts
-E10,,STRAT-20261031-01,base,HORS ECHANTILLON (une seule fois),20250801-20261031,0.0005,,,,,,,verdict
-E11,,STRAT-20261031-01,base,hors echantillon frais doubles,20250801-20261031,0.0010,,,,,,,meme regles - stress des couts
+id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire,sharpe_realise,dsr,statut,sharpe_reevalue,dd_reevalue,dsr_reevalue,ic90_blocs_bas,ic90_blocs_haut,esperance_hors_force_exit
+E01,2026-10-31,STRAT-20261031-01,base (20/10/2.0/200),developpement,20210101-20240630,0.0005,135,0.1340,-0.1146,0.4084,0.1093,0.1093,"porte technique validee, lookahead et recursive propres, financement applique",0.435,0.573,exécuté,0.310,0.1275,0.433,-0.1325,0.4027,0.1236
+E02,2026-10-31,STRAT-20261031-01,base,validation,20240701-20250731,0.0005,46,0.5734,-0.0943,1.4002,0.0376,0.0552,validation,1.146,0.879,exécuté,1.151,0.0834,0.786,-0.1667,1.5518,0.4312
+E03,2026-10-31,STRAT-20261031-01,entry 16,dev+val,20210101-20250731,0.0005,178,0.4853,0.0743,1.0024,0.0875,0.0953,robustesse - jamais retenue a la place de la base,0.708,0.931,exécuté,0.874,0.0990,0.845,0.0706,1.0085,0.4518
+E04,2026-10-31,STRAT-20261031-01,entry 24,dev+val,20210101-20250731,0.0005,177,0.1904,-0.0639,0.4650,0.1157,0.1168,robustesse,0.526,0.675,exécuté,0.406,0.1439,0.504,-0.1008,0.5306,0.1468
+E05,2026-10-31,STRAT-20261031-01,exit 8,dev+val,20210101-20250731,0.0005,188,0.2543,0.0103,0.5198,0.1041,0.1024,robustesse,0.714,0.835,exécuté,0.572,0.1268,0.642,-0.0304,0.5731,0.2160
+E06,2026-10-31,STRAT-20261031-01,exit 12,dev+val,20210101-20250731,0.0005,171,0.0577,-0.1488,0.2823,0.1338,0.1320,robustesse,0.183,0.358,exécuté,0.139,0.1652,0.289,-0.1911,0.3400,0.0121
+E07,2026-10-31,STRAT-20261031-01,atr_mult 1.6,dev+val,20210101-20250731,0.0005,186,0.6458,0.2090,1.1623,0.1204,0.1052,robustesse,1.010,0.987,exécuté,0.872,0.1769,0.848,0.0697,1.3532,0.6033
+E08,2026-10-31,STRAT-20261031-01,atr_mult 2.4,dev+val,20210101-20250731,0.0005,165,0.2410,-0.0038,0.5018,0.0648,0.0927,robustesse,0.716,0.836,exécuté,0.558,0.0907,0.632,-0.0230,0.5403,0.2050
+E09,2026-10-31,STRAT-20261031-01,base,dev+val frais doubles,20210101-20250731,0.0010,178,0.2592,-0.0115,0.5530,0.1111,0.1108,stress des couts,0.687,0.814,exécuté,0.544,0.1298,0.620,-0.0441,0.6050,0.2191
+E10,,STRAT-20261031-01,base,HORS ECHANTILLON (une seule fois),20250801-20261031,0.0005,,,,,,,verdict,,,verrouillé,,,,,,
+E11,,STRAT-20261031-01,base,hors echantillon frais doubles,20250801-20261031,0.0010,,,,,,,meme regles - stress des couts,,,verrouillé,,,,,,
+R01,2026-10-31,STRAT-20261031-01,entry 15,dev+val,20210101-20250731,0.0005,176,0.5243,0.1067,1.0540,0.0693,0.0885,"robustesse - ajout du 31/10/2026, hors préenregistrement",0.749,0.958,exécuté,0.934,0.0961,0.874,0.1055,1.0487,0.4828
+R02,2026-10-31,STRAT-20261031-01,entry 30,dev+val,20210101-20250731,0.0005,171,0.2066,-0.0865,0.5139,0.1344,0.1308,"robustesse - ajout du 31/10/2026, hors préenregistrement",0.498,0.648,exécuté,0.412,0.1690,0.510,-0.1187,0.5733,0.1672
+R03,2026-10-31,STRAT-20261031-01,base,dev+val,20210101-20250731,0.0015,178,0.2500,-0.0209,0.5440,0.1129,0.1132,"stress des couts x3 - ajout du 31/10/2026, hors préenregistrement",0.662,0.794,exécuté,0.525,0.1325,0.604,-0.0532,0.5956,0.2099
+E00-ref,2026-10-31,STRAT-20261031-01,base,dev+val,20210101-20250731,0.0005,178,0.2681,-0.0030,0.5622,0.1093,0.1086,"reference de calcul pour N et V sur la periode commune, memes regles que E01 et E02 - compte dans N - ajout du 31/10/2026, hors préenregistrement",0.711,0.832,exécuté,0.563,0.1275,0.635,-0.0353,0.6141,0.2280
+CTRL-FORMAT,2026-10-31,STRAT-20261031-01,base - 3 paires BTC ETH XRP,controles de format - synthese de 6 backtests - pas un essai,20210101-20221201 / 20210401-20220101 / 20210401-20221201,0.0005 / 0.0010,,,,,,,"synthese hors N, marquee comme telle - aucun parametre change et aucune selection - detail dans resultats/brut/format_check/ - N = 19 en sensibilite",,,hors N (contrôles de format),,,,,,
+CTRL-CONTRADICTEUR,2026-10-31,STRAT-20261031-01,"base - ordres de whitelist inverse et alphabetique, strategie instrumentee",controles du contradicteur - synthese de 7 backtests et de 600 rejeux simules - pas un essai,20210101-20240630 / 20240701-20250731 / 20210101-20250731,0.0005,,,,,,,"synthese hors N, marquee comme telle - aucun ordre retenu - detail dans resultats/controles/ - N = 26 en sensibilite",,,hors N (contrôles du contradicteur),,,,,,

@@ -1,0 +1,134 @@
+{
+ "debut_utc": "2026-10-31T23:25:17+00:00",
+ "fichier_signaux": "signaux_sans_rendement_20261031T232359Z.csv",
+ "avertissement": "Aucun rendement réalisé lu.",
+ "equilibre": {
+  "couts_x1": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 21,
+   "part_gain_net_negatif_ou_nul": 0.228,
+   "reussite_equilibre_mediane_si_gain_positif": 0.809,
+   "reussite_equilibre_q25": 0.687,
+   "reussite_equilibre_q75": 0.896
+  },
+  "couts_x2": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 33,
+   "part_gain_net_negatif_ou_nul": 0.359,
+   "reussite_equilibre_mediane_si_gain_positif": 0.829,
+   "reussite_equilibre_q25": 0.745,
+   "reussite_equilibre_q75": 0.943
+  },
+  "couts_x4": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 55,
+   "part_gain_net_negatif_ou_nul": 0.598,
+   "reussite_equilibre_mediane_si_gain_positif": 0.86,
+   "reussite_equilibre_q25": 0.828,
+   "reussite_equilibre_q75": 0.921
+  }
+ },
+ "equilibre_trades_pris": {
+  "couts_x1": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 17,
+   "part_gain_net_negatif_ou_nul": 0.262,
+   "reussite_equilibre_mediane_si_gain_positif": 0.813,
+   "reussite_equilibre_q25": 0.686,
+   "reussite_equilibre_q75": 0.907
+  },
+  "couts_x2": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 26,
+   "part_gain_net_negatif_ou_nul": 0.4,
+   "reussite_equilibre_mediane_si_gain_positif": 0.829,
+   "reussite_equilibre_q25": 0.746,
+   "reussite_equilibre_q75": 0.948
+  },
+  "couts_x4": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 41,
+   "part_gain_net_negatif_ou_nul": 0.631,
+   "reussite_equilibre_mediane_si_gain_positif": 0.863,
+   "reussite_equilibre_q25": 0.83,
+   "reussite_equilibre_q75": 0.925
+  }
+ },
+ "comparaison_oi": {
+  "jour": "2026-10-28",
+  "lignes_archive": 288,
+  "pas_uniques_archive_minutes": [
+   5
+  ],
+  "lignes_rest": 288,
+  "communes": 288,
+  "ecart_relatif_moyen_par_decalage_de_pas": {
+   "-2": 0.00093881,
+   "-1": 0.00071828,
+   "0": 0.00042972,
+   "1": 0.0,
+   "2": 0.00043168
+  },
+  "ecart_relatif_max_sans_decalage": 0.00645138
+ },
+ "carnet_par_classe": {
+  "BTC_ETH": {
+   "signaux_mesures": 20,
+   "ratio_ask1_mediane": 0.552,
+   "ratio_ask1_q10": 0.354,
+   "ratio_bid1_mediane": 0.496,
+   "ratio_bid1_q10": 0.205,
+   "ratio_ask1_pendant_mediane": 0.376,
+   "ratio_ask1_pendant_q10": 0.208,
+   "ratio_bid1_pendant_mediane": 0.363,
+   "ratio_bid1_pendant_q10": 0.037,
+   "ask1_ref_usd_mediane": 91522348,
+   "ask1_apres_usd_mediane": 40382116,
+   "bid1_ref_usd_mediane": 95066465,
+   "bid1_apres_usd_mediane": 30552243,
+   "bid1_pendant_min_usd_mediane": 21069735,
+   "gliss_entree_pct_10000": 0.0125,
+   "gliss_entree_pct_10000_q90": 0.0225,
+   "gliss_stop_pct_10000": 0.0237,
+   "gliss_stop_pct_10000_q90": 0.1938,
+   "gliss_entree_pct_100000": 0.1254,
+   "gliss_entree_pct_100000_q90": 0.225,
+   "gliss_stop_pct_100000": 0.2374,
+   "gliss_stop_pct_100000_q90": 1.9379,
+   "gliss_entree_pct_500000": 0.6268,
+   "gliss_entree_pct_500000_q90": 1.1251,
+   "gliss_stop_pct_500000": 1.1872,
+   "gliss_stop_pct_500000_q90": 9.6897
+  },
+  "autres": {
+   "signaux_mesures": 54,
+   "ratio_ask1_mediane": 0.523,
+   "ratio_ask1_q10": 0.254,
+   "ratio_bid1_mediane": 0.44,
+   "ratio_bid1_q10": 0.194,
+   "ratio_ask1_pendant_mediane": 0.227,
+   "ratio_ask1_pendant_q10": 0.07,
+   "ratio_bid1_pendant_mediane": 0.198,
+   "ratio_bid1_pendant_q10": 0.046,
+   "ask1_ref_usd_mediane": 3998451,
+   "ask1_apres_usd_mediane": 1667446,
+   "bid1_ref_usd_mediane": 4018777,
+   "bid1_apres_usd_mediane": 1815475,
+   "bid1_pendant_min_usd_mediane": 891624,
+   "gliss_entree_pct_10000": 0.2999,
+   "gliss_entree_pct_10000_q90": 0.7156,
+   "gliss_stop_pct_10000": 0.5608,
+   "gliss_stop_pct_10000_q90": 3.9808,
+   "gliss_entree_pct_100000": 2.9986,
+   "gliss_entree_pct_100000_q90": 7.1559,
+   "gliss_stop_pct_100000": 5.6077,
+   "gliss_stop_pct_100000_q90": 39.8077,
+   "gliss_entree_pct_500000": 14.993,
+   "gliss_entree_pct_500000_q90": 35.7795,
+   "gliss_stop_pct_500000": 28.0387,
+   "gliss_stop_pct_500000_q90": 199.0387
+  }
+ },
+ "carnet_signaux_lacunaires": 1,
+ "fin_utc": "2026-10-31T23:25:23+00:00"
+}

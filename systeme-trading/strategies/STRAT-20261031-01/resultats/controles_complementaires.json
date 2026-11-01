@@ -1,0 +1,557 @@
+{
+ "risque_stops": {
+  "E01": {
+   "n_stop": 56,
+   "moy": -0.994402128019766,
+   "med": -0.9833395528402737,
+   "min": -1.2570893381985209,
+   "max": -0.9143718830696802
+  },
+  "E02": {
+   "n_stop": 16,
+   "moy": -0.9688531044770318,
+   "med": -0.9773877026465452,
+   "min": -1.0020808173205655,
+   "max": -0.9003516589290054
+  },
+  "E00-ref": {
+   "n_stop": 69,
+   "moy": -0.9902240942079199,
+   "med": -0.982751241280928,
+   "min": -1.2570893381985209,
+   "max": -0.9143718830696802
+  },
+  "E07": {
+   "n_stop": 82,
+   "moy": -0.9787886763225111,
+   "med": -0.9774729848556248,
+   "min": -1.0376199248521416,
+   "max": -0.8956029130061828
+  },
+  "E08": {
+   "n_stop": 49,
+   "moy": -0.9902223753049759,
+   "med": -0.9891963430594735,
+   "min": -1.1313196315812977,
+   "max": -0.852442276903262
+  }
+ },
+ "par_paire": {
+  "E01": [
+   {
+    "pair": "LINK/USDT:USDT",
+    "trades": 11,
+    "esp_R": 1.059,
+    "som_R": 11.6485,
+    "pnl": 597.8467,
+    "fin_net_paye": 91.952,
+    "reussite": 0.5455,
+    "premier": "2021-01-16"
+   },
+   {
+    "pair": "ADA/USDT:USDT",
+    "trades": 10,
+    "esp_R": 0.8167,
+    "som_R": 8.1668,
+    "pnl": 425.1479,
+    "fin_net_paye": 29.5588,
+    "reussite": 0.7,
+    "premier": "2021-05-14"
+   },
+   {
+    "pair": "BTC/USDT:USDT",
+    "trades": 15,
+    "esp_R": 0.4549,
+    "som_R": 6.8241,
+    "pnl": 355.4358,
+    "fin_net_paye": 94.9342,
+    "reussite": 0.4667,
+    "premier": "2021-01-03"
+   },
+   {
+    "pair": "ETH/USDT:USDT",
+    "trades": 16,
+    "esp_R": 0.3596,
+    "som_R": 5.7542,
+    "pnl": 282.0349,
+    "fin_net_paye": 264.4525,
+    "reussite": 0.3125,
+    "premier": "2021-01-03"
+   },
+   {
+    "pair": "BCH/USDT:USDT",
+    "trades": 17,
+    "esp_R": 0.1671,
+    "som_R": 2.8412,
+    "pnl": 133.3946,
+    "fin_net_paye": -7.6388,
+    "reussite": 0.1765,
+    "premier": "2021-01-04"
+   },
+   {
+    "pair": "XRP/USDT:USDT",
+    "trades": 17,
+    "esp_R": 0.0076,
+    "som_R": 0.1285,
+    "pnl": -6.2761,
+    "fin_net_paye": 140.431,
+    "reussite": 0.3529,
+    "premier": "2021-01-31"
+   },
+   {
+    "pair": "BNB/USDT:USDT",
+    "trades": 8,
+    "esp_R": -0.0444,
+    "som_R": -0.3548,
+    "pnl": -16.2468,
+    "fin_net_paye": -13.3548,
+    "reussite": 0.375,
+    "premier": "2021-05-04"
+   },
+   {
+    "pair": "TRX/USDT:USDT",
+    "trades": 14,
+    "esp_R": -0.0575,
+    "som_R": -0.8053,
+    "pnl": -52.0243,
+    "fin_net_paye": 42.3401,
+    "reussite": 0.2857,
+    "premier": "2021-04-01"
+   },
+   {
+    "pair": "DOGE/USDT:USDT",
+    "trades": 9,
+    "esp_R": -0.5005,
+    "som_R": -4.5041,
+    "pnl": -237.7487,
+    "fin_net_paye": 6.4966,
+    "reussite": 0.2222,
+    "premier": "2021-10-29"
+   },
+   {
+    "pair": "LTC/USDT:USDT",
+    "trades": 18,
+    "esp_R": -0.6448,
+    "som_R": -11.6059,
+    "pnl": -604.6329,
+    "fin_net_paye": 16.1101,
+    "reussite": 0.1111,
+    "premier": "2021-01-04"
+   }
+  ],
+  "E02": [
+   {
+    "pair": "DOGE/USDT:USDT",
+    "trades": 2,
+    "esp_R": 6.5966,
+    "som_R": 13.1933,
+    "pnl": 634.1733,
+    "fin_net_paye": 34.1959,
+    "reussite": 0.5,
+    "premier": "2024-10-19"
+   },
+   {
+    "pair": "ADA/USDT:USDT",
+    "trades": 4,
+    "esp_R": 2.8735,
+    "som_R": 11.4938,
+    "pnl": 544.475,
+    "fin_net_paye": 19.9385,
+    "reussite": 0.25,
+    "premier": "2024-09-04"
+   },
+   {
+    "pair": "ETH/USDT:USDT",
+    "trades": 5,
+    "esp_R": 1.086,
+    "som_R": 5.4299,
+    "pnl": 291.1035,
+    "fin_net_paye": 0.9037,
+    "reussite": 0.6,
+    "premier": "2024-07-05"
+   },
+   {
+    "pair": "BTC/USDT:USDT",
+    "trades": 7,
+    "esp_R": 0.6493,
+    "som_R": 4.5449,
+    "pnl": 225.2724,
+    "fin_net_paye": 45.0794,
+    "reussite": 0.4286,
+    "premier": "2024-07-05"
+   },
+   {
+    "pair": "BCH/USDT:USDT",
+    "trades": 6,
+    "esp_R": 0.0286,
+    "som_R": 0.1717,
+    "pnl": 16.2659,
+    "fin_net_paye": -1.2131,
+    "reussite": 0.3333,
+    "premier": "2024-07-29"
+   },
+   {
+    "pair": "TRX/USDT:USDT",
+    "trades": 6,
+    "esp_R": 0.0167,
+    "som_R": 0.1002,
+    "pnl": 8.9366,
+    "fin_net_paye": -4.416,
+    "reussite": 0.5,
+    "premier": "2024-07-02"
+   },
+   {
+    "pair": "LTC/USDT:USDT",
+    "trades": 3,
+    "esp_R": -0.3528,
+    "som_R": -1.0584,
+    "pnl": -57.4005,
+    "fin_net_paye": -0.8835,
+    "reussite": 0.0,
+    "premier": "2024-08-03"
+   },
+   {
+    "pair": "LINK/USDT:USDT",
+    "trades": 4,
+    "esp_R": -0.4045,
+    "som_R": -1.6181,
+    "pnl": -88.088,
+    "fin_net_paye": 0.436,
+    "reussite": 0.25,
+    "premier": "2024-08-03"
+   },
+   {
+    "pair": "BNB/USDT:USDT",
+    "trades": 3,
+    "esp_R": -0.7952,
+    "som_R": -2.3857,
+    "pnl": -121.7849,
+    "fin_net_paye": -0.5393,
+    "reussite": 0.0,
+    "premier": "2024-08-23"
+   },
+   {
+    "pair": "XRP/USDT:USDT",
+    "trades": 6,
+    "esp_R": -0.5826,
+    "som_R": -3.4959,
+    "pnl": -183.2565,
+    "fin_net_paye": 1.7538,
+    "reussite": 0.0,
+    "premier": "2024-07-05"
+   }
+  ],
+  "E00-ref": [
+   {
+    "pair": "ADA/USDT:USDT",
+    "trades": 14,
+    "esp_R": 1.3485,
+    "som_R": 18.8785,
+    "pnl": 984.6835,
+    "fin_net_paye": 51.1907,
+    "reussite": 0.5714,
+    "premier": "2021-05-14"
+   },
+   {
+    "pair": "ETH/USDT:USDT",
+    "trades": 20,
+    "esp_R": 0.6071,
+    "som_R": 12.1418,
+    "pnl": 656.6486,
+    "fin_net_paye": 266.7499,
+    "reussite": 0.4,
+    "premier": "2021-01-03"
+   },
+   {
+    "pair": "BTC/USDT:USDT",
+    "trades": 22,
+    "esp_R": 0.5154,
+    "som_R": 11.3386,
+    "pnl": 604.1767,
+    "fin_net_paye": 144.6675,
+    "reussite": 0.4545,
+    "premier": "2021-01-03"
+   },
+   {
+    "pair": "LINK/USDT:USDT",
+    "trades": 15,
+    "esp_R": 0.6416,
+    "som_R": 9.6233,
+    "pnl": 478.3079,
+    "fin_net_paye": 91.1512,
+    "reussite": 0.4667,
+    "premier": "2021-01-16"
+   },
+   {
+    "pair": "DOGE/USDT:USDT",
+    "trades": 11,
+    "esp_R": 0.7901,
+    "som_R": 8.6915,
+    "pnl": 463.6186,
+    "fin_net_paye": 44.3153,
+    "reussite": 0.2727,
+    "premier": "2021-10-29"
+   },
+   {
+    "pair": "BCH/USDT:USDT",
+    "trades": 23,
+    "esp_R": 0.131,
+    "som_R": 3.0127,
+    "pnl": 151.3764,
+    "fin_net_paye": -8.9815,
+    "reussite": 0.2174,
+    "premier": "2021-01-04"
+   },
+   {
+    "pair": "TRX/USDT:USDT",
+    "trades": 19,
+    "esp_R": 0.0966,
+    "som_R": 1.8362,
+    "pnl": 96.3986,
+    "fin_net_paye": 35.1953,
+    "reussite": 0.4211,
+    "premier": "2021-04-01"
+   },
+   {
+    "pair": "BNB/USDT:USDT",
+    "trades": 11,
+    "esp_R": -0.2484,
+    "som_R": -2.7322,
+    "pnl": -150.4407,
+    "fin_net_paye": -13.9483,
+    "reussite": 0.2727,
+    "premier": "2021-05-04"
+   },
+   {
+    "pair": "XRP/USDT:USDT",
+    "trades": 22,
+    "esp_R": -0.1091,
+    "som_R": -2.3995,
+    "pnl": -155.5026,
+    "fin_net_paye": 142.9059,
+    "reussite": 0.2727,
+    "premier": "2021-01-31"
+   },
+   {
+    "pair": "LTC/USDT:USDT",
+    "trades": 21,
+    "esp_R": -0.6031,
+    "som_R": -12.6643,
+    "pnl": -668.1016,
+    "fin_net_paye": 15.1333,
+    "reussite": 0.0952,
+    "premier": "2021-01-04"
+   }
+  ]
+ },
+ "concentration": {
+  "E01": {
+   "esp": 0.13402401020164245,
+   "esp_sans_1": 0.05563163423531985,
+   "esp_sans_3": -0.05403664894127806,
+   "rmax": 10.63860238968886,
+   "meilleur": "LINK/USDT:USDT 2023-09-20 long",
+   "part_top1_pnl": 0.6217720683371438,
+   "part_top3_pnl": 1.456812286166462,
+   "meilleur_mois": "2024-01",
+   "part_meilleur_mois": 0.5164066231121437,
+   "mois_pos": 18,
+   "mois_avec_cloture": 38,
+   "pnl_total": 876.9310949399999
+  },
+  "E02": {
+   "esp": 0.5733859780732005,
+   "esp_sans_1": 0.2853577948994537,
+   "esp_sans_3": -0.14570488565692913,
+   "rmax": 13.534654220891799,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.5142598422319212,
+   "part_top3_pnl": 1.2389313581230472,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.9851161164365153,
+   "mois_pos": 5,
+   "mois_avec_cloture": 13,
+   "pnl_total": 1269.6966930300002
+  },
+  "E00-ref": {
+   "esp": 0.26812698519204015,
+   "esp_sans_1": 0.19316228529663657,
+   "esp_sans_3": 0.05752566191730076,
+   "rmax": 13.53687886667846,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.29340869623575994,
+   "part_top3_pnl": 0.8064791836604029,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.5620086503198058,
+   "mois_pos": 24,
+   "mois_avec_cloture": 51,
+   "pnl_total": 2461.1653624599994
+  },
+  "E03": {
+   "esp": 0.4852603391063326,
+   "esp_sans_1": 0.23491898728005592,
+   "esp_sans_3": 0.12779517125507303,
+   "rmax": 44.79567961235729,
+   "meilleur": "XRP/USDT:USDT 2024-11-08 long",
+   "part_top1_pnl": 0.5414161724890652,
+   "part_top3_pnl": 0.7635028891435552,
+   "meilleur_mois": "2025-02",
+   "part_meilleur_mois": 0.5950312942855389,
+   "mois_pos": 25,
+   "mois_avec_cloture": 51,
+   "pnl_total": 4780.788508940001
+  },
+  "E04": {
+   "esp": 0.19039879142986113,
+   "esp_sans_1": 0.11456996457681563,
+   "esp_sans_3": -0.022756585225552458,
+   "rmax": 13.53627231756587,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.41546753282813853,
+   "part_top3_pnl": 1.1439083978641509,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.7958907351219955,
+   "mois_pos": 22,
+   "mois_avec_cloture": 52,
+   "pnl_total": 1642.7514337500006
+  },
+  "E05": {
+   "esp": 0.2542866340847622,
+   "esp_sans_1": 0.1832511143728502,
+   "esp_sans_3": 0.05482066874634537,
+   "rmax": 13.537928820212326,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.29206539323067676,
+   "part_top3_pnl": 0.7992280775575102,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.5587577920888205,
+   "mois_pos": 24,
+   "mois_avec_cloture": 51,
+   "pnl_total": 2453.1070892199996
+  },
+  "E06": {
+   "esp": 0.05768378441152715,
+   "esp_sans_1": -0.003976774287936698,
+   "esp_sans_3": -0.07501787310764199,
+   "rmax": 10.539978763320374,
+   "meilleur": "ADA/USDT:USDT 2024-11-08 long",
+   "part_top1_pnl": 1.2292129615458098,
+   "part_top3_pnl": 2.6695908946756144,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 1.7989350149609828,
+   "mois_pos": 20,
+   "mois_avec_cloture": 50,
+   "pnl_total": 399.7124414
+  },
+  "E07": {
+   "esp": 0.64583774563534,
+   "esp_sans_1": 0.47813037169857414,
+   "esp_sans_3": 0.24061071170388323,
+   "rmax": 31.67170192393701,
+   "meilleur": "ADA/USDT:USDT 2021-01-04 long",
+   "part_top1_pnl": 0.22781918648939264,
+   "part_top3_pnl": 0.5931459607117221,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.32734345317438707,
+   "mois_pos": 22,
+   "mois_avec_cloture": 54,
+   "pnl_total": 6915.3038776799995
+  },
+  "E08": {
+   "esp": 0.24104303391259466,
+   "esp_sans_1": 0.17351713668101865,
+   "esp_sans_3": 0.05114541697767708,
+   "rmax": 11.315290179891056,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.29455631770719864,
+   "part_top3_pnl": 0.812125818087338,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.5601823245718817,
+   "mois_pos": 24,
+   "mois_avec_cloture": 50,
+   "pnl_total": 2042.3873148699997
+  },
+  "E09": {
+   "esp": 0.2592326088185576,
+   "esp_sans_1": 0.18432120581790462,
+   "esp_sans_3": 0.04875036494913486,
+   "rmax": 13.518550939934139,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.3030174432427936,
+   "part_top3_pnl": 0.8335522922135334,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.580360012202659,
+   "mois_pos": 23,
+   "mois_avec_cloture": 51,
+   "pnl_total": 2364.41425072
+  },
+  "R01": {
+   "esp": 0.5242813339623081,
+   "esp_sans_1": 0.2712982917306607,
+   "esp_sans_3": 0.16335580103093117,
+   "rmax": 44.79631372450059,
+   "meilleur": "XRP/USDT:USDT 2024-11-08 long",
+   "part_top1_pnl": 0.5057548466058921,
+   "part_top3_pnl": 0.7127517017916172,
+   "meilleur_mois": "2025-02",
+   "part_meilleur_mois": 0.5622576947944359,
+   "mois_pos": 24,
+   "mois_avec_cloture": 51,
+   "pnl_total": 5211.29902651
+  },
+  "R02": {
+   "esp": 0.206616905807988,
+   "esp_sans_1": 0.12820015535823814,
+   "esp_sans_3": -0.025951636707052812,
+   "rmax": 13.537464482265458,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.4031578023957188,
+   "part_top3_pnl": 1.1786395164361008,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.7716442660394838,
+   "mois_pos": 19,
+   "mois_avec_cloture": 51,
+   "pnl_total": 1703.3087349899997
+  },
+  "R03": {
+   "esp": 0.24999474883638778,
+   "esp_sans_1": 0.17510522698127615,
+   "esp_sans_3": 0.0396255026800936,
+   "rmax": 13.505440117191144,
+   "meilleur": "DOGE/USDT:USDT 2024-10-19 long",
+   "part_top1_pnl": 0.31388772850266006,
+   "part_top3_pnl": 0.8637781825577389,
+   "meilleur_mois": "2024-12",
+   "part_meilleur_mois": 0.6008709669052382,
+   "mois_pos": 23,
+   "mois_avec_cloture": 51,
+   "pnl_total": 2264.5090211099996
+  }
+ },
+ "drawdown_reevalue": {
+  "E01": {
+   "dd_mtm": 0.12752779600846492,
+   "dd_realise": 0.10932324427259867,
+   "date_creux": "2023-06-09",
+   "sharpe_mtm": 0.3099317121021145
+  },
+  "E02": {
+   "dd_mtm": 0.0833689251508329,
+   "dd_realise": 0.03756994840499992,
+   "date_creux": "2025-06-24",
+   "sharpe_mtm": 1.1514093771267115
+  },
+  "E00-ref": {
+   "dd_mtm": 0.12752779600846492,
+   "dd_realise": 0.10932324427259867,
+   "date_creux": "2023-06-09",
+   "sharpe_mtm": 0.5628929818885409
+  },
+  "E09": {
+   "dd_mtm": 0.12977226137672077,
+   "dd_realise": 0.11106282109924077,
+   "date_creux": "2023-06-09",
+   "sharpe_mtm": 0.5441829329713667
+  }
+ }
+}

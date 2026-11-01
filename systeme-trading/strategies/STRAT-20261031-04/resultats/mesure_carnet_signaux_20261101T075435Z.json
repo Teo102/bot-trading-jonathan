@@ -1,0 +1,331 @@
+{
+ "debut_utc": "2026-11-01T07:54:35+00:00",
+ "fichier_signaux": "signaux_sans_rendement_20261101T001535Z.csv",
+ "avertissement": "Aucun rendement réalisé lu.",
+ "equilibre": {
+  "frais_seuls": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 6,
+   "part_gain_net_negatif_ou_nul": 0.065,
+   "reussite_equilibre_mediane_si_gain_positif": 0.769,
+   "reussite_equilibre_q25": 0.608,
+   "reussite_equilibre_q75": 0.881
+  },
+  "couts_x1": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 21,
+   "part_gain_net_negatif_ou_nul": 0.228,
+   "reussite_equilibre_mediane_si_gain_positif": 0.809,
+   "reussite_equilibre_q25": 0.687,
+   "reussite_equilibre_q75": 0.896
+  },
+  "couts_x2": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 33,
+   "part_gain_net_negatif_ou_nul": 0.359,
+   "reussite_equilibre_mediane_si_gain_positif": 0.829,
+   "reussite_equilibre_q25": 0.745,
+   "reussite_equilibre_q75": 0.943
+  },
+  "couts_x4": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 55,
+   "part_gain_net_negatif_ou_nul": 0.598,
+   "reussite_equilibre_mediane_si_gain_positif": 0.86,
+   "reussite_equilibre_q25": 0.828,
+   "reussite_equilibre_q75": 0.921
+  },
+  "frais_et_glissement_x2": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 36,
+   "part_gain_net_negatif_ou_nul": 0.391,
+   "reussite_equilibre_mediane_si_gain_positif": 0.839,
+   "reussite_equilibre_q25": 0.756,
+   "reussite_equilibre_q75": 0.957
+  },
+  "couts_x1_objectif_sans_frais": {
+   "signaux": 92,
+   "gain_net_prevu_negatif_ou_nul": 18,
+   "part_gain_net_negatif_ou_nul": 0.196,
+   "reussite_equilibre_mediane_si_gain_positif": 0.805,
+   "reussite_equilibre_q25": 0.681,
+   "reussite_equilibre_q75": 0.905
+  }
+ },
+ "equilibre_trades_pris": {
+  "frais_seuls": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 6,
+   "part_gain_net_negatif_ou_nul": 0.092,
+   "reussite_equilibre_mediane_si_gain_positif": 0.774,
+   "reussite_equilibre_q25": 0.601,
+   "reussite_equilibre_q75": 0.894
+  },
+  "couts_x1": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 17,
+   "part_gain_net_negatif_ou_nul": 0.262,
+   "reussite_equilibre_mediane_si_gain_positif": 0.813,
+   "reussite_equilibre_q25": 0.686,
+   "reussite_equilibre_q75": 0.907
+  },
+  "couts_x2": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 26,
+   "part_gain_net_negatif_ou_nul": 0.4,
+   "reussite_equilibre_mediane_si_gain_positif": 0.829,
+   "reussite_equilibre_q25": 0.746,
+   "reussite_equilibre_q75": 0.948
+  },
+  "couts_x4": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 41,
+   "part_gain_net_negatif_ou_nul": 0.631,
+   "reussite_equilibre_mediane_si_gain_positif": 0.863,
+   "reussite_equilibre_q25": 0.83,
+   "reussite_equilibre_q75": 0.925
+  },
+  "frais_et_glissement_x2": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 29,
+   "part_gain_net_negatif_ou_nul": 0.446,
+   "reussite_equilibre_mediane_si_gain_positif": 0.838,
+   "reussite_equilibre_q25": 0.751,
+   "reussite_equilibre_q75": 0.961
+  },
+  "couts_x1_objectif_sans_frais": {
+   "signaux": 65,
+   "gain_net_prevu_negatif_ou_nul": 15,
+   "part_gain_net_negatif_ou_nul": 0.231,
+   "reussite_equilibre_mediane_si_gain_positif": 0.825,
+   "reussite_equilibre_q25": 0.68,
+   "reussite_equilibre_q75": 0.913
+  }
+ },
+ "comparaison_oi": {
+  "jour": "2026-10-29",
+  "lignes_archive": 288,
+  "pas_uniques_archive_minutes": [
+   5
+  ],
+  "lignes_rest": 288,
+  "communes": 288,
+  "ecart_relatif_moyen_par_decalage_de_pas": {
+   "-2": 0.0017912,
+   "-1": 0.00133771,
+   "0": 0.00076627,
+   "1": 0.0,
+   "2": 0.00076381
+  },
+  "ecart_relatif_max_sans_decalage": 0.00611131
+ },
+ "fichier_demi_ecart": "demi_ecart_signaux_20261101T001437Z.csv",
+ "carnet_par_classe": {
+  "BTC_ETH": {
+   "signaux_mesures": 20,
+   "demi_ecart_signaux_mesures": 9,
+   "signaux_gele_vendeurs_apres": 0,
+   "signaux_gele_acheteurs_pendant": 2,
+   "signaux_stop_exploitables": 18,
+   "signaux_entree_exploitables": 20,
+   "signaux_acheteurs_geles_liste": [
+    "ETHUSDT 2025-10-10 21:30:00+00:00",
+    "BTCUSDT 2025-10-10 21:30:00+00:00"
+   ],
+   "demi_ecart_entree_pct_mediane_mesuree": 0.0002,
+   "demi_ecart_entree_pct_q90_mesuree": 0.0003,
+   "demi_ecart_stop_pct_mediane_mesuree": 0.0021,
+   "demi_ecart_stop_pct_q90_mesuree": 0.0089,
+   "ratio_ask1_mediane": 0.552,
+   "ratio_ask1_q10": 0.354,
+   "ratio_bid1_mediane": 0.51,
+   "ratio_bid1_q10": 0.298,
+   "ratio_ask1_pendant_mediane": 0.376,
+   "ratio_ask1_pendant_q10": 0.208,
+   "ratio_bid1_pendant_mediane": 0.381,
+   "ratio_bid1_pendant_q10": 0.173,
+   "ask1_ref_usd_mediane": 91522348,
+   "ask1_apres_usd_mediane": 40382116,
+   "bid1_ref_usd_mediane": 95066465,
+   "bid1_apres_usd_mediane": 32093838,
+   "bid1_pendant_min_usd_mediane": 22455360,
+   "bid1_pendant_min_usd_plus_faible": 2639949,
+   "gliss_entree_pct_10000": 0.0003,
+   "gliss_entree_pct_10000_q90": 0.0005,
+   "gliss_entree_pct_10000_max": 0.0012,
+   "impact_seul_entree_pct_10000": 0.0001,
+   "part_ticket_au_dela_1pct_entree_10000": 0.0,
+   "gliss_stop_pct_10000": 0.0024,
+   "gliss_stop_pct_10000_q90": 0.0044,
+   "gliss_stop_pct_10000_max": 0.0268,
+   "impact_seul_stop_pct_10000": 0.0002,
+   "part_ticket_au_dela_1pct_stop_10000": 0.0,
+   "gliss_entree_pct_100000": 0.0015,
+   "gliss_entree_pct_100000_q90": 0.0024,
+   "gliss_entree_pct_100000_max": 0.01,
+   "impact_seul_entree_pct_100000": 0.0013,
+   "part_ticket_au_dela_1pct_entree_100000": 0.0,
+   "gliss_stop_pct_100000": 0.0046,
+   "gliss_stop_pct_100000_q90": 0.0071,
+   "gliss_stop_pct_100000_max": 0.0438,
+   "impact_seul_stop_pct_100000": 0.0022,
+   "part_ticket_au_dela_1pct_stop_100000": 0.0,
+   "gliss_entree_pct_500000": 0.0065,
+   "gliss_entree_pct_500000_q90": 0.0114,
+   "gliss_entree_pct_500000_max": 0.0491,
+   "impact_seul_entree_pct_500000": 0.0063,
+   "part_ticket_au_dela_1pct_entree_500000": 0.0,
+   "gliss_stop_pct_500000": 0.014,
+   "gliss_stop_pct_500000_q90": 0.023,
+   "gliss_stop_pct_500000_max": 0.1196,
+   "impact_seul_stop_pct_500000": 0.0112,
+   "part_ticket_au_dela_1pct_stop_500000": 0.0,
+   "ticket_atteignant_base_entree_usd_mediane": 12096746,
+   "ticket_atteignant_base_entree_usd_q10": 6682994,
+   "ticket_atteignant_base_stop_usd_mediane": 13314263,
+   "ticket_atteignant_base_stop_usd_q10": 7345074,
+   "signaux_stop_10000_au_dessus_base_x1": 0,
+   "signaux_stop_10000_au_dessus_base_x2": 0,
+   "signaux_stop_10000_au_dessus_base_x4": 0,
+   "signaux_stop_100000_au_dessus_base_x1": 0,
+   "signaux_stop_100000_au_dessus_base_x2": 0,
+   "signaux_stop_100000_au_dessus_base_x4": 0,
+   "cinq_carnets_les_plus_vides_pendant_la_bougie": [
+    {
+     "symbole": "ETHUSDT",
+     "T": "2023-06-05 16:15:00+00:00",
+     "bid1_pendant_min_usd": 2639949,
+     "bid1_ref_usd": 66931755
+    },
+    {
+     "symbole": "ETHUSDT",
+     "T": "2024-04-13 20:00:00+00:00",
+     "bid1_pendant_min_usd": 9419096,
+     "bid1_ref_usd": 41901408
+    },
+    {
+     "symbole": "ETHUSDT",
+     "T": "2023-04-19 08:30:00+00:00",
+     "bid1_pendant_min_usd": 13575834,
+     "bid1_ref_usd": 59661542
+    },
+    {
+     "symbole": "ETHUSDT",
+     "T": "2024-08-05 02:30:00+00:00",
+     "bid1_pendant_min_usd": 13778143,
+     "bid1_ref_usd": 38057172
+    },
+    {
+     "symbole": "BTCUSDT",
+     "T": "2024-04-13 20:15:00+00:00",
+     "bid1_pendant_min_usd": 14023530,
+     "bid1_ref_usd": 100968760
+    }
+   ]
+  },
+  "autres": {
+   "signaux_mesures": 54,
+   "demi_ecart_signaux_mesures": 17,
+   "signaux_gele_vendeurs_apres": 0,
+   "signaux_gele_acheteurs_pendant": 2,
+   "signaux_stop_exploitables": 51,
+   "signaux_entree_exploitables": 53,
+   "signaux_acheteurs_geles_liste": [
+    "BNBUSDT 2025-10-10 21:30:00+00:00",
+    "BCHUSDT 2026-09-10 13:30:00+00:00"
+   ],
+   "demi_ecart_entree_pct_mediane_mesuree": 0.0074,
+   "demi_ecart_entree_pct_q90_mesuree": 0.0101,
+   "demi_ecart_stop_pct_mediane_mesuree": 0.0239,
+   "demi_ecart_stop_pct_q90_mesuree": 0.0471,
+   "ratio_ask1_mediane": 0.523,
+   "ratio_ask1_q10": 0.254,
+   "ratio_bid1_mediane": 0.45,
+   "ratio_bid1_q10": 0.214,
+   "ratio_ask1_pendant_mediane": 0.227,
+   "ratio_ask1_pendant_q10": 0.07,
+   "ratio_bid1_pendant_mediane": 0.199,
+   "ratio_bid1_pendant_q10": 0.057,
+   "ask1_ref_usd_mediane": 3998451,
+   "ask1_apres_usd_mediane": 1667446,
+   "bid1_ref_usd_mediane": 4101114,
+   "bid1_apres_usd_mediane": 1944250,
+   "bid1_pendant_min_usd_mediane": 995063,
+   "bid1_pendant_min_usd_plus_faible": 36753,
+   "gliss_entree_pct_10000": 0.0104,
+   "gliss_entree_pct_10000_q90": 0.0146,
+   "gliss_entree_pct_10000_max": 0.0243,
+   "impact_seul_entree_pct_10000": 0.003,
+   "part_ticket_au_dela_1pct_entree_10000": 0.0,
+   "gliss_stop_pct_10000": 0.0296,
+   "gliss_stop_pct_10000_q90": 0.0609,
+   "gliss_stop_pct_10000_max": 0.1599,
+   "impact_seul_stop_pct_10000": 0.005,
+   "part_ticket_au_dela_1pct_stop_10000": 0.0,
+   "gliss_entree_pct_100000": 0.037,
+   "gliss_entree_pct_100000_q90": 0.0804,
+   "gliss_entree_pct_100000_max": 0.1417,
+   "impact_seul_entree_pct_100000": 0.03,
+   "part_ticket_au_dela_1pct_entree_100000": 0.0,
+   "gliss_stop_pct_100000": 0.0808,
+   "gliss_stop_pct_100000_q90": 0.259,
+   "gliss_stop_pct_100000_max": 1.3843,
+   "impact_seul_stop_pct_100000": 0.0502,
+   "part_ticket_au_dela_1pct_stop_100000": 0.039,
+   "gliss_entree_pct_500000": 0.1569,
+   "gliss_entree_pct_500000_q90": 0.3652,
+   "gliss_entree_pct_500000_max": 0.6789,
+   "impact_seul_entree_pct_500000": 0.1499,
+   "part_ticket_au_dela_1pct_entree_500000": 0.019,
+   "gliss_stop_pct_500000": 0.2804,
+   "gliss_stop_pct_500000_q90": 1.1997,
+   "gliss_stop_pct_500000_max": 6.826,
+   "impact_seul_stop_pct_500000": 0.2512,
+   "part_ticket_au_dela_1pct_stop_500000": 0.294,
+   "ticket_atteignant_base_entree_usd_mediane": 977065,
+   "ticket_atteignant_base_entree_usd_q10": 409108,
+   "ticket_atteignant_base_stop_usd_mediane": 1136082,
+   "ticket_atteignant_base_stop_usd_q10": 244996,
+   "signaux_stop_10000_au_dessus_base_x1": 0,
+   "signaux_stop_10000_au_dessus_base_x2": 0,
+   "signaux_stop_10000_au_dessus_base_x4": 0,
+   "signaux_stop_100000_au_dessus_base_x1": 1,
+   "signaux_stop_100000_au_dessus_base_x2": 1,
+   "signaux_stop_100000_au_dessus_base_x4": 0,
+   "cinq_carnets_les_plus_vides_pendant_la_bougie": [
+    {
+     "symbole": "LINKUSDT",
+     "T": "2024-04-12 18:45:00+00:00",
+     "bid1_pendant_min_usd": 36753,
+     "bid1_ref_usd": 3028260
+    },
+    {
+     "symbole": "LINKUSDT",
+     "T": "2023-06-30 14:00:00+00:00",
+     "bid1_pendant_min_usd": 89346,
+     "bid1_ref_usd": 1964814
+    },
+    {
+     "symbole": "BCHUSDT",
+     "T": "2024-08-05 01:15:00+00:00",
+     "bid1_pendant_min_usd": 122252,
+     "bid1_ref_usd": 1236547
+    },
+    {
+     "symbole": "XRPUSDT",
+     "T": "2024-04-13 20:15:00+00:00",
+     "bid1_pendant_min_usd": 123462,
+     "bid1_ref_usd": 4651262
+    },
+    {
+     "symbole": "BNBUSDT",
+     "T": "2024-04-13 20:15:00+00:00",
+     "bid1_pendant_min_usd": 134968,
+     "bid1_ref_usd": 5072367
+    }
+   ]
+  }
+ },
+ "carnet_signaux_lacunaires": 1,
+ "fin_utc": "2026-11-01T07:54:36+00:00"
+}

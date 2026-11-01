@@ -1,0 +1,601 @@
+{
+ "debut_utc": "2026-10-31T22:36:29+00:00",
+ "sha256_parametres": "066dd22a76f1b162d0f843a5104ef4cea47e5c741a0d0314f33cf94bc19f1938",
+ "periode_donnees": [
+  "2021-12-01",
+  "2026-10-30"
+ ],
+ "telechargement": {
+  "BTCUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "ETHUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "XRPUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "LTCUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "BCHUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "LINKUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "ADAUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "BNBUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "DOGEUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  },
+  "TRXUSDT": {
+   "metrics": {
+    "ok": 1795
+   },
+   "klines": {
+    "ok": 58
+   },
+   "funding": {
+    "ok": 58
+   }
+  }
+ },
+ "qualite": {
+  "BTCUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.9989,
+   "oi_valide_1pct_bougies_les_plus_amples": 0.9983,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9982,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "ETHUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 0.9988,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "XRPUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516819,
+   "lignes_oi_uniques": 516819,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "LTCUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516777,
+   "lignes_oi_uniques": 516777,
+   "taux_couverture_5min": 0.9996,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "BCHUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516783,
+   "lignes_oi_uniques": 516783,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "LINKUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9968
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "ADAUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "BNBUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 0.9983,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "DOGEUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516820,
+   "lignes_oi_uniques": 516820,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.999,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 1.0,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9969
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  },
+  "TRXUSDT": {
+   "fichiers_metrics_lus": 1795,
+   "lignes_oi_brutes": 516812,
+   "lignes_oi_uniques": 516812,
+   "taux_couverture_5min": 0.9997,
+   "oi_valide_toutes_bougies": 0.9989,
+   "oi_valide_1pct_bougies_les_plus_amples": 1.0,
+   "oi_valide_par_annee": {
+    "2021": 0.9987,
+    "2022": 0.999,
+    "2023": 0.9999,
+    "2024": 0.9987,
+    "2025": 0.9999,
+    "2026": 0.9968
+   },
+   "ecart_max_oi_heures": 10.5,
+   "premiere_oi": "2021-12-01 00:00:00+00:00",
+   "derniere_oi": "2026-10-30 23:55:00+00:00"
+  }
+ },
+ "entonnoir": {
+  "BTCUSDT": {
+   "bougies": 172410,
+   "oi_valide": 172215,
+   "seul_c_oi": 322,
+   "cumul_c_oi": 322,
+   "seul_c_prix": 44335,
+   "cumul_c_prix": 78,
+   "seul_c_meche": 28879,
+   "cumul_c_meche": 26,
+   "seul_c_ampl": 4092,
+   "cumul_c_ampl": 19,
+   "seul_c_vol": 19516,
+   "cumul_c_vol": 19,
+   "seul_c_fund": 169502,
+   "cumul_c_fund": 17,
+   "sans_oi_prix_meche_ampl_vol_fund": 399
+  },
+  "ETHUSDT": {
+   "bougies": 172410,
+   "oi_valide": 172234,
+   "seul_c_oi": 198,
+   "cumul_c_oi": 198,
+   "seul_c_prix": 42684,
+   "cumul_c_prix": 54,
+   "seul_c_meche": 29239,
+   "cumul_c_meche": 21,
+   "seul_c_ampl": 3835,
+   "cumul_c_ampl": 16,
+   "seul_c_vol": 18039,
+   "cumul_c_vol": 16,
+   "seul_c_fund": 168957,
+   "cumul_c_fund": 15,
+   "sans_oi_prix_meche_ampl_vol_fund": 449
+  },
+  "XRPUSDT": {
+   "bougies": 171930,
+   "oi_valide": 171754,
+   "seul_c_oi": 432,
+   "cumul_c_oi": 432,
+   "seul_c_prix": 44688,
+   "cumul_c_prix": 120,
+   "seul_c_meche": 30420,
+   "cumul_c_meche": 48,
+   "seul_c_ampl": 3165,
+   "cumul_c_ampl": 32,
+   "seul_c_vol": 13723,
+   "cumul_c_vol": 32,
+   "seul_c_fund": 167129,
+   "cumul_c_fund": 29,
+   "sans_oi_prix_meche_ampl_vol_fund": 395
+  },
+  "LTCUSDT": {
+   "bougies": 171930,
+   "oi_valide": 171754,
+   "seul_c_oi": 262,
+   "cumul_c_oi": 262,
+   "seul_c_prix": 45373,
+   "cumul_c_prix": 85,
+   "seul_c_meche": 30165,
+   "cumul_c_meche": 35,
+   "seul_c_ampl": 2801,
+   "cumul_c_ampl": 13,
+   "seul_c_vol": 13640,
+   "cumul_c_vol": 13,
+   "seul_c_fund": 167607,
+   "cumul_c_fund": 12,
+   "sans_oi_prix_meche_ampl_vol_fund": 304
+  },
+  "BCHUSDT": {
+   "bougies": 172410,
+   "oi_valide": 172233,
+   "seul_c_oi": 301,
+   "cumul_c_oi": 301,
+   "seul_c_prix": 45203,
+   "cumul_c_prix": 96,
+   "seul_c_meche": 29733,
+   "cumul_c_meche": 23,
+   "seul_c_ampl": 3374,
+   "cumul_c_ampl": 6,
+   "seul_c_vol": 15185,
+   "cumul_c_vol": 6,
+   "seul_c_fund": 170392,
+   "cumul_c_fund": 5,
+   "sans_oi_prix_meche_ampl_vol_fund": 339
+  },
+  "LINKUSDT": {
+   "bougies": 172411,
+   "oi_valide": 172232,
+   "seul_c_oi": 314,
+   "cumul_c_oi": 314,
+   "seul_c_prix": 47194,
+   "cumul_c_prix": 95,
+   "seul_c_meche": 28092,
+   "cumul_c_meche": 28,
+   "seul_c_ampl": 2312,
+   "cumul_c_ampl": 13,
+   "seul_c_vol": 11905,
+   "cumul_c_vol": 11,
+   "seul_c_fund": 168059,
+   "cumul_c_fund": 8,
+   "sans_oi_prix_meche_ampl_vol_fund": 239
+  },
+  "ADAUSDT": {
+   "bougies": 172411,
+   "oi_valide": 172233,
+   "seul_c_oi": 255,
+   "cumul_c_oi": 255,
+   "seul_c_prix": 47371,
+   "cumul_c_prix": 56,
+   "seul_c_meche": 29700,
+   "cumul_c_meche": 14,
+   "seul_c_ampl": 2379,
+   "cumul_c_ampl": 8,
+   "seul_c_vol": 12486,
+   "cumul_c_vol": 8,
+   "seul_c_fund": 168570,
+   "cumul_c_fund": 6,
+   "sans_oi_prix_meche_ampl_vol_fund": 249
+  },
+  "BNBUSDT": {
+   "bougies": 172411,
+   "oi_valide": 172234,
+   "seul_c_oi": 213,
+   "cumul_c_oi": 213,
+   "seul_c_prix": 44960,
+   "cumul_c_prix": 69,
+   "seul_c_meche": 28960,
+   "cumul_c_meche": 29,
+   "seul_c_ampl": 3070,
+   "cumul_c_ampl": 13,
+   "seul_c_vol": 14239,
+   "cumul_c_vol": 13,
+   "seul_c_fund": 169917,
+   "cumul_c_fund": 11,
+   "sans_oi_prix_meche_ampl_vol_fund": 299
+  },
+  "DOGEUSDT": {
+   "bougies": 172411,
+   "oi_valide": 172233,
+   "seul_c_oi": 504,
+   "cumul_c_oi": 504,
+   "seul_c_prix": 44117,
+   "cumul_c_prix": 152,
+   "seul_c_meche": 30042,
+   "cumul_c_meche": 54,
+   "seul_c_ampl": 3283,
+   "cumul_c_ampl": 28,
+   "seul_c_vol": 14930,
+   "cumul_c_vol": 28,
+   "seul_c_fund": 167517,
+   "cumul_c_fund": 27,
+   "sans_oi_prix_meche_ampl_vol_fund": 390
+  },
+  "TRXUSDT": {
+   "bougies": 171931,
+   "oi_valide": 171750,
+   "seul_c_oi": 463,
+   "cumul_c_oi": 463,
+   "seul_c_prix": 44174,
+   "cumul_c_prix": 156,
+   "seul_c_meche": 30960,
+   "cumul_c_meche": 35,
+   "seul_c_ampl": 3071,
+   "cumul_c_ampl": 11,
+   "seul_c_vol": 12887,
+   "cumul_c_vol": 11,
+   "seul_c_fund": 169401,
+   "cumul_c_fund": 10,
+   "sans_oi_prix_meche_ampl_vol_fund": 240
+  }
+ },
+ "avertissement": "Aucun rendement calculé. Comptage de signaux uniquement.",
+ "base": {
+  "signaux_valides": 93,
+  "trades_borne_basse": 65,
+  "episodes_independants": 56,
+  "par_bloc_trades": {
+   "developpement": 51,
+   "hors_echantillon": 10,
+   "validation": 4
+  },
+  "par_bloc_episodes": {
+   "developpement": 44,
+   "hors_echantillon": 9,
+   "validation": 3
+  },
+  "par_annee_trades": {
+   "2021": 2,
+   "2022": 12,
+   "2023": 28,
+   "2024": 9,
+   "2025": 8,
+   "2026": 6
+  },
+  "par_symbole_trades": {
+   "ADAUSDT": 1,
+   "BCHUSDT": 2,
+   "BNBUSDT": 7,
+   "BTCUSDT": 9,
+   "DOGEUSDT": 17,
+   "ETHUSDT": 6,
+   "LINKUSDT": 3,
+   "LTCUSDT": 5,
+   "TRXUSDT": 3,
+   "XRPUSDT": 12
+  }
+ },
+ "signaux_bruts": 140,
+ "signaux_apres_delai": 133,
+ "signaux_annules_prix": 40,
+ "part_rr_prevu_ge_2": 0.0,
+ "rr_prevu_mediane": 0.3,
+ "dist_stop_pct_mediane": 2.409,
+ "dist_stop_pct_q90": 6.614,
+ "signaux_rr_ge_2": 0,
+ "part_signaux_strat01_short_meme_actif": 0.086,
+ "sensibilite_nombre": {
+  "seuil_oi_-4pct": {
+   "signaux_valides": 156,
+   "trades_borne_basse": 108,
+   "episodes_independants": 93,
+   "par_bloc_trades": {
+    "developpement": 82,
+    "hors_echantillon": 16,
+    "validation": 10
+   },
+   "par_bloc_episodes": {
+    "developpement": 69,
+    "hors_echantillon": 15,
+    "validation": 9
+   },
+   "par_annee_trades": {
+    "2021": 1,
+    "2022": 22,
+    "2023": 45,
+    "2024": 14,
+    "2025": 17,
+    "2026": 9
+   },
+   "par_symbole_trades": {
+    "ADAUSDT": 4,
+    "BCHUSDT": 10,
+    "BNBUSDT": 9,
+    "BTCUSDT": 12,
+    "DOGEUSDT": 22,
+    "ETHUSDT": 15,
+    "LINKUSDT": 5,
+    "LTCUSDT": 9,
+    "TRXUSDT": 5,
+    "XRPUSDT": 17
+   }
+  },
+  "seuil_oi_-6pct": {
+   "signaux_valides": 67,
+   "trades_borne_basse": 46,
+   "episodes_independants": 39,
+   "par_bloc_trades": {
+    "developpement": 36,
+    "hors_echantillon": 6,
+    "validation": 4
+   },
+   "par_bloc_episodes": {
+    "developpement": 30,
+    "hors_echantillon": 6,
+    "validation": 3
+   },
+   "par_annee_trades": {
+    "2021": 2,
+    "2022": 7,
+    "2023": 22,
+    "2024": 5,
+    "2025": 5,
+    "2026": 5
+   },
+   "par_symbole_trades": {
+    "ADAUSDT": 1,
+    "BCHUSDT": 1,
+    "BNBUSDT": 4,
+    "BTCUSDT": 7,
+    "DOGEUSDT": 10,
+    "ETHUSDT": 5,
+    "LTCUSDT": 4,
+    "TRXUSDT": 3,
+    "XRPUSDT": 11
+   }
+  }
+ },
+ "fin_utc": "2026-10-31T22:52:06+00:00"
+}

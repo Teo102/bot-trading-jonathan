@@ -1,0 +1,65 @@
+2026-11-01 01:33:29,488 - freqtrade - INFO - freqtrade 2026.10
+2026-11-01 01:33:29,762 - numexpr.utils - INFO - NumExpr defaulting to 10 threads.
+2026-11-01 01:33:31,029 - freqtrade.configuration.load_config - INFO - Using config: data_engineering/config_telechargement_panier.json ...
+2026-11-01 01:33:31,032 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-11-01 01:33:31,032 - freqtrade.loggers - INFO - Logfile configured
+2026-11-01 01:33:31,032 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-11-01 01:33:31,033 - freqtrade.configuration.configuration - INFO - Parameter --timerange detected: 20210101-20240630 ...
+2026-11-01 01:33:31,033 - freqtrade.configuration.configuration - INFO - Using user-data directory: /Users/teobrondel/Bot Trading Jonathan/systeme-trading/user_data ...
+2026-11-01 01:33:31,034 - freqtrade.configuration.configuration - INFO - Using data directory: /Users/teobrondel/Bot Trading Jonathan/systeme-trading/user_data/data/binance ...
+2026-11-01 01:33:31,034 - freqtrade.configuration.configuration - INFO - Using pairs ['AVAX/USDT:USDT', 'BCH/USDT:USDT', 'FIL/USDT:USDT', 'QNT/USDT:USDT']
+2026-11-01 01:33:31,034 - freqtrade.configuration.configuration - INFO - timeframes --timeframes: ['1d']
+2026-11-01 01:33:31,034 - freqtrade.configuration.configuration - INFO - Detected --trading-mode: futures
+2026-11-01 01:33:31,034 - freqtrade.configuration.configuration - INFO - Filter trades by timerange: 20210101-20240630
+2026-11-01 01:33:31,035 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2026-11-01 01:33:31,040 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development team.
+2026-11-01 01:33:31,041 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-11-01 01:33:31,894 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2026-11-01 01:33:31,894 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.91
+2026-11-01 01:33:31,894 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-11-01 01:33:31,897 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-11-01 01:33:31,899 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2026-11-01 01:33:31,900 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange class 'Binance' ...
+2026-11-01 01:33:31,900 - freqtrade.exchange.exchange - INFO - Markets were not loaded. Loading them now..
+2026-11-01 01:33:33,169 - freqtrade.data.history.history_utils - INFO - About to download pairs: ['AVAX/USDT:USDT', 'BCH/USDT:USDT', 'FIL/USDT:USDT', 'QNT/USDT:USDT'], intervals: ['1d'] to 
+/Users/teobrondel/Bot Trading Jonathan/systeme-trading/user_data/data/binance
+2026-11-01 01:33:33,269 - freqtrade.data.history.history_utils - INFO - Download history data for "AVAX/USDT:USDT", 1d, futures and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:34,802 - freqtrade.data.history.history_utils - INFO - Downloaded data for AVAX/USDT:USDT, 1d, futures with length 1496.
+2026-11-01 01:33:34,818 - freqtrade.data.history.history_utils - INFO - Download history data for "AVAX/USDT:USDT", 1h, mark and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:42,285 - freqtrade.data.history.history_utils - INFO - Downloaded data for AVAX/USDT:USDT, 1h, mark with length 30937.
+2026-11-01 01:33:42,303 - freqtrade.data.history.history_utils - INFO - Download history data for "AVAX/USDT:USDT", 1h, funding_rate and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:44,166 - freqtrade.data.history.history_utils - INFO - Downloaded data for AVAX/USDT:USDT, 1h, funding_rate with length 4750.
+2026-11-01 01:33:44,169 - freqtrade.data.history.history_utils - INFO - Download history data for "BCH/USDT:USDT", 1d, futures and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:45,774 - freqtrade.data.history.history_utils - INFO - Downloaded data for BCH/USDT:USDT, 1d, futures with length 1496.
+2026-11-01 01:33:45,778 - freqtrade.data.history.history_utils - INFO - Download history data for "BCH/USDT:USDT", 1h, mark and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:53,312 - freqtrade.data.history.history_utils - INFO - Downloaded data for BCH/USDT:USDT, 1h, mark with length 30937.
+2026-11-01 01:33:53,340 - freqtrade.data.history.history_utils - INFO - Download history data for "BCH/USDT:USDT", 1h, funding_rate and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:55,382 - freqtrade.data.history.history_utils - INFO - Downloaded data for BCH/USDT:USDT, 1h, funding_rate with length 4750.
+2026-11-01 01:33:55,385 - freqtrade.data.history.history_utils - INFO - Download history data for "FIL/USDT:USDT", 1d, futures and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:33:56,944 - freqtrade.data.history.history_utils - INFO - Downloaded data for FIL/USDT:USDT, 1d, futures with length 1496.
+2026-11-01 01:33:56,947 - freqtrade.data.history.history_utils - INFO - Download history data for "FIL/USDT:USDT", 1h, mark and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:34:03,848 - freqtrade.data.history.history_utils - INFO - Downloaded data for FIL/USDT:USDT, 1h, mark with length 30937.
+2026-11-01 01:34:03,864 - freqtrade.data.history.history_utils - INFO - Download history data for "FIL/USDT:USDT", 1h, funding_rate and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:34:05,872 - freqtrade.data.history.history_utils - INFO - Downloaded data for FIL/USDT:USDT, 1h, funding_rate with length 4750.
+2026-11-01 01:34:05,875 - freqtrade.data.history.history_utils - INFO - Download history data for "QNT/USDT:USDT", 1d, futures and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:34:06,164 - freqtrade.exchange.binance - INFO - Candle-data for QNT/USDT:USDT available starting with 2022-10-20T00:00:00+00:00.
+2026-11-01 01:34:06,716 - freqtrade.data.history.history_utils - INFO - Downloaded data for QNT/USDT:USDT, 1d, futures with length 997.
+2026-11-01 01:34:06,720 - freqtrade.data.history.history_utils - INFO - Download history data for "QNT/USDT:USDT", 1h, mark and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:34:07,138 - freqtrade.exchange.binance - INFO - Candle-data for QNT/USDT:USDT available starting with 2022-10-20T01:00:00+00:00.
+2026-11-01 01:34:10,398 - freqtrade.data.history.history_utils - INFO - Downloaded data for QNT/USDT:USDT, 1h, mark with length 14969.
+2026-11-01 01:34:10,409 - freqtrade.data.history.history_utils - INFO - Download history data for "QNT/USDT:USDT", 1h, funding_rate and store in /Users/teobrondel/Bot Trading 
+Jonathan/systeme-trading/user_data/data/binance. From 2021-01-01T00:00:00 to 2024-06-30T00:00:00
+2026-11-01 01:34:12,271 - freqtrade.data.history.history_utils - INFO - Downloaded data for QNT/USDT:USDT, 1h, funding_rate with length 2778.
+Timeframe                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 100% • 0:00:10 • 0:00:00
+Downloading QNT/USDT:USDT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4/4 100% • 0:00:39 • 0:00:00

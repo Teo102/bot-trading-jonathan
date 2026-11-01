@@ -1,0 +1,16 @@
+2026-10-31T22:42:22Z
+$ python analyse_strat.py user_data/backtest_results/E04/backtest-result-2026-10-31_22-42-21.zip --essai E04 --start 2021-01-01 --end 2025-07-31
+Trades : 177  (longs 93, shorts 84)
+Taux de réussite : 31.6%   gain moyen 2.14 R   perte moyenne -0.71 R
+Espérance : +0.190 R   intervalle 90 % : [-0.064 ; +0.465] R
+Espérance avec frais doublés (approx.) : +0.181 R
+Espérance avec frais et financement payé doublés (approx.) : +0.078 R
+Drawdown réalisé : 11.6%   drawdown 95e centile (Monte Carlo) : 11.7%
+Part du gain portée par le meilleur trade : 40%
+Capital final : 11,643 (départ 10,000)
+Sharpe annualisé : 0.526   Sortino : 1.573   Calmar : 0.292   (équité réalisée, 1673 jours, base 365)
+Semestres positifs : 6 / 10 (60%)
+Financement payé : 919.99   reçu : 143.78   net payé : 776.21
+DSR : non calculable. Nombre d'essais N inconnu.
+Exports : /Users/teobrondel/Bot Trading Jonathan/systeme-trading/strategies/STRAT-20261031-01/resultats/E04_metriques.json ; /Users/teobrondel/Bot Trading Jonathan/systeme-trading/strategies/STRAT-20261031-01/resultats/E04_metriques.md
+exit=0

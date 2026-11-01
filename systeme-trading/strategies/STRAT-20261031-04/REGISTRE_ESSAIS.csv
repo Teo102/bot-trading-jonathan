@@ -1,0 +1,37 @@
+id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire
+C01,2026-10-31,STRAT-20261031-04,base comptage sans rendement - horodatage brut,tous,20211201-20261030,,65,,,,,,REMPLACE par C02 - biais d'horodatage de 5 min depuis 03/2024 - borne haute 93 signaux valides - aucun rendement
+C02,2026-10-31,STRAT-20261031-04,base comptage sans rendement - horodatage corrige,tous,20211201-20261030,,65,,,,,,65 trades dont 10 hors echantillon - 92 signaux valides sur 65 bougies distinctes - 55 episodes - aucun rendement - sous le seuil 100 et 30 - fourchette 65 a 92 retiree le 2026-11-01 - relance identique compte_signaux_20261101T001535Z
+C03,2026-10-31,STRAT-20261031-04,seuil OI -4 pct nombre seul,tous,20211201-20261030,,102,,,,,,149 signaux valides - 12 hors echantillon - 88 episodes - jamais retenue a la place de la base
+C04,2026-10-31,STRAT-20261031-04,seuil OI -6 pct nombre seul,tous,20211201-20261030,,45,,,,,,65 signaux valides - 6 hors echantillon - 39 episodes - jamais retenue a la place de la base
+C05,2026-11-01,STRAT-20261031-04,delai non relance par un signal annule nombre seul,tous,20211201-20261030,,65,,,,,,92 signaux valides - 10 hors echantillon - 55 episodes - aucun rendement - jamais retenue a la place de la base
+C06,2026-11-01,STRAT-20261031-04,delai relance par une entree reelle seulement nombre seul,tous,20211201-20261030,,65,,,,,,93 signaux valides - 10 hors echantillon - 55 episodes - aucun rendement - jamais retenue a la place de la base
+E01,,STRAT-20261031-04,base (OI -5pct 1h / meche 0.5 / amplitude 3 / volume 3 / financement 0.03pct),developpement,20211201-20241031,0.0005,,,,,,,BLOQUE non lance - glissement de base
+E02,,STRAT-20261031-04,base,validation,20241101-20250930,0.0005,,,,,,,BLOQUE non lance - glissement de base
+E03,,STRAT-20261031-04,seuil OI -4pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E04,,STRAT-20261031-04,seuil OI -6pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E05,,STRAT-20261031-04,fenetre OI 3 bougies,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E06,,STRAT-20261031-04,fenetre OI 5 bougies,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E07,,STRAT-20261031-04,meche 0.4,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E08,,STRAT-20261031-04,meche 0.6,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E09,,STRAT-20261031-04,amplitude 2.4,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E10,,STRAT-20261031-04,amplitude 3.6,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E11,,STRAT-20261031-04,horizon 77 bougies,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E12,,STRAT-20261031-04,horizon 115 bougies,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E13,,STRAT-20261031-04,volume 2.4,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E14,,STRAT-20261031-04,volume 3.6,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E15,,STRAT-20261031-04,financement 0.024pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E16,,STRAT-20261031-04,financement 0.036pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E17,,STRAT-20261031-04,tampon stop 0.20,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E18,,STRAT-20261031-04,tampon stop 0.30,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E19,,STRAT-20261031-04,retracement 40pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E20,,STRAT-20261031-04,retracement 60pct,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - robustesse - jamais retenue a la place de la base
+E21,,STRAT-20261031-04,base glissement x2,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - stress des couts
+E22,,STRAT-20261031-04,base glissement x4,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - stress propre a cette strategie
+E23,,STRAT-20261031-04,base OI retarde de 5 min supplementaires,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - controle d'anticipation - le resultat doit survivre
+E24,,STRAT-20261031-04,base ventilee sous et sur moyenne 200 jours,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - lecture du regime - aucune selection
+E25,,STRAT-20261031-04,base sur donnees Bybit,dev+val,20211201-20250930,0.0005,,,,,,,BLOQUE non lance - replication sur une autre plateforme - episodes non independants
+E26,,STRAT-20261031-04,base,HORS ECHANTILLON (une seule fois),20251001-20261031,0.0005,,,,,,,BLOQUE non lance - verdict
+E27,,STRAT-20261031-04,base glissement x2,hors echantillon,20251001-20261031,0.0005,,,,,,,BLOQUE non lance - meme regles - stress des couts
+E28,,STRAT-20261031-04,base glissement x4,hors echantillon,20251001-20261031,0.0005,,,,,,,BLOQUE non lance - meme regles - stress propre a cette strategie
+E29,,STRAT-20261031-04,base frais et glissement x2,dev+val,20211201-20250930,0.0010,,,,,,,BLOQUE non lance - stress complet validation-edge 4.5 - declare le 2026-11-01 car E21 ne double que le glissement
+E30,,STRAT-20261031-04,base frais et glissement x2,hors echantillon,20251001-20261031,0.0010,,,,,,,BLOQUE non lance - meme regles - stress complet validation-edge 4.5 - declare le 2026-11-01 car E27 ne double que le glissement

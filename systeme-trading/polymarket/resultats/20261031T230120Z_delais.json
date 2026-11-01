@@ -1,0 +1,402 @@
+{
+ "etats_v2": {
+  "contestes_selon_gamma": {
+   "lignes": 137,
+   "etats_lus": 137,
+   "was_disputed": 81,
+   "new_version_q": 136,
+   "extended_review": 0,
+   "final_differ_premiere_proposition": 34,
+   "final_50_50": 0,
+   "statuts": {
+    "resolved": 137
+   },
+   "triplets_premiere_seconde_finale": {
+    "oui / oui / oui": 63,
+    "non / non / non": 36,
+    "oui / non / non": 24,
+    "non / oui / oui": 5,
+    "oui / vide / non": 3,
+    "non / oui / non": 2,
+    "oui / oui / non": 2,
+    "absent / absent / absent": 1,
+    "oui / non / oui": 1
+   }
+  },
+  "non_contestes_echantillon": {
+   "lignes": 600,
+   "etats_lus": 600,
+   "was_disputed": 0,
+   "new_version_q": 594,
+   "extended_review": 0,
+   "final_differ_premiere_proposition": 0,
+   "final_50_50": 0,
+   "statuts": {
+    "resolved": 600
+   },
+   "triplets_premiere_seconde_finale": {
+    "non / vide / non": 465,
+    "oui / vide / oui": 129,
+    "absent / absent / absent": 6
+   }
+  }
+ },
+ "graine_echantillon_calme": 20261031,
+ "marches_passes_au_vote_was_disputed": {
+  "n": 81,
+  "part_marches": 0.0127,
+  "volume_usd": 991162982.72,
+  "part_volume": 0.2266,
+  "delai": {
+   "n": 58,
+   "mediane_h": 96.6,
+   "p90_h": 432.6,
+   "max_h": 901.6
+  },
+  "p75_h": 124.3,
+  "cloture_entre_00h_et_01h_utc": 48,
+  "final_differ_premiere": 24,
+  "avec_seconde_proposition": 78,
+  "final_differ_seconde": 5
+ },
+ "lu_utc": "2026-10-31T23:02:11Z",
+ "fenetre_debut": "2026-05-04T23:01:28Z",
+ "fenetre_fin": "2026-10-31T23:01:28Z",
+ "plafond_par_etiquette": 3000,
+ "lus_par_etiquette": {
+  "politics": 2100,
+  "economy": 1915,
+  "tech": 2100,
+  "ai": 2100,
+  "toutes_categories": 2100
+ },
+ "politique_macro_tech_uniques": {
+  "marches": 6375,
+  "avec_statuts_uma": 6369,
+  "contestes": 137,
+  "part_marches_contestes": 0.0215,
+  "volume_usd": 4373133143.09,
+  "volume_conteste_usd": 1041374973.61,
+  "part_volume_contestee": 0.2381,
+  "indice_dvm": 49,
+  "delai_sans_contestation": {
+   "n": 4185,
+   "mediane_h": 10.1,
+   "p90_h": 36.4,
+   "max_h": 3022.4
+  },
+  "delai_contestes": {
+   "n": 89,
+   "mediane_h": 88.4,
+   "p90_h": 618.3,
+   "max_h": 1238.8
+  },
+  "delai_indice_dvm": {
+   "n": 31,
+   "mediane_h": 96.5,
+   "p90_h": 336.5,
+   "max_h": 864.6
+  },
+  "cautions": {
+   "500": 6332,
+   "None": 34,
+   "2500": 8,
+   "250": 1
+  },
+  "liveness_s": {
+   "0": 5669,
+   "None": 706
+  }
+ },
+ "toutes_categories_top_volume": {
+  "marches": 2100,
+  "avec_statuts_uma": 2094,
+  "contestes": 63,
+  "part_marches_contestes": 0.03,
+  "volume_usd": 17533898711.74,
+  "volume_conteste_usd": 1245710401.65,
+  "part_volume_contestee": 0.071,
+  "indice_dvm": 38,
+  "delai_sans_contestation": {
+   "n": 1283,
+   "mediane_h": 2.6,
+   "p90_h": 27.6,
+   "max_h": 3022.4
+  },
+  "delai_contestes": {
+   "n": 42,
+   "mediane_h": 94.5,
+   "p90_h": 649.7,
+   "max_h": 901.6
+  },
+  "delai_indice_dvm": {
+   "n": 22,
+   "mediane_h": 96.5,
+   "p90_h": 432.6,
+   "max_h": 864.6
+  },
+  "cautions": {
+   "500": 1560,
+   "250": 540
+  },
+  "liveness_s": {
+   "0": 982,
+   "900": 380,
+   "1800": 316,
+   "600": 289,
+   "None": 133
+  }
+ },
+ "contestes_perimetre_par_volume": [
+  {
+   "question": "MicroStrategy sells any Bitcoin by May 31, 2026?",
+   "volume_usd": 375813104.55575246,
+   "end_date": "2026-07-01T04:00:00Z",
+   "closed_time": "2026-06-04 00:34:19+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -651.43,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US x Iran permanent peace deal by June 15, 2026?",
+   "volume_usd": 177370818.43892464,
+   "end_date": "2026-06-15T00:00:00Z",
+   "closed_time": "2026-06-18 00:32:19+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 72.54,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US x Iran permanent peace deal by June 30, 2026?",
+   "volume_usd": 49036513.606860146,
+   "end_date": "2026-05-31T00:00:00Z",
+   "closed_time": "2026-06-18 00:33:07+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 432.55,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?",
+   "volume_usd": 36601896.005035795,
+   "end_date": "2026-06-07T00:00:00Z",
+   "closed_time": "2026-07-06 13:42:37+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"resolved\"]",
+   "heures_fin_a_cloture": 709.71,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Trump say \"Iran\" during events with Xi Jinping?",
+   "volume_usd": 28337791.229197014,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-05-23 00:41:11+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 192.69,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Keiko Fujimori win the 2026 Peruvian presidential election?",
+   "volume_usd": 21817048.613106236,
+   "end_date": "2026-06-07T00:00:00Z",
+   "closed_time": "2026-07-06 13:41:52+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"resolved\"]",
+   "heures_fin_a_cloture": 709.7,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US and Iran sign an agreement by June 15, 2026?",
+   "volume_usd": 20219693.965023123,
+   "end_date": "2026-06-16T03:59:00Z",
+   "closed_time": "2026-06-18 00:33:47+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 44.58,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Trump kiss by May 31?",
+   "volume_usd": 15515794.179611996,
+   "end_date": "2026-05-31T00:00:00Z",
+   "closed_time": "2026-05-23 01:21:05+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -190.65,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Iran closes its airspace by May 24?",
+   "volume_usd": 15430021.40518324,
+   "end_date": "2026-05-24T00:00:00Z",
+   "closed_time": "2026-05-27 03:29:12+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\"]",
+   "heures_fin_a_cloture": 75.49,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Rafael López Aliaga win the 2026 Peruvian presidential election?",
+   "volume_usd": 14784685.9830578,
+   "end_date": "2026-06-07T00:00:00Z",
+   "closed_time": "2026-07-04 01:42:11+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"resolved\"]",
+   "heures_fin_a_cloture": 649.7,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Epstein suicide note released by May 8?",
+   "volume_usd": 14180619.718706006,
+   "end_date": "2026-05-31T00:00:00Z",
+   "closed_time": "2026-05-15 00:38:25+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -383.36,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Iran x Israel/US conflict ends by May 15?",
+   "volume_usd": 13670502.108909987,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-04-25 00:30:14+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -479.5,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US x Iran permanent peace deal by July 31, 2026?",
+   "volume_usd": 12699539.82302617,
+   "end_date": "2026-07-31T00:00:00Z",
+   "closed_time": "2026-06-18 00:32:35+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -1031.46,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Tesla launches unsupervised full self driving (FSD) by June 30?",
+   "volume_usd": 12177341.281891,
+   "end_date": "2026-06-30T00:00:00Z",
+   "closed_time": "2026-02-02 00:57:48+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -3551.04,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Trump say \"Nuclear\" during events with Xi Jinping?",
+   "volume_usd": 12129905.141829975,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-05-23 00:41:11+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 192.69,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Iran closes its airspace by June 8?",
+   "volume_usd": 11787943.203117052,
+   "end_date": "2026-06-08T00:00:00Z",
+   "closed_time": "2026-06-12 00:31:33+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 96.53,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US announces new Iran agreement/ceasefire extension by June 12?",
+   "volume_usd": 11308231.598603914,
+   "end_date": "2026-05-29T00:00:00Z",
+   "closed_time": "2026-06-16 00:32:43+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 432.55,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Trump say \"Strait\" or \"Hormuz\" during events with Xi Jinping?",
+   "volume_usd": 9968465.165516004,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-05-23 00:43:22+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 192.72,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Donald Trump announce that the United States blockade of the Strait of Hormuz has been lifted by May 31, 2026?",
+   "volume_usd": 9359876.895693928,
+   "end_date": "2026-05-31T00:00:00Z",
+   "closed_time": "2026-06-01 06:07:39+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\"]",
+   "heures_fin_a_cloture": 30.13,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US announces new Iran agreement/ceasefire extension by June 13?",
+   "volume_usd": 8715169.978520965,
+   "end_date": "2026-06-13T00:00:00Z",
+   "closed_time": "2026-06-18 04:05:32+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\"]",
+   "heures_fin_a_cloture": 124.09,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Iran closes its airspace by May 31?",
+   "volume_usd": 8565902.329688976,
+   "end_date": "2026-05-31T00:00:00Z",
+   "closed_time": "2026-06-01 12:41:54+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\"]",
+   "heures_fin_a_cloture": 36.7,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Trump say \"Dumbocrat\" during Bret Baier interview?",
+   "volume_usd": 7080544.923814001,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-05-19 00:36:07+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": 96.6,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "US x Iran diplomatic meeting by June 30, 2026?",
+   "volume_usd": 6999918.236180979,
+   "end_date": "2026-05-15T00:00:00Z",
+   "closed_time": "2026-06-21 13:38:16+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\"]",
+   "heures_fin_a_cloture": 901.64,
+   "indice_dvm": false,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will the Tesla Roadster's 0-60 time be less than 1 second?",
+   "volume_usd": 6844356.4802170005,
+   "end_date": "2026-10-16T03:59:00Z",
+   "closed_time": "2026-10-20 00:30:40.19993+00",
+   "statuts_uma": "[\"proposed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"disputed\", \"proposed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"proposed\", \"disputed\", \"disputed\"]",
+   "heures_fin_a_cloture": 92.53,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  },
+  {
+   "question": "Will Trump agree to withdraw troops from the Iranian region by June 30?",
+   "volume_usd": 6557781.334681008,
+   "end_date": "2026-06-30T00:00:00Z",
+   "closed_time": "2026-06-22 00:34:04+00",
+   "statuts_uma": "[\"proposed\", \"disputed\", \"proposed\", \"disputed\"]",
+   "heures_fin_a_cloture": -191.43,
+   "indice_dvm": true,
+   "uma_bond": "500"
+  }
+ ]
+}

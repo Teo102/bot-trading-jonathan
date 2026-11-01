@@ -1,0 +1,6 @@
+debut 2026-11-01T00:13:02Z
+$ python -B t9_stop_papier_estimation.py
+E01 {'trades': 135, 'resserres': 53, 'part': 0.393, 'med_resserrement': 0.015, 'max': 0.049, 'sorties_changees': 6}
+E00 {'trades': 178, 'resserres': 70, 'part': 0.393, 'med_resserrement': 0.015, 'max': 0.049, 'sorties_changees': 7}
+exit=0
+fin 2026-11-01T00:13:04Z

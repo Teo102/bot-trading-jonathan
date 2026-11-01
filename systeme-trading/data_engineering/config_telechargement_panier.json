@@ -1,0 +1,21 @@
+{
+  "$comment": "Téléchargement de données publiques seulement. Aucune clé. dry_run reste true. Ne sert ni au backtest de STRAT-20261031-01 ni à une exécution. Panier figé par son horodatage 20261101T001138Z, le panier 20261031T224232Z est remplacé.",
+  "bot_name": "telechargement-panier-recherche",
+  "dry_run": true,
+  "trading_mode": "futures",
+  "margin_mode": "isolated",
+  "stake_currency": "USDT",
+  "dataformat_ohlcv": "feather",
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "pair_whitelist": [
+      "BTC/USDT:USDT", "ETH/USDT:USDT", "SOL/USDT:USDT", "ZEC/USDT:USDT", "BNB/USDT:USDT",
+      "DOGE/USDT:USDT", "NEAR/USDT:USDT", "AVAX/USDT:USDT", "SUI/USDT:USDT", "LINK/USDT:USDT",
+      "BCH/USDT:USDT", "UNI/USDT:USDT", "FIL/USDT:USDT", "WLD/USDT:USDT", "QNT/USDT:USDT"
+    ],
+    "pair_blacklist": []
+  },
+  "pairlists": [{"method": "StaticPairList"}]
+}

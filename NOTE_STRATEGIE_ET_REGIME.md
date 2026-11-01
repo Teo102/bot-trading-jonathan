@@ -1,4 +1,4 @@
-# NOTE_STRATEGIE_ET_REGIME — version du 31/10/2026 (v3)
+# NOTE_STRATEGIE_ET_REGIME — version du 01/11/2026 (v4, indicateurs de régime du 31/10)
 
 Document de référence pour `cerveau-trading` et `synthese-marche`. Relu avant chaque chaîne T1, P1 ou M1. Remplacé à chaque nouvelle synthèse ; une note de plus de 7 jours est signalée comme ancienne. Détail et sources : `2026-10-31_RADIOGRAPHIE_ET_AUDIT.md`, `2026-10-31_SQD_RENTABILITE_INTEGRATION.md` et `2026-10-31_AUDIT_7_REPOS_ET_MAXIMISATION.md`.
 
@@ -15,7 +15,7 @@ Document de référence pour `cerveau-trading` et `synthese-marche`. Relu avant 
 | Dominance BTC | 59,2 % (CoinGecko, 31/10) | orange |
 | Financement BTC | positif malgré la baisse (CoinDesk, 30/10) | orange : levier acheteur encore chargé |
 
-**Alertes ouvertes :** piratage Binance ≈ 6,3 Md$ (retraits suspendus, reprise annoncée le 01/11) ; mi-mandat US le 03/11 (résolutions Polymarket en masse) ; résidence de Jonathan : **Émirats** (confirmée le 31/10) ; Polymarket accessible, statut légal en zone grise [risque faible, non nul].
+**Alertes ouvertes :** piratage Binance ≈ 6,3 Md$ (retraits suspendus, reprise annoncée le 01/11 [non confirmée au 01/11, aucune source récente trouvée]) ; mi-mandat US le 03/11 (résolutions Polymarket en masse) ; résidence de Jonathan : **Émirats** (confirmée le 31/10) ; Polymarket accessible, statut légal en zone grise [risque faible, non nul].
 
 ## 2. Règles de régime (appliquées par le cerveau tant que le régime ne change pas)
 
@@ -26,16 +26,23 @@ Document de référence pour `cerveau-trading` et `synthese-marche`. Relu avant 
 
 Ces ajustements sont des propositions du conseil ; ils deviennent des règles après accord de Jonathan (`cerveau-trading` § 6).
 
-## 3. Moteurs (révisés le 31/10, v3)
+## 3. Matrice des 5 stratégies (révisée le 01/11, v4)
 
-| Moteur | Statut | Condition |
-|---|---|---|
-| A. Swing filtré, 15–25 trades/mois (BTC, ETH, alts liquides, perps) | backtest dans freqtrade puis dry-run | ≥ 100 trades simulés, espérance > 0,2 R nette, drawdown < 20 %, `lookahead-analysis` propre |
-| B. Polymarket, prévisions calibrées en **maker** (Kelly/4 tant que la calibration n'est pas mesurée) | actif en petite taille | journal de calibration ; Kelly/2 seulement si l'intervalle de confiance de l'edge est > 0 |
-| C. Portage de financement delta neutre | réserve | capital et plateformes renseignés |
-| Rejetées | intraday taker, arbitrage taker « somme ≠ 1 » (frais 2026), marchés 5–15 min, sniping, MEV, suivi d'« initiés », TradingAgents ou ai-hedge-fund comme moteurs | coûts, latence, aucun edge démontré |
+Aucun edge n'est validé à ce jour. Les chiffres ci-dessous sont des résultats de recherche, sans verdict de rentabilité.
 
-**Frais Polymarket 2026 :** taker = parts × taux × p × (1 − p), soit jusqu'à 1–1,75 ¢ par part à 50 ¢ ; maker = 0 avec rebates de 15 à 25 % ; géopolitique sans frais.
+| Stratégie | Statut | Mesure principale (source, heure UTC) | Principal contre-argument | Prochaine porte |
+|---|---|---|---|---|
+| STRAT-20261031-01, tendance Donchian, 10 perpétuels | `backtest`, E10-E11 verrouillés | E00-ref 2021-01 à 2025-07 : 178 trades, +0,268 R, IC 90 % par blocs [-0,035 ; +0,614], Sharpe réévalué 0,56, DD réévalué 12,8 %, DSR réévalué 0,635 pour N=13 (freqtrade, 31/10 22:33-22:44, analyse du 01/11) | Trois trades portent 81 % du gain, shorts à -0,119 R, l'ordre de la whitelist fait varier E01 de +0,011 à +0,468 R, DOGE et TRX choisis avec le recul | Jonathan valide `AVENANT_AVANT_E10.md`, puis avocat du diable et ouverture unique de E10-E11 |
+| STRAT-20261031-02, portage de financement delta neutre | `recherche`, rejet proposé | APR net 12 mois : Binance -3,07 %, Bybit -5,71 %, contre 3,875 % de taux court (`apr_net.py`, 31/10 22:41) | Rejet valable pour ce jeu de paramètres seulement. Hors échantillon consommé, toute nouvelle règle est une nouvelle stratégie | Décision de Jonathan sur le rejet |
+| STRAT-20261031-03, momentum transversal | `recherche`, aucun test | 26 essais préenregistrés. Un vrai Sharpe de 1 passerait le seuil dans 18 % des cas (calcul de puissance de la fiche) | Avocat du diable : affaiblie, proche du rejet. Survivants, squeezes de shorts, moteur séparé à écrire | Jonathan tranche la lecture « Top 3 / Flop 3 », le plafond de positions et le critère C3 |
+| STRAT-20261031-04, retour à la moyenne après cascades | `recherche`, non testable en l'état | 65 trades pour 100 requis, 10 hors échantillon pour 30, ratio prévu médian 0,29 (comptage du 01/11 00:14) | Événement rare, objectif trop proche, carnet du choc du 10/10/2025 [non mesuré] | Jonathan choisit : attente, version 2 déclarée, données payantes ou lecture de contexte |
+| Polymarket maker et lecture des règles UMA (ex-moteur B) | mesure, aucune position au journal | Classement du 01/11 00:13 : net hypothétique à 1 h de 4,83 $ pour 1 000 [2,47 ; 6,70], contre 4,32 [-1,07 ; 6,24] au passage de 22:40 le 31/10, donc échantillon instable. Hors mi-mandat au 31/10 22:40 : intervalle contenant zéro | Le simulateur suppose un remplissage sur chaque trade public. Calibration à mesurer sur au moins 100 prévisions, zone grise légale aux Émirats | Journal de calibration, Kelly/4 tant qu'elle n'est pas mesurée, après le mi-mandat |
+
+**Écartées :** intraday taker, arbitrage taker « somme ≠ 1 », marchés 5–15 min, sniping, MEV, suivi d'« initiés », TradingAgents ou ai-hedge-fund comme moteurs (coûts, latence, aucun edge démontré).
+
+**Frais Polymarket :** la documentation lue le 31/10/2026 donne taker = parts × taux × p × (1 − p), maker = 0 et rebate selon la catégorie. Mais l'API `feeSchedule` donne un taux nul sur 1 973 des 2 086 marchés classés et sur 20 des 20 du classement (31/10 22:40 UTC), avec un rebate nul. Cause [non vérifiée]. Le potentiel de rebate se lit donc marché par marché.
+
+**Correction de la radiographie :** le marché Iran vaut 177,4 M$ sur Gamma et 478,9 M$ pour l'événement, pas 120 M$ (lecture du 31/10). Le chiffre Fidonis de 7,3 % reste [source unique].
 
 **Edge visé :** discipline écrite, tests avant capital, lecture des clauses, patience. Aucun edge de vitesse. Les règles de régime du § 2 sont des hypothèses à backtester, pas des règles validées.
 

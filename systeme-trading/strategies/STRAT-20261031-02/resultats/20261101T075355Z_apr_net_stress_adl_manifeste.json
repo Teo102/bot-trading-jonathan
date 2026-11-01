@@ -1,0 +1,105 @@
+{
+ "horodatage_utc": "20261101T075355Z",
+ "mode": "stress_adl",
+ "script_sha256": "979d335e9f99b8d5a0db14b73ac5651d58c1e022ccc6826760da555b29647dbe",
+ "execution_de_reference": "20261031T224137Z",
+ "donnees": {
+  "binance_BTCUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:15:27.988251+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "07c6877cc16f663faa09b9e15ad1b4fb53c8654fc043d353ec2904ca8cf8b4f7"
+  },
+  "binance_ETHUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:17:09.015989+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "1d39ed1c221ad8d592b349806350f99be17f56b0e79efcc358c143c3c90da9d1"
+  },
+  "binance_XRPUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:18:40.734103+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "d73d7cf777e02d4bf86fe0a0f6cadf3558484dd1802dd0590e8b4b96ff38969e"
+  },
+  "binance_BNBUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:20:21.101443+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "a7136734b40bdc38aea19328459ca978a98444613c5bb8bea576f40b5c6d3ecf"
+  },
+  "binance_ADAUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:22:01.992267+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "8824b1de956ee916171867015594f98025696761696ea0ccb18ffa14e2491435"
+  },
+  "binance_LINKUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:23:34.704073+00:00",
+   "lignes": 204410,
+   "premier_utc": "2021-01-01 00:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "b7496f2ed306f5b20c60d11252005a05944ab1ecc43ff9a6fca59973ec7add70"
+  },
+  "bybit_BTCUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:25:05.170791+00:00",
+   "lignes": 162880,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "b80409624e03b6642180dd8a53c53e7bf387026feddacdae24bf422c0a40bdcb"
+  },
+  "bybit_ETHUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:27:06.372302+00:00",
+   "lignes": 162880,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "18c7f62e5d8aef29b826fc71b427fdd9b8b52c3532d290dbea19a0606cb9891d"
+  },
+  "bybit_XRPUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:29:24.788774+00:00",
+   "lignes": 162880,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "7012776c408a33c7dcca1967d82edda031679cdc8e35a25a03536aeb9609d6c5"
+  },
+  "bybit_BNBUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:31:41.725892+00:00",
+   "lignes": 162872,
+   "premier_utc": "2022-03-10 10:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "a901d238b93902852586ae11dd08d22aed9b1d9f9823cc9e51d0b2a79b4df271"
+  },
+  "bybit_ADAUSDT_spot15m.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-11-01T00:33:57.191369+00:00",
+   "lignes": 162880,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "5dc3cca67bcb9a372406e3c4bd6f593e553b77196fb6ddbdaf90166efad43c74"
+  },
+  "bybit_LINKUSDT_spot15m.csv.gz": {
+   "origine": "téléchargé",
+   "fichier_modifie_utc": "2026-11-01T07:55:40.925253+00:00",
+   "lignes": 162880,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 23:45:00",
+   "sha256": "41af679664c9d1196c73730e5fc96df42f539322ac8a8a84311769a9008e0809"
+  }
+ },
+ "note": "Pas un essai du registre : aucune règle testée, aucun paramètre modifié."
+}

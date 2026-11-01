@@ -1,0 +1,82 @@
+{
+ "debut_utc": "2026-10-31T23:25:50+00:00",
+ "script": "verif_donnees_oi.py",
+ "liquidations_flux": [
+  {
+   "url": "wss://fstream.binance.com/ws/!forceOrder@arr",
+   "abonnement": null,
+   "secondes": 240,
+   "messages": 0,
+   "exemple": null,
+   "erreur": null
+  },
+  {
+   "url": "wss://fstream.binance.com/stream?streams=!forceOrder@arr",
+   "abonnement": null,
+   "secondes": 240,
+   "messages": 0,
+   "exemple": null,
+   "erreur": null
+  },
+  {
+   "url": "wss://fstream.binance.com/market/ws/!forceOrder@arr",
+   "abonnement": null,
+   "secondes": 240,
+   "messages": 16,
+   "exemple": "{'e': 'forceOrder', 'E': 1793489152175, 'o': {'s': 'QNTUSDT', 'S': 'BUY', 'o': 'LIMIT', 'f': 'IOC', 'q': '6.7', 'p': '202.230000', 'ap': '200.253582', 'X': 'FILLED', 'l': '0.7', 'z': '6.7', 'T': 1793489151166, 'ps': 'QNTUSDT', 'st': 1}}",
+   "erreur": null
+  },
+  {
+   "url": "wss://fstream.binance.com/ws/btcusdt@aggTrade",
+   "abonnement": null,
+   "secondes": 20,
+   "messages": 0,
+   "exemple": null,
+   "erreur": null
+  },
+  {
+   "url": "wss://fstream.binance.com/market/ws/btcusdt@aggTrade",
+   "abonnement": null,
+   "secondes": 20,
+   "messages": 22,
+   "exemple": "{'e': 'aggTrade', 'E': 1793489151793, 'a': 3503622956, 's': 'BTCUSDT', 'p': '77517.80', 'q': '0.003', 'nq': '0.003', 'f': 8223984677, 'l': 8223984678, 'T': 1793489151642, 'm': False, 'st': 1}",
+   "erreur": null
+  },
+  {
+   "url": "wss://stream.bybit.com/v5/public/linear",
+   "abonnement": {
+    "op": "subscribe",
+    "args": [
+     "publicTrade.BTCUSDT"
+    ]
+   },
+   "secondes": 20,
+   "messages": 8,
+   "exemple": "{'topic': 'publicTrade.BTCUSDT', 'type': 'snapshot', 'ts': 1793489157579, 'data': [{'T': 1793489157579, 's': 'BTCUSDT', 'S': 'Buy', 'v': '0.020', 'p': '77513.10', 'L': 'ZeroPlusTick', 'i': '62cb58df-0eec-5d72-8cdf-cb68026d8c93', 'BT': False, 'RPI': False, 'seq",
+   "erreur": null
+  },
+  {
+   "url": "wss://stream.bybit.com/v5/public/linear",
+   "abonnement": {
+    "op": "subscribe",
+    "args": [
+     "allLiquidation.BTCUSDT",
+     "allLiquidation.ETHUSDT",
+     "allLiquidation.XRPUSDT",
+     "allLiquidation.LTCUSDT",
+     "allLiquidation.BCHUSDT",
+     "allLiquidation.LINKUSDT",
+     "allLiquidation.ADAUSDT",
+     "allLiquidation.BNBUSDT",
+     "allLiquidation.DOGEUSDT",
+     "allLiquidation.TRXUSDT"
+    ]
+   },
+   "secondes": 240,
+   "messages": 1,
+   "exemple": "{'topic': 'allLiquidation.DOGEUSDT', 'type': 'snapshot', 'ts': 1793489183035, 'data': [{'T': 1793489182889, 's': 'DOGEUSDT', 'S': 'Buy', 'v': '36605', 'p': '0.07490'}]}",
+   "erreur": null
+  }
+ ],
+ "fin_utc": "2026-10-31T23:30:00+00:00"
+}

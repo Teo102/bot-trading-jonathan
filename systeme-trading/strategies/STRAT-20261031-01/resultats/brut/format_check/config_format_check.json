@@ -1,0 +1,54 @@
+{
+ "strategy": "TrendDonchianV1",
+ "max_open_trades": 3,
+ "stake_currency": "USDT",
+ "stake_amount": "unlimited",
+ "tradable_balance_ratio": 0.99,
+ "dry_run": true,
+ "dry_run_wallet": 10000,
+ "trading_mode": "futures",
+ "margin_mode": "isolated",
+ "timeframe": "1d",
+ "unfilledtimeout": {
+  "entry": 10,
+  "exit": 10,
+  "unit": "minutes"
+ },
+ "entry_pricing": {
+  "price_side": "other",
+  "use_order_book": true,
+  "order_book_top": 1
+ },
+ "exit_pricing": {
+  "price_side": "other",
+  "use_order_book": true,
+  "order_book_top": 1
+ },
+ "order_types": {
+  "entry": "market",
+  "exit": "market",
+  "stoploss": "market",
+  "stoploss_on_exchange": true
+ },
+ "exchange": {
+  "name": "binance",
+  "key": "",
+  "secret": "",
+  "pair_whitelist": [
+   "BTC/USDT:USDT",
+   "ETH/USDT:USDT",
+   "XRP/USDT:USDT"
+  ],
+  "pair_blacklist": []
+ },
+ "pairlists": [
+  {
+   "method": "StaticPairList"
+  }
+ ],
+ "bot_name": "STRAT-20261031-01",
+ "initial_state": "running",
+ "internals": {
+  "process_throttle_secs": 5
+ }
+}

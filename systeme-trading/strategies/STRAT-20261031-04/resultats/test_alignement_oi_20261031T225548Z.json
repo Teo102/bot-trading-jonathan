@@ -1,0 +1,162 @@
+{
+ "debut_utc": "2026-10-31T22:55:48+00:00",
+ "fin_utc": "2026-10-31T23:17:53+00:00",
+ "erreurs_requete": 0,
+ "symboles": {
+  "BTCUSDT": {
+   "releves_directs": 108,
+   "points": [
+    {
+     "horodatage_hist": "22:55:00",
+     "premiere_vue": "22:55:49",
+     "delai_publication_s": 49.3,
+     "valeur": 97222.644,
+     "instant_direct_le_plus_proche": "22:55:42",
+     "decalage_instant_moins_horodatage_s": 42.2,
+     "ecart_relatif": 6.38e-05,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:00:00",
+     "premiere_vue": "23:01:51",
+     "delai_publication_s": 111.4,
+     "valeur": 97195.929,
+     "instant_direct_le_plus_proche": "22:58:30",
+     "decalage_instant_moins_horodatage_s": -89.8,
+     "ecart_relatif": 6.9e-06,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:05:00",
+     "premiere_vue": "23:07:54",
+     "delai_publication_s": 174.1,
+     "valeur": 97193.281,
+     "instant_direct_le_plus_proche": "23:06:46",
+     "decalage_instant_moins_horodatage_s": 106.4,
+     "ecart_relatif": 1.7e-07,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:10:00",
+     "premiere_vue": "23:10:45",
+     "delai_publication_s": 45.3,
+     "valeur": 97190.834,
+     "instant_direct_le_plus_proche": "23:01:10",
+     "decalage_instant_moins_horodatage_s": -529.4,
+     "ecart_relatif": 5e-08,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:15:00",
+     "premiere_vue": "23:16:50",
+     "delai_publication_s": 110.3,
+     "valeur": 97107.148,
+     "instant_direct_le_plus_proche": "23:12:56",
+     "decalage_instant_moins_horodatage_s": -123.3,
+     "ecart_relatif": 7.99e-06,
+     "decalages_exacts_s": []
+    }
+   ]
+  },
+  "ETHUSDT": {
+   "releves_directs": 108,
+   "points": [
+    {
+     "horodatage_hist": "22:55:00",
+     "premiere_vue": "22:57:48",
+     "delai_publication_s": 168.5,
+     "valeur": 2354370.795,
+     "instant_direct_le_plus_proche": "22:55:46",
+     "decalage_instant_moins_horodatage_s": 46.9,
+     "ecart_relatif": 0.00018016,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:00:00",
+     "premiere_vue": "23:00:51",
+     "delai_publication_s": 51.7,
+     "valeur": 2355029.372,
+     "instant_direct_le_plus_proche": "23:03:21",
+     "decalage_instant_moins_horodatage_s": 201.2,
+     "ecart_relatif": 1.21e-06,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:05:00",
+     "premiere_vue": "23:06:54",
+     "delai_publication_s": 114.4,
+     "valeur": 2355271.884,
+     "instant_direct_le_plus_proche": "23:04:32",
+     "decalage_instant_moins_horodatage_s": -27.3,
+     "ecart_relatif": 1.2e-07,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:10:00",
+     "premiere_vue": "23:12:52",
+     "delai_publication_s": 172.5,
+     "valeur": 2355488.162,
+     "instant_direct_le_plus_proche": "23:10:40",
+     "decalage_instant_moins_horodatage_s": 40.4,
+     "ecart_relatif": 8.7e-07,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:15:00",
+     "premiere_vue": "23:16:01",
+     "delai_publication_s": 61.3,
+     "valeur": 2355717.432,
+     "instant_direct_le_plus_proche": "23:14:29",
+     "decalage_instant_moins_horodatage_s": -30.4,
+     "ecart_relatif": 1.11e-06,
+     "decalages_exacts_s": []
+    }
+   ]
+  },
+  "DOGEUSDT": {
+   "releves_directs": 108,
+   "points": [
+    {
+     "horodatage_hist": "22:55:00",
+     "premiere_vue": "22:56:50",
+     "delai_publication_s": 110.1,
+     "valeur": 2526543113.0,
+     "instant_direct_le_plus_proche": "22:58:17",
+     "decalage_instant_moins_horodatage_s": 197.9,
+     "ecart_relatif": 0.00011277,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:00:00",
+     "premiere_vue": "23:02:52",
+     "delai_publication_s": 172.7,
+     "valeur": 2525954562.0,
+     "instant_direct_le_plus_proche": "22:58:17",
+     "decalage_instant_moins_horodatage_s": -102.1,
+     "ecart_relatif": 0.00034579,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:05:00",
+     "premiere_vue": "23:05:53",
+     "delai_publication_s": 53.1,
+     "valeur": 2525522215.0,
+     "instant_direct_le_plus_proche": "22:58:17",
+     "decalage_instant_moins_horodatage_s": -402.1,
+     "ecart_relatif": 0.00051704,
+     "decalages_exacts_s": []
+    },
+    {
+     "horodatage_hist": "23:10:00",
+     "premiere_vue": "23:11:49",
+     "delai_publication_s": 109.8,
+     "valeur": 2526073080.0,
+     "instant_direct_le_plus_proche": "22:58:17",
+     "decalage_instant_moins_horodatage_s": -702.1,
+     "ecart_relatif": 0.00029886,
+     "decalages_exacts_s": []
+    }
+   ]
+  }
+ }
+}

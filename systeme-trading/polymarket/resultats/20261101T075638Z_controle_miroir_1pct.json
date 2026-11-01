@@ -1,0 +1,98 @@
+{
+ "debut_utc": "2026-11-01T07:56:38+00:00",
+ "fin_utc": "2026-11-01T07:56:39+00:00",
+ "prefixe_classement": "20261101T001303Z",
+ "marches": [
+  {
+   "rang": 1,
+   "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+   "milieu_jeton0": 0.945,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 2306935.6108,
+   "jeton0_ask_usd": 1292087.818,
+   "jeton1_bid_usd": 0,
+   "jeton1_ask_usd": 0,
+   "code_bid_usd": 0,
+   "code_ask_usd": 0,
+   "ecart_usd": 0
+  },
+  {
+   "rang": 23,
+   "question": "Will the Republicans win the Texas governor race in 2026?",
+   "milieu_jeton0": 0.6745,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 2937.6693099999998,
+   "jeton0_ask_usd": 5223.1235,
+   "jeton1_bid_usd": 338.88250000000005,
+   "jeton1_ask_usd": 1189.1612,
+   "code_bid_usd": 338.88250000000005,
+   "code_ask_usd": 1189.1612,
+   "ecart_usd": 0.0
+  },
+  {
+   "rang": 92,
+   "question": "Will OpenAI not IPO by December 31, 2026?",
+   "milieu_jeton0": 0.9495,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 5010.912939999999,
+   "jeton0_ask_usd": 7546.284799999999,
+   "jeton1_bid_usd": 131.4735,
+   "jeton1_ask_usd": 89.05211999999999,
+   "code_bid_usd": 131.4735,
+   "code_ask_usd": 89.05211999999999,
+   "ecart_usd": 0.0
+  },
+  {
+   "rang": 189,
+   "question": "Will Claude Fable 5.2+ debut at an output token price of at least $40 by June 30, 2027?",
+   "milieu_jeton0": 0.9315,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 3508.0207800000003,
+   "jeton0_ask_usd": 3085.68357,
+   "jeton1_bid_usd": 12.981200000000001,
+   "jeton1_ask_usd": 60.692400000000006,
+   "code_bid_usd": 12.981200000000001,
+   "code_ask_usd": 60.692400000000006,
+   "ecart_usd": 0.0
+  },
+  {
+   "rang": 232,
+   "question": "Will Discord not IPO by December 31, 2027?",
+   "milieu_jeton0": 0.618,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 219.87,
+   "jeton0_ask_usd": 124.25,
+   "jeton1_bid_usd": 37.95,
+   "jeton1_ask_usd": 80.03,
+   "code_bid_usd": 37.95,
+   "code_ask_usd": 80.03,
+   "ecart_usd": 0.0
+  },
+  {
+   "rang": 496,
+   "question": "Will SB Energy not IPO before January 2027?",
+   "milieu_jeton0": 0.8545,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 61.84884,
+   "jeton0_ask_usd": 372.45829999999995,
+   "jeton1_bid_usd": 57.341699999999996,
+   "jeton1_ask_usd": 8.76,
+   "code_bid_usd": 57.341699999999996,
+   "code_ask_usd": 8.76,
+   "ecart_usd": 0.0
+  },
+  {
+   "rang": 713,
+   "question": "Will Japan's core CPI increase by less than or equal to 1.9% in 2026?",
+   "milieu_jeton0": 0.5875,
+   "jeton_ref_1pct": 1,
+   "jeton0_bid_usd": 419.74519999999995,
+   "jeton0_ask_usd": 196.69199999999998,
+   "jeton1_bid_usd": 137.308,
+   "jeton1_ask_usd": 287.4948,
+   "code_bid_usd": 137.308,
+   "code_ask_usd": 287.4948,
+   "ecart_usd": 0.0
+  }
+ ]
+}

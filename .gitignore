@@ -27,3 +27,10 @@ user_data/logs/
 user_data/data/
 *.sqlite
 *.zip
+
+# Userdir freqtrade par stratégie : seules les sous-classes testées sont versionnées
+systeme-trading/strategies/*/user_data/*
+!systeme-trading/strategies/*/user_data/strategies/
+
+# Journaux du screener cités comme sources par ses rapports
+!systeme-trading/data_engineering/resultats/*.log

@@ -1,0 +1,23 @@
+2026-11-01T00:28:54Z
+$ python analyse_strat.py user_data/backtest_results/E01/backtest-result-2026-10-31_22-33-54.zip --essai E01 --start 2021-01-01 --end 2024-06-30 --registry-json resultats/registre_dsr.json
+Trades : 135  (longs 70, shorts 65)
+Taux de réussite : 33.3%   gain moyen 1.93 R   perte moyenne -0.77 R
+Espérance : +0.134 R   intervalle 90 % iid : [-0.115 ; +0.408] R
+Espérance hors force_exit : +0.124 R (2 sorties forcées)
+Intervalle 90 % par blocs de 10 trades (50000 tirages, graine 20261101) : [-0.132 ; +0.403] R   par épisodes (18) : [-0.148 ; +0.384] R
+Espérance avec frais doublés (approx.) : +0.125 R
+Espérance avec frais et financement payé doublés (approx.) : +0.009 R
+Drawdown réalisé : 10.9%   réévalué : 12.8%   95e centile par permutation : 10.9%   95e centile par blocs de 30 jours : 24.9%
+Part du gain portée par le meilleur trade : 59%
+Capital final : 10,877 (départ 10,000)
+Base réévaluée (principale). Sharpe annualisé : 0.310   Sortino : 0.438   Calmar : 0.191   (calcule)
+Base réalisée. Sharpe annualisé : 0.435   Sortino : 1.090   Calmar : 0.222   (1277 jours, base 365)
+Semestres positifs : 4 / 7 (57%), hors partiel 4 / 7, réévalué 5
+Financement payé : 792.11   reçu : 126.82   net payé : 665.28
+DSR principal (série réévaluée) : 0.433   SR0 quotidien : 0.0210   N = 13
+DSR réalisé (second) : 0.573   SR0 quotidien : 0.0181   N = 13
+AVERTISSEMENT : Registre hétérogène : 3 frais différent(e)s. V[SR] mesure aussi cet effet, pas seulement la dispersion des variantes.
+AVERTISSEMENT : Registre : 11 Sharpe connus pour 13 essais déclarés. V[SR] n'utilise que les Sharpe connus.
+Exports : /Users/teobrondel/Bot Trading Jonathan/systeme-trading/strategies/STRAT-20261031-01/resultats/E01_metriques.json ; /Users/teobrondel/Bot Trading Jonathan/systeme-trading/strategies/STRAT-20261031-01/resultats/E01_metriques.md
+exit=0
+2026-11-01T00:28:56Z

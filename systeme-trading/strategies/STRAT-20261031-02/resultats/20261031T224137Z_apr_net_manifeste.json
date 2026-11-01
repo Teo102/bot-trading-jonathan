@@ -1,0 +1,639 @@
+{
+ "horodatage_utc": "20261031T224137Z",
+ "script_sha256": "3faa983495b4a3da836492f0225dfc619c1307d40eaba447e23212a22dae71e9",
+ "mode": "plan",
+ "params_base": {
+  "seuil_entree": 10.0,
+  "seuil_sortie": 3.0,
+  "fenetre_h": 24,
+  "levier": 1.0,
+  "reequilibrage": 25.0,
+  "mult_couts": 1.0,
+  "gliss_majeurs": 0.02,
+  "gliss_alts": 0.05,
+  "marge_maintenance": 0.5
+ },
+ "frais_pct": {
+  "binance": {
+   "spot": 0.1,
+   "perp": 0.05
+  },
+  "bybit": {
+   "spot": 0.1,
+   "perp": 0.055
+  }
+ },
+ "taux_court_pct": 3.875,
+ "debuts_paniers": {
+  "binance": "2021-01-01 00:00:00",
+  "bybit": "2022-03-10 08:00:00"
+ },
+ "fin_effective": "2026-10-31 16:00:00",
+ "controles_biais": {
+  "binance_BTC": {
+   "synthetique_entree_au_pic": true,
+   "synthetique_pic_non_encaisse": true,
+   "synthetique_taux_suivant_encaisse": true,
+   "reel_ecart_max_avant_coupe": 0.0,
+   "reel_futur_sans_effet": true,
+   "tout_passe": true
+  },
+  "binance_ADA": {
+   "synthetique_entree_au_pic": true,
+   "synthetique_pic_non_encaisse": true,
+   "synthetique_taux_suivant_encaisse": true,
+   "reel_ecart_max_avant_coupe": 0.0,
+   "reel_futur_sans_effet": true,
+   "tout_passe": true
+  },
+  "bybit_BTC": {
+   "synthetique_entree_au_pic": true,
+   "synthetique_pic_non_encaisse": true,
+   "synthetique_taux_suivant_encaisse": true,
+   "reel_ecart_max_avant_coupe": 0.0,
+   "reel_futur_sans_effet": true,
+   "tout_passe": true
+  },
+  "bybit_ADA": {
+   "synthetique_entree_au_pic": true,
+   "synthetique_pic_non_encaisse": true,
+   "synthetique_taux_suivant_encaisse": true,
+   "reel_ecart_max_avant_coupe": 0.0,
+   "reel_futur_sans_effet": true,
+   "tout_passe": true
+  }
+ },
+ "lacunes": [],
+ "infos_series": {
+  "binance_BTC": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "binance_ETH": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "binance_XRP": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "binance_BNB": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "binance_ADA": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "binance_LINK": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 0,
+   "premier_valide": "2020-12-25 00:00:00"
+  },
+  "bybit_BTC": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 578,
+   "premier_valide": "2021-07-05 16:00:00"
+  },
+  "bybit_ETH": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 578,
+   "premier_valide": "2021-07-05 16:00:00"
+  },
+  "bybit_XRP": {
+   "trous_financement": 0,
+   "reglements": 5992,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 202,
+   "premier_valide": "2021-07-20 00:00:00"
+  },
+  "bybit_BNB": {
+   "trous_financement": 0,
+   "reglements": 5852,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 762,
+   "premier_valide": "2022-03-10 08:00:00"
+  },
+  "bybit_ADA": {
+   "trous_financement": 0,
+   "reglements": 6161,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 651,
+   "premier_valide": "2021-10-21 08:00:00"
+  },
+  "bybit_LINK": {
+   "trous_financement": 0,
+   "reglements": 6411,
+   "intervalle_median_h": 8.0,
+   "reglements_sans_prix": 815,
+   "premier_valide": "2021-09-22 16:00:00"
+  }
+ },
+ "donnees": {
+  "binance_BTCUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:33:44.932787+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "0ef802dc4ecb462bfcdee94ce5c0069932c0c50f98ee79a0b31269ca3d7d2a22"
+  },
+  "binance_BTCUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:33:50.685980+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "5a7068450ca3fffb06a29fe168b9eb7ac68fe9a37939dabe780a468645fbb6bf"
+  },
+  "binance_BTCUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:00.040771+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "c01ae633f4be8915945c3397b17216613ef589071a57681b9cfce40c21e16b18"
+  },
+  "binance_ETHUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:03.089422+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "7c10824b66e89c998354873ec2e43d809c6b83d221ff1b88f2de0349afd8de50"
+  },
+  "binance_ETHUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:08.146600+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "375da9a55c46ff00cec88fb437caa82972d658d4e0dfdef91a945957872500c8"
+  },
+  "binance_ETHUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:15.835308+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "5dbbf7a2e91ec27f25cea27b4170ad78bf6f211b59021c466e9f8282d5f8d52b"
+  },
+  "binance_XRPUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:18.299399+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "09bbc5e22ad5541e9606d817ecaef19a76ae59b3e1db5e5f29c851d024a83f0e"
+  },
+  "binance_XRPUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:23.782170+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "24d42a5ee0abbae8accacde851b0256fa1d656b7e567e7709c9d3a9354e5c542"
+  },
+  "binance_XRPUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:29.722923+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "7c07e28ef689aadda7df335d5b9e94705dce7290f6ea5e875e665e59d834c55e"
+  },
+  "binance_BNBUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:32.265250+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "c873bb7ab72ca3ba3cb91a620e0c55659b0ab9404c03c2de5b4d6f497411b7b0"
+  },
+  "binance_BNBUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:37.231395+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "9e5c95f616b81591f35724dc045b804e58382499e408d22da475f7e7ac3b4719"
+  },
+  "binance_BNBUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:45.805705+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "c3f023b2a5c2f364c344f54b37ac2fcb63a1a771809c105542dcbc3dcb87e69c"
+  },
+  "binance_ADAUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:48.706170+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "adde2ca46230a1e489e98caf4b5f354403304e0b7c9878f47a879d9f75d0fdc4"
+  },
+  "binance_ADAUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:34:53.838298+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "628a619666998ab96dcd1f7144a3fdbce82e5d0409fdd6bc0931e59e14983db6"
+  },
+  "binance_ADAUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:01.021589+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "dc75a5b2ffcdb7647775c9014d6de31692bbec76050921e0c5d324e899114031"
+  },
+  "binance_LINKUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:03.764601+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "da053219d4c2316a383c0395f8c243e4270072f8e8c884da288f200a097f8620"
+  },
+  "binance_LINKUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:09.265645+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "3d9e76d93354624d59126a65c0996044e73ce396193f418b4ca2882caf5e1b88"
+  },
+  "binance_LINKUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:15.882319+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "3c8ae0e1bbc1738bbcc9477a7fc3b7a248cf39be4231a5fc34e0b4c1d7b4a810"
+  },
+  "bybit_BTCUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:24.683600+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "c11d009daf79dc7b6c5dd90681fe0fcfccdbf4c63470f11de974f0a7d4696a47"
+  },
+  "bybit_BTCUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:30.167393+00:00",
+   "lignes": 11667,
+   "premier_utc": "2021-07-05 12:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "063ea2ea2d4f90f50edc767cf51db589c5c767c2530d0f604610203d42dcae5d"
+  },
+  "bybit_BTCUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:33.868189+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "9b029d816b2a663298147f0c8e6cb97f1887f26e4d9235a213106ff499259dc5"
+  },
+  "bybit_ETHUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:45.202079+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "b639dde4f3cec880ad510356bac55f19793ca37911e35d09e869a3defc1d221a"
+  },
+  "bybit_ETHUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:51.227847+00:00",
+   "lignes": 11667,
+   "premier_utc": "2021-07-05 12:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "41161947e054c0763ed1f8078dc6dfedf4fd038d871e558aed1af7a19007649d"
+  },
+  "bybit_ETHUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:35:55.345045+00:00",
+   "lignes": 12342,
+   "premier_utc": "2021-03-15 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "528e6182843cb8b9413f701da0c080b62d42cce5eaaad20992b94c1ebd422344"
+  },
+  "bybit_XRPUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:03.463865+00:00",
+   "lignes": 5992,
+   "premier_utc": "2021-05-13 16:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "02a8890fe7e5039339105205fdf6a86dfe45da310afa69b5674b4fec11cb618c"
+  },
+  "bybit_XRPUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:08.818369+00:00",
+   "lignes": 11580,
+   "premier_utc": "2021-07-20 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "20d824593d0ecebe109270770b6b660ddc3d4d6a75411edfda5ca13f8f455838"
+  },
+  "bybit_XRPUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:14.594936+00:00",
+   "lignes": 11986,
+   "premier_utc": "2021-05-13 08:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "eec6858d15b72003da917ecd8bd8b2b014c80c4cfeca1f77de48ccce49a3f110"
+  },
+  "bybit_BNBUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:23.600844+00:00",
+   "lignes": 5852,
+   "premier_utc": "2021-06-29 08:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "b54eb63bdb32dc834fa8f088994009786e7f742737eabe3fbb311441686c9ca1"
+  },
+  "bybit_BNBUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:28.075227+00:00",
+   "lignes": 10180,
+   "premier_utc": "2022-03-10 08:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "dc355675ecf76bf0e07f8408be93c09e97b561d13945d3f957c962ddd80a2249"
+  },
+  "bybit_BNBUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:31.890616+00:00",
+   "lignes": 11705,
+   "premier_utc": "2021-06-29 04:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "2337eddbb1d9d5f92cf23bda9840c30abfc9de2711e98432fc015e67a6d3a8ee"
+  },
+  "bybit_ADAUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:40.982983+00:00",
+   "lignes": 6161,
+   "premier_utc": "2021-03-18 08:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "c128a9c00d0301cc5ea164411d838941ed5a067f54028491476b53abdedd7ee5"
+  },
+  "bybit_ADAUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:49.580795+00:00",
+   "lignes": 11021,
+   "premier_utc": "2021-10-21 04:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "c7e3559898f74fc09e30f6632db8ba241af8d5facdcc246bca51f07f0c16db6e"
+  },
+  "bybit_ADAUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:36:56.220233+00:00",
+   "lignes": 12323,
+   "premier_utc": "2021-03-18 04:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "a4679630040380827cc81bb282f12441ba1f401aba95bd23a4c6ca1393d36a26"
+  },
+  "bybit_LINKUSDT_financement.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:37:06.289753+00:00",
+   "lignes": 6411,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 16:00:00",
+   "sha256": "ac7d3dec43d4108d24f7e96d3030e838997454d81c1c1dcb0d2c01877309252e"
+  },
+  "bybit_LINKUSDT_spot4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:37:11.818162+00:00",
+   "lignes": 11193,
+   "premier_utc": "2021-09-22 12:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "4050dd0c2c6f9436744e9676a1810fecfa38d9071ab300ce476948a289c0bc23"
+  },
+  "bybit_LINKUSDT_perp4h.csv.gz": {
+   "origine": "cache",
+   "fichier_modifie_utc": "2026-10-31T22:37:17.168479+00:00",
+   "lignes": 12822,
+   "premier_utc": "2020-12-25 00:00:00",
+   "dernier_utc": "2026-10-31 20:00:00",
+   "sha256": "c5c93a3e68bbd2e8e87b3a8e79d97f81b583983d64702f296e2826cad5185c52"
+  },
+  "fred_DFF": {
+   "premier": "1954-07-01",
+   "dernier": "2026-10-29",
+   "derniere_valeur_pct": 3.88
+  }
+ },
+ "essais": {
+  "E01": {
+   "nom": "base",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2026-10-31 23:59:59"
+  },
+  "E02": {
+   "nom": "base couts x2",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 2.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2026-10-31 23:59:59"
+  },
+  "E03": {
+   "nom": "entree 8",
+   "params": {
+    "seuil_entree": 8.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E04": {
+   "nom": "entree 12",
+   "params": {
+    "seuil_entree": 12.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E05": {
+   "nom": "sortie 2.4",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 2.4,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E06": {
+   "nom": "sortie 3.6",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.6,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E07": {
+   "nom": "fenetre 16h",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 16,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E08": {
+   "nom": "fenetre 32h",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 32,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E09": {
+   "nom": "reequilibrage 20",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 20.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E10": {
+   "nom": "reequilibrage 30",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 30.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E11": {
+   "nom": "levier 2",
+   "params": {
+    "seuil_entree": 10.0,
+    "seuil_sortie": 3.0,
+    "fenetre_h": 24,
+    "levier": 2.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  },
+  "E12": {
+   "nom": "temoin toujours en position",
+   "params": {
+    "seuil_entree": -1000000000.0,
+    "seuil_sortie": -1000000000.0,
+    "fenetre_h": 24,
+    "levier": 1.0,
+    "reequilibrage": 25.0,
+    "mult_couts": 1.0,
+    "gliss_majeurs": 0.02,
+    "gliss_alts": 0.05,
+    "marge_maintenance": 0.5
+   },
+   "fin": "2025-07-31 23:59:59"
+  }
+ },
+ "sources": [
+  "https://fapi.binance.com/fapi/v1/fundingRate",
+  "https://fapi.binance.com/fapi/v1/klines",
+  "https://api.binance.com/api/v3/klines",
+  "https://api.bybit.com/v5/market/funding/history",
+  "https://api.bybit.com/v5/market/kline",
+  "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFF"
+ ],
+ "avertissement": "L'APR historique n'est pas un rendement attendu."
+}

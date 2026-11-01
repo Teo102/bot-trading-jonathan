@@ -1,0 +1,100 @@
+debut 2026-11-01T00:12:22Z
+$ python -B verif2.py
+V11 1.1326e-04  V9 1.4100e-04  V11 reevalue 1.5189e-04  1/T(1673) 5.9773e-04 ratio 5.28
+
+=== 1. Realise vs reevalue (cloture 1d) vs complet (+frais et financement courus) vs pire intrajour
+E01 {'SR_real': 0.435, 'SR_mtm': 0.31, 'DD_real': 0.109, 'DD_mtm': 0.128, 'cal_real': 0.222, 'cal_mtm': 0.191, 'sortino_real': 1.09, 'sortino_mtm': 0.438, 'SR_full': 0.311, 'DD_full': 0.123, 'DD_worst': 0.128}
+E02 {'SR_real': 1.146, 'SR_mtm': 1.151, 'DD_real': 0.038, 'DD_mtm': 0.083, 'cal_real': 3.1, 'cal_mtm': 1.397, 'sortino_real': 4.897, 'sortino_mtm': 1.863, 'SR_full': 1.155, 'DD_full': 0.078, 'DD_worst': 0.076}
+E03 {'SR_real': 0.708, 'SR_mtm': 0.874, 'DD_real': 0.088, 'DD_mtm': 0.099, 'cal_real': 1.016, 'cal_mtm': 0.899, 'sortino_real': 4.15, 'sortino_mtm': 1.32}
+E04 {'SR_real': 0.526, 'SR_mtm': 0.406, 'DD_real': 0.116, 'DD_mtm': 0.144, 'cal_real': 0.292, 'cal_mtm': 0.234, 'sortino_real': 1.573, 'sortino_mtm': 0.587}
+E05 {'SR_real': 0.714, 'SR_mtm': 0.572, 'DD_real': 0.104, 'DD_mtm': 0.127, 'cal_real': 0.471, 'cal_mtm': 0.387, 'sortino_real': 2.23, 'sortino_mtm': 0.835}
+E06 {'SR_real': 0.183, 'SR_mtm': 0.139, 'DD_real': 0.134, 'DD_mtm': 0.165, 'cal_real': 0.064, 'cal_mtm': 0.052, 'sortino_real': 0.42, 'sortino_mtm': 0.19}
+E07 {'SR_real': 1.01, 'SR_mtm': 0.872, 'DD_real': 0.12, 'DD_mtm': 0.177, 'cal_real': 1.009, 'cal_mtm': 0.687, 'sortino_real': 5.213, 'sortino_mtm': 1.351}
+E08 {'SR_real': 0.716, 'SR_mtm': 0.558, 'DD_real': 0.065, 'DD_mtm': 0.091, 'cal_real': 0.638, 'cal_mtm': 0.456, 'sortino_real': 2.14, 'sortino_mtm': 0.816}
+E09 {'SR_real': 0.687, 'SR_mtm': 0.544, 'DD_real': 0.111, 'DD_mtm': 0.13, 'cal_real': 0.427, 'cal_mtm': 0.365, 'sortino_real': 2.074, 'sortino_mtm': 0.795, 'SR_full': 0.546, 'DD_full': 0.126, 'DD_worst': 0.13}
+R01 {'SR_real': 0.749, 'SR_mtm': 0.934, 'DD_real': 0.069, 'DD_mtm': 0.096, 'cal_real': 1.382, 'cal_mtm': 0.997, 'sortino_real': 4.642, 'sortino_mtm': 1.41}
+R02 {'SR_real': 0.498, 'SR_mtm': 0.412, 'DD_real': 0.134, 'DD_mtm': 0.169, 'cal_real': 0.26, 'cal_mtm': 0.207, 'sortino_real': 1.522, 'sortino_mtm': 0.599}
+R03 {'SR_real': 0.662, 'SR_mtm': 0.525, 'DD_real': 0.113, 'DD_mtm': 0.132, 'cal_real': 0.404, 'cal_mtm': 0.344, 'sortino_real': 1.977, 'sortino_mtm': 0.766}
+E00-ref {'SR_real': 0.711, 'SR_mtm': 0.563, 'DD_real': 0.109, 'DD_mtm': 0.128, 'cal_real': 0.45, 'cal_mtm': 0.386, 'sortino_real': 2.169, 'sortino_mtm': 0.823, 'SR_full': 0.565, 'DD_full': 0.123, 'DD_worst': 0.128}
+DD reel > DD95 Monte Carlo : E01: real 0.109 mtm 0.128 mc95 0.109 ; E02: real 0.038 mtm 0.083 mc95 0.055 ; E03: real 0.088 mtm 0.099 mc95 0.095 ; E04: real 0.116 mtm 0.144 mc95 0.117 ; E05: real 0.104 mtm 0.127 mc95 0.102 ; E06: real 0.134 mtm 0.165 mc95 0.132 ; E07: real 0.120 mtm 0.177 mc95 0.105 ; E08: real 0.065 mtm 0.091 mc95 0.093 ; E09: real 0.111 mtm 0.130 mc95 0.111 ; R01: real 0.069 mtm 0.096 mc95 0.088 ; R02: real 0.134 mtm 0.169 mc95 0.131 ; R03: real 0.113 mtm 0.132 mc95 0.113 ; E00-ref: real 0.109 mtm 0.128 mc95 0.109 ; 
+
+=== 2. DSR sous variantes
+essai | SR ann | den | DSR publie | normal(g3=0,g4=3) | mtm(V11mtm) | mtm(1/T) | sans meilleur jour (g3,g4 recalc) | mensuel realise | mensuel mtm
+V mensuelle realisee 2.7931e-03, reevaluee 3.0117e-03, 1/55 = 1.8182e-02
+E01      SR 0.435 den 0.811 pub 0.573 norm 0.566 mtm 0.433 (g3 -0.29 g4 9.1) mtm1/T 0.131 sans_top1 0.387 (SR 0.198, meilleur jour 2024-01-04 5.44%) mois_real 0.596 mois_mtm 0.489
+E02      SR 1.146 den 0.505 pub 0.879 norm 0.797 mtm 0.786 (g3 0.81 g4 17.9) mtm1/T 0.304 sans_top1 0.669 (SR 0.689, meilleur jour 2024-12-10 6.74%) mois_real 0.779 mois_mtm 0.683
+E03      SR 0.708 den 0.271 pub 0.931 norm 0.780 mtm 0.845 (g3 0.31 g4 14.9) mtm1/T 0.567 sans_top1 0.763 (SR 0.632, meilleur jour 2025-02-03 24.86%) mois_real 0.951 mois_mtm 0.880
+E04      SR 0.526 den 0.717 pub 0.675 norm 0.650 mtm 0.504 (g3 -0.02 g4 12.0) mtm1/T 0.202 sans_top1 0.501 (SR 0.348, meilleur jour 2024-12-10 6.74%) mois_real 0.641 mois_mtm 0.519
+E05      SR 0.714 den 0.652 pub 0.835 norm 0.784 mtm 0.642 (g3 0.01 g4 12.4) mtm1/T 0.316 sans_top1 0.707 (SR 0.564, meilleur jour 2024-12-10 6.74%) mois_real 0.806 mois_mtm 0.645
+E06      SR 0.183 den 0.922 pub 0.358 norm 0.363 mtm 0.289 (g3 -1.37 g4 24.6) mtm1/T 0.081 sans_top1 0.215 (SR -0.024, meilleur jour 2024-12-20 5.14%) mois_real 0.375 mois_mtm 0.337
+E07      SR 1.010 den 0.405 pub 0.987 norm 0.922 mtm 0.848 (g3 1.10 g4 26.4) mtm1/T 0.566 sans_top1 0.958 (SR 0.898, meilleur jour 2021-03-26 13.28%) mois_real 0.948 mois_mtm 0.875
+E08      SR 0.716 den 0.653 pub 0.836 norm 0.786 mtm 0.632 (g3 0.01 g4 12.2) mtm1/T 0.306 sans_top1 0.709 (SR 0.567, meilleur jour 2024-12-10 5.64%) mois_real 0.783 mois_mtm 0.630
+E09      SR 0.687 den 0.667 pub 0.814 norm 0.767 mtm 0.620 (g3 0.03 g4 12.0) mtm1/T 0.295 sans_top1 0.680 (SR 0.536, meilleur jour 2024-12-10 6.74%) mois_real 0.782 mois_mtm 0.623
+R01      SR 0.749 den 0.247 pub 0.958 norm 0.805 mtm 0.874 (g3 0.29 g4 15.0) mtm1/T 0.617 sans_top1 0.834 (SR 0.721, meilleur jour 2025-02-03 25.14%) mois_real 0.970 mois_mtm 0.910
+R02      SR 0.498 den 0.734 pub 0.648 norm 0.627 mtm 0.510 (g3 0.01 g4 12.6) mtm1/T 0.206 sans_top1 0.486 (SR 0.331, meilleur jour 2024-12-10 6.74%) mois_real 0.615 mois_mtm 0.516
+R03      SR 0.662 den 0.678 pub 0.794 norm 0.751 mtm 0.604 (g3 0.02 g4 12.0) mtm1/T 0.281 sans_top1 0.654 (SR 0.508, meilleur jour 2024-12-10 6.73%) mois_real 0.762 mois_mtm 0.607
+E00-ref  SR 0.711 den 0.656 pub 0.832 norm 0.782 mtm 0.635 (g3 0.03 g4 12.0) mtm1/T 0.309 sans_top1 0.704 (SR 0.562, meilleur jour 2024-12-10 6.74%) mois_real 0.800 mois_mtm 0.638
+
+=== 3. V coherente avec la periode de E01 et E02 : V transversale sur les memes fenetres (tranches des 11 series)
+E01 T 1277 V tranche 3.0346e-04 (x2.68) V echelle T 1.4838e-04 1/T 7.8309e-04 | DSR publie 0.573 V_tranche 0.392 V_echelle 0.532 1/T 0.162 | SR ann des 11 sur la tranche min -0.17 max 0.93
+E02 T 396 V tranche 1.0343e-04 (x0.91) V echelle T 4.7849e-04 1/T 2.5253e-03 | DSR publie 0.879 V_tranche 0.884 V_echelle 0.737 1/T 0.237 | SR ann des 11 sur la tranche min 0.89 max 1.38
+V9 sur E00-ref: 0.804
+
+=== 4. Calibration du PSR sur la serie a zeros : ecart-type du SR, formule vs bootstrap
+E00-ref  real SR 0.0372 sd_formule 0.0198 sd_iid 0.0206 sd_bloc30 0.0225 | P(formule) 0.832 P(iid) 0.845 P(bloc30) 0.882 | sd_normale 0.0245
+E00-ref  mtm  SR 0.0295 sd_formule 0.0245 sd_iid 0.0244 sd_bloc30 0.0269 | P(formule) 0.635 P(iid) 0.638 P(bloc30) 0.682 | sd_normale 0.0245
+E01      real SR 0.0228 sd_formule 0.0252 sd_iid 0.0264 sd_bloc30 0.0263 | P(formule) 0.573 P(iid) 0.585 P(bloc30) 0.535 | sd_normale 0.0280
+E01      mtm  SR 0.0162 sd_formule 0.0281 sd_iid 0.0282 sd_bloc30 0.0269 | P(formule) 0.433 P(iid) 0.428 P(bloc30) 0.444 | sd_normale 0.0280
+E02      real SR 0.0600 sd_formule 0.0358 sd_iid 0.0458 sd_bloc30 0.0575 | P(formule) 0.879 P(iid) 0.907 P(bloc30) 0.918 | sd_normale 0.0504
+E02      mtm  SR 0.0603 sd_formule 0.0495 sd_iid 0.0496 sd_bloc30 0.0693 | P(formule) 0.786 P(iid) 0.776 P(bloc30) 0.740 | sd_normale 0.0504
+E03      real SR 0.0371 sd_formule 0.0127 sd_iid 0.0160 sd_bloc30 0.0160 | P(formule) 0.931 P(iid) 0.913 P(bloc30) 0.936 | sd_normale 0.0245
+E03      mtm  SR 0.0457 sd_formule 0.0244 sd_iid 0.0241 sd_bloc30 0.0263 | P(formule) 0.845 P(iid) 0.852 P(bloc30) 0.858 | sd_normale 0.0245
+R01      real SR 0.0392 sd_formule 0.0122 sd_iid 0.0155 sd_bloc30 0.0150 | P(formule) 0.958 P(iid) 0.937 P(bloc30) 0.955 | sd_normale 0.0245
+R01      mtm  SR 0.0489 sd_formule 0.0244 sd_iid 0.0242 sd_bloc30 0.0262 | P(formule) 0.874 P(iid) 0.876 P(bloc30) 0.877 | sd_normale 0.0245
+E07      real SR 0.0529 sd_formule 0.0156 sd_iid 0.0167 sd_bloc30 0.0207 | P(formule) 0.987 P(iid) 0.994 P(bloc30) 0.990 | sd_normale 0.0245
+E07      mtm  SR 0.0456 sd_formule 0.0240 sd_iid 0.0241 sd_bloc30 0.0263 | P(formule) 0.848 P(iid) 0.846 P(bloc30) 0.867 | sd_normale 0.0245
+E09      real SR 0.0360 sd_formule 0.0200 sd_iid 0.0208 sd_bloc30 0.0233 | P(formule) 0.814 P(iid) 0.837 P(bloc30) 0.863 | sd_normale 0.0245
+E09      mtm  SR 0.0285 sd_formule 0.0245 sd_iid 0.0246 sd_bloc30 0.0270 | P(formule) 0.620 P(iid) 0.619 P(bloc30) 0.666 | sd_normale 0.0245
+
+=== 5. IC 90 % de l'esperance R : iid vs grappes (ouverture du meme mois, episodes chevauchants, blocs de trades)
+E01      n 135 esp +0.134 iid [-0.117, 0.405] mois(38) [-0.132, 0.463] episodes(18) [-0.145, 0.389] bloc10 [-0.163, 0.382] ac1 +0.039 part_chevauchement 1.00
+E02      n 46 esp +0.573 iid [-0.125, 1.363] mois(13) [-0.183, 1.648] episodes(6) [-0.28, 1.494] bloc10 [-0.187, 1.795] ac1 +0.083 part_chevauchement 1.00
+E03      n 178 esp +0.485 iid [0.084, 1.026] mois(53) [0.041, 1.061] episodes(20) [0.054, 1.043] bloc10 [0.024, 0.966] ac1 +0.075 part_chevauchement 0.99
+E04      n 177 esp +0.190 iid [-0.061, 0.473] mois(51) [-0.095, 0.511] episodes(26) [-0.092, 0.524] bloc10 [-0.147, 0.463] ac1 +0.074 part_chevauchement 1.00
+E05      n 188 esp +0.254 iid [0.011, 0.521] mois(51) [-0.037, 0.583] episodes(30) [-0.045, 0.589] bloc10 [-0.075, 0.527] ac1 +0.099 part_chevauchement 1.00
+E06      n 171 esp +0.058 iid [-0.149, 0.285] mois(50) [-0.185, 0.332] episodes(22) [-0.169, 0.36] bloc10 [-0.223, 0.299] ac1 +0.258 part_chevauchement 1.00
+E07      n 186 esp +0.646 iid [0.194, 1.153] mois(52) [0.162, 1.213] episodes(22) [0.039, 1.428] bloc10 [-0.005, 1.128] ac1 -0.040 part_chevauchement 1.00
+E08      n 165 esp +0.241 iid [-0.002, 0.509] mois(51) [-0.03, 0.545] episodes(22) [-0.034, 0.553] bloc10 [-0.049, 0.522] ac1 +0.048 part_chevauchement 1.00
+E09      n 178 esp +0.259 iid [-0.004, 0.563] mois(51) [-0.045, 0.605] episodes(22) [-0.029, 0.589] bloc10 [-0.076, 0.566] ac1 +0.058 part_chevauchement 1.00
+R01      n 176 esp +0.524 iid [0.118, 1.031] mois(53) [0.09, 1.12] episodes(20) [0.097, 1.072] bloc10 [0.06, 1.018] ac1 +0.071 part_chevauchement 0.99
+R02      n 171 esp +0.207 iid [-0.083, 0.527] mois(49) [-0.132, 0.596] episodes(23) [-0.143, 0.635] bloc10 [-0.159, 0.528] ac1 +0.128 part_chevauchement 0.99
+R03      n 178 esp +0.250 iid [-0.015, 0.548] mois(51) [-0.045, 0.587] episodes(22) [-0.041, 0.588] bloc10 [-0.089, 0.543] ac1 +0.058 part_chevauchement 1.00
+E00-ref  n 178 esp +0.268 iid [0.008, 0.551] mois(51) [-0.023, 0.616] episodes(22) [-0.017, 0.606] bloc10 [-0.07, 0.566] ac1 +0.058 part_chevauchement 1.00
+
+=== 6. Correlation entre trades simultanes (E00-ref): R des paires de trades qui se chevauchent
+paires 338 corr 0.121 corr rang 0.003 meme sens 213 corr rang meme sens 0.092
+
+=== 7. Semestres : affectation a la cloture vs reevalue chaque jour
+E01 (sem, jours, pnl_realise, pnl_reevalue) [('2021-S1', 181, 433, 362), ('2021-S2', 184, -111, 17), ('2022-S1', 181, 399, 741), ('2022-S2', 184, -381, -732), ('2023-S1', 181, -409, 175), ('2023-S2', 184, 163, 379), ('2024-S1', 182, 783, -65)]
+   positifs realise 4 / 7 | reevalue 5 / 7 | hors partiel realise 4 / 7 reevalue 5 | signes differents ['2021-S2', '2023-S1', '2024-S1'] | trades a cheval 14 pnl 1291 somme abs 1615 | force_exit pnl 90 n 2
+   dernier semestre:           pair  open_date close_date  is_short  exit_reason  profit_abs ||  LTC/USDT:USDT 2024-05-21 2024-05-23     False    stop_loss       -53.9 ||  ETH/USDT:USDT 2024-05-21 2024-06-08     False channel_exit        -2.2 ||  TRX/USDT:USDT 2024-05-24 2024-06-10      True channel_exit       -12.0 ||  ADA/USDT:USDT 2024-06-12 2024-06-30      True   force_exit        48.5 || LINK/USDT:USDT 2024-06-12 2024-06-30      True   force_exit        41.2 ||  LTC/USDT:USDT 2024-06-25 2024-06-29      True    stop_loss       -52.3
+E02 (sem, jours, pnl_realise, pnl_reevalue) [('2024-S2', 184, 875, 1140), ('2025-S1', 181, -22, -199), ('2025-S2', 31, 417, 328)]
+   positifs realise 2 / 3 | reevalue 2 / 3 | hors partiel realise 1 / 2 reevalue 1 | signes differents [] | trades a cheval 3 pnl 422 somme abs 439 | force_exit pnl 425 n 3
+   dernier semestre:          pair  open_date close_date  is_short  exit_reason  profit_abs || BCH/USDT:USDT 2025-06-14 2025-07-31     False   force_exit       159.0 || ADA/USDT:USDT 2025-06-18 2025-07-10      True channel_exit        -8.4 || BTC/USDT:USDT 2025-07-10 2025-07-31     False   force_exit        57.2 || ETH/USDT:USDT 2025-07-10 2025-07-31     False   force_exit       208.7
+E00-ref (sem, jours, pnl_realise, pnl_reevalue) [('2021-S1', 181, 433, 362), ('2021-S2', 184, -111, 17), ('2022-S1', 181, 399, 741), ('2022-S2', 184, -381, -732), ('2023-S1', 181, -409, 175), ('2023-S2', 184, 163, 379), ('2024-S1', 182, 693, -107), ('2024-S2', 184, 1238, 1483), ('2025-S1', 181, -25, -219), ('2025-S2', 31, 461, 363)]
+   positifs realise 6 / 10 | reevalue 7 / 10 | hors partiel realise 5 / 9 reevalue 6 | signes differents ['2021-S2', '2023-S1', '2024-S1'] | trades a cheval 20 pnl 1854 somme abs 2196 | force_exit pnl 470 n 3
+   dernier semestre:          pair  open_date close_date  is_short  exit_reason  profit_abs || BCH/USDT:USDT 2025-06-14 2025-07-31     False   force_exit       175.9 || ADA/USDT:USDT 2025-06-18 2025-07-10      True channel_exit        -9.3 || BTC/USDT:USDT 2025-07-10 2025-07-31     False   force_exit        62.9 || ETH/USDT:USDT 2025-07-10 2025-07-31     False   force_exit       231.1
+E09 (sem, jours, pnl_realise, pnl_reevalue) [('2021-S1', 181, 429, 358), ('2021-S2', 184, -114, 13), ('2022-S1', 181, 396, 737), ('2022-S2', 184, -390, -740), ('2023-S1', 181, -422, 161), ('2023-S2', 184, 151, 367), ('2024-S1', 182, 678, -121), ('2024-S2', 184, 1214, 1459), ('2025-S1', 181, -32, -227), ('2025-S2', 31, 454, 357)]
+   positifs realise 6 / 10 | reevalue 7 / 10 | hors partiel realise 5 / 9 reevalue 6 | signes differents ['2021-S2', '2023-S1', '2024-S1'] | trades a cheval 20 pnl 1839 somme abs 2187 | force_exit pnl 464 n 3
+   dernier semestre:          pair  open_date close_date  is_short  exit_reason  profit_abs || BCH/USDT:USDT 2025-06-14 2025-07-31     False   force_exit       173.9 || ADA/USDT:USDT 2025-06-18 2025-07-10      True channel_exit        -9.7 || BTC/USDT:USDT 2025-07-10 2025-07-31     False   force_exit        61.7 || ETH/USDT:USDT 2025-07-10 2025-07-31     False   force_exit       228.4
+
+Meilleur trade par essai (pnl, R):
+E03 XRP/USDT:USDT 2024-11-08 2025-02-03 R 44.8 pnl 2588 mise 734 exit channel_exit % 24.86
+R01 XRP/USDT:USDT 2024-11-08 2025-02-03 R 44.8 pnl 2636 mise 747 exit channel_exit % 25.14
+E07 ADA/USDT:USDT 2021-01-04 2021-05-20 R 31.67 pnl 1575 mise 337 exit channel_exit % 13.28
+E00-ref DOGE/USDT:USDT 2024-10-19 2024-12-19 R 13.54 pnl 722 mise 473 exit channel_exit % 6.74
+Controles § 13 / §14: emax(13)/sqrt(1673/365) = 0.796 emax(500) 3.053
+jours sans cloture E00-ref 1526 sur 1673
+Autocorrelation lag1 mtm: {'E00-ref': 0.033, 'E01': -0.014, 'E02': 0.151}
+exit=0
+fin 2026-11-01T00:12:32Z

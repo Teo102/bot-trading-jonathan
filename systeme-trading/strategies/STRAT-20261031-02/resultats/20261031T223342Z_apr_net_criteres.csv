@@ -1,0 +1,21 @@
+plateforme,critere,valeur,seuil,passe
+binance,1. APR net HE > taux court,-3.3477,3.8750,False
+binance,2. APR net HE couts x2 > taux court,-7.2325,3.8750,False
+binance,3. Drawdown total < 10 %,-7.2843,-10.0000,True
+binance,"4. Aucune liquidation, levier 1",0.0000,0.0000,True
+binance,"5. Voisins ±20 % au-dessus du taux court, dev+val (pire)",1.8241,3.8750,False
+binance,6. Part du meilleur mois < 50 % du gain net,46.7030,50.0000,True
+binance,7a. Trades total >= 100,606.0000,100.0000,True
+binance,7b. Trades HE >= 30,142.0000,30.0000,True
+binance,8. Sharpe HE > repère tests multiples,-21.2812,1.7693,False
+binance,BILAN,0.0000,1.0000,False
+bybit,1. APR net HE > taux court,-5.7514,3.8750,False
+bybit,2. APR net HE couts x2 > taux court,-11.4542,3.8750,False
+bybit,3. Drawdown total < 10 %,-11.0330,-10.0000,False
+bybit,"4. Aucune liquidation, levier 1",0.0000,0.0000,True
+bybit,"5. Voisins ±20 % au-dessus du taux court, dev+val (pire)",-2.9784,3.8750,False
+bybit,6. Part du meilleur mois < 50 % du gain net,,50.0000,False
+bybit,7a. Trades total >= 100,657.0000,100.0000,True
+bybit,7b. Trades HE >= 30,218.0000,30.0000,True
+bybit,8. Sharpe HE > repère tests multiples,-21.7244,1.7693,False
+bybit,BILAN,0.0000,1.0000,False

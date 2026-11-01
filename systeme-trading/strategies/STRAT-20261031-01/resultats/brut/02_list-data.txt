@@ -1,0 +1,50 @@
+2026-10-31T22:32:47Z
+2026-10-31 23:32:48,024 - freqtrade - INFO - freqtrade 2026.10
+2026-10-31 23:32:48,323 - numexpr.utils - INFO - NumExpr defaulting to 10 threads.
+2026-10-31 23:32:49,229 - freqtrade.configuration.load_config - INFO - Using config: config_strat01.json ...
+2026-10-31 23:32:49,231 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-10-31 23:32:49,231 - freqtrade.loggers - INFO - Logfile configured
+2026-10-31 23:32:49,231 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-10-31 23:32:49,232 - freqtrade.configuration.configuration - INFO - Using user-data directory: user_data ...
+2026-10-31 23:32:49,232 - freqtrade.configuration.configuration - INFO - Using data directory: user_data/data/binance ...
+2026-10-31 23:32:49,232 - freqtrade.configuration.configuration - INFO - Detected --show-timerange
+2026-10-31 23:32:49,232 - freqtrade.configuration.configuration - INFO - Detected --trading-mode: futures
+2026-10-31 23:32:49,233 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2026-10-31 23:32:49,238 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development team.
+2026-10-31 23:32:49,238 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2026-10-31 23:32:49,238 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+                              Found 30 pair / timeframe combinations.                              
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃           Pair ┃ Timeframe ┃         Type ┃                From ┃                  To ┃ Candles ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│  ADA/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  ADA/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  ADA/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  BCH/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  BCH/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  BCH/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  BNB/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  BNB/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  BNB/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  BTC/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  BTC/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  BTC/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│ DOGE/USDT:USDT │        1h │ funding_rate │ 2020-07-10 08:00:00 │ 2026-06-28 16:00:00 │    6539 │
+│ DOGE/USDT:USDT │        1h │         mark │ 2020-07-10 03:00:00 │ 2025-08-03 12:00:00 │   44410 │
+│ DOGE/USDT:USDT │        1d │      futures │ 2020-07-10 00:00:00 │ 2025-12-25 00:00:00 │    1995 │
+│  ETH/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  ETH/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  ETH/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│ LINK/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│ LINK/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│ LINK/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  LTC/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  LTC/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  LTC/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  TRX/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  TRX/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  TRX/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+│  XRP/USDT:USDT │        1h │ funding_rate │ 2020-05-01 00:00:00 │ 2026-06-28 16:00:00 │    6750 │
+│  XRP/USDT:USDT │        1h │         mark │ 2020-05-01 00:00:00 │ 2025-08-16 13:00:00 │   46406 │
+│  XRP/USDT:USDT │        1d │      futures │ 2020-05-01 00:00:00 │ 2025-10-16 00:00:00 │    1995 │
+└────────────────┴───────────┴──────────────┴─────────────────────┴─────────────────────┴─────────┘

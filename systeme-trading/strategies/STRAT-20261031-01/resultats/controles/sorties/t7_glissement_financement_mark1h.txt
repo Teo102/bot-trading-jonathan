@@ -1,0 +1,50 @@
+debut 2026-11-01T00:12:58Z
+$ python -B t7_glissement_financement_mark1h.py
+E01 trades 135 stops 56 jour d entree stoppe 7
+ stop non atteint sur le mark 1h le jour de sortie: 5 | ouverture 1h au-dela du stop: 0 | slip moyen R 0.0 max 0.0 somme R 0.0 | extension moyenne dans l heure R 0.118 max 0.603
+ pire slip
+   pair  short                        cd  hit_h  slip  slip_R  hr_ext_R         R
+0   BTC  False 2021-01-04 00:00:00+00:00   10.0   0.0     0.0  0.158345 -0.984995
+2   LTC  False 2021-01-11 00:00:00+00:00    3.0   0.0     0.0  0.343757 -1.159612
+76  ADA   True 2023-03-21 00:00:00+00:00   21.0   0.0     0.0  0.032599 -0.962641
+78  BCH   True 2023-03-14 00:00:00+00:00   12.0   0.0     0.0  0.166427 -1.032204
+80  XRP  False 2023-03-22 00:00:00+00:00   19.0   0.0     0.0  0.120829 -0.981542
+ financement compte a l entree (USDT, negatif = paye): -8.33  moyenne R -0.0012  sur financement total -665.28
+ financement omis sur stops avant franchissement (USDT): -2.17
+ stops R: moy -0.994 min -1.257 max -0.914 part>1R 0.179 part>1.5 0.0
+ hors stops R min -0.91 R max 10.639 mise/ref max 0.1166 moy 0.0454
+ positions simultanées max (fin de journée) 3 premiere entree DOGE 2021-10-29 00:00:00+00:00
+E02 trades 46 stops 16 jour d entree stoppe 2
+ stop non atteint sur le mark 1h le jour de sortie: 0 | ouverture 1h au-dela du stop: 0 | slip moyen R 0.0 max 0.0 somme R 0.0 | extension moyenne dans l heure R 0.096 max 0.232
+ pire slip
+  pair  short                        cd  hit_h  slip  slip_R  hr_ext_R         R
+0  TRX  False 2024-07-05 00:00:00+00:00    4.0   0.0     0.0  0.159614 -0.971269
+1  XRP   True 2024-07-12 00:00:00+00:00    9.0   0.0     0.0  0.231618 -0.968158
+2  BTC   True 2024-07-14 00:00:00+00:00   21.0   0.0     0.0  0.017079 -0.927384
+3  ETH   True 2024-07-15 00:00:00+00:00    2.0   0.0     0.0  0.031230 -0.950659
+7  BCH  False 2024-08-03 00:00:00+00:00   15.0   0.0     0.0  0.024110 -0.980717
+ financement compte a l entree (USDT, negatif = paye): -0.9  moyenne R -0.0004  sur financement total -95.26
+ financement omis sur stops avant franchissement (USDT): 0.05
+ stops R: moy -0.969 min -1.002 max -0.9 part>1R 0.062 part>1.5 0.0
+ hors stops R min -0.858 R max 13.535 mise/ref max 0.1376 moy 0.0537
+ positions simultanées max (fin de journée) 3 premiere entree DOGE 2024-10-19 00:00:00+00:00
+E00-ref trades 178 stops 69 jour d entree stoppe 9
+ stop non atteint sur le mark 1h le jour de sortie: 5 | ouverture 1h au-dela du stop: 0 | slip moyen R 0.0 max 0.0 somme R 0.0 | extension moyenne dans l heure R 0.112 max 0.603
+ pire slip
+    pair  short                        cd  hit_h  slip  slip_R  hr_ext_R         R
+0    BTC  False 2021-01-04 00:00:00+00:00   10.0   0.0     0.0  0.158345 -0.984995
+107  ETH   True 2023-10-16 00:00:00+00:00    NaN   0.0     0.0  0.000000 -0.968992
+115  ETH  False 2024-01-22 00:00:00+00:00   19.0   0.0     0.0  0.104152 -1.009492
+114  LTC   True 2024-01-11 00:00:00+00:00   12.0   0.0     0.0  0.010192 -0.965460
+113  ETH  False 2024-01-03 00:00:00+00:00    NaN   0.0     0.0  0.000000 -1.257089
+ financement compte a l entree (USDT, negatif = paye): -9.38  moyenne R -0.001  sur financement total -768.38
+ financement omis sur stops avant franchissement (USDT): -2.16
+ stops R: moy -0.99 min -1.257 max -0.914 part>1R 0.159 part>1.5 0.0
+ hors stops R min -0.91 R max 13.537 mise/ref max 0.1376 moy 0.0471
+ positions simultanées max (fin de journée) 3 premiere entree DOGE 2021-10-29 00:00:00+00:00
+             pair                 open_date                close_date  is_short  open_rate  stop_loss_abs      dist   exit_reason  stake_amount  profit_abs
+11  XRP/USDT:USDT 2021-06-22 00:00:00+00:00 2021-07-27 00:00:00+00:00      True     0.6065         0.8277  0.364716  channel_exit     140.76865   -3.039231
+12  LTC/USDT:USDT 2021-06-22 00:00:00+00:00 2021-07-27 00:00:00+00:00      True   124.3500       165.8400  0.333655  channel_exit     153.82095   -7.956856
+13  BCH/USDT:USDT 2021-06-22 00:00:00+00:00 2021-07-27 00:00:00+00:00      True   455.1700       609.5500  0.339170  channel_exit     151.11644   -7.427435
+exit=0
+fin 2026-11-01T00:13:01Z

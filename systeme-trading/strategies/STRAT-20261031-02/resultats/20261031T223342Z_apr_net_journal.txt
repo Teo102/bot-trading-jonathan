@@ -1,0 +1,216 @@
+STRAT-20261031-02 apr_net.py, exécution 20261031T223342Z UTC, mode PLAN E01-E12
+L'APR historique n'est pas un rendement attendu. Aucun sinistre de plateforme n'y figure.
+  données binance BTC : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données binance ETH : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données binance XRP : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données binance BNB : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données binance ADA : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données binance LINK : 6411 règlements, début valide 2020-12-25 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 0
+  données bybit BTC : 6411 règlements, début valide 2021-07-05 16:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 578
+  données bybit ETH : 6411 règlements, début valide 2021-07-05 16:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 578
+  données bybit XRP : 5992 règlements, début valide 2021-07-20 00:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 202
+  données bybit BNB : 5852 règlements, début valide 2022-03-10 08:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 762
+  données bybit ADA : 6161 règlements, début valide 2021-10-21 08:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 651
+  données bybit LINK : 6411 règlements, début valide 2021-09-22 16:00:00, dernier 2026-10-31 16:00:00, trous 0, sans prix 815
+  début commun du panier binance : 2021-01-01 00:00:00
+  début commun du panier bybit : 2022-03-10 08:00:00
+Contrôle du biais d'anticipation : réussi {"binance_BTC": {"synthetique_entree_au_pic": true, "synthetique_pic_non_encaisse": true, "synthetique_taux_suivant_encaisse": true, "reel_ecart_max_avant_coupe": 0.0, "reel_futur_sans_effet": true, "tout_passe": true}, "binance_ADA": {"synthetique_entree_au_pic": true, "synthetique_pic_non_encaisse": true, "synthetique_taux_suivant_encaisse": true, "reel_ecart_max_avant_coupe": 0.0, "reel_futur_sans_effet": true, "tout_passe": true}, "bybit_BTC": {"synthetique_entree_au_pic": true, "synthetique_pic_non_encaisse": true, "synthetique_taux_suivant_encaisse": true, "reel_ecart_max_avant_coupe": 0.0, "reel_futur_sans_effet": true, "tout_passe": true}, "bybit_ADA": {"synthetique_entree_au_pic": true, "synthetique_pic_non_encaisse": true, "synthetique_taux_suivant_encaisse": true, "reel_ecart_max_avant_coupe": 0.0, "reel_futur_sans_effet": true, "tout_passe": true}}
+  essai E01 (base) simulé, fin 2026-10-31 23:59:59
+  essai E02 (base couts x2) simulé, fin 2026-10-31 23:59:59
+  essai E03 (entree 8) simulé, fin 2025-07-31 23:59:59
+  essai E04 (entree 12) simulé, fin 2025-07-31 23:59:59
+  essai E05 (sortie 2.4) simulé, fin 2025-07-31 23:59:59
+  essai E06 (sortie 3.6) simulé, fin 2025-07-31 23:59:59
+  essai E07 (fenetre 16h) simulé, fin 2025-07-31 23:59:59
+  essai E08 (fenetre 32h) simulé, fin 2025-07-31 23:59:59
+  essai E09 (reequilibrage 20) simulé, fin 2025-07-31 23:59:59
+  essai E10 (reequilibrage 30) simulé, fin 2025-07-31 23:59:59
+  essai E11 (levier 2) simulé, fin 2025-07-31 23:59:59
+  essai E12 (temoin toujours en position) simulé, fin 2025-07-31 23:59:59
+
+=== E01 base, panier binance, capital égal par paire, % par an du capital total ===
+         periode  duree_ans  apr_net_pct  excedent_pct  excedent_fred_pct  financement_pct  frais_pct  glissement_pct  pnl_base_pct  liquidation_pct  financement_brut_notionnel_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  reequilibrages  liquidations
+            2021       1.00        17.67         13.79              17.59            21.54      -2.53           -1.43          0.08             0.00                           45.85                  82.85             -1.06           78              90             0
+            2022       1.00        -3.98         -7.85              -5.66             1.21      -3.59           -1.81          0.22             0.00                            7.68                  31.78             -4.07          147               8             0
+            2023       1.00        -0.51         -4.38              -5.53             3.34      -2.63           -1.44          0.22             0.00                           11.53                  56.68             -2.00          104              17             0
+            2024       1.00         3.23         -0.65              -1.92             5.87      -1.76           -1.07          0.19             0.00                           16.83                  67.20             -0.86           66              30             0
+            2025       1.00        -3.33         -7.20              -7.54             1.28      -3.03           -1.76          0.19             0.00                            7.76                  32.36             -3.48          125               9             0
+            2026       0.83        -3.21         -7.08              -6.88             0.62      -2.51           -1.52          0.20             0.00                            6.88                  17.95             -2.67           86               2             0
+12_derniers_mois       1.00        -3.07         -6.95              -6.76             0.61      -2.42           -1.45          0.19             0.00                            6.77                  17.94             -3.07          100               2             0
+   developpement       3.50         4.42          0.54               1.71             8.87      -3.04           -1.63          0.22             0.00                           25.88                  59.81             -5.83          359             128             0
+      validation       1.08        -1.19         -5.06              -5.81             2.61      -2.46           -1.47          0.13             0.00                           11.15                  44.95             -2.07          105              24             0
+hors_echantillon       1.25        -3.35         -7.22              -7.15             0.78      -2.71           -1.60          0.19             0.00                            6.97                  22.34             -4.19          142               4             0
+toute_la_periode       5.83         1.57         -2.30              -1.72             6.07      -3.01           -1.69          0.21             0.00                           21.45                  49.01             -7.28          606             156             0
+
+--- E01, binance, par paire, 12 derniers mois et toute la période ---
+paire          periode  duree_ans  apr_net_pct  excedent_pct  excedent_fred_pct  financement_pct  frais_pct  glissement_pct  pnl_base_pct  liquidation_pct  financement_brut_notionnel_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  reequilibrages  liquidations
+  BTC 12_derniers_mois       1.00        -0.85         -4.72              -4.54             0.81      -1.34           -0.36          0.04             0.00                            6.99                  22.90             -0.85            9               0             0
+  BTC toute_la_periode       5.83         2.37         -1.51              -0.93             5.27      -2.41           -0.64          0.15             0.00                           18.18                  51.60             -5.87           83              12             0
+  ETH 12_derniers_mois       1.00        -0.97         -4.85              -4.66             0.30      -1.03           -0.27          0.04             0.00                            6.46                   9.12             -0.98            7               0             0
+  ETH toute_la_periode       5.83         3.22         -0.65              -0.07             6.16      -2.41           -0.64          0.12             0.00                           20.69                  50.16             -5.34           79              21             0
+  XRP 12_derniers_mois       1.00        -3.19         -7.06              -6.88             0.32      -2.21           -1.48          0.18             0.00                            6.36                  10.04             -3.19           15               0             0
+  XRP toute_la_periode       5.83         2.09         -1.79              -1.21             7.54      -3.39           -2.26          0.19             0.00                           24.09                  52.66             -9.84          107              38             0
+  BNB 12_derniers_mois       1.00        -2.59         -6.46              -6.28             0.34      -1.79           -1.20          0.07             0.00                            7.28                   9.12             -2.59           12               0             0
+  BNB toute_la_periode       5.83         0.27         -3.60              -3.02             3.47      -2.15           -1.43          0.39             0.00                           37.50                  16.85             -7.26           77              11             0
+  ADA 12_derniers_mois       1.00        -6.34        -10.21             -10.03             0.93      -4.65           -3.10          0.48             0.00                            6.87                  27.19             -6.34           32               2             0
+  ADA toute_la_periode       5.83         0.00         -3.87              -3.29             6.44      -4.04           -2.69          0.30             0.00                           20.50                  56.70            -15.00          142              31             0
+ LINK 12_derniers_mois       1.00        -4.79         -8.66              -8.48             0.96      -3.65           -2.43          0.33             0.00                            6.61                  29.29             -4.79           25               0             0
+ LINK toute_la_periode       5.83         1.49         -2.39              -1.81             7.51      -3.67           -2.45          0.09             0.00                           19.29                  66.09            -11.34          118              43             0
+
+=== E01 base, panier bybit, capital égal par paire, % par an du capital total ===
+         periode  duree_ans  apr_net_pct  excedent_pct  excedent_fred_pct  financement_pct  frais_pct  glissement_pct  pnl_base_pct  liquidation_pct  financement_brut_notionnel_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  reequilibrages  liquidations
+            2022       0.81        -4.68         -8.56              -6.74             1.91      -4.45           -2.18          0.04             0.00                            8.37                  46.61             -3.82          141               7             0
+            2023       1.00         0.55         -3.32              -4.47             4.23      -2.49           -1.30          0.12             0.00                           12.37                  67.21             -1.61           95              16             0
+            2024       1.00         1.94         -1.94              -3.21             6.06      -2.74           -1.50          0.12             0.00                           17.46                  67.53             -1.98          105              29             0
+            2025       1.00        -5.12         -9.00              -9.33             1.52      -4.39           -2.39          0.14             0.00                            7.66                  39.89             -5.13          176              13             0
+            2026       0.83        -5.89         -9.77              -9.56             0.42      -4.07           -2.44          0.19             0.00                            5.07                  17.27             -4.91          140               2             0
+12_derniers_mois       1.00        -5.71         -9.59              -9.40             0.40      -3.91           -2.36          0.16             0.00                            5.02                  16.70             -5.72          162               2             0
+   developpement       2.31        -0.51         -4.38              -4.55             3.99      -3.06           -1.55          0.12             0.00                           13.04                  62.52             -4.94          278              34             0
+      validation       1.08        -2.76         -6.63              -7.38             3.06      -3.84           -2.11          0.13             0.00                           12.52                  48.09             -3.25          161              28             0
+hors_echantillon       1.25        -5.75         -9.63              -9.55             0.67      -4.14           -2.40          0.12             0.00                            5.74                  24.28             -7.21          218               5             0
+toute_la_periode       4.65        -2.37         -6.25              -6.49             2.86      -3.48           -1.88          0.12             0.00                           11.99                  48.85            -11.03          657              67             0
+
+--- E01, bybit, par paire, 12 derniers mois et toute la période ---
+paire          periode  duree_ans  apr_net_pct  excedent_pct  excedent_fred_pct  financement_pct  frais_pct  glissement_pct  pnl_base_pct  liquidation_pct  financement_brut_notionnel_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  reequilibrages  liquidations
+  BTC 12_derniers_mois       1.00        -1.48         -5.35              -5.17             0.24      -1.37           -0.35          0.01             0.00                            5.82                   8.58             -1.48            9               0             0
+  BTC toute_la_periode       4.65        -1.22         -5.10              -5.34             2.57      -3.09           -0.80          0.10             0.00                           11.94                  43.99             -6.27           96               6             0
+  ETH 12_derniers_mois       1.00        -1.05         -4.92              -4.74             0.23      -1.08           -0.28          0.08             0.00                            6.00                   7.85             -1.05            7               0             0
+  ETH toute_la_periode       4.65        -0.38         -4.25              -4.49             2.75      -2.56           -0.66          0.09             0.00                           12.13                  45.13             -3.83           77               9             0
+  XRP 12_derniers_mois       1.00        -4.83         -8.71              -8.52             0.27      -3.17           -2.05          0.12             0.00                            4.83                  11.31             -4.83           21               1             0
+  XRP toute_la_periode       4.65        -2.21         -6.08              -6.32             3.33      -3.43           -2.21          0.11             0.00                           13.33                  51.41            -10.65          106              15             0
+  BNB 12_derniers_mois       1.00       -12.19        -16.07             -15.89             0.68      -7.99           -5.15          0.26             0.00                            4.79                  29.93            -12.21           55               0             0
+  BNB toute_la_periode       4.65        -5.61         -9.48              -9.72             1.72      -4.66           -3.01          0.35             0.00                            9.88                  37.37            -26.45          159               1             0
+  ADA 12_derniers_mois       1.00        -7.99        -11.87             -11.69             0.52      -5.35           -3.45          0.29             0.00                            4.84                  22.17             -8.00           36               1             0
+  ADA toute_la_periode       4.65        -2.50         -6.38              -6.62             3.35      -3.55           -2.29         -0.01             0.00                           12.29                  54.93            -12.74          110              15             0
+ LINK 12_derniers_mois       1.00        -7.63        -11.51             -11.32             0.48      -5.05           -3.26          0.19             0.00                            4.87                  20.35             -7.64           34               0             0
+ LINK toute_la_periode       4.65        -2.32         -6.20              -6.44             3.47      -3.57           -2.30          0.08             0.00                           11.78                  60.29            -12.92          109              21             0
+
+=== Sensibilité déclarée, panier binance, développement + validation ===
+essai                    variante  apr_net_pct  excedent_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  liquidations
+  E01                        base         3.05         -0.83                  56.29             -5.83          464             0
+  E02               base couts x2        -1.14         -5.02                  56.29            -16.77          464             0
+  E03                    entree 8         1.82         -2.05                  60.70             -8.31          623             0
+  E04                   entree 12         5.35          1.48                  31.47             -0.50          102             0
+  E05                  sortie 2.4         3.33         -0.55                  57.45             -5.17          437             0
+  E06                  sortie 3.6         2.78         -1.10                  55.23             -6.36          491             0
+  E07                 fenetre 16h         0.90         -2.98                  57.81            -10.51          719             0
+  E08                 fenetre 32h         4.01          0.13                  55.08             -3.85          354             0
+  E09            reequilibrage 20         2.92         -0.96                  56.29             -5.84          467             0
+  E10            reequilibrage 30         3.12         -0.76                  56.29             -5.75          467             0
+  E11                    levier 2         4.37          0.49                  56.28             -7.66          470             3
+  E12 temoin toujours en position         6.66          2.79                  99.98             -0.74            6             0
+
+=== Critères annoncés, panier binance, 24 séries comptées ===
+  ÉCHEC  1. APR net HE > taux court : -3.35 (seuil 3.88)
+  ÉCHEC  2. APR net HE couts x2 > taux court : -7.23 (seuil 3.88)
+  passe  3. Drawdown total < 10 % : -7.28 (seuil -10.00)
+  passe  4. Aucune liquidation, levier 1 : 0.00 (seuil 0.00)
+  ÉCHEC  5. Voisins ±20 % au-dessus du taux court, dev+val (pire) : 1.82 (seuil 3.88)
+  passe  6. Part du meilleur mois < 50 % du gain net : 46.70 (seuil 50.00)
+  passe  7a. Trades total >= 100 : 606.00 (seuil 100.00)
+  passe  7b. Trades HE >= 30 : 142.00 (seuil 30.00)
+  ÉCHEC  8. Sharpe HE > repère tests multiples : -21.28 (seuil 1.77)
+  Espérance en R (validation-edge § 5) : non applicable, à trancher.
+  Critère d'échec annoncé pour binance : DÉCLENCHÉ.
+
+=== Sensibilité déclarée, panier bybit, développement + validation ===
+essai                    variante  apr_net_pct  excedent_pct  temps_en_position_pct  drawdown_max_pct  trades_clos  liquidations
+  E01                        base        -1.22         -5.09                  57.91             -4.94          439             0
+  E02               base couts x2        -5.73         -9.60                  57.91            -19.60          439             0
+  E03                    entree 8        -2.98         -6.85                  64.02            -10.22          628             0
+  E04                   entree 12         1.94         -1.94                  23.86             -0.20           49             0
+  E05                  sortie 2.4        -0.94         -4.81                  59.23             -4.49          420             0
+  E06                  sortie 3.6        -1.51         -5.38                  56.98             -5.33          469             0
+  E07                 fenetre 16h        -4.34         -8.22                  61.33            -14.86          701             1
+  E08                 fenetre 32h        -0.00         -3.88                  56.96             -2.79          329             0
+  E09            reequilibrage 20        -1.31         -5.19                  57.91             -5.06          445             0
+  E10            reequilibrage 30        -1.19         -5.07                  57.91             -4.90          445             0
+  E11                    levier 2        -1.40         -5.28                  57.90             -5.37          447             2
+  E12 temoin toujours en position         3.10         -0.77                  99.97             -0.60            6             0
+
+=== Critères annoncés, panier bybit, 24 séries comptées ===
+  ÉCHEC  1. APR net HE > taux court : -5.75 (seuil 3.88)
+  ÉCHEC  2. APR net HE couts x2 > taux court : -11.45 (seuil 3.88)
+  ÉCHEC  3. Drawdown total < 10 % : -11.03 (seuil -10.00)
+  passe  4. Aucune liquidation, levier 1 : 0.00 (seuil 0.00)
+  ÉCHEC  5. Voisins ±20 % au-dessus du taux court, dev+val (pire) : -2.98 (seuil 3.88)
+  ÉCHEC  6. Part du meilleur mois < 50 % du gain net : nan (seuil 50.00)
+  passe  7a. Trades total >= 100 : 657.00 (seuil 100.00)
+  passe  7b. Trades HE >= 30 : 218.00 (seuil 30.00)
+  ÉCHEC  8. Sharpe HE > repère tests multiples : -21.72 (seuil 1.77)
+  Espérance en R (validation-edge § 5) : non applicable, à trancher.
+  Critère d'échec annoncé pour bybit : DÉCLENCHÉ.
+
+=== Risques non simulés, mesurés à part (pas des prévisions) ===
+  binance, ADL : pire baisse spot 4 h par paire, perte si le court saute à ce moment, levier 1 :
+  paire  pire_baisse_4h_pct  perte_capital_paire_pct                date
+    BTC              -10.53                    -5.26 2021-05-21 12:00:00
+    ETH              -13.99                    -7.00 2024-08-05 00:00:00
+    XRP              -31.34                   -15.67 2021-02-01 12:00:00
+    BNB              -14.11                    -7.05 2021-05-21 12:00:00
+    ADA              -18.05                    -9.02 2025-02-03 00:00:00
+   LINK              -17.07                    -8.54 2021-04-18 00:00:00
+  binance, 12_derniers_mois : excédent -6.95 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 100 % de perte.
+  binance, 12_derniers_mois : excédent -6.95 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 50 % de perte.
+  binance, 12_derniers_mois : un USDT à -5 % coûte ≈ 5 % du capital en dollars, soit sans excédent à opposer.
+  binance, toute_la_periode : excédent -2.30 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 100 % de perte.
+  binance, toute_la_periode : excédent -2.30 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 50 % de perte.
+  binance, toute_la_periode : un USDT à -5 % coûte ≈ 5 % du capital en dollars, soit sans excédent à opposer.
+  bybit, ADL : pire baisse spot 4 h par paire, perte si le court saute à ce moment, levier 1 :
+  paire  pire_baisse_4h_pct  perte_capital_paire_pct                date
+    BTC               -7.99                    -4.00 2024-03-05 16:00:00
+    ETH              -13.99                    -6.99 2024-08-05 00:00:00
+    XRP              -14.06                    -7.03 2024-12-20 08:00:00
+    BNB              -11.04                    -5.52 2024-08-05 00:00:00
+    ADA              -18.07                    -9.03 2025-02-03 00:00:00
+   LINK              -15.66                    -7.83 2025-10-10 20:00:00
+  bybit, 12_derniers_mois : excédent -9.59 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 100 % de perte.
+  bybit, 12_derniers_mois : excédent -9.59 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 50 % de perte.
+  bybit, 12_derniers_mois : un USDT à -5 % coûte ≈ 5 % du capital en dollars, soit sans excédent à opposer.
+  bybit, toute_la_periode : excédent -6.25 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 100 % de perte.
+  bybit, toute_la_periode : excédent -6.25 %/an, annulé par 0.00 % de probabilité annuelle d'un sinistre à 50 % de perte.
+  bybit, toute_la_periode : un USDT à -5 % coûte ≈ 5 % du capital en dollars, soit sans excédent à opposer.
+
+=== Trades de l'essai de référence ===
+plateforme paire  trades  gain_moyen_capital  base_entree_pb  base_sortie_pb  pnl_base_moyen  liquidations
+   binance   ADA     142             0.00000        -3.89277        -6.68432         0.00012             0
+   binance   BNB      77             0.00021         6.74421         0.65732         0.00029             0
+   binance   BTC      83             0.00166        -3.06742        -5.19047         0.00010             0
+   binance   ETH      79             0.00238        -2.62257        -5.01343         0.00009             0
+   binance  LINK     118             0.00074        -4.49679        -5.98633         0.00005             0
+   binance   XRP     107             0.00114        -2.98501        -5.51300         0.00011             0
+     bybit   ADA     110            -0.00106        -5.11040        -5.28170        -0.00001             0
+     bybit   BNB     159            -0.00164        -3.84361        -6.11518         0.00010             0
+     bybit   BTC      96            -0.00059        -3.99300        -5.13588         0.00005             0
+     bybit   ETH      77            -0.00023        -3.77901        -5.17326         0.00005             0
+     bybit  LINK     109            -0.00099        -4.97924        -5.99167         0.00004             0
+     bybit   XRP     106            -0.00097        -3.71702        -5.07977         0.00005             0
+
+=== Glissement mesuré sur carnet, relevé du jour, 2026-10-31 22:37:46 à 2026-10-31 22:37:57 UTC ===
+plateforme paire marche  10000.0  100000.0
+   binance   ADA   perp   0.0259    0.0605
+   binance   ADA   spot   0.0592    0.1057
+   binance   BNB   perp   0.0007    0.0088
+   binance   BNB   spot   0.0021    0.0342
+   binance   BTC   perp   0.0001    0.0001
+   binance   BTC   spot   0.0000    0.0038
+   binance   ETH   perp   0.0002    0.0004
+   binance   ETH   spot   0.0002    0.0011
+   binance  LINK   perp   0.0136    0.0650
+   binance  LINK   spot   0.0335    0.0783
+   binance   XRP   perp   0.0040    0.0102
+   binance   XRP   spot   0.0042    0.0256
+     bybit   ADA   perp   0.0259    0.0613
+     bybit   ADA   spot   0.0768    0.1488
+     bybit   BNB   perp   0.0013    0.0188
+     bybit   BNB   spot   0.0189    0.0986
+     bybit   BTC   perp   0.0001    0.0001
+     bybit   BTC   spot   0.0001    0.0077
+     bybit   ETH   perp   0.0002    0.0036
+     bybit   ETH   spot   0.0120    0.0287
+     bybit  LINK   perp   0.0177    0.0654
+     bybit  LINK   spot   0.0620    0.3738
+     bybit   XRP   perp   0.0040    0.0102
+     bybit   XRP   spot   0.0126    0.0661
+
+Sorties : /Users/teobrondel/Bot Trading Jonathan/systeme-trading/strategies/STRAT-20261031-02/resultats/20261031T223342Z_apr_net_*

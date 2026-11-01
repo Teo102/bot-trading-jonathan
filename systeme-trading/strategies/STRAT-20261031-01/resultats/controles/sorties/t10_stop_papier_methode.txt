@@ -1,0 +1,7 @@
+debut 2026-11-01T00:13:04Z
+$ python -B t10_stop_papier_methode.py
+live, entree 00:00:05, df jusqu au 03/01 (seule bougie close) ATR lu 12.0
+live, le lendemain, df jusqu au 04/01 ATR lu 5.0
+backtest, entree 00:00:00, df jusqu au 04/01 ATR lu 12.0
+exit=0
+fin 2026-11-01T00:13:06Z

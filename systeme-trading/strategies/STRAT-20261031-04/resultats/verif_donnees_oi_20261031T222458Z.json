@@ -1,0 +1,689 @@
+{
+ "debut_utc": "2026-10-31T22:24:58+00:00",
+ "script": "verif_donnees_oi.py",
+ "binance_openInterestHist": {
+  "source": "https://fapi.binance.com/futures/data/openInterestHist",
+  "resultats": [
+   {
+    "symbole": "BTCUSDT",
+    "periode": "5m",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   },
+   {
+    "symbole": "BTCUSDT",
+    "periode": "1h",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   },
+   {
+    "symbole": "BTCUSDT",
+    "periode": "1d",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "periode": "5m",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "periode": "1h",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "periode": "1d",
+    "anciennete_max_acceptee_jours": 30.95,
+    "reponse_au_dela": "code=400 {\"msg\":\"parameter 'startTime' is invalid.\",\"code\":-1130}"
+   }
+  ]
+ },
+ "binance_delai_publication": {
+  "dernier_horodatage": "2026-10-31 22:25",
+  "age_secondes_a_la_requete": 43.0,
+  "note": "Un seul relevé. Il borne le délai de publication sans le mesurer sur un événement."
+ },
+ "bybit_open_interest": {
+  "source": "https://api.bybit.com/v5/market/open-interest",
+  "resultats": [
+   {
+    "symbole": "BTCUSDT",
+    "debut_recherche_dichotomique": "2020-07-05 12:22",
+    "plus_ancienne_valeur_de_la_page": "2020-07-20 07:50"
+   },
+   {
+    "symbole": "ETHUSDT",
+    "debut_recherche_dichotomique": "2020-09-21 12:24",
+    "plus_ancienne_valeur_de_la_page": "2020-10-21 08:55"
+   },
+   {
+    "symbole": "XRPUSDT",
+    "debut_recherche_dichotomique": "2021-04-13 21:07",
+    "plus_ancienne_valeur_de_la_page": "2021-05-13 11:45"
+   },
+   {
+    "symbole": "LTCUSDT",
+    "debut_recherche_dichotomique": "2020-09-21 12:24",
+    "plus_ancienne_valeur_de_la_page": "2020-10-21 08:55"
+   },
+   {
+    "symbole": "BCHUSDT",
+    "debut_recherche_dichotomique": "2020-11-14 08:06",
+    "plus_ancienne_valeur_de_la_page": "2020-12-14 07:50"
+   },
+   {
+    "symbole": "LINKUSDT",
+    "debut_recherche_dichotomique": "2020-09-21 12:24",
+    "plus_ancienne_valeur_de_la_page": "2020-10-21 08:55"
+   },
+   {
+    "symbole": "ADAUSDT",
+    "debut_recherche_dichotomique": "2021-02-16 17:16",
+    "plus_ancienne_valeur_de_la_page": "2021-03-18 08:10"
+   },
+   {
+    "symbole": "BNBUSDT",
+    "debut_recherche_dichotomique": "2021-05-30 16:21",
+    "plus_ancienne_valeur_de_la_page": "2021-06-29 08:25"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "debut_recherche_dichotomique": "2021-05-04 03:51",
+    "plus_ancienne_valeur_de_la_page": "2021-06-02 12:05"
+   },
+   {
+    "symbole": "TRXUSDT",
+    "debut_recherche_dichotomique": "2021-07-18 19:44",
+    "plus_ancienne_valeur_de_la_page": "2021-08-17 12:00"
+   }
+  ]
+ },
+ "okx_open_interest": {
+  "source": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history",
+  "resultats": [
+   {
+    "instrument": "BTC-USDT-SWAP",
+    "periode": "5m",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 5,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   },
+   {
+    "instrument": "BTC-USDT-SWAP",
+    "periode": "1H",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 60,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   },
+   {
+    "instrument": "BTC-USDT-SWAP",
+    "periode": "1D",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 730,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   },
+   {
+    "instrument": "DOGE-USDT-SWAP",
+    "periode": "5m",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 5,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   },
+   {
+    "instrument": "DOGE-USDT-SWAP",
+    "periode": "1H",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 60,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   },
+   {
+    "instrument": "DOGE-USDT-SWAP",
+    "periode": "1D",
+    "plus_grande_anciennete_testee_avec_donnees_jours": 730,
+    "ages_testes": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     30,
+     45,
+     60,
+     90,
+     120,
+     180,
+     365,
+     730,
+     1095,
+     1460
+    ]
+   }
+  ]
+ },
+ "vision_metrics": {
+  "source": "https://data.binance.vision/data/futures/um/daily/metrics/",
+  "resultats": [
+   {
+    "symbole": "BTCUSDT",
+    "fichiers": 2251,
+    "erreur": null,
+    "premier": "2020-09-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 2251,
+    "jours_manquants": 0,
+    "mo_total": 26.0,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "ETHUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 21.2,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "XRPUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 21.0,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "LTCUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.9,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "BCHUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.6,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "LINKUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.9,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "ADAUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.4,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "BNBUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.3,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 21.0,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "TRXUSDT",
+    "fichiers": 1795,
+    "erreur": null,
+    "premier": "2021-12-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1795,
+    "jours_manquants": 0,
+    "mo_total": 20.2,
+    "derniere_mise_en_ligne_min": "2023-06-16",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   }
+  ]
+ },
+ "vision_bookDepth": {
+  "source": "https://data.binance.vision/data/futures/um/daily/bookDepth/",
+  "resultats": [
+   {
+    "symbole": "BTCUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 657.2,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "ETHUSDT",
+    "fichiers": 1396,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 3,
+    "mo_total": 686.7,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "XRPUSDT",
+    "fichiers": 1394,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 5,
+    "mo_total": 668.6,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "LTCUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 662.4,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "BCHUSDT",
+    "fichiers": 1396,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 3,
+    "mo_total": 642.7,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "LINKUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 653.2,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "ADAUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 618.3,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "BNBUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 611.0,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "DOGEUSDT",
+    "fichiers": 1395,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 4,
+    "mo_total": 663.3,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   },
+   {
+    "symbole": "TRXUSDT",
+    "fichiers": 1393,
+    "erreur": null,
+    "premier": "2023-01-01",
+    "dernier": "2026-10-30",
+    "jours_attendus": 1399,
+    "jours_manquants": 6,
+    "mo_total": 632.7,
+    "derniere_mise_en_ligne_min": "2023-07-11",
+    "derniere_mise_en_ligne_max": "2026-10-31"
+   }
+  ]
+ },
+ "vision_liquidations": {
+  "prefixes_testes": [
+   {
+    "prefixe": "data/futures/um/daily/liquidationSnapshot/",
+    "code": 200,
+    "objets_ou_sous_dossiers": 0
+   },
+   {
+    "prefixe": "data/futures/um/monthly/liquidationSnapshot/",
+    "code": 200,
+    "objets_ou_sous_dossiers": 0
+   },
+   {
+    "prefixe": "data/futures/cm/daily/liquidationSnapshot/",
+    "code": 200,
+    "objets_ou_sous_dossiers": 5
+   }
+  ],
+  "fichiers_testes": [
+   {
+    "url": "https://data.binance.vision/data/futures/um/daily/liquidationSnapshot/BTCUSDT/BTCUSDT-liquidationSnapshot-2021-06-01.zip",
+    "code": 404
+   },
+   {
+    "url": "https://data.binance.vision/data/futures/um/daily/liquidationSnapshot/BTCUSDT/BTCUSDT-liquidationSnapshot-2022-06-13.zip",
+    "code": 404
+   },
+   {
+    "url": "https://data.binance.vision/data/futures/um/daily/liquidationSnapshot/BTCUSDT/BTCUSDT-liquidationSnapshot-2023-01-01.zip",
+    "code": 404
+   },
+   {
+    "url": "https://data.binance.vision/data/futures/um/daily/liquidationSnapshot/BTCUSDT/BTCUSDT-liquidationSnapshot-2024-08-05.zip",
+    "code": 404
+   },
+   {
+    "url": "https://data.binance.vision/data/futures/um/daily/liquidationSnapshot/BTCUSDT/BTCUSDT-liquidationSnapshot-2026-10-01.zip",
+    "code": 404
+   }
+  ],
+  "jeux_quotidiens_um": [
+   "aggTrades",
+   "bookDepth",
+   "bookTicker",
+   "indexPriceKlines",
+   "klines",
+   "markPriceKlines",
+   "metrics",
+   "premiumIndexKlines",
+   "trades"
+  ],
+  "jeux_mensuels_um": [
+   "aggTrades",
+   "bookTicker",
+   "fundingRate",
+   "indexPriceKlines",
+   "klines",
+   "markPriceKlines",
+   "premiumIndexKlines",
+   "trades"
+  ]
+ },
+ "liquidations_rest": [
+  {
+   "point": "Binance allForceOrders (ancien public)",
+   "code": 404,
+   "reponse": "page d'erreur 404"
+  },
+  {
+   "point": "Binance forceOrders (compte)",
+   "code": 401,
+   "reponse": "{\"code\":-2014,\"msg\":\"API-key format invalid.\"}"
+  },
+  {
+   "point": "OKX public liquidation-orders (BTC-USDT SWAP)",
+   "pages_lues": 2,
+   "plus_ancienne_liquidation": "2026-10-30 23:05",
+   "anciennete_jours": 0.99
+  },
+  {
+   "point": "Bybit /v5/market/liquidation (chemin supposé)",
+   "code": 404,
+   "reponse": ""
+  }
+ ],
+ "liquidations_flux": [
+  {
+   "url": "wss://fstream.binance.com/ws/!forceOrder@arr",
+   "abonnement": null,
+   "secondes": 60,
+   "messages": 0,
+   "exemple": null,
+   "erreur": null
+  },
+  {
+   "url": "wss://stream.bybit.com/v5/public/linear",
+   "abonnement": {
+    "op": "subscribe",
+    "args": [
+     "allLiquidation.BTCUSDT",
+     "allLiquidation.ETHUSDT",
+     "allLiquidation.DOGEUSDT"
+    ]
+   },
+   "secondes": 60,
+   "messages": 0,
+   "exemple": null,
+   "erreur": null
+  }
+ ],
+ "tardis_echantillons": {
+  "source": "https://datasets.tardis.dev (premier jour de chaque mois gratuit, sans clé)",
+  "resultats": [
+   {
+    "url": "https://datasets.tardis.dev/v1/binance-futures/liquidations/2020/02/01/BTCUSDT.csv.gz",
+    "code": 200,
+    "lignes": 342,
+    "entete": "exchange,symbol,timestamp,local_timestamp,id,side,price,amount"
+   },
+   {
+    "url": "https://datasets.tardis.dev/v1/binance-futures/liquidations/2021/06/01/BTCUSDT.csv.gz",
+    "code": 200,
+    "lignes": 3487,
+    "entete": "exchange,symbol,timestamp,local_timestamp,id,side,price,amount"
+   },
+   {
+    "url": "https://datasets.tardis.dev/v1/binance-futures/liquidations/2023/01/01/BTCUSDT.csv.gz",
+    "code": 200,
+    "lignes": 81,
+    "entete": "exchange,symbol,timestamp,local_timestamp,id,side,price,amount"
+   },
+   {
+    "url": "https://datasets.tardis.dev/v1/binance-futures/liquidations/2026/10/01/BTCUSDT.csv.gz",
+    "code": 200,
+    "lignes": 797,
+    "entete": "exchange,symbol,timestamp,local_timestamp,id,side,price,amount"
+   }
+  ],
+  "binance_futures_availableSince": "2019-11-17T00:00:00.000Z",
+  "canaux_pertinents": [
+   "forceOrder",
+   "openInterest"
+  ]
+ },
+ "financement_bougies": [
+  {
+   "symbole": "BTCUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2019-09-08 17:45"
+  },
+  {
+   "symbole": "ETHUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2019-11-27 07:45"
+  },
+  {
+   "symbole": "XRPUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-01-06 08:15"
+  },
+  {
+   "symbole": "LTCUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-01-09 08:00"
+  },
+  {
+   "symbole": "BCHUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2019-12-19 08:45"
+  },
+  {
+   "symbole": "LINKUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-01-17 08:00"
+  },
+  {
+   "symbole": "ADAUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-01-31 08:00"
+  },
+  {
+   "symbole": "BNBUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-02-10 08:00"
+  },
+  {
+   "symbole": "DOGEUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-07-10 09:00"
+  },
+  {
+   "symbole": "TRXUSDT",
+   "premier_financement": "2026-10-31 16:00",
+   "premiere_bougie_15m": "2020-01-15 08:00"
+  }
+ ],
+ "fin_utc": "2026-10-31T22:57:46+00:00"
+}

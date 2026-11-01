@@ -1,0 +1,16 @@
+debut 2026-11-01T00:13:13Z
+$ python -B t5_permutations_ordre_places_strictes.py
+E01 base {'n': 135, 'exp': 0.137, 'pnl': 896, 'L': 0.335, 'S': -0.077} rej 432 | strict {'n': 129, 'exp': 0.333, 'pnl': 2196, 'L': 0.735, 'S': -0.075} rej 429
+  seuls base 9 -101.3 seuls strict 3 1126.4
+  entrees avec >=3 positions a l ouverture, place liberee par stop du jour: 6 [('LTC', 'L', '2021-11-10', 'DOGE', -53.1), ('TRX', 'L', '2021-11-16', 'BTC,LTC', -51.2), ('ADA', 'S', '2021-11-25', 'BCH', 38.4), ('XRP', 'L', '2023-06-05', 'ETH', -48.4), ('DOGE', 'L', '2023-10-27', 'BCH', -50.8), ('TRX', 'L', '2023-10-31', 'DOGE', -2.1)]
+  200 ordres exp min/p5/med/p95/max 0.011 0.044 0.189 0.389 0.468 | pnl 18 1221.5 3100 | n 123 148 | part exp<=0.2 0.535 | part base>= 0.675 | L med 0.445 S med -0.083
+E02 base {'n': 46, 'exp': 0.579, 'pnl': 1282, 'L': 1.239, 'S': -0.279} rej 142 | strict {'n': 46, 'exp': 0.567, 'pnl': 1250, 'L': 1.223, 'S': -0.286} rej 145
+  seuls base 3 -39.1 seuls strict 3 -67.1
+  entrees avec >=3 positions a l ouverture, place liberee par stop du jour: 1 [('TRX', 'L', '2024-07-12', 'XRP', -10.6)]
+  200 ordres exp min/p5/med/p95/max 0.42 0.501 0.618 0.711 0.783 | pnl 946 1347.0 1677 | n 42 49 | part exp<=0.2 0.0 | part base>= 0.68 | L med 1.263 S med -0.26
+E00 base {'n': 178, 'exp': 0.272, 'pnl': 2499, 'L': 0.613, 'S': -0.119} rej 575 | strict {'n': 172, 'exp': 0.423, 'pnl': 3979, 'L': 0.917, 'S': -0.119} rej 573
+  seuls base 10 -79.4 seuls strict 4 1142.5
+  entrees avec >=3 positions a l ouverture, place liberee par stop du jour: 6 [('LTC', 'L', '2021-11-10', 'DOGE', -53.1), ('TRX', 'L', '2021-11-16', 'BTC,LTC', -51.2), ('ADA', 'S', '2021-11-25', 'BCH', 38.4), ('XRP', 'L', '2023-06-05', 'ETH', -48.4), ('DOGE', 'L', '2023-10-27', 'BCH', -50.8), ('TRX', 'L', '2023-10-31', 'DOGE', -2.1)]
+  200 ordres exp min/p5/med/p95/max 0.175 0.207 0.305 0.463 0.528 | pnl 1590 2841.0 5018 | n 166 191 | part exp<=0.2 0.025 | part base>= 0.655 | L med 0.67 S med -0.12
+exit=0
+fin 2026-11-01T00:22:41Z
