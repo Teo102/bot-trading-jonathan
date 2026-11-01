@@ -54,7 +54,7 @@ def pari(r: pd.DataFrame) -> np.ndarray:
     return g, achat_oui | achat_non
 
 
-def bootstrap_evenements(r: pd.DataFrame, valeur, iterations: int, graine: int):
+def bootstrap_evenements(r: pd.DataFrame, valeur, iterations: int, graine: int, niveau: float = 0.95):
     rng = np.random.default_rng(graine)
     groupes = [g for _, g in r.groupby("evenement")]
     if len(groupes) < 5:
@@ -63,7 +63,8 @@ def bootstrap_evenements(r: pd.DataFrame, valeur, iterations: int, graine: int):
     for _ in range(iterations):
         idx = rng.integers(0, len(groupes), len(groupes))
         tirages.append(valeur(pd.concat([groupes[i] for i in idx])))
-    return [float(np.quantile(tirages, 0.025)), float(np.quantile(tirages, 0.975))]
+    a = (1 - niveau) / 2
+    return [float(np.quantile(tirages, a)), float(np.quantile(tirages, 1 - a))]
 
 
 def scorer(df: pd.DataFrame, iterations: int = 5000, graine: int = 20261101) -> dict:
@@ -80,6 +81,12 @@ def scorer(df: pd.DataFrame, iterations: int = 5000, graine: int = 20261101) -> 
     diff = lambda d: float((((d["proba_propre"] - d["y"]) ** 2) - ((d["milieu"] - d["y"]) ** 2)).mean())
     out["brier_difference"] = diff(r)
     out["brier_difference_ic95"] = bootstrap_evenements(r, diff, iterations, graine)
+    out["brier_difference_ic60"] = bootstrap_evenements(r, diff, iterations, graine, 0.60)
+    # palier 1 (MODE_EMPLOI § 4, règle révisée du 01/11/2026) : arrêt si nettement pire que le marché
+    out["palier1_arret"] = bool(out["brier_difference_ic60"][0] > 0) if len(r) >= OBJECTIF else None
+    # palier 2 : borne haute de l'IC 95 % < 0 sur au moins 90 événements et 300 prévisions
+    out["palier2_papier_autorise"] = (bool(out["brier_difference_ic95"][1] < 0)
+                                      if len(r) >= 300 and r["evenement"].nunique() >= 90 else None)
     out["logloss_propre"] = float(-(y * np.log(p) + (1 - y) * np.log(1 - p)).mean())
     out["logloss_marche"] = float(-(y * np.log(q) + (1 - y) * np.log(1 - q)).mean())
     g, pris = pari(r)

@@ -38,6 +38,13 @@ class Tests(unittest.TestCase):
         j.iloc[0, j.columns.get_loc("annule")] = "oui"
         self.assertEqual(s.scorer(j, iterations=50)["resolues_retenues"], 49)
 
+    def test_paliers(self):
+        bon = s.scorer(journal(n=300), iterations=300)
+        self.assertFalse(bon["palier1_arret"])
+        mauvais = s.scorer(journal(n=300, biais=0.25), iterations=300)
+        self.assertTrue(mauvais["palier1_arret"])
+        self.assertIsNone(s.scorer(journal(n=60), iterations=50)["palier1_arret"])
+
     def test_pari_taker(self):
         r = pd.DataFrame({"proba_propre": [0.8, 0.2, 0.505], "milieu": [0.5, 0.5, 0.5], "bid": [0.49] * 3,
                           "ask": [0.51] * 3, "y": [1, 1, 1]})

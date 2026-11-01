@@ -7,6 +7,7 @@
 
 ## Étapes, dans l'ordre
 
+0. Téo lance `python -B controle_taille_univers.py --cache ~/cache_binance_vision` (volumes seulement, aucun rendement, aucun essai consommé). Jonathan et Téo choisissent la règle de volume sur la synthèse produite (`resultats/taille_univers_*.md`) et consignent ce choix au § 0 de la fiche.
 1. Jonathan et Téo relisent le § 0 de la fiche (tableau « Opérationnalisation de D6 ») et la liste des memecoins de `config_strat03.json`. Toute correction se fait **maintenant**, avant le moindre rendement.
 2. Passer `statut_regles` à `"figees"`, puis commit et push **avant** l'étape 4. Ce commit date le gel des règles.
 3. Tests, tous verts exigés :

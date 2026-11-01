@@ -96,6 +96,11 @@ def couper_zombies(jours: dict, heures: dict, financement: pd.DataFrame | None):
 
 def univers(jours: dict, t: pd.Timestamp, p: Params) -> list[str]:
     """Univers du lundi t, lu sur les seuls jours < t (fiche § 1.3)."""
+    return [s for s, med in candidats_classes(jours, t, p)[: p.taille_univers] if med >= p.volume_min]
+
+
+def candidats_classes(jours: dict, t: pd.Timestamp, p: Params) -> list[tuple[str, float]]:
+    """Tous les candidats éligibles au lundi t (exclusions, ancienneté, vivant), triés par médiane de volume décroissante."""
     vol = jours["volume"].loc[jours["volume"].index < t]
     if vol.empty:
         return []
@@ -118,7 +123,7 @@ def univers(jours: dict, t: pd.Timestamp, p: Params) -> list[str]:
         med = v.reindex(fenetre).fillna(0).median()
         candidats.append((-med, s))
     candidats.sort()
-    return [s for m, s in candidats[: p.taille_univers] if -m >= p.volume_min]
+    return [(s, -m) for m, s in candidats]
 
 
 def scores(jours: dict, t: pd.Timestamp, noms: list[str], p: Params) -> pd.Series:
