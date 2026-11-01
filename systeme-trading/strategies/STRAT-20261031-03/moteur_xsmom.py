@@ -40,6 +40,22 @@ class Params:
     glissement_stop: float = 0.0030
     facteur: str = "BTC"
     exclus: frozenset = field(default_factory=frozenset)
+    anciennete_continue: bool = False  # D6 b : aucun jour à volume nul sur la fenêtre d'ancienneté
+    volume_min: float = 0.0  # D6 c : médiane de volume minimale (USDT), appliquée après le classement
+    min_noms: int = 6  # sous ce nombre de noms classés, la semaine reste vide
+
+
+def nom_de_base(symbole: str) -> str:
+    """DOGEUSDT, 1000PEPEUSDT, 1MBABYDOGEUSDT -> DOGE, PEPE, BABYDOGE (comparaison des exclusions)."""
+    b = symbole[:-4] if symbole.endswith("USDT") else symbole
+    for pre in ("1000000", "1000", "1M"):
+        if b.startswith(pre) and len(b) > len(pre):
+            return b[len(pre):]
+    return b
+
+
+def est_exclu(symbole: str, exclus) -> bool:
+    return symbole in exclus or nom_de_base(symbole) in exclus
 
 
 # ---------------------------------------------------------------- nettoyage
@@ -86,19 +102,23 @@ def univers(jours: dict, t: pd.Timestamp, p: Params) -> list[str]:
     candidats = []
     veille = t - UN_JOUR
     for s in vol.columns:
-        if s == p.facteur or s in p.exclus:
+        if s == p.facteur or est_exclu(s, p.exclus):
             continue
         v = vol[s]
         actifs = v.index[v.fillna(0) > 0]
         if len(actifs) == 0 or actifs[0] > t - pd.Timedelta(days=p.anciennete):
             continue
+        if p.anciennete_continue:
+            fen_a = pd.date_range(t - pd.Timedelta(days=p.anciennete), veille, freq="D")
+            if not (v.reindex(fen_a).fillna(0) > 0).all():
+                continue
         if veille not in v.index or not (v.get(veille, 0) or 0) > 0:
             continue
         fenetre = pd.date_range(t - pd.Timedelta(days=p.fenetre_volume), veille, freq="D")
         med = v.reindex(fenetre).fillna(0).median()
         candidats.append((-med, s))
     candidats.sort()
-    return [s for _, s in candidats[: p.taille_univers]]
+    return [s for m, s in candidats[: p.taille_univers] if -m >= p.volume_min]
 
 
 def scores(jours: dict, t: pd.Timestamp, noms: list[str], p: Params) -> pd.Series:
@@ -132,7 +152,10 @@ def selection(sc: pd.Series, k: int) -> tuple[list[str], list[str]]:
 
 
 def signal(jours: dict, t: pd.Timestamp, p: Params) -> tuple[list[str], list[str]]:
-    return selection(scores(jours, t, univers(jours, t, p), p), p.k)
+    sc = scores(jours, t, univers(jours, t, p), p)
+    if len(sc) < max(p.min_noms, 2 * p.k):
+        return [], []
+    return selection(sc, p.k)
 
 
 # ---------------------------------------------------------------- exécution d'une ligne

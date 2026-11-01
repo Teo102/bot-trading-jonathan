@@ -44,7 +44,13 @@ Une seule question : nos probabilités battent-elles le prix du marché, après 
 
 **Conséquence : 100 prévisions ne peuvent presque jamais prouver un edge**, même grand. Elles peuvent en revanche montrer qu'il n'y en a pas.
 
-Proposition, non appliquée :
+**Décision de Jonathan et Téo du 01/11/2026** :
+- **Palier 1, à 100 prévisions résolues** : arrêt immédiat si notre Brier ne bat pas celui du milieu de marché (différence de Brier ≥ 0, estimation ponctuelle).
+- **Palier 2, à 300 prévisions résolues** : test en papier autorisé seulement avec une significativité statistique. **Précision proposée, à confirmer** : borne haute de l'IC 95 % par bootstrap sur les événements de la différence de Brier strictement négative, 5 000 tirages, graine 20261101, sur au moins 90 événements.
+
+Effet connu de ces paliers, sur le cas synthétique favorable ci-dessus : au palier 1, un vrai edge serait arrêté par hasard dans 21,5 % des cas (1 000 journaux synthétiques de 100 prévisions, calcul du 01/11/2026), et le palier 2 au Brier ne passe que dans 30 % des cas. Le gain par pari détecte plus tôt (57 %) mais n'a pas été retenu.
+
+Proposition initiale de Claude, remplacée par la décision ci-dessus :
 
 - **Porte 1, à 100 prévisions résolues sur au moins 30 événements.** Arrêt du projet si la différence de Brier est positive (nous faisons pire que le marché) ou si le gain moyen par pari taker est négatif. Sinon, poursuite jusqu'à 300.
 - **Porte 2, à 300 prévisions résolues.** Borne basse de l'IC 95 % du gain par pari supérieure à 0, et différence de Brier négative. Seul ce résultat ouvre une fiche de stratégie `analyse-polymarket` avec capital papier.

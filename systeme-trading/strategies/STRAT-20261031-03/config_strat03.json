@@ -1,0 +1,32 @@
+{
+  "strategie": "STRAT-20261031-03",
+  "version": "2026-11-01 D6",
+  "statut_regles": "proposees",
+  "note_statut": "run_essai.py refuse tout essai tant que statut_regles ne vaut pas \"figees\". Passer a \"figees\" seulement apres validation ecrite de Jonathan et Teo sur l'operationnalisation de D6 (fiche § 0), puis commit avant tout essai.",
+  "params_base": {
+    "taille_univers": 30,
+    "fenetre_volume": 30,
+    "anciennete": 180,
+    "anciennete_continue": true,
+    "volume_min": 50000000,
+    "fenetre_classement": 21,
+    "fenetre_beta": 60,
+    "k": 3,
+    "stop": 0.30,
+    "frais": 0.0005,
+    "glissement": 0.0005,
+    "glissement_stop": 0.0030,
+    "min_noms": 6
+  },
+  "exclusions": {
+    "stablecoins_et_indexes": ["USDC", "BUSD", "TUSD", "DAI", "FDUSD", "USDP", "USD1", "USDE", "RLUSD", "BFUSD", "PYUSD", "PAXG", "XAUT"],
+    "indices": ["BTCDOM", "DEFI", "FOOTBALL", "BLUEBIRD", "DOTECO"],
+    "memecoins_liste_close_2026-11-01": ["DOGE", "SHIB", "PEPE", "FLOKI", "BONK", "WIF", "BOME", "MEME", "PEOPLE", "SATS", "TURBO", "MEW", "NEIRO", "POPCAT", "BRETT", "PNUT", "RATS", "BABYDOGE", "DOGS", "MOODENG", "GOAT", "ACT", "CHILLGUY", "TRUMP", "FARTCOIN", "SPX", "PENGU", "MYRO", "CHEEMS", "LUNC"],
+    "note": "Liste close ecrite le 01/11/2026 avant tout rendement. Comparaison par nom de base (prefixes 1000, 1000000 et 1M retires). LUNC ajoute par Claude comme cas limite (ancien LUNA apres effondrement), a confirmer ou retirer par Jonathan."
+  },
+  "blocs": {
+    "developpement": {"essai": "E01", "premier_lundi": "2021-01-04", "dernier_lundi": "2024-06-24", "fin_donnees_prix": "2024-07-01T02:00:00Z"},
+    "validation": {"essai": "E02", "premier_lundi": "2024-07-01", "dernier_lundi": "2025-07-21", "fin_donnees_prix": "2025-07-28T02:00:00Z"}
+  },
+  "bootstrap": {"bloc_semaines": 4, "tirages": 10000, "graine": 20261031, "niveau": 0.90}
+}

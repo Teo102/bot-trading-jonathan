@@ -250,6 +250,45 @@ class Signal(unittest.TestCase):
         self.assertNotIn("S07", m.univers(j, t, m.Params(taille_univers=100)))
 
 
+class FiltresD6(unittest.TestCase):
+    """Règles d'exclusion D6 du 01/11/2026 (à figer)."""
+
+    def test_nom_de_base_et_exclusion_par_prefixe(self):
+        self.assertEqual(m.nom_de_base("1000PEPEUSDT"), "PEPE")
+        self.assertEqual(m.nom_de_base("1MBABYDOGEUSDT"), "BABYDOGE")
+        self.assertEqual(m.nom_de_base("DOGEUSDT"), "DOGE")
+        self.assertTrue(m.est_exclu("1000SHIBUSDT", {"SHIB"}))
+        self.assertFalse(m.est_exclu("ETHUSDT", {"SHIB"}))
+
+    def test_exclusion_avant_classement_laisse_entrer_le_suivant(self):
+        j, h, f = marche(graine=21)
+        t = pd.Timestamp("2022-06-06")
+        p = m.Params(taille_univers=5)
+        base = m.univers(j, t, p)
+        p2 = m.Params(taille_univers=5, exclus=frozenset({base[0]}))
+        u2 = m.univers(j, t, p2)
+        self.assertNotIn(base[0], u2)
+        self.assertEqual(len(u2), 5)
+        self.assertEqual(u2[:4], base[1:])
+
+    def test_anciennete_continue(self):
+        j, h, f = marche(graine=22)
+        t = pd.Timestamp("2022-09-05")
+        j["volume"].loc[pd.Timestamp("2022-05-01"), "S08"] = 0.0  # un jour nul dans les 180 j
+        p = m.Params(taille_univers=100, anciennete=180, anciennete_continue=True)
+        self.assertNotIn("S08", m.univers(j, t, p))
+        self.assertIn("S08", m.univers(j, t, m.Params(taille_univers=100, anciennete=180)))
+
+    def test_seuil_de_volume_et_semaine_vide(self):
+        j, h, f = marche(graine=23)
+        t = pd.Timestamp("2022-06-06")
+        med = j["volume"].loc[(j["volume"].index >= t - pd.Timedelta(days=30)) & (j["volume"].index < t)].median()
+        seuil = med.drop("BTC").sort_values().iloc[-4]  # seuls 4 noms au-dessus
+        p = m.Params(volume_min=float(seuil))
+        self.assertEqual(len(m.univers(j, t, p)), 4)
+        self.assertEqual(m.signal(j, t, p), ([], []))  # moins de 6 noms : aucune position
+
+
 class AucunEdgeFantome(unittest.TestCase):
     """Marches aléatoires sans dérive et sans coût : le moteur ne doit pas fabriquer de rendement."""
 

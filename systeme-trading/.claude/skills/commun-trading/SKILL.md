@@ -3,7 +3,7 @@ name: commun-trading
 description: Données partagées du système de trading de Jonathan (plateformes, univers d'actifs, règles de risque, format des fiches et du journal, classement). Ouvert par cerveau-trading au début de chaque traitement et par tout skill du système qui en a besoin.
 ---
 
-# Commun trading : données partagées (version 1.4, 01/11/2026)
+# Commun trading : données partagées (version 1.5, 01/11/2026)
 
 Les valeurs entre crochets sont à compléter par Jonathan. Tant qu'une valeur manque, le skill qui en dépend la marque au compte rendu et applique la valeur prudente indiquée.
 
@@ -20,7 +20,7 @@ Aucune plateforme n'est connectée en écriture à Claude. L'exécution passe so
 ## 2. Univers
 
 - Actifs suivis : [BTC, ETH, SOL, …]
-- Actifs exclus : [memecoins, jetons de moins de X M$ de capitalisation, …]
+- Actifs exclus : [memecoins, jetons de moins de X M$ de capitalisation, …]. Pour STRAT-20261031-03 (décision D6 du 01/11/2026, opérationnalisation à figer) : stablecoins et actifs indexés, moins de 180 jours d'historique continu, memecoins de la liste close de `strategies/STRAT-20261031-03/config_strat03.json`, médiane de volume journalier sous 50 M USDT
 - Horizon dominant : [swing, quelques jours à quelques semaines]
 
 ## 3. Règles de risque
