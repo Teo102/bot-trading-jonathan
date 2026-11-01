@@ -1,0 +1,81 @@
+prefixe,variante,question,mi_mandat,evenements_jeton0,trades_ws,ordres_poses,attentes_niveau_inconnu,remplissages,parts_remplies
+20261101T001303Z,meilleur,"2026 Balance of Power: D Senate, D House",True,164,1,2,68,0,0
+20261101T001303Z,meilleur,Will the Republican Party control the Senate after the 2026 Midterm elections?,True,166,0,2,91,0,0
+20261101T001303Z,meilleur,Will the Democrats win the Kansas Senate race in 2026?,True,144,0,2,161,0,0
+20261101T001303Z,meilleur,Will Marine Le Pen win the 2027 French presidential election?,False,256,0,1,258,0,0
+20261101T001303Z,meilleur,Will the Democrats win the Texas Senate race in 2026?,True,167,1,2,60,0,0
+20261101T001303Z,meilleur,Will the Democratic Party control the Senate after the 2026 Midterm elections?,True,122,0,2,23,0,0
+20261101T001303Z,meilleur,"2026 Balance of Power: R Senate, D House",True,115,0,2,42,0,0
+20261101T001303Z,meilleur,Will the Democratic Party control the House after the 2026 Midterm elections?,True,75,0,2,9,0,0
+20261101T001303Z,meilleur,Will the Republican Party win the NC-13 House seat?,True,144,0,2,18,0,0
+20261101T001303Z,meilleur,"2026 Balance of Power: R Senate, R House",True,99,1,2,5,0,0
+20261101T001303Z,meilleur,Will the Republicans win the Kansas Senate race in 2026?,True,78,0,2,37,0,0
+20261101T001303Z,meilleur,Will the Republicans win the Texas Senate race in 2026?,True,187,0,2,97,0,0
+20261101T001303Z,meilleur,Will there be no change in Fed interest rates after the December 2026 meeting?,False,325,0,2,152,0,0
+20261101T001303Z,meilleur,Will the Republican Party control the House after the 2026 Midterm elections?,True,86,0,2,6,0,0
+20261101T001303Z,meilleur,Will the Democrats win the Iowa Senate race in 2026?,True,107,0,2,154,0,0
+20261101T001303Z,meilleur,Will the Republicans win the Iowa Senate race in 2026?,True,124,0,2,190,0,0
+20261101T001303Z,meilleur,"Will Republicans lose the Alaska, Iowa, Kansas, Maine, Michigan, Ohio, and Texas Senate seats?",True,112,4,2,21,0,0
+20261101T001303Z,meilleur,Will the Republican Party hold below 190 House seats after the 2026 midterm elections?,True,49,0,2,30,0,0
+20261101T001303Z,meilleur,Will the Democratic Party win the ME-02 House seat?,True,52,0,2,18,0,0
+20261101T001303Z,meilleur,Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?,False,279,0,14,63,0,0
+20261101T001303Z,milieu_1c,"2026 Balance of Power: D Senate, D House",True,164,1,2,25,0,0
+20261101T001303Z,milieu_1c,Will the Republican Party control the Senate after the 2026 Midterm elections?,True,166,0,2,34,0,0
+20261101T001303Z,milieu_1c,Will the Democrats win the Kansas Senate race in 2026?,True,144,0,2,1,0,0
+20261101T001303Z,milieu_1c,Will Marine Le Pen win the 2027 French presidential election?,False,256,0,2,297,0,0
+20261101T001303Z,milieu_1c,Will the Democrats win the Texas Senate race in 2026?,True,167,1,2,42,0,0
+20261101T001303Z,milieu_1c,Will the Democratic Party control the Senate after the 2026 Midterm elections?,True,122,0,2,4,0,0
+20261101T001303Z,milieu_1c,"2026 Balance of Power: R Senate, D House",True,115,0,2,7,0,0
+20261101T001303Z,milieu_1c,Will the Democratic Party control the House after the 2026 Midterm elections?,True,75,0,2,10,0,0
+20261101T001303Z,milieu_1c,Will the Republican Party win the NC-13 House seat?,True,144,0,2,18,0,0
+20261101T001303Z,milieu_1c,"2026 Balance of Power: R Senate, R House",True,99,1,2,20,0,0
+20261101T001303Z,milieu_1c,Will the Republicans win the Kansas Senate race in 2026?,True,78,0,2,60,0,0
+20261101T001303Z,milieu_1c,Will the Republicans win the Texas Senate race in 2026?,True,187,0,2,24,0,0
+20261101T001303Z,milieu_1c,Will there be no change in Fed interest rates after the December 2026 meeting?,False,325,0,2,152,0,0
+20261101T001303Z,milieu_1c,Will the Republican Party control the House after the 2026 Midterm elections?,True,86,0,2,15,0,0
+20261101T001303Z,milieu_1c,Will the Democrats win the Iowa Senate race in 2026?,True,107,0,2,18,0,0
+20261101T001303Z,milieu_1c,Will the Republicans win the Iowa Senate race in 2026?,True,124,0,2,190,0,0
+20261101T001303Z,milieu_1c,"Will Republicans lose the Alaska, Iowa, Kansas, Maine, Michigan, Ohio, and Texas Senate seats?",True,112,4,2,3,0,0
+20261101T001303Z,milieu_1c,Will the Republican Party hold below 190 House seats after the 2026 midterm elections?,True,49,0,2,10,0,0
+20261101T001303Z,milieu_1c,Will the Democratic Party win the ME-02 House seat?,True,52,0,2,18,0,0
+20261101T001303Z,milieu_1c,Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?,False,279,0,0,558,0,0
+20261031T224031Z,meilleur,Will the Democrats win the Texas Senate race in 2026?,True,211,0,2,236,0,0
+20261031T224031Z,meilleur,Will the Republicans win the Texas Senate race in 2026?,True,149,0,2,100,0,0
+20261031T224031Z,meilleur,Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?,False,65,0,1,75,0,0
+20261031T224031Z,meilleur,Will the Republican Party hold below 190 House seats after the 2026 midterm elections?,True,38,0,2,21,0,0
+20261031T224031Z,meilleur,Will the Republican Party control the Senate after the 2026 Midterm elections?,True,216,4,2,209,0,0
+20261031T224031Z,meilleur,"2026 Balance of Power: R Senate, R House",True,68,0,2,19,0,0
+20261031T224031Z,meilleur,Will Marine Le Pen win the 2027 French presidential election?,False,318,1,4,245,0,0
+20261031T224031Z,meilleur,Will the Democrats win the Kansas Senate race in 2026?,True,143,0,2,114,0,0
+20261031T224031Z,meilleur,Will the Democratic Party win the NJ-02 House seat?,True,319,0,2,37,0,0
+20261031T224031Z,meilleur,Will the Democrats win the Iowa Senate race in 2026?,True,79,0,0,158,0,0
+20261031T224031Z,meilleur,"Will Republicans lose the Alaska, Iowa, Kansas, Maine, Michigan, Ohio, and Texas Senate seats?",True,116,0,2,56,0,0
+20261031T224031Z,meilleur,Will the Democratic Party control the House after the 2026 Midterm elections?,True,142,0,2,21,0,0
+20261031T224031Z,meilleur,"2026 Balance of Power: R Senate, D House",True,448,0,2,9,0,0
+20261031T224031Z,meilleur,"2026 Balance of Power: D Senate, D House",True,134,1,2,40,0,0
+20261031T224031Z,meilleur,Will the Republican Party control the House after the 2026 Midterm elections?,True,110,0,2,21,0,0
+20261031T224031Z,meilleur,Will the US confirm that aliens exist before 2027?,False,127,2,2,2,0,0
+20261031T224031Z,meilleur,Will the Republicans win the Kansas Senate race in 2026?,True,102,0,2,85,0,0
+20261031T224031Z,meilleur,Will Kamala Harris win the 2028 Democratic presidential nomination?,False,44,0,1,46,0,0
+20261031T224031Z,meilleur,"Will Anthropic announce bankruptcy by December 31, 2028?",False,6,0,1,6,0,0
+20261031T224031Z,meilleur,"Will OpenAI announce another Millennium Prize solution by December 31, 2027?",False,22,0,1,27,0,0
+20261031T224031Z,milieu_1c,Will the Democrats win the Texas Senate race in 2026?,True,211,0,2,110,0,0
+20261031T224031Z,milieu_1c,Will the Republicans win the Texas Senate race in 2026?,True,149,0,2,41,0,0
+20261031T224031Z,milieu_1c,Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?,False,65,0,0,130,0,0
+20261031T224031Z,milieu_1c,Will the Republican Party hold below 190 House seats after the 2026 midterm elections?,True,38,0,2,9,0,0
+20261031T224031Z,milieu_1c,Will the Republican Party control the Senate after the 2026 Midterm elections?,True,216,4,2,26,0,0
+20261031T224031Z,milieu_1c,"2026 Balance of Power: R Senate, R House",True,68,0,2,21,0,0
+20261031T224031Z,milieu_1c,Will Marine Le Pen win the 2027 French presidential election?,False,318,1,4,266,0,0
+20261031T224031Z,milieu_1c,Will the Democrats win the Kansas Senate race in 2026?,True,143,0,2,41,0,0
+20261031T224031Z,milieu_1c,Will the Democratic Party win the NJ-02 House seat?,True,319,0,2,17,0,0
+20261031T224031Z,milieu_1c,Will the Democrats win the Iowa Senate race in 2026?,True,79,0,2,22,0,0
+20261031T224031Z,milieu_1c,"Will Republicans lose the Alaska, Iowa, Kansas, Maine, Michigan, Ohio, and Texas Senate seats?",True,116,0,2,9,0,0
+20261031T224031Z,milieu_1c,Will the Democratic Party control the House after the 2026 Midterm elections?,True,142,0,2,9,0,0
+20261031T224031Z,milieu_1c,"2026 Balance of Power: R Senate, D House",True,448,0,2,13,0,0
+20261031T224031Z,milieu_1c,"2026 Balance of Power: D Senate, D House",True,134,1,2,19,0,0
+20261031T224031Z,milieu_1c,Will the Republican Party control the House after the 2026 Midterm elections?,True,110,0,2,8,0,0
+20261031T224031Z,milieu_1c,Will the US confirm that aliens exist before 2027?,False,127,2,1,138,0,0
+20261031T224031Z,milieu_1c,Will the Republicans win the Kansas Senate race in 2026?,True,102,0,2,8,0,0
+20261031T224031Z,milieu_1c,Will Kamala Harris win the 2028 Democratic presidential nomination?,False,44,0,0,88,0,0
+20261031T224031Z,milieu_1c,"Will Anthropic announce bankruptcy by December 31, 2028?",False,6,0,1,7,0,0
+20261031T224031Z,milieu_1c,"Will OpenAI announce another Millennium Prize solution by December 31, 2027?",False,22,0,2,2,0,0

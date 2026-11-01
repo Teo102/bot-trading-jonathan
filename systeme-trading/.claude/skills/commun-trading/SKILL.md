@@ -3,7 +3,7 @@ name: commun-trading
 description: Données partagées du système de trading de Jonathan (plateformes, univers d'actifs, règles de risque, format des fiches et du journal, classement). Ouvert par cerveau-trading au début de chaque traitement et par tout skill du système qui en a besoin.
 ---
 
-# Commun trading : données partagées (version 1.3)
+# Commun trading : données partagées (version 1.4, 01/11/2026)
 
 Les valeurs entre crochets sont à compléter par Jonathan. Tant qu'une valeur manque, le skill qui en dépend la marque au compte rendu et applique la valeur prudente indiquée.
 
@@ -89,7 +89,7 @@ Mandat validé le 31/10/2026 (`cerveau-trading` § 0). Les valeurs entre crochet
 |---|---|---|
 | Logiciel | [freqtrade] | — |
 | Hôte | [serveur loué, fonctionnement continu] | jamais un ordinateur personnel |
-| Plateforme(s) | [Hyperliquid ? autre] — support freqtrade [à confirmer] | une seule au départ |
+| Plateforme(s) | Données de backtest : Binance Futures (décision du 01/11/2026). Exécution : [différée, Bybit ou OKX envisagés ; Hyperliquid non tranché] — support freqtrade [à confirmer] | une seule au départ |
 | Compte | dédié au moteur | — |
 | Clé | trading seulement, sans retrait, liste blanche d'IP si disponible | — |
 | Accès de supervision | API du moteur en lecture, clé plateforme en lecture seule | — |
@@ -101,8 +101,9 @@ Mandat validé le 31/10/2026 (`cerveau-trading` § 0). Les valeurs entre crochet
 | Règle | Valeur | Valeur prudente |
 |---|---|---|
 | Capital alloué au moteur | [ ] | 0 tant qu'aucune stratégie n'est promue |
-| Risque par trade (réel) | [ ] % | 0,5 % ; quart de cette valeur en « réel réduit » |
-| Positions ouvertes simultanées | [ ] | 3 |
+| Risque par trade (réel) | 0,25 % par ligne quand 6 positions sont ouvertes (décision du 01/11/2026) ; [ ] % sinon | 0,5 % ; quart de cette valeur en « réel réduit » |
+| Positions ouvertes simultanées | 6 (décision du 01/11/2026, pour 3 longs et 3 shorts) | 3 |
+| Risque cumulé au stop, toutes positions ouvertes | 1,5 % du capital du moteur (6 × 0,25 % = 3 × 0,5 %, décision du 01/11/2026) | 1,5 % |
 | Exposition totale du moteur | [ ] % de son capital | 100 %, sans levier implicite au-delà de 2 |
 | Stop | posé sur la plateforme à l'entrée, jamais géré seulement par le moteur | — |
 | Coupe-circuits | § 3 bis, codés dans le moteur (protections natives si disponibles) | — |
@@ -119,7 +120,7 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 |---|---|---|---|---|---|
 | STRAT-20261031-01 | Tendance Donchian, 10 perpétuels | rejetée | — | — | Verdict E10-E11 du 01/11/2026 |
 | STRAT-20261031-02 | Portage de financement delta neutre | rejetée pour ce jeu de paramètres | — | — | Jonathan et Téo, 01/11/2026 |
-| STRAT-20261031-03 | Momentum transversal | recherche, fiche conservée, aucun test | — | — | Jonathan et Téo, 01/11/2026 |
+| STRAT-20261031-03 | Momentum transversal résiduel, 3 longs et 3 shorts | recherche, décisions D1 à D5 prises, tests synthétiques avant E01 | — | — | Jonathan et Téo, 01/11/2026 (fiche § 0) |
 | STRAT-20261031-04 | Retour à la moyenne après cascades | recherche, non testable en l'état | — | — | Jonathan et Téo, 01/11/2026 |
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
