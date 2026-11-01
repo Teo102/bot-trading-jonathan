@@ -27,6 +27,7 @@ import pandas as pd
 VISION = "https://data.binance.vision"
 S3 = "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision"
 RACINE = "data/futures/um/monthly"
+RACINE_J = "data/futures/um/daily"  # archives journalières, pour combler les trous des mensuelles
 
 
 class ErreurSomme(RuntimeError):
@@ -178,17 +179,46 @@ def _serie(source, cles: list[str], lecteur, fin: pd.Timestamp):
     return x[~x.index.duplicated(keep="last")].sort_index()
 
 
-def charger_symbole(source, sym: str, nature: str, debut: pd.Timestamp, fin: pd.Timestamp):
+CHEMINS_J = {"1d": "klines/{s}/1d/{s}-1d-{d}.zip", "1h": "klines/{s}/1h/{s}-1h-{d}.zip",
+             "marque": "markPriceKlines/{s}/1h/{s}-1h-{d}.zip"}
+
+
+def combler(source, sym: str, nature: str, x, debut, fin, journal: dict | None = None):
+    """Comble les trous d'une série mensuelle par les archives journalières (ex. 26-27/02/2022, diagnostic du
+    01/11/2026). Seuls les jours compris entre la première et la dernière ligne observée sont cherchés : un actif
+    arrêté n'est pas prolongé. Les jours introuvables restent absents et sont comptés."""
+    if x is None or not len(x):
+        return x
+    pas = "D" if nature == "1d" else "h"
+    attendu = pd.date_range(max(x.index.min(), naif(debut)), x.index.max(), freq=pas)
+    manquants = attendu.difference(x.index)
+    if not len(manquants):
+        return x
+    jours = sorted({d.normalize() for d in manquants})
+    ajouts, trouves, introuvables = [], [], []
+    for d in jours:
+        z = source.lire(f"{RACINE_J}/" + CHEMINS_J[nature].format(s=sym, d=d.date().isoformat()))
+        if z is None:
+            introuvables.append(d.date().isoformat())
+            continue
+        y = lire_klines(z)
+        ajouts.append(y[y.index < naif(fin)])
+        trouves.append(d.date().isoformat())
+    if journal is not None:
+        journal.setdefault(nature, {})[sym] = {"jours_comble": trouves, "jours_introuvables": introuvables}
+    if not ajouts:
+        return x
+    y = pd.concat([x] + ajouts)
+    return y[~y.index.duplicated(keep="first")].sort_index()  # la mensuelle prime en cas de doublon
+
+
+def charger_symbole(source, sym: str, nature: str, debut: pd.Timestamp, fin: pd.Timestamp, journal: dict | None = None):
     ms = mois(debut, fin)
-    if nature == "1d":
-        cles = [f"{RACINE}/klines/{sym}/1d/{sym}-1d-{m}.zip" for m in ms]
-        return _serie(source, cles, lire_klines, fin)
-    if nature == "1h":
-        cles = [f"{RACINE}/klines/{sym}/1h/{sym}-1h-{m}.zip" for m in ms]
-        return _serie(source, cles, lire_klines, fin)
-    if nature == "marque":
-        cles = [f"{RACINE}/markPriceKlines/{sym}/1h/{sym}-1h-{m}.zip" for m in ms]
-        return _serie(source, cles, lire_klines, fin)
+    if nature in CHEMINS_J:
+        modele = {"1d": "klines/{s}/1d/{s}-1d-{m}.zip", "1h": "klines/{s}/1h/{s}-1h-{m}.zip",
+                  "marque": "markPriceKlines/{s}/1h/{s}-1h-{m}.zip"}[nature]
+        cles = [f"{RACINE}/" + modele.format(s=sym, m=m) for m in ms]
+        return combler(source, sym, nature, _serie(source, cles, lire_klines, fin), debut, fin, journal)
     if nature == "financement":
         cles = [f"{RACINE}/fundingRate/{sym}/{sym}-fundingRate-{m}.zip" for m in ms]
         return _serie(source, cles, lire_financement, fin)
@@ -199,9 +229,9 @@ def symboles_usdt(source) -> list[str]:
     return sorted(s for s in source.lister(f"{RACINE}/klines/") if s.endswith("USDT"))
 
 
-def charger_jours(source, symboles, debut, fin, fils=8) -> dict:
+def charger_jours(source, symboles, debut, fin, fils=8, journal: dict | None = None) -> dict:
     with ThreadPoolExecutor(fils) as ex:
-        res = dict(zip(symboles, ex.map(lambda s: charger_symbole(source, s, "1d", debut, fin), symboles)))
+        res = dict(zip(symboles, ex.map(lambda s: charger_symbole(source, s, "1d", debut, fin, journal), symboles)))
     res = {s: v for s, v in res.items() if v is not None and len(v)}
     close = pd.DataFrame({s: v["close"] for s, v in res.items()})
     vol = pd.DataFrame({s: v["volume_usdt"] for s, v in res.items()})
@@ -209,9 +239,9 @@ def charger_jours(source, symboles, debut, fin, fils=8) -> dict:
     return {"close": close.reindex(idx), "volume": vol.reindex(idx)}
 
 
-def charger_heures(source, symboles, debut, fin, fils=8):
+def charger_heures(source, symboles, debut, fin, fils=8, journal: dict | None = None):
     def un(s):
-        return s, charger_symbole(source, s, "1h", debut, fin), charger_symbole(source, s, "marque", debut, fin), \
+        return s, charger_symbole(source, s, "1h", debut, fin, journal), charger_symbole(source, s, "marque", debut, fin, journal), \
             charger_symbole(source, s, "financement", debut, fin)
     with ThreadPoolExecutor(fils) as ex:
         res = list(ex.map(un, symboles))

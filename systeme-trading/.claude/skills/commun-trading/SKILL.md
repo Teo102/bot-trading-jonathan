@@ -3,7 +3,7 @@ name: commun-trading
 description: Données partagées du système de trading de Jonathan (plateformes, univers d'actifs, règles de risque, format des fiches et du journal, classement). Ouvert par cerveau-trading au début de chaque traitement et par tout skill du système qui en a besoin.
 ---
 
-# Commun trading : données partagées (version 1.5, 01/11/2026)
+# Commun trading : données partagées (version 1.6, 01/11/2026)
 
 Les valeurs entre crochets sont à compléter par Jonathan. Tant qu'une valeur manque, le skill qui en dépend la marque au compte rendu et applique la valeur prudente indiquée.
 
@@ -17,6 +17,13 @@ Les valeurs entre crochets sont à compléter par Jonathan. Tant qu'une valeur m
 
 Aucune plateforme n'est connectée en écriture à Claude. L'exécution passe soit par Jonathan (mode discrétionnaire), soit par le moteur autonome déterministe (§ 8).
 
+## 1 bis. Statut juridique et fiscal (Émirats)
+
+- Résidence de Jonathan : Émirats arabes unis (confirmée le 31/10/2026). Résidence fiscale : [à inscrire par Jonathan].
+- Impôt sur les sociétés : d'après la décision du Conseil des ministres n° 49 de 2023, une personne physique n'y entre que si le chiffre d'affaires de son activité dépasse 1 million d'AED, et les revenus d'investissement personnel, sans licence, en sont exclus (PwC, Khaleej Times, lus le 01/11/2026). Application à ce système : [à confirmer par Jonathan, juriste fiscaliste].
+- Polymarket : risque pénal au titre des art. 460 à 463 du code pénal fédéral, non chiffrable (`polymarket/REGISTRE_MARCHES_UMA.md` § 4). Aucun capital avant l'avis d'un conseil local.
+- Téo : pays de résidence [à confirmer]. Polymarket est bloqué en France depuis le 16/07/2026.
+
 ## 2. Univers
 
 - Actifs suivis : [BTC, ETH, SOL, …]
@@ -27,14 +34,14 @@ Aucune plateforme n'est connectée en écriture à Claude. L'exécution passe so
 
 | Règle | Valeur | Valeur prudente par défaut |
 |---|---|---|
-| Capital alloué au système | [ ] | — |
-| Risque maximal par position (perte à l'invalidation) | [ ] % du capital | 1 % |
-| Exposition maximale totale | [ ] % | 50 % |
+| Capital alloué au système | 0 jusqu'à la première promotion d'une stratégie (décision de Jonathan du 01/11/2026). L'enveloppe se fixe à la porte de promotion | — |
+| Risque maximal par position (perte à l'invalidation) | 1 % du capital (profil « standard », décision de Jonathan du 01/11/2026) | 1 % |
+| Exposition maximale totale | 50 % (profil « standard », 01/11/2026) | 50 % |
 | Exposition maximale par actif | [ ] % | 20 % |
 | Mise maximale par marché Polymarket | [ ] % | 2 % |
 | Levier maximal | [ ] | aucun |
 | Ratio rendement/risque minimal | [ ] | 2 |
-| Perte mensuelle déclenchant une pause | [ ] % | 10 % |
+| Perte mensuelle déclenchant une pause | 10 % (profil « standard », 01/11/2026) | 10 % |
 | Alerte de proximité de l'invalidation (part de la distance initiale restante) | [ ] | un tiers |
 
 Une fiche qui dépasse une règle le dit en tête ; elle ne s'ajuste pas en silence. Ces valeurs sont des plafonds : une instruction ponctuelle peut les resserrer, jamais les relâcher.

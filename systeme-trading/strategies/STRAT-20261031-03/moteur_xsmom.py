@@ -14,6 +14,8 @@ Conventions écrites (hypothèses du moteur, à relire avec la fiche) :
 - H2. Le financement s'applique au notionnel d'entrée de la ligne, pour chaque événement dans ]entrée ; sortie].
 - H3. « Vivant » : volume non nul le jour t − 1, lu sur les seules données antérieures à t.
 - H4. Une ligne stoppée ou délistée ne revient au portefeuille qu'au lundi suivant (fiche § 1.3).
+- H5. Une heure absente suivie d'une reprise des données est un trou d'archive : elle ne déclenche ni délistage
+  ni stop (le stop n'y est pas lisible). Seule la fin définitive des données vaut délistage (01/11/2026).
 """
 from __future__ import annotations
 
@@ -187,10 +189,13 @@ def jouer_ligne(heures: dict, financement, s: str, sens: int, t_in: pd.Timestamp
     fen = heures["open"].index[(heures["open"].index >= t_in) & (heures["open"].index < t_out)]
     niveau = None if p.stop is None else px_in * (1 - sens * p.stop)
     sortie, t_sortie, statut = None, t_out, "semaine"
+    derniere = o.last_valid_index()
     for h in fen:
         oh = o.get(h, np.nan)
-        if not np.isfinite(oh):  # données finies : délistage en cours de semaine
-            prec = h - UNE_HEURE
+        if not np.isfinite(oh):
+            if derniere is not None and h < derniere:
+                continue  # H5 : trou de données suivi d'une reprise, ni délistage ni stop lisible
+            prec = o.loc[:h].last_valid_index()  # données finies : délistage en cours de semaine
             sortie = heures["close"][s].get(prec, np.nan)
             t_sortie, statut = h, "delistage"
             break
@@ -203,12 +208,15 @@ def jouer_ligne(heures: dict, financement, s: str, sens: int, t_in: pd.Timestamp
                 break
     if sortie is None:
         px_out = o.get(t_out, np.nan)
-        if not np.isfinite(px_out):  # plus de bougie à l'heure de sortie
-            prec = t_out - UNE_HEURE
+        if np.isfinite(px_out):
+            sortie = px_out
+        elif derniere is not None and t_out < derniere:  # H5 : trou à l'heure de sortie, première ouverture suivante
+            suite = o.loc[t_out:].dropna()
+            sortie, t_sortie = float(suite.iloc[0]), suite.index[0]
+        else:  # plus de bougie à l'heure de sortie
+            prec = o.loc[:t_out].last_valid_index()
             sortie = heures["close"][s].get(prec, np.nan)
             statut = "delistage"
-        else:
-            sortie = px_out
     rend = sens * (sortie / px_in - 1)
     fin_ = 0.0
     if financement is not None and s in financement:
@@ -240,7 +248,9 @@ def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionne
     lundis = list(lundis)
     for i, t in enumerate(lundis[:-1]):
         t_in, t_out = t + UNE_HEURE, lundis[i + 1] + UNE_HEURE
-        longs, shorts = signal(jours, t, p)
+        u = univers(jours, t, p)
+        sc = scores(jours, t, u, p)
+        longs, shorts = selection(sc, p.k) if len(sc) >= max(p.min_noms, 2 * p.k) else ([], [])
         cible = {s: notionnel for s in longs} | {s: -notionnel for s in shorts}
         # rotation au lundi t_in : coût sur l'écart entre la tenue et la cible
         cout_rotation = cout_de_rotation(tenues, cible, p)
@@ -260,7 +270,8 @@ def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionne
             if r["statut"] == "semaine":
                 tenues[s] = r["valeur_fin"]
         net = tot["pnl_prix"] + tot["financement"] - tot["cout"]
-        semaines.append({"lundi": t, "longs": ",".join(longs), "shorts": ",".join(shorts), **tot, "net": net})
+        semaines.append({"lundi": t, "longs": ",".join(longs), "shorts": ",".join(shorts), "univers": len(u),
+                         "exclus_h1": len(u) - len(sc), **tot, "net": net})
     if semaines and tenues:  # solde final des lignes encore tenues, imputé à la dernière semaine
         solde = sum(abs(v) for v in tenues.values()) * (p.frais + p.glissement)
         semaines[-1]["cout"] += solde

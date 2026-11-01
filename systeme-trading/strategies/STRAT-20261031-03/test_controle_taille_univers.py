@@ -38,10 +38,11 @@ class Taille(unittest.TestCase):
             # diagnostic : un trou d'archive de 3 jours fait perdre le nom en mode strict, pas avec 7 jours tolérés
             vol2 = vol.copy()
             vol2.loc[pd.Timestamp("2021-02-10"):pd.Timestamp("2021-02-12"), "S03USDT"] = float("nan")
-            dg = c.diagnostic(vol2, p, pd.Timestamp("2021-02-08"), pd.Timestamp("2021-02-15"))
+            import moteur_xsmom as m
+            p0 = m.Params(**{**p.__dict__, "trou_max_jours": 0})  # règle stricte, indépendante de la config
+            dg = c.diagnostic(vol2, p0, pd.Timestamp("2021-02-08"), pd.Timestamp("2021-02-15"))
             self.assertIn("S03USDT", dg["symbole"].tolist())
             self.assertEqual(int(dg.set_index("symbole").loc["S03USDT", "jours_absents"]), 3)
-            import moteur_xsmom as m
             p7 = m.Params(**{**p.__dict__, "trou_max_jours": 7})
             self.assertNotIn("S03USDT", c.diagnostic(vol2, p7, pd.Timestamp("2021-02-08"), pd.Timestamp("2021-02-15"))["symbole"].tolist() if len(c.diagnostic(vol2, p7, pd.Timestamp("2021-02-08"), pd.Timestamp("2021-02-15"))) else [])
         finally:

@@ -113,6 +113,8 @@ def metriques(sem: pd.DataFrame, lig: pd.DataFrame, btc: pd.Series, config: dict
     mois_ = sem.assign(mois=pd.to_datetime(sem["lundi"]).dt.to_period("M")).groupby("mois")["net"].sum()
     return {
         "semaines": int(len(r)), "semaines_vides": int((sem["longs"] == "").sum()),
+        "semaines_avec_exclusion_h1": int((sem["exclus_h1"] > 0).sum()), "exclusions_h1_moyenne": float(sem["exclus_h1"].mean()),
+        "univers_moyen": float(sem["univers"].mean()),
         "lignes": int(len(actives)), "stops": int((actives["statut"] == "stop").sum()),
         "delistages": int((actives["statut"] == "delistage").sum()),
         "rendement_net_total_brut100": gain_total,
@@ -185,6 +187,12 @@ def rapport_md(essai: str, mt: dict, meta: dict) -> str:
         f"Repli du prix de marque sur le contrat : {len(meta['qualite']['marque_repli_contrat'])} symboles. "
         f"Sans financement : {len(meta['qualite']['sans_financement'])}. Sans archive 1 h (lignes « absent ») : "
         f"{len(meta['qualite'].get('sans_archive_1h', []))}. Incidents réseau : {meta['incidents']}.",
+        "",
+        "Trous des archives mensuelles comblés par les journalières : "
+        + (", ".join(f"{n} {v['jours_combles']} jours comblés, {v['jours_introuvables']} introuvables ({v['symboles']} symboles)"
+                     for n, v in meta['qualite'].get('comblement', {}).items()) or "aucun") + ".",
+        f"Semaines où la règle H1 a retiré au moins un nom du classement : {mt.get('semaines_avec_exclusion_h1', 'n.d.')}, "
+        f"noms retirés en moyenne : {mt.get('exclusions_h1_moyenne', float('nan')):.2f}.",
     ]
     return "\n".join(lignes) + "\n"
 
@@ -198,7 +206,8 @@ def executer(essai: str, source, config: dict | None = None, registre: Path = RE
     fin = db.naif(bloc["fin_donnees_prix"])
     debut_jours = lundis[0] - pd.Timedelta(days=p.anciennete + p.fenetre_volume + 10)
     syms = symboles or db.symboles_usdt(source)
-    jours = db.charger_jours(source, syms, debut_jours, fin)
+    comblement: dict = {}
+    jours = db.charger_jours(source, syms, debut_jours, fin, journal=comblement)
     jours = {k: v.rename(columns={"BTCUSDT": "BTC"}) for k, v in jours.items()}
     jc, _, _, _ = m.couper_zombies(jours, {}, None)
     noms = set()
@@ -206,7 +215,7 @@ def executer(essai: str, source, config: dict | None = None, registre: Path = RE
         noms |= set(m.univers(jc, t, p))
     noms = sorted(noms | {"BTCUSDT"})
     noms = [("BTCUSDT" if s == "BTC" else s) for s in noms]
-    heures, fin_df, qualite = db.charger_heures(source, noms, lundis[0] - pd.Timedelta(days=1), fin)
+    heures, fin_df, qualite = db.charger_heures(source, noms, lundis[0] - pd.Timedelta(days=1), fin, journal=comblement)
     btc = rendements_btc(heures, lundis)
     ren = {"BTCUSDT": "BTC"}
     heures = {k: v.rename(columns=ren) for k, v in heures.items()}
@@ -217,6 +226,10 @@ def executer(essai: str, source, config: dict | None = None, registre: Path = RE
     jours = {k: v.reindex(columns=utiles) for k, v in jours.items()}
     heures = {k: v.reindex(columns=utiles) for k, v in heures.items()}
     qualite["sans_archive_1h"] = sorted(set(utiles) - set(heures["open"].dropna(axis=1, how="all").columns))
+    qualite["comblement"] = {n: {"symboles": len(v), "jours_combles": sum(len(x["jours_comble"]) for x in v.values()),
+                                 "jours_introuvables": sum(len(x["jours_introuvables"]) for x in v.values())}
+                             for n, v in comblement.items()}
+    qualite["comblement_detail"] = comblement
     sem, lig = m.backtest(jours, heures, fin_df, lundis, p, notionnel=1.0 / 6)
     mt = metriques(sem, lig, btc, config)
     h = horo()

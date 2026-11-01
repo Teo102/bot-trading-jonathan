@@ -134,6 +134,63 @@ class Chargeur(Base):
         self.assertTrue((x.index.hour % 8 == 0).all() and (x.index.minute == 0).all())
 
 
+class Comblement(unittest.TestCase):
+    """Trou de 2 jours dans les mensuelles (cas réel des 26-27/02/2022), journalières présentes."""
+
+    def test_trou_comble_par_les_journalieres(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            faux_vision(tmp, n_sym=3, jours=300, debut="2020-06-01")
+            sym, mo = "S00USDT", "2020-10"
+            trou = [pd.Timestamp("2020-10-17"), pd.Timestamp("2020-10-18")]
+            for nature, chemin, pas in (("1d", "klines/{s}/1d/{s}-1d-{m}.zip", "D"), ("1h", "klines/{s}/1h/{s}-1h-{m}.zip", "h"),
+                                        ("marque", "markPriceKlines/{s}/1h/{s}-1h-{m}.zip", "h")):
+                cle = f"{R}/" + chemin.format(s=sym, m=mo)
+                with zipfile.ZipFile(tmp / cle) as z:
+                    df = pd.read_csv(z.open(z.namelist()[0]), header=None)
+                t = pd.to_datetime(df[0], unit="ms")
+                garde = ~t.dt.normalize().isin(trou)
+                poser(tmp, cle, zipper(df[garde], "x.zip", False))
+                for d in trou:  # archives journalières du trou
+                    cj = f"{db.RACINE_J}/" + chemin.replace("{m}", "{d}").format(s=sym, d=d.date().isoformat())
+                    jour = df[(t.dt.normalize() == d).values].copy()
+                    jour.columns = ["open_time"] + [f"c{i}" for i in range(1, jour.shape[1])]  # en-tête réaliste
+                    poser(tmp, cj, zipper(jour, "x.zip", True))
+            src = db.VisionLocale(tmp)
+            j: dict = {}
+            x1 = db.charger_symbole(src, sym, "1d", pd.Timestamp("2020-09-01"), pd.Timestamp("2020-12-01"), j)
+            xh = db.charger_symbole(src, sym, "1h", pd.Timestamp("2020-09-01"), pd.Timestamp("2020-12-01"), j)
+            self.assertTrue(all(d in x1.index for d in trou))
+            self.assertEqual(len(xh), (30 + 31 + 30) * 24)
+            self.assertEqual(j["1d"][sym]["jours_comble"], ["2020-10-17", "2020-10-18"])
+            self.assertEqual(j["1h"][sym]["jours_introuvables"], [])
+        finally:
+            shutil.rmtree(tmp)
+
+
+class TrouMoteur(unittest.TestCase):
+    def test_trou_en_semaine_n_est_pas_un_delistage(self):
+        jj, hh, ff = ts.marche(graine=31)
+        s = "S05"
+        t_in = pd.Timestamp("2022-05-02 01:00")
+        for k in hh:
+            hh[k].loc[pd.Timestamp("2022-05-04 00:00"):pd.Timestamp("2022-05-05 23:00"), s] = np.nan  # 48 h absentes
+        r = re_.m.jouer_ligne(hh, ff, s, -1, t_in, t_in + pd.Timedelta(days=7), 1.0, re_.m.Params(stop=None))
+        self.assertEqual(r["statut"], "semaine")
+        self.assertAlmostEqual(r["sortie"], hh["open"].loc[t_in + pd.Timedelta(days=7), s])
+
+    def test_trou_a_l_heure_de_sortie(self):
+        jj, hh, ff = ts.marche(graine=32)
+        s = "S06"
+        t_in = pd.Timestamp("2022-05-02 01:00")
+        t_out = t_in + pd.Timedelta(days=7)
+        for k in hh:
+            hh[k].loc[t_out:t_out + pd.Timedelta(hours=2), s] = np.nan
+        r = re_.m.jouer_ligne(hh, ff, s, 1, t_in, t_out, 1.0, re_.m.Params(stop=None))
+        self.assertEqual(r["statut"], "semaine")
+        self.assertAlmostEqual(r["sortie"], hh["open"].loc[t_out + pd.Timedelta(hours=3), s])
+
+
 class Lanceur(Base):
     def test_refus_regles_non_figees(self):
         with self.assertRaises(re_.Refus):
@@ -143,8 +200,11 @@ class Lanceur(Base):
         with self.assertRaises(re_.Refus):
             re_.controles("E25", config_test(), self.registre())
 
-    def test_config_reelle_encore_proposee(self):
-        self.assertEqual(re_.charger_config()["statut_regles"], "proposees")
+    def test_config_reelle_figee_le_01_11(self):
+        c = re_.charger_config()
+        self.assertEqual(c["statut_regles"], "figees")  # gel du 01/11/2026, toute modification ouvre une nouvelle stratégie
+        self.assertEqual(c["params_base"]["trou_max_jours"], 7)
+        self.assertIn("LUNC", c["exclusions"]["memecoins_liste_close_2026-11-01"])
 
     def test_bout_en_bout_puis_refus_de_relance(self):
         reg = self.registre()

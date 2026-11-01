@@ -3,7 +3,7 @@ name: validation-edge
 description: "Porte d'entrée du moteur autonome de Jonathan : toute stratégie candidate (crypto, perps, alts, règles de bot freqtrade ou autre) y passe par backtest honnête, contrôle des biais, correction des tests multiples, hors échantillon, papier, puis dossier de promotion. Chaîne V1 de cerveau-trading ; s'ouvre sur le mot VALIDER, sur toute idée de stratégie automatisable, de bot, de backtest, d'optimisation, de « stratégie qui marche » vue en ligne, et sur toute modification d'une stratégie existante."
 ---
 
-# Validation d'un edge (version 1.2, 01/11/2026)
+# Validation d'un edge (version 1.3, 01/11/2026)
 
 Le skill répond à une seule question : cette stratégie a-t-elle un edge qui survit aux frais, au hasard et au temps ? Il ne cherche pas à rendre une stratégie bonne ; il cherche à la faire échouer avant le capital. Une stratégie qui échoue ici coûte du temps, pas d'argent.
 
@@ -29,6 +29,21 @@ Ajouté le 01/11/2026 sur décision de Jonathan et Téo. Toute idée passe ce tr
 | T10 | L'idée ne marche-t-elle que dans un régime précis (hausse de 2021 par exemple) ? | Oui |
 
 Une idée qui passe les dix questions ouvre la fiche du § 1. Le tri ne dit rien de l'edge : il élimine seulement les impasses à coût nul.
+
+## 0 ter. Leçons inscrites (cerveau-trading § 7)
+
+Règles génériques tirées des erreurs relevées, chacune datée et sourcée au journal.
+
+| N° | Règle | Origine |
+|---|---|---|
+| L1 | Un critère d'échec se fixe avant le test et ne se négocie pas après. Un critère inatteignable se corrige **avant** toute lecture de rendement, et la correction est consignée | STRAT-01, E10 ; STRAT-03, C3 retiré le 01/11/2026 |
+| L2 | Une ligne absente d'une archive n'est pas un jour à volume nul. Toute règle de continuité distingue les deux, et un saut brutal du nombre de candidats se diagnostique sur les volumes seuls avant le gel | STRAT-03, trou du 26-27/02/2022, 43 noms perdus |
+| L3 | Un trou de données se comble à la source (archives journalières) ; une heure absente suivie d'une reprise ne vaut ni délistage ni stop | STRAT-03, correctif 0007 |
+| L4 | Avant tout essai, le cerveau vérifie dans `git log` et dans le code que chaque correctif annoncé est présent, et relance toutes les suites de tests. Un correctif annoncé peut manquer | 01/11/2026 : patch 0007 annoncé appliqué, absent du dépôt |
+| L5 | Une idée écartée par le tri T1 à T10 ne se poursuit que par exception écrite de Jonathan, avec une règle de décision et un plan de sortie écrits avant les résultats | STRAT-DEX, avenant 2 |
+| L6 | Une décision du journal ne se renverse que par une nouvelle ligne de journal qui l'acte. Un mandat plus récent ne l'efface pas en silence | Approche par wallets abandonnée puis rouverte le 01/11/2026 |
+| L7 | Un simulateur qui suppose une exécution sur chaque trade public surestime le maker. Toute mesure de maker modélise la file d'attente | Polymarket, 01/11/2026 : +4,83 $ naïf contre −15,42 $ avec file |
+| L8 | Avant d'interpréter un échec, publier la puissance du test. Un échec sans puissance ne prouve pas l'absence d'edge, mais reste un échec | STRAT-03 § 3, calibration Polymarket, STRAT-DEX |
 
 ## 1. Fiche de stratégie
 

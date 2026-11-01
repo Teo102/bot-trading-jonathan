@@ -9,17 +9,20 @@
 
 0. Téo lance `python -B controle_taille_univers.py --cache ~/cache_binance_vision` (volumes seulement, aucun rendement, aucun essai consommé). Jonathan et Téo choisissent la règle de volume sur la synthèse produite (`resultats/taille_univers_*.md`) et consignent ce choix au § 0 de la fiche.
 1. Jonathan et Téo relisent le § 0 de la fiche (tableau « Opérationnalisation de D6 ») et la liste des memecoins de `config_strat03.json`. Toute correction se fait **maintenant**, avant le moindre rendement.
+1 bis. Appliquer le correctif de comblement (patch 0007), puis relancer les trois suites de tests (21, 12 et 1 tests).
 2. Passer `statut_regles` à `"figees"`, puis commit et push **avant** l'étape 4. Ce commit date le gel des règles.
 3. Tests, tous verts exigés :
    ```
    python -B test_moteur_synthetique.py
    python -B test_donnees_et_essai.py
+   python -B test_controle_taille_univers.py
    ```
 4. Lancement unique :
    ```
    python -B run_essai.py --essai E01 --cache ~/cache_binance_vision
    ```
    Le script lit environ 300 symboles en 1 d de juin 2020 à juin 2024, puis le 1 h, la marque et le financement des seuls noms entrés dans l'univers. Il s'arrête au 01/07/2024 02:00 UTC (verrou de bloc). Durée [non mesurée].
+4 bis. Avant de lire le moindre rendement, lire dans `E01_metriques.md` les lignes de comblement et d'exclusion H1. Si des jours restent introuvables en grand nombre, le signaler avant toute interprétation.
 5. Commit des sorties : `resultats/E01_metriques.json`, `.md`, `E01_semaines.csv`, `E01_lignes.csv`, et la ligne E01 de `REGISTRE_ESSAIS.csv`.
 
 ## Ce que E01 tranche
