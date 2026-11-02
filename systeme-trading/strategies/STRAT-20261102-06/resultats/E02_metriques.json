@@ -1,0 +1,72 @@
+{
+ "meta": {
+  "horodatage": "2026-11-02T17:24:00Z",
+  "essai": "E02",
+  "bloc": "validation",
+  "premier_lundi": "2024-07-01",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "empreinte": "319bcd24de8d240c3a516d656f63e3025da60147741a6d28933456c5cf5a0c78",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 91
+  },
+  "incidents": 0,
+  "appels": 58057
+ },
+ "metriques": {
+  "semaines": 56,
+  "semaines_vides": 0,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 5.839285714285714,
+  "lignes": 383,
+  "stops": 74,
+  "delistages": 0,
+  "rendement_net_total_brut100": 1.1338631060221966,
+  "moyenne_hebdo_net": 0.02024755546468208,
+  "ic90_moyenne_hebdo_blocs": [
+   0.010108963468915532,
+   0.030227917251444997
+  ],
+  "sharpe_net_annualise": 2.546022305506854,
+  "beta_btc_hebdo": -0.25610534321806483,
+  "alpha_hebdo_residuel": 0.02377611955635465,
+  "alpha_annualise_residuel": 1.236358216930442,
+  "sharpe_residuel_annualise": 3.138403812361295,
+  "drawdown_max_brut100": 0.12859367112464182,
+  "esperance_par_ligne_R": 0.05748501133221104,
+  "jambe_longue": 0.33272201796391243,
+  "jambe_courte": 0.8291232961975614,
+  "pnl_prix": 1.2230340199948073,
+  "financement": -0.06118870583333334,
+  "couts": 0.027982208139277452,
+  "par_annee": {
+   "2024": 0.5134137234209534,
+   "2025": 0.620449382601243
+  },
+  "annees_positives": 2,
+  "part_max_mois_du_gain": 0.22344256863027523,
+  "part_max_nom_du_gain": 0.293441083140242,
+  "nom_max": "BTC",
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": false,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.0
+  }
+ }
+}
