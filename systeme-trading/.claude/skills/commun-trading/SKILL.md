@@ -3,7 +3,7 @@ name: commun-trading
 description: Données partagées du système de trading de Jonathan (plateformes, univers d'actifs, règles de risque, format des fiches et du journal, classement). Ouvert par cerveau-trading au début de chaque traitement et par tout skill du système qui en a besoin.
 ---
 
-# Commun trading : données partagées (version 1.6, 01/11/2026)
+# Commun trading : données partagées (version 1.7, 02/11/2026)
 
 Les valeurs entre crochets sont à compléter par Jonathan. Tant qu'une valeur manque, le skill qui en dépend la marque au compte rendu et applique la valeur prudente indiquée.
 
@@ -132,3 +132,18 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
 | STRAT-DEX | Rétro-ingénierie de wallets Solana (pilote) | rejetée pour l'approche par wallets (non concluant, 6 wallets sur 30 requis) | — | — | Avenant 2, 02/11/2026 |
+| STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | recherche, fiche écrite, règles proposées | — | — | Fiche du 02/11/2026, décisions de Jonathan en attente |
+
+## 9. Constats empiriques mesurés
+
+Inscrits le 02/11/2026 à la demande de Jonathan et Téo. Ce sont des **observations datées, sur un échantillon nommé**, pas des lois : chacune peut être contredite par une mesure plus large. Un skill qui s'en sert cite le numéro et la limite. Un constat ne justifie jamais à lui seul une règle de trading ; il oriente une fiche, qui reste soumise à `validation-edge`.
+
+| N° | Constat | Mesure (source) | Portée et limite |
+|---|---|---|---|
+| C1 | **Le coût de rotation d'un portefeuille hebdomadaire 3L/3S sur le top 30 des perpétuels est stable : environ 0,13 % par semaine à brut 100 %, soit environ 6,6 % par an**, et environ 63 % de la borne haute calculée (0,20 %) | 0,127 %/sem. sur 182 semaines (E01) et 0,126 %/sem. sur 56 semaines (E02) de STRAT-03, frais et glissement de 0,05 % par côté (exports du 02/11/2026) | Coût **modélisé**, pas observé en exécution. Vaut pour cette rotation et ce barème. Le glissement réel au stop n'est pas mesuré |
+| C2 | **Ce coût suffit à annuler un momentum résiduel d'alts** : sur 2021 à mi-2024, prix +15,9 % contre coûts −23,1 %. Sur la validation, prix +46,2 % contre coûts −7,1 % | E01 et E02 de STRAT-03 | Une seule stratégie et un seul jeu de paramètres. Le signe du prix change d'un bloc à l'autre : ce n'est pas une invariance du résultat, seulement du coût |
+| C3 | **Le financement encaissé n'est ni stable ni symétrique** : +32,6 % sur 2021 à mi-2024 (longs +12,3 %, shorts +20,3 %), puis +0,8 % sur juillet 2024 à juillet 2025 (longs +3,1 %, shorts −2,3 %) | E01 et E02 de STRAT-03, sur les seules lignes choisies par le momentum | Mesuré sur des lignes sélectionnées par un autre signal. Il dépend du régime de levier. Base de l'hypothèse de STRAT-05, d'où sa déclaration de contamination |
+| C4 | **La jambe courte d'un momentum d'alts subit les rebonds** : prix des shorts −73,3 % sur E01, contre +17,2 % sur E02 | STRAT-03 | Même portée que C2 |
+| C5 | **Sur un tirage de wallets actifs sur pump.fun et Raydium, la détention médiane est d'environ 11 à 14 minutes** (perdants 0,19 h, gagnants 0,23 h) et 69 % des wallets perdent avant filtres | Pilote STRAT-DEX, 4 174 positions, 147 wallets, 90 jours avant le 01/11/2026, `cohorte_pilote.json` du 02/11/2026 | Échantillon biaisé vers les wallets peu actifs (193 au-delà de 1 000 signatures écartés) et vers les pools chauds du jour du tirage ; 28 % des positions exclues pour transfert. Conséquence retenue : l'activité observée relève de la vitesse (tri T5) |
+| C6 | **Un maker passif sur Polymarket perd une fois la file d'attente modélisée** : −15,42 $ pour 1 000 $ exécutés [IC 95 % −35,89 ; −8,43], contre −2,54 $ dans le simulateur naïf | `polymarket/resultats/20261101T091123Z_file_attente_rapport.md`, 23 marchés hors mi-mandat | Une fenêtre de 14 jours avant le mi-mandat, un seul instantané du carnet |
+| C7 | **Les archives mensuelles de data.binance.vision ont des trous** : 2 jours manquants (26 et 27/02/2022) sur 43 contrats majeurs ; 318 jours 1 d et 256 jours 1 h comblés par les journalières sur E01, 5 restés introuvables | Diagnostic du 01/11/2026, E01 du 02/11/2026 | Vaut pour toute stratégie qui lit ces archives : comblement obligatoire (`validation-edge` L2 et L3) |

@@ -42,3 +42,13 @@ La requête lit 4 mois de `dex_solana.trades` filtrés sur les mints `pump`. Le 
 ## 4. Sorties à rapporter
 
 Le tableau de synthèse complet (une ligne par classe), le nombre total d'événements, l'heure du passage et l'identifiant de la requête Dune. Ne rien filtrer avant de le partager.
+
+## 5. Requête complémentaire : taux de base du cycle de vie
+
+Fichier : `taux_de_base_cycle_de_vie.sql` (02/11/2026, jamais exécutée). Elle est **descriptive** et ne teste aucune stratégie. Cohorte : les tokens `pump` dont le premier trade vu tombe en juillet 2025, suivis 30 jours. Lecture bornée au 31/08/2025, donc la réserve (septembre 2025 à octobre 2026) reste intacte.
+
+Sorties par palier de FDV maximale atteinte : nombre et part de tokens, part encore actifs aux jours 4-6 et 27-29, médiane du rapport FDV finale sur pic, délai médian jusqu'à 5 M$, volume médian sur 30 jours.
+
+Usage prévu. Elle donne le dénominateur qui manquait au pilote par wallets : quelle part des tokens franchit chaque palier, et combien survivent. Elle ne remplace pas `faisabilite_tokens_solana.sql`, qui reste la seule porte d'arrêt ou de poursuite. **Un seul mois de cohorte ne donne pas un taux « définitif »** : le régime des memecoins change vite (`commun-trading` § 9, constat C5).
+
+Limite connue : si la courbe de lancement n'est pas dans `dex_solana.trades`, la cohorte commence à la migration et le palier « jamais coté » sous-estime fortement les morts précoces.
