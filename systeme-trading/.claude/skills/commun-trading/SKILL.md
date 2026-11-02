@@ -132,7 +132,7 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
 | STRAT-DEX | Rétro-ingénierie de wallets Solana (pilote) | rejetée pour l'approche par wallets (non concluant, 6 wallets sur 30 requis) | — | — | Avenant 2, 02/11/2026 |
-| STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | recherche, fiche écrite, règles proposées | — | — | Fiche du 02/11/2026, décisions de Jonathan en attente |
+| STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | rejetée (E01 −23,5 %, prix net de coûts −66,2 %) | — | — | Verdict E01 du 02/11/2026, hors échantillon non ouvert |
 
 ## 9. Constats empiriques mesurés
 
@@ -147,3 +147,4 @@ Inscrits le 02/11/2026 à la demande de Jonathan et Téo. Ce sont des **observat
 | C5 | **Sur un tirage de wallets actifs sur pump.fun et Raydium, la détention médiane est d'environ 11 à 14 minutes** (perdants 0,19 h, gagnants 0,23 h) et 69 % des wallets perdent avant filtres | Pilote STRAT-DEX, 4 174 positions, 147 wallets, 90 jours avant le 01/11/2026, `cohorte_pilote.json` du 02/11/2026 | Échantillon biaisé vers les wallets peu actifs (193 au-delà de 1 000 signatures écartés) et vers les pools chauds du jour du tirage ; 28 % des positions exclues pour transfert. Conséquence retenue : l'activité observée relève de la vitesse (tri T5) |
 | C6 | **Un maker passif sur Polymarket perd une fois la file d'attente modélisée** : −15,42 $ pour 1 000 $ exécutés [IC 95 % −35,89 ; −8,43], contre −2,54 $ dans le simulateur naïf | `polymarket/resultats/20261101T091123Z_file_attente_rapport.md`, 23 marchés hors mi-mandat | Une fenêtre de 14 jours avant le mi-mandat, un seul instantané du carnet |
 | C7 | **Les archives mensuelles de data.binance.vision ont des trous** : 2 jours manquants (26 et 27/02/2022) sur 43 contrats majeurs ; 318 jours 1 d et 256 jours 1 h comblés par les journalières sur E01, 5 restés introuvables | Diagnostic du 01/11/2026, E01 du 02/11/2026 | Vaut pour toute stratégie qui lit ces archives : comblement obligatoire (`validation-edge` L2 et L3) |
+| C8 | **Un financement très négatif n'annonce pas un rebond** : sur 2022 à mi-2024, le long des 3 noms les moins encombrés (financement le plus négatif, intérêt ouvert en baisse) perd −70,0 % sur le prix, en encaissant +36,4 % de financement ; le short des plus encombrés gagne +24,6 % sur le prix | E01 de STRAT-20261102-05, 130 semaines, export du 02/11/2026 | Lu jambe par jambe après le résultat. Ne fonde aucune stratégie testable sur ces blocs |
