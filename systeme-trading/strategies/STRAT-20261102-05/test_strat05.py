@@ -173,9 +173,11 @@ class Metrics(unittest.TestCase):
 class Lanceur(unittest.TestCase):
     def test_refus_tant_que_non_figee(self):
         c5, c3 = r5.charger_configs()
-        self.assertEqual(c5["statut_regles"], "proposees")
+        self.assertEqual(c5["statut_regles"], "figees")  # gel du 02/11/2026
+        c5 = copy.deepcopy(c5)
+        c5["statut_regles"] = "proposees"
         with self.assertRaises(r5.r3.Refus):
-            r5.r3.controles("E01", c5, r5.REGISTRE)
+            r5.executer("E01", None, c5, c3)
 
     def test_bout_en_bout_sur_faux_vision(self):
         tmp = Path(tempfile.mkdtemp())

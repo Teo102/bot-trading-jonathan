@@ -1,7 +1,7 @@
 {
   "strategie": "STRAT-20261102-05",
   "version": "2026-11-02",
-  "statut_regles": "proposees",
+  "statut_regles": "figees",
   "note_statut": "Aucun essai avant les decisions de Jonathan (fiche § 9) et le gel. Univers, couts, calendrier et stop repris de STRAT-20261031-03/config_strat03.json sans modification.",
   "reprise_infrastructure": "../STRAT-20261031-03/config_strat03.json",
   "score": {
@@ -47,5 +47,6 @@
     "critere 0,2 R retire",
     "papier 26 semaines",
     "papier Binance Futures"
-  ]
+  ],
+  "gel": "02/11/2026, apres controle de couverture couverture_20261102T080645Z (0,0 % de semaines a plus de 20 % de noms manquants)"
 }
