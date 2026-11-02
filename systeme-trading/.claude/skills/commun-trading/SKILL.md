@@ -127,7 +127,8 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 |---|---|---|---|---|---|
 | STRAT-20261031-01 | Tendance Donchian, 10 perpétuels | rejetée | — | — | Verdict E10-E11 du 01/11/2026 |
 | STRAT-20261031-02 | Portage de financement delta neutre | rejetée pour ce jeu de paramètres | — | — | Jonathan et Téo, 01/11/2026 |
-| STRAT-20261031-03 | Momentum transversal résiduel, 3 longs et 3 shorts | recherche, décisions D1 à D5 prises, tests synthétiques avant E01 | — | — | Jonathan et Téo, 01/11/2026 (fiche § 0) |
+| STRAT-20261031-03 | Momentum transversal résiduel, 3 longs et 3 shorts | rejetée (porte sous-périodes, 2 années positives sur 4) | — | — | Verdict des portes du 02/11/2026, E25 non ouvert |
 | STRAT-20261031-04 | Retour à la moyenne après cascades | recherche, non testable en l'état | — | — | Jonathan et Téo, 01/11/2026 |
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
+| STRAT-DEX | Rétro-ingénierie de wallets Solana (pilote) | rejetée pour l'approche par wallets (non concluant, 6 wallets sur 30 requis) | — | — | Avenant 2, 02/11/2026 |
