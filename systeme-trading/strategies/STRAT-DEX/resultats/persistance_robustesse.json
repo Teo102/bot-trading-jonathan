@@ -1,0 +1,71 @@
+{
+ "verdict": "non_concluant_echantillon_insuffisant",
+ "regle": "avenant 2 du 01/11/2026",
+ "variantes": {
+  "base": {
+   "wallets": 6,
+   "tableau": {
+    "a_pos_b_pos": 0,
+    "a_pos_b_neg": 2,
+    "a_neg_b_pos": 0,
+    "a_neg_b_neg": 4
+   },
+   "part_b_pos_si_a_pos": 0.0,
+   "part_b_pos_si_a_neg": 0.0,
+   "p_fisher_unilateral": 1.0,
+   "spearman": 0.9428571428571428,
+   "p_spearman_unilateral": 0.0076,
+   "survivants_observes": 0,
+   "survivants_attendus_hasard": 0.0
+  },
+  "sans_jeton_graine": {
+   "wallets": 6,
+   "tableau": {
+    "a_pos_b_pos": 0,
+    "a_pos_b_neg": 2,
+    "a_neg_b_pos": 0,
+    "a_neg_b_neg": 4
+   },
+   "part_b_pos_si_a_pos": 0.0,
+   "part_b_pos_si_a_neg": 0.0,
+   "p_fisher_unilateral": 1.0,
+   "spearman": 0.6571428571428573,
+   "p_spearman_unilateral": 0.0855,
+   "survivants_observes": 0,
+   "survivants_attendus_hasard": 0.0
+  },
+  "positions_soldees_seules": {
+   "wallets": 6,
+   "tableau": {
+    "a_pos_b_pos": 0,
+    "a_pos_b_neg": 2,
+    "a_neg_b_pos": 2,
+    "a_neg_b_neg": 2
+   },
+   "part_b_pos_si_a_pos": 0.0,
+   "part_b_pos_si_a_neg": 0.5,
+   "p_fisher_unilateral": 1.0,
+   "spearman": -0.08571428571428573,
+   "p_spearman_unilateral": 0.6007,
+   "survivants_observes": 0,
+   "survivants_attendus_hasard": 0.6666666666666666
+  },
+  "sans_meilleure_position_par_periode": {
+   "wallets": 5,
+   "tableau": {
+    "a_pos_b_pos": 0,
+    "a_pos_b_neg": 1,
+    "a_neg_b_pos": 0,
+    "a_neg_b_neg": 4
+   },
+   "part_b_pos_si_a_pos": 0.0,
+   "part_b_pos_si_a_neg": 0.0,
+   "p_fisher_unilateral": 1.0,
+   "spearman": 0.7,
+   "p_spearman_unilateral": 0.12,
+   "survivants_observes": 0,
+   "survivants_attendus_hasard": 0.0
+  }
+ },
+ "positions_filtrees": 1784
+}

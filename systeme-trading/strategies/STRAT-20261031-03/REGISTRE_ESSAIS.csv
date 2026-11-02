@@ -1,6 +1,6 @@
 id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire,glissement,semaines,sharpe_net_brut100
-E01,,STRAT-20261031-03,base D6 (N30/V30/A180c/VM50M/L21/B60/K3/stop30 - exclusions config_strat03.json),developpement,20210104-20240701,0.0005,,,,,,,moteur separe - univers a date,0.0005,182,
-E02,,STRAT-20261031-03,base,validation,20240701-20250728,0.0005,,,,,,,,0.0005,56,
+E01,2026-11-02T00:53:36Z,STRAT-20261031-03,base D6 (N30/V30/A180c/VM50M/L21/B60/K3/stop30 - exclusions config_strat03.json),developpement,20210104-20240701,0.0005,1092,0.0045,-0.007239,0.009992,0.6836,,moteur separe - univers a date - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,182,0.1503
+E02,2026-11-02T01:15:40Z,STRAT-20261031-03,base,validation,20240701-20250728,0.0005,336,0.0231,-0.002930,0.018075,0.1802,,IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,56,1.0728
 E03,,STRAT-20261031-03,classement 17 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse - jamais retenue a la place de la base,0.0005,238,
 E04,,STRAT-20261031-03,classement 25 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
 E05,,STRAT-20261031-03,beta 48 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,

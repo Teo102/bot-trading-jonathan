@@ -1,0 +1,280 @@
+{
+ "horodatage_utc": "2026-11-02T04:06:50+00:00",
+ "sources": "RPC public Solana, GeckoTerminal",
+ "periode_jours": 90,
+ "wallets": {
+  "hors_budget": 193,
+  "lu": 179,
+  "lu_incomplet": 2,
+  "non_lu_budget": 26
+ },
+ "mouvements": {
+  "achat": 9168,
+  "autre": 13482,
+  "complexe": 363,
+  "entree_jeton": 5434,
+  "financement": 2185,
+  "sortie_jeton": 844,
+  "vente": 8525
+ },
+ "positions_total": 4174,
+ "positions_exclues": {
+  "transfert": 1177,
+  "cout_inconnu": 104,
+  "prix_sol_absent": 0
+ },
+ "wallets_avec_positions": 147,
+ "part_wallets_positifs_avant_filtres": 0.30612244897959184,
+ "candidats_min_positions": 80,
+ "exclusions": {
+  "F3": 10,
+  "F2_cluster": 13,
+  "F1": 15
+ },
+ "passent_filtres": 42,
+ "couverture_filtre_dev": {
+  "jetons": 1886,
+  "lus": 400,
+  "trouves": 176,
+  "financeurs_partages": 80,
+  "non_plateforme": 5
+ },
+ "rentables": 12,
+ "rentables_sans_meilleure_position": 6,
+ "part_gains_top_1pct": 0.3106948100395146,
+ "gagnants": {
+  "positions": 725,
+  "wallets": 12,
+  "reussite": 0.40413793103448276,
+  "retour_moyen": 0.03183296206622879,
+  "retour_median": -0.040826008735519774,
+  "retour_pondere": 0.08657357955624023,
+  "profit_factor": 2.082073888356391,
+  "fdv_entree_mediane": 7055.109448485658,
+  "fdv_p25": 4246.404694293039,
+  "fdv_p75": 18339.179753977493,
+  "duree_mediane_h": 0.23166666666666666,
+  "duree_p75_h": 3.2605555555555554,
+  "perte_sortie_mediane": -0.13240086491325959,
+  "part_echelonnee": 0.28551724137931034,
+  "multiple_v1_median": 0.9570688573386963,
+  "volume_h1_median": 4470.487054729725,
+  "part_jamais_vendu": 0.041379310344827586,
+  "phases": {
+   "inconnue": 0.4317,
+   "apres_1h": 0.331,
+   "migration_1h": 0.1793,
+   "avant_migration": 0.0579
+  },
+  "declencheurs": {
+   "inconnu": 0.8676,
+   "repli": 0.0772,
+   "cassure": 0.0359,
+   "entre_les_deux": 0.0193
+  }
+ },
+ "perdants_et_neutres": {
+  "positions": 1059,
+  "wallets": 30,
+  "reussite": 0.28611898016997167,
+  "retour_moyen": -0.06863626215184013,
+  "retour_median": -0.14850545764566092,
+  "retour_pondere": -0.18268105008560773,
+  "profit_factor": 0.23023535606345086,
+  "fdv_entree_mediane": 28484.67385209344,
+  "fdv_p25": 11648.226777137232,
+  "fdv_p75": 102265.47466924682,
+  "duree_mediane_h": 0.18638888888888888,
+  "duree_p75_h": 0.9723611111111111,
+  "perte_sortie_mediane": -0.24917175716355716,
+  "part_echelonnee": 0.26440037771482533,
+  "multiple_v1_median": 0.8923406552670125,
+  "volume_h1_median": 38087.63535377917,
+  "part_jamais_vendu": 0.07459867799811143,
+  "phases": {
+   "migration_1h": 0.3229,
+   "inconnue": 0.3182,
+   "apres_1h": 0.254,
+   "avant_migration": 0.1048
+  },
+  "declencheurs": {
+   "inconnu": 0.8942,
+   "repli": 0.0604,
+   "cassure": 0.0349,
+   "entre_les_deux": 0.0104
+  }
+ },
+ "tranches_fdv": {
+  "<500k": {
+   "n": 1435,
+   "reussite": 0.35400696864111497,
+   "retour_moyen": 0.005808189152790072,
+   "retour_median": -0.07259336044408542,
+   "retour_pondere": -0.10731065681494219
+  },
+  "500k-1M": {
+   "n": 36,
+   "reussite": 0.3333333333333333,
+   "retour_moyen": -0.0986148814737087,
+   "retour_median": -0.09298813406619483,
+   "retour_pondere": -0.39992583352452077
+  },
+  "1M-5M": {
+   "n": 32,
+   "reussite": 0.25,
+   "retour_moyen": -0.13638471104027827,
+   "retour_median": -0.10901691140118107,
+   "retour_pondere": -0.04796077658273083
+  },
+  ">5M": {
+   "n": 27,
+   "reussite": 0.25925925925925924,
+   "retour_moyen": -0.09594782438367178,
+   "retour_median": -0.10521012520773561,
+   "retour_pondere": -0.05097848427418118
+  }
+ },
+ "persistance": {
+  "wallets": 6,
+  "tableau": {
+   "a_pos_b_pos": 0,
+   "a_pos_b_neg": 2,
+   "a_neg_b_pos": 0,
+   "a_neg_b_neg": 4
+  },
+  "part_b_pos_si_a_pos": 0.0,
+  "part_b_pos_si_a_neg": 0.0,
+  "p_fisher": 1.0,
+  "rang_spearman": 0.942857142857143
+ },
+ "persistance_avant_filtres": {
+  "wallets": 12,
+  "tableau": {
+   "a_pos_b_pos": 1,
+   "a_pos_b_neg": 2,
+   "a_neg_b_pos": 2,
+   "a_neg_b_neg": 7
+  },
+  "part_b_pos_si_a_pos": 0.3333333333333333,
+  "part_b_pos_si_a_neg": 0.2222222222222222,
+  "p_fisher": 1.0,
+  "rang_spearman": 0.3426573426573427
+ },
+ "controle_lecture": {
+  "n": 313,
+  "sens_concordant": 1.0,
+  "ratio_usd_median": 1.003971116935237,
+  "ratio_usd_p10": 0.977093596114985,
+  "ratio_usd_p90": 1.0224267655814512
+ },
+ "par_rentable": [
+  {
+   "id": "R1",
+   "n": 179,
+   "reussite": 0.508,
+   "pf": 4.01,
+   "retour": 0.07,
+   "gain_sur_perte": 3.88,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R2",
+   "n": 91,
+   "reussite": 0.319,
+   "pf": 2.3,
+   "retour": 0.119,
+   "gain_sur_perte": 4.91,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R3",
+   "n": 32,
+   "reussite": 0.406,
+   "pf": 1.91,
+   "retour": 0.154,
+   "gain_sur_perte": 2.79,
+   "positif_sans_meilleure": false
+  },
+  {
+   "id": "R4",
+   "n": 150,
+   "reussite": 0.367,
+   "pf": 1.42,
+   "retour": 0.04,
+   "gain_sur_perte": 2.46,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R5",
+   "n": 107,
+   "reussite": 0.514,
+   "pf": 4.87,
+   "retour": 0.078,
+   "gain_sur_perte": 4.61,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R6",
+   "n": 13,
+   "reussite": 0.231,
+   "pf": 2.3,
+   "retour": 0.502,
+   "gain_sur_perte": 7.68,
+   "positif_sans_meilleure": false
+  },
+  {
+   "id": "R7",
+   "n": 9,
+   "reussite": 0.556,
+   "pf": 25.1,
+   "retour": 0.229,
+   "gain_sur_perte": 20.08,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R8",
+   "n": 112,
+   "reussite": 0.25,
+   "pf": 2.25,
+   "retour": 0.24,
+   "gain_sur_perte": 6.75,
+   "positif_sans_meilleure": true
+  },
+  {
+   "id": "R9",
+   "n": 9,
+   "reussite": 0.333,
+   "pf": 1.63,
+   "retour": 0.103,
+   "gain_sur_perte": 3.26,
+   "positif_sans_meilleure": false
+  },
+  {
+   "id": "R10",
+   "n": 7,
+   "reussite": 0.429,
+   "pf": 1.48,
+   "retour": 0.163,
+   "gain_sur_perte": 1.97,
+   "positif_sans_meilleure": false
+  },
+  {
+   "id": "R11",
+   "n": 11,
+   "reussite": 0.545,
+   "pf": 2.99,
+   "retour": 0.204,
+   "gain_sur_perte": 2.49,
+   "positif_sans_meilleure": false
+  },
+  {
+   "id": "R12",
+   "n": 5,
+   "reussite": 0.4,
+   "pf": 1.15,
+   "retour": 0.019,
+   "gain_sur_perte": 1.73,
+   "positif_sans_meilleure": false
+  }
+ ]
+}

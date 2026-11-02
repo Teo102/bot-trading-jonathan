@@ -1,0 +1,60 @@
+{
+ "meta": {
+  "horodatage": "2026-11-02T01:15:40Z",
+  "essai": "E02",
+  "bloc": "validation",
+  "premier_lundi": "2024-07-01",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "empreinte": "ca3bd7c78006dcfe40b7568d776945f8b710385184812cf8dcb98d334f844425",
+  "config_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "moteur_sha256": "e0e8e66dad945ab4aabb495730b4fee73e0635d02f357b0bcfd4d06c432263fb",
+  "symboles_lus_1d": 81,
+  "noms_univers": 80,
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "sans_archive_1h": [],
+   "comblement": {},
+   "comblement_detail": {}
+  },
+  "incidents": 0,
+  "appels": 17740
+ },
+ "metriques": {
+  "semaines": 56,
+  "semaines_vides": 0,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 30.0,
+  "lignes": 336,
+  "stops": 24,
+  "delistages": 4,
+  "rendement_net_total_brut100": 0.3989007671740966,
+  "moyenne_hebdo_net": 0.007123227985251725,
+  "ic90_moyenne_hebdo_blocs": [
+   -0.002930228379530497,
+   0.01807509142821684
+  ],
+  "sharpe_net_annualise": 1.0727913263682276,
+  "beta_btc_hebdo": -0.026074252440945373,
+  "alpha_hebdo_residuel": 0.007482473402486097,
+  "alpha_annualise_residuel": 0.38908861692927704,
+  "sharpe_residuel_annualise": 1.1276711752811728,
+  "drawdown_max_brut100": 0.18021498575905942,
+  "esperance_par_ligne_R": 0.02305251775162371,
+  "jambe_longue": 0.32007984369561066,
+  "jambe_courte": 0.14964314545212343,
+  "pnl_prix": 0.46181339414773437,
+  "financement": 0.007909594999999997,
+  "couts": 0.07082222197363763,
+  "par_annee": {
+   "2024": 0.4611839047919275,
+   "2025": -0.062283137617831004
+  },
+  "annees_positives": 1,
+  "part_max_mois_du_gain": 0.7007095015799186,
+  "part_max_nom_du_gain": 0.599268398704217,
+  "nom_max": "REEFUSDT"
+ }
+}
