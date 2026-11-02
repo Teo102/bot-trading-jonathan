@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "horodatage": "2026-11-02T08:58:17Z",
+  "essai": "E01",
+  "bloc": "developpement",
+  "premier_lundi": "2022-01-03",
+  "dernier_lundi": "2024-06-24",
+  "fin_donnees": "2024-07-01T02:00:00Z",
+  "empreinte": "46b7f0d9f4fce92bd48032cd330ac25d2c6e58809b3e87d9992dafa349c9157a",
+  "config05_sha256": "2647c04d03fa1ace593fc34217ca64878d4fdb41b9891efe026d104a236b1567",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "oi_jours_demandes": 4177,
+   "oi_jours_introuvables": 12,
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 109,
+     "jours_combles": 242,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 41,
+     "jours_combles": 241,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": []
+  },
+  "incidents": 0,
+  "appels": 29622
+ },
+ "metriques": {
+  "semaines": 130,
+  "semaines_vides": 0,
+  "semaines_avec_exclusion_h1": 14,
+  "exclusions_h1_moyenne": 0.1076923076923077,
+  "univers_moyen": 30.0,
+  "lignes": 780,
+  "stops": 65,
+  "delistages": 0,
+  "rendement_net_total_brut100": -0.23499395721361777,
+  "moyenne_hebdo_net": -0.0018076458247201367,
+  "ic90_moyenne_hebdo_blocs": [
+   -0.008519693710699815,
+   0.005020077816573833
+  ],
+  "sharpe_net_annualise": -0.2659061759991666,
+  "beta_btc_hebdo": 0.04618776982336213,
+  "alpha_hebdo_residuel": -0.00203324769187567,
+  "alpha_annualise_residuel": -0.10572887997753486,
+  "sharpe_residuel_annualise": -0.29980341134883404,
+  "drawdown_max_brut100": 0.7548232536067236,
+  "esperance_par_ligne_R": -0.005849986487767433,
+  "jambe_longue": -0.33609791251757537,
+  "jambe_courte": 0.30853076589500567,
+  "pnl_prix": -0.4543648866225696,
+  "financement": 0.42679774,
+  "couts": 0.2074268105910482,
+  "par_annee": {
+   "2022": -0.447816221098697,
+   "2023": -0.11941625208679878,
+   "2024": 0.33223851597187803
+  },
+  "annees_positives": 1,
+  "part_max_mois_du_gain": NaN,
+  "part_max_nom_du_gain": NaN,
+  "nom_max": "STORJUSDT",
+  "portes_internes": {
+   "rendement_net_positif": false,
+   "prix_net_de_couts": -0.6617916972136177,
+   "prix_seul_positif_ou_nul": false,
+   "concentration_nom_ok": null,
+   "concentration_mois_ok": null,
+   "drawdown_brut100_ok": false
+  }
+ }
+}

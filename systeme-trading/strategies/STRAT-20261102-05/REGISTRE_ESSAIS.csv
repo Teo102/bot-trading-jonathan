@@ -1,5 +1,5 @@
 id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire,glissement,semaines,sharpe_net_brut100
-E01,,STRAT-20261102-05,base (C=zF7+zO7 K3 stop30 univers D6),developpement,20220103-20240701,0.0005,,,,,,,elimination seulement - contamination fiche § 0,0.0005,130,
+E01,2026-11-02T08:58:17Z,STRAT-20261102-05,base (C=zF7+zO7 K3 stop30 univers D6),developpement,20220103-20240701,0.0005,780,-0.0058,-0.008520,0.005020,0.7548,,elimination seulement - contamination fiche § 0 - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,130,-0.2659
 E02,,STRAT-20261102-05,base,validation,20240701-20250728,0.0005,,,,,,,elimination seulement - contamination fiche § 0,0.0005,56,
 E03,,STRAT-20261102-05,financement 3 j,dev+val,20220103-20250728,0.0005,,,,,,,robustesse,0.0005,186,
 E04,,STRAT-20261102-05,financement 14 j,dev+val,20220103-20250728,0.0005,,,,,,,robustesse,0.0005,186,
