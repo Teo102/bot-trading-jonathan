@@ -33,7 +33,20 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H09 | Tokens pump.fun franchissant 5 M$ | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/` |
 | H10 | Portage couvert sur financement **positif** des alts encombrés | 02/11/2026 | 1 | **écartée au criblage** (voir `PISTES_20261102.md`) | ce registre |
 | H11 | Portage couvert sur financement **négatif** (long perpétuel, short spot emprunté) | 02/11/2026 | 0 | **écartée au tri (T4)** : aucun historique public des taux d'emprunt sur marge, API limitée à 90 jours avec clé (contrôle de Téo, 02/11/2026) | `PISTES_20261102.md` |
-| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 2 (fiche) | fiche écrite, règles proposées | `strategies/STRAT-20261102-06/FICHE_STRAT-20261102-06.md` |
+| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 2 (gel) | règles figées le 02/11, E01 en attente | `strategies/STRAT-20261102-06/FICHE_STRAT-20261102-06.md` |
 | H13 | Levier agrégé comme filtre de risque sur BTC | 02/11/2026 | 0 | en tri, puissance faible | `PISTES_20261102.md` |
+| H09b | Cycle de vie des tokens pump.fun (taux de base à 30 jours) | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/taux_de_base_cycle_de_vie.sql` |
+| H14 | Dérive de prix autour de l'heure de versement du financement | 02/11/2026 | 0 | à trier (T2 : mouvement contre coût) | `PISTES_20261102.md` |
+| H15 | Réservé (numéro non attribué, conservé pour ne pas renuméroter) | 02/11/2026 | — | — | — |
+| H16 | Short après annonce de délistage | 02/11/2026 | 0 | à trier (T3 : nombre d'annonces ; T6 : short possible jusqu'au délistage) | — |
+| H17 | Cotation au comptant d'un actif déjà coté en perpétuel | 02/11/2026 | 0 | à trier (T4 : dates d'annonce datées) | — |
+| H18 | Réservé | 02/11/2026 | — | — | — |
+| H19 | Réservé | 02/11/2026 | — | — | — |
+| H20 | Divergence de financement Binance–Bybit | 02/11/2026 | 0 | à trier (T6 : deux comptes, transferts) | — |
+| H21 | Après « graduation » pump.fun | 02/11/2026 | 0 | à trier, voisine de H09 (T9) | — |
+| H22 | Variables « smart money » centrées sur les tokens | 02/11/2026 | 0 | à trier, voisine de H06 close (T9, L5) | — |
+| H23 | Réservé | 02/11/2026 | — | — | — |
+| H24 | Biais du longshot Polymarket (contrats 1 à 10 c) | 02/11/2026 | 0 | passe le tri sous conditions T2, T4, T6 ; fusion avec H25 | `recherche/TRI_H24_H25_POLYMARKET.md` |
+| H25 | Portage de quasi-certitude Polymarket (95 à 99 c, derniers jours) | 02/11/2026 | 0 | passe le tri, affaiblie (prime de risque probable) ; bloquée par T6 | `recherche/TRI_H24_H25_POLYMARKET.md` |
 
-Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, soit **6**.
+Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, soit **6** (inchangé au 02/11 : H12 figée, E01 non lancé).

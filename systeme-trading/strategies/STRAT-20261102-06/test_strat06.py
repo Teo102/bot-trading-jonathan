@@ -170,7 +170,9 @@ class Moteur(unittest.TestCase):
 class Lanceur(unittest.TestCase):
     def test_refus_tant_que_non_figee(self):
         c6, c3 = r6.charger_configs()
-        self.assertEqual(c6["statut_regles"], "proposees")
+        self.assertEqual(c6["statut_regles"], "figees")
+        c6 = copy.deepcopy(c6)
+        c6["statut_regles"] = "proposees"
         with self.assertRaises(r6.r3.Refus):
             r6.executer("E01", None, c6, c3)
 
