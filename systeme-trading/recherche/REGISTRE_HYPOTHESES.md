@@ -32,8 +32,8 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H08 | Calibration Polymarket (lecture des clauses) | 01/11/2026 | 4 (journal) | en cours, aucune prévision | `polymarket/calibration/` |
 | H09 | Tokens pump.fun franchissant 5 M$ | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/` |
 | H10 | Portage couvert sur financement **positif** des alts encombrés | 02/11/2026 | 1 | **écartée au criblage** (voir `PISTES_20261102.md`) | ce registre |
-| H11 | Portage couvert sur financement **négatif** (long perpétuel, short spot emprunté) | 02/11/2026 | 0 | en tri, données d'emprunt à vérifier | `PISTES_20261102.md` |
-| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 0 | tri passé, fiche à écrire | `PISTES_20261102.md` |
+| H11 | Portage couvert sur financement **négatif** (long perpétuel, short spot emprunté) | 02/11/2026 | 0 | **écartée au tri (T4)** : aucun historique public des taux d'emprunt sur marge, API limitée à 90 jours avec clé (contrôle de Téo, 02/11/2026) | `PISTES_20261102.md` |
+| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 2 (fiche) | fiche écrite, règles proposées | `strategies/STRAT-20261102-06/FICHE_STRAT-20261102-06.md` |
 | H13 | Levier agrégé comme filtre de risque sur BTC | 02/11/2026 | 0 | en tri, puissance faible | `PISTES_20261102.md` |
 
 Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, soit **6**.

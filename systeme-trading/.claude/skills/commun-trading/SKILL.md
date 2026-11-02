@@ -129,10 +129,12 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 | STRAT-20261031-02 | Portage de financement delta neutre | rejetée pour ce jeu de paramètres | — | — | Jonathan et Téo, 01/11/2026 |
 | STRAT-20261031-03 | Momentum transversal résiduel, 3 longs et 3 shorts | rejetée (porte sous-périodes, 2 années positives sur 4) | — | — | Verdict des portes du 02/11/2026, E25 non ouvert |
 | STRAT-20261031-04 | Retour à la moyenne après cascades | recherche, non testable en l'état | — | — | Jonathan et Téo, 01/11/2026 |
-
-Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
 | STRAT-DEX | Rétro-ingénierie de wallets Solana (pilote) | rejetée pour l'approche par wallets (non concluant, 6 wallets sur 30 requis) | — | — | Avenant 2, 02/11/2026 |
 | STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | rejetée (E01 −23,5 %, prix net de coûts −66,2 %) | — | — | Verdict E01 du 02/11/2026, hors échantillon non ouvert |
+| STRAT-20261102-06 | Dérive des perpétuels nouvellement cotés, short couvert par BTC | recherche, fiche écrite, règles proposées | — | — | Fiche du 02/11/2026, décisions de Jonathan en attente |
+
+Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
+
 
 ## 9. Constats empiriques mesurés
 

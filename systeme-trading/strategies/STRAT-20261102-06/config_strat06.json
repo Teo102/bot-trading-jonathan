@@ -1,0 +1,49 @@
+{
+  "strategie": "STRAT-20261102-06",
+  "version": "2026-11-02",
+  "statut_regles": "proposees",
+  "note_statut": "Aucun essai avant les decisions de Jonathan (fiche § 10), la liste des faux nouveaux noms (§ 3.2), le controle de couverture (§ 4) et le gel.",
+  "reprise_infrastructure": "../STRAT-20261031-03/config_strat03.json",
+  "univers": {
+    "age_min_j": 7,
+    "age_max_j": 60,
+    "liquidite_min_usdt": 20000000,
+    "fenetre_liquidite_max_j": 30,
+    "noms_max": 6,
+    "memecoins": "inclus (a confirmer)",
+    "faux_nouveaux_noms": []
+  },
+  "portefeuille": {
+    "sens": "short des jeunes cotations",
+    "couverture": "long BTC",
+    "multiple_couverture": 1.0
+  },
+  "taille": {
+    "risque_par_ligne": 0.0025
+  },
+  "blocs": {
+    "developpement": {
+      "essai": "E01",
+      "premier_lundi": "2021-01-04",
+      "dernier_lundi": "2024-06-24",
+      "fin_donnees_prix": "2024-07-01T02:00:00Z"
+    },
+    "validation": {
+      "essai": "E02",
+      "premier_lundi": "2024-07-01",
+      "dernier_lundi": "2025-07-21",
+      "fin_donnees_prix": "2025-07-28T02:00:00Z"
+    }
+  },
+  "seuil_sharpe_hors_echantillon": 1.72,
+  "papier": {
+    "semaines_minimum": 26,
+    "plateforme": "Binance Futures, dry_run sur donnees publiques reelles (a confirmer)"
+  },
+  "bootstrap": {
+    "bloc_semaines": 4,
+    "tirages": 10000,
+    "graine": 20261106,
+    "niveau": 0.9
+  }
+}
