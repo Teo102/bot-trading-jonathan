@@ -240,8 +240,12 @@ def cout_de_rotation(tenues: dict, cible: dict, p: Params) -> float:
     return sum(abs(cible.get(s, 0.0) - tenues.get(s, 0.0)) for s in set(tenues) | set(cible)) * (p.frais + p.glissement)
 
 
-def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionnel: float = 1.0 / 6):
-    """Retourne (semaines, lignes). Notionnel par ligne en part du capital (1/6 = brut 100 %)."""
+def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionnel: float = 1.0 / 6, fonction_scores=None):
+    """Retourne (semaines, lignes). Notionnel par ligne en part du capital (1/6 = brut 100 %).
+
+    `fonction_scores(jours, t, noms, p) -> Series` remplace le score de STRAT-03 (momentum résiduel) ; le plus haut
+    score va en long, le plus bas en short. Par défaut : `scores`, comportement de STRAT-03 inchangé (02/11/2026)."""
+    fonction_scores = fonction_scores or scores
     jours, heures, financement, _ = couper_zombies(jours, heures, financement)
     tenues: dict[str, float] = {}  # valeur signée détenue à la sortie précédente, lignes non soldées
     semaines, lignes = [], []
@@ -249,7 +253,7 @@ def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionne
     for i, t in enumerate(lundis[:-1]):
         t_in, t_out = t + UNE_HEURE, lundis[i + 1] + UNE_HEURE
         u = univers(jours, t, p)
-        sc = scores(jours, t, u, p)
+        sc = fonction_scores(jours, t, u, p)
         longs, shorts = selection(sc, p.k) if len(sc) >= max(p.min_noms, 2 * p.k) else ([], [])
         cible = {s: notionnel for s in longs} | {s: -notionnel for s in shorts}
         # rotation au lundi t_in : coût sur l'écart entre la tenue et la cible

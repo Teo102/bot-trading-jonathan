@@ -99,7 +99,9 @@ class Base(unittest.TestCase):
 
     def registre(self):
         r = self.tmp / f"registre_{self._testMethodName}.csv"
-        shutil.copy(re_.REGISTRE, r)
+        reg = pd.read_csv(re_.REGISTRE, dtype=str, keep_default_na=False)
+        reg["date"] = ""  # copie de test : les vrais E01 et E02 ont été consommés le 02/11/2026
+        reg.to_csv(r, index=False)
         return r
 
 

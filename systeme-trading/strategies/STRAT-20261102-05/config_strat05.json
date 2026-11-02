@@ -4,12 +4,48 @@
   "statut_regles": "proposees",
   "note_statut": "Aucun essai avant les decisions de Jonathan (fiche § 9) et le gel. Univers, couts, calendrier et stop repris de STRAT-20261031-03/config_strat03.json sans modification.",
   "reprise_infrastructure": "../STRAT-20261031-03/config_strat03.json",
-  "score": {"fenetre_financement_j": 7, "fenetre_interet_ouvert_j": 7, "poids_financement": 1.0, "poids_interet_ouvert": 1.0, "borne_z": 3.0, "sens": "short des plus encombres"},
-  "taille": {"risque_par_ligne": 0.0025, "positions": 6},
-  "blocs": {
-    "developpement": {"essai": "E01", "premier_lundi": "2022-01-03", "dernier_lundi": "2024-06-24", "fin_donnees_prix": "2024-07-01T02:00:00Z"},
-    "validation": {"essai": "E02", "premier_lundi": "2024-07-01", "dernier_lundi": "2025-07-21", "fin_donnees_prix": "2025-07-28T02:00:00Z"}
+  "score": {
+    "fenetre_financement_j": 7,
+    "fenetre_interet_ouvert_j": 7,
+    "poids_financement": 1.0,
+    "poids_interet_ouvert": 1.0,
+    "borne_z": 3.0,
+    "sens": "short des plus encombres"
   },
-  "papier": {"semaines_minimum": 26, "debut": "premier lundi apres le gel"},
-  "bootstrap": {"bloc_semaines": 4, "tirages": 10000, "graine": 20261102, "niveau": 0.90}
+  "taille": {
+    "risque_par_ligne": 0.0025,
+    "positions": 6
+  },
+  "blocs": {
+    "developpement": {
+      "essai": "E01",
+      "premier_lundi": "2022-01-03",
+      "dernier_lundi": "2024-06-24",
+      "fin_donnees_prix": "2024-07-01T02:00:00Z"
+    },
+    "validation": {
+      "essai": "E02",
+      "premier_lundi": "2024-07-01",
+      "dernier_lundi": "2025-07-21",
+      "fin_donnees_prix": "2025-07-28T02:00:00Z"
+    }
+  },
+  "papier": {
+    "semaines_minimum": 26,
+    "debut": "premier lundi apres le gel",
+    "plateforme": "Binance Futures, dry_run sur donnees publiques du marche reel (pas le testnet)",
+    "decision": "Jonathan et Teo, 02/11/2026"
+  },
+  "bootstrap": {
+    "bloc_semaines": 4,
+    "tirages": 10000,
+    "graine": 20261102,
+    "niveau": 0.9
+  },
+  "decisions_02_11_2026": [
+    "contamination validee : blocs passes pour eliminer seulement",
+    "critere 0,2 R retire",
+    "papier 26 semaines",
+    "papier Binance Futures"
+  ]
 }
