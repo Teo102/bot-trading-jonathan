@@ -52,6 +52,22 @@ def params_cotation(c6: dict, c3: dict, **surcharges) -> uc.ParamsCotation:
     return uc.ParamsCotation(**pc)
 
 
+def calculer_concentration_noms(lig: pd.DataFrame, gain_total: float, facteur: str = "BTC") -> tuple[float, str | None]:
+    """Part du gain net du meilleur nom parmi les jeunes cotations vendues (hors couverture).
+
+    Règles § 3, § 7 (ebcb777, L11) : "nom" désigne les jeunes cotations vendues, à l'exclusion
+    de la couverture BTC. La formule héritée de STRAT-03 intégrait à tort le benchmark de couverture.
+    """
+    actives = lig[(lig["statut"] != "absent") & (lig["symbole"] != facteur)]
+    if actives.empty or gain_total <= 0:
+        return float("nan"), None
+    g = actives["pnl_prix"] + actives["financement"]
+    gains = actives.assign(g=g).groupby("symbole")["g"].sum()
+    if gains.empty:
+        return float("nan"), None
+    return float(gains.max() / gain_total), str(gains.idxmax())
+
+
 def portes_internes(mt: dict) -> dict:
     net = mt["rendement_net_total_brut100"]
     return {"rendement_net_positif": net > 0, "alpha_positif": mt["alpha_hebdo_residuel"] > 0,
@@ -100,6 +116,9 @@ def executer(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, so
     if lig.empty:
         raise r3.Refus("Aucune ligne jouée sur le bloc : univers vide, vérifier les données avant tout verdict.")
     mt = r3.metriques(sem, lig, btc, c6)
+    part_max_nom, nom_max = calculer_concentration_noms(lig, mt["rendement_net_total_brut100"], pc.facteur)
+    mt["part_max_nom_du_gain"] = part_max_nom
+    mt["nom_max"] = nom_max
     mt["portes_internes"] = portes_internes(mt)
     h = r3.horo()
     meta = {"horodatage": h, "essai": essai, "bloc": [k for k, b in c6["blocs"].items() if b["essai"] == essai][0],

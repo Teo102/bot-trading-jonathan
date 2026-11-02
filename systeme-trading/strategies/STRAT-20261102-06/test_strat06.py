@@ -224,6 +224,45 @@ class Lanceur(unittest.TestCase):
         finally:
             shutil.rmtree(tmp)
 
+    def test_concentration_exclut_couverture_btc(self):
+        """Vérifie la règle de concentration selon § 3, § 7 et L11 :
+        - une couverture à 40 % du gain avec des shorts sous 25 % : la porte est franchie
+        - un short à 30 % : la porte échoue
+        """
+        # Cas 1 : couverture BTC à 40 % du gain, 3 shorts sous 25 % (chacun 20 %)
+        lig1 = pd.DataFrame([
+            {"symbole": "BTC", "statut": "semaine", "pnl_prix": 0.40, "financement": 0.0},
+            {"symbole": "ALT1", "statut": "semaine", "pnl_prix": 0.20, "financement": 0.0},
+            {"symbole": "ALT2", "statut": "semaine", "pnl_prix": 0.20, "financement": 0.0},
+            {"symbole": "ALT3", "statut": "semaine", "pnl_prix": 0.20, "financement": 0.0},
+        ])
+        part1, nom1 = r6.calculer_concentration_noms(lig1, gain_total=1.0, facteur="BTC")
+        self.assertAlmostEqual(part1, 0.20)
+        self.assertIn(nom1, ["ALT1", "ALT2", "ALT3"])
+        pi1 = r6.portes_internes({
+            "rendement_net_total_brut100": 1.0, "alpha_hebdo_residuel": 0.01,
+            "part_max_nom_du_gain": part1, "part_max_mois_du_gain": 0.30,
+            "drawdown_max_brut100": 0.10, "semaines_vides": 0, "semaines": 10,
+        })
+        self.assertTrue(pi1["concentration_nom_ok"])
+
+        # Cas 2 : un short à 30 % du gain net total (> 25 %) : la porte échoue
+        lig2 = pd.DataFrame([
+            {"symbole": "BTC", "statut": "semaine", "pnl_prix": 0.20, "financement": 0.0},
+            {"symbole": "ALT_DOMINANT", "statut": "semaine", "pnl_prix": 0.30, "financement": 0.0},
+            {"symbole": "ALT2", "statut": "semaine", "pnl_prix": 0.25, "financement": 0.0},
+            {"symbole": "ALT3", "statut": "semaine", "pnl_prix": 0.25, "financement": 0.0},
+        ])
+        part2, nom2 = r6.calculer_concentration_noms(lig2, gain_total=1.0, facteur="BTC")
+        self.assertEqual(nom2, "ALT_DOMINANT")
+        self.assertAlmostEqual(part2, 0.30)
+        pi2 = r6.portes_internes({
+            "rendement_net_total_brut100": 1.0, "alpha_hebdo_residuel": 0.01,
+            "part_max_nom_du_gain": part2, "part_max_mois_du_gain": 0.30,
+            "drawdown_max_brut100": 0.10, "semaines_vides": 0, "semaines": 10,
+        })
+        self.assertFalse(pi2["concentration_nom_ok"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

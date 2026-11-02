@@ -46,6 +46,7 @@ Règles génériques tirées des erreurs relevées, chacune datée et sourcée a
 | L8 | Avant d'interpréter un échec, publier la puissance du test. Un échec sans puissance ne prouve pas l'absence d'edge, mais reste un échec | STRAT-03 § 3, calibration Polymarket, STRAT-DEX |
 | L9 | Un rapprochement de renommages par les seules dates ne vaut rien : les plateformes arrêtent et cotent par lots. La liste close se fait par les annonces, puis on vérifie que chaque nom concerné est éligible | STRAT-06, 1 075 paires candidates pour 5 vrais renommages |
 | L10 | Tout univers construit par noms ou volumes vérifie le type du contrat (`underlyingType`, `contractType`) : une plateforme peut coter des actions ou des métaux sous le même format | STRAT-06, perpétuels non crypto cotés depuis décembre 2025 |
+| L11 | Un code repris d'une autre stratégie se reteste contre les définitions de la nouvelle fiche, notamment quand elle ajoute une jambe de couverture | STRAT-06, porte de concentration de E02 |
 
 ## 1. Fiche de stratégie
 

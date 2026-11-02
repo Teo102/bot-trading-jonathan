@@ -18,7 +18,7 @@ Passage du 2026-11-02T17:24:00Z. Bloc validation, lundis 2024-07-01 à 2025-07-2
 | Jambe longue, jambe courte | +33.27 %, +82.91 % |
 | Prix, financement, coûts | +122.30 %, -6.12 %, -2.80 % |
 | Années positives | 2 sur 2 |
-| Part maximale d'un mois, d'un nom dans le gain | 22.3%, 29.3% (BTC) |
+| Part maximale d'un mois, d'un nom dans le gain | 22.3%, 8.2% (MUBARAKUSDT) |
 
 Par année : 2024 +51.34 %, 2025 +62.04 %.
 
@@ -27,4 +27,4 @@ Repli du prix de marque sur le contrat : 0 symboles. Sans financement : 0. Sans 
 Trous des archives mensuelles comblés par les journalières : 1d 318 jours comblés, 5 introuvables (52 symboles).
 Semaines où la règle H1 a retiré au moins un nom du classement : 0, noms retirés en moyenne : 0.00.
 
-Portes calculables sur cet essai : rendement net > 0 : True ; alpha sur BTC > 0 : True ; concentration nom : False ; mois : True ; drawdown < 50 % : True. Semaines sans position : 0 sur 56. Noms différents vendus : 91. Jambe longue = couverture BTC, jambe courte = jeunes cotations. Rappel : ce bloc sert seulement à éliminer (fiche § 0).
+Portes calculables sur cet essai : rendement net > 0 : True ; alpha sur BTC > 0 : True ; concentration nom : True ; mois : True ; drawdown < 50 % : True. Semaines sans position : 0 sur 56. Noms différents vendus : 91. Jambe longue = couverture BTC, jambe courte = jeunes cotations. Rappel : ce bloc sert seulement à éliminer (fiche § 0).

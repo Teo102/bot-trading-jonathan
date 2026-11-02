@@ -58,12 +58,12 @@
   },
   "annees_positives": 2,
   "part_max_mois_du_gain": 0.22344256863027523,
-  "part_max_nom_du_gain": 0.293441083140242,
-  "nom_max": "BTC",
+  "part_max_nom_du_gain": 0.08193540854497931,
+  "nom_max": "MUBARAKUSDT",
   "portes_internes": {
    "rendement_net_positif": true,
    "alpha_positif": true,
-   "concentration_nom_ok": false,
+   "concentration_nom_ok": true,
    "concentration_mois_ok": true,
    "drawdown_brut100_ok": true,
    "part_semaines_vides": 0.0
