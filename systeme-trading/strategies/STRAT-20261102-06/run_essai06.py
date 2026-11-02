@@ -110,7 +110,7 @@ def executer(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, so
             "qualite": qualite, "incidents": len(getattr(source, "incidents", [])), "appels": getattr(source, "appels", None)}
     sorties.mkdir(exist_ok=True)
     (sorties / f"{essai}_metriques.json").write_text(json.dumps({"meta": meta, "metriques": mt}, ensure_ascii=False, indent=1, default=str))
-    md = r3.rapport_md(essai, mt, meta).replace("STRAT-20261031-03", "STRAT-20261102-06")
+    md = r3.rapport_md(essai, mt, meta).replace("STRAT-20261031-03", "STRAT-20261102-06").replace("porte que sur E25", "porte que sur E19/E20")
     pi = mt["portes_internes"]
     md += (f"\nPortes calculables sur cet essai : rendement net > 0 : {pi['rendement_net_positif']} ; alpha sur BTC > 0 : "
            f"{pi['alpha_positif']} ; concentration nom : {pi['concentration_nom_ok']} ; mois : {pi['concentration_mois_ok']} ; "

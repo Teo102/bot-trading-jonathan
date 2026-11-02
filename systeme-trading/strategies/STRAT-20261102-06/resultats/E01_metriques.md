@@ -1,6 +1,6 @@
 # E01 de STRAT-20261102-06 — métriques
 
-Passage du 2026-11-02T15:11:06Z. Bloc developpement, lundis 2021-01-04 à 2024-06-24. Données data.binance.vision lues jusqu'à 2024-07-01T02:00:00Z (verrou de bloc). Empreinte des données : `3aa493abaa0253ee…`. Résultat de recherche, sans verdict : le verdict ne porte que sur E25 (fiche § 1.8).
+Passage du 2026-11-02T15:11:06Z. Bloc developpement, lundis 2021-01-04 à 2024-06-24. Données data.binance.vision lues jusqu'à 2024-07-01T02:00:00Z (verrou de bloc). Empreinte des données : `3aa493abaa0253ee…`. Résultat de recherche, sans verdict : le verdict ne porte que sur E19/E20 (fiche § 1.8).
 
 | Mesure | Valeur |
 |---|---:|
