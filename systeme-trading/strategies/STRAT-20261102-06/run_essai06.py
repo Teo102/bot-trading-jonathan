@@ -45,6 +45,9 @@ def params_cotation(c6: dict, c3: dict, **surcharges) -> uc.ParamsCotation:
               fenetre_liquidite_max_j=u["fenetre_liquidite_max_j"], noms_max=u["noms_max"],
               multiple_couverture=float(pf["multiple_couverture"]), exclus=frozenset(exclus),
               faux_nouveaux=frozenset(u.get("faux_nouveaux_noms", [])))
+    fichier_nc = ICI / "exclusions_non_coin.json"
+    if fichier_nc.exists():
+        pc["faux_nouveaux"] = pc["faux_nouveaux"] | frozenset(json.loads(fichier_nc.read_text())["symboles"])
     pc.update(surcharges)
     return uc.ParamsCotation(**pc)
 
@@ -59,11 +62,13 @@ def portes_internes(mt: dict) -> dict:
 
 
 def executer(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, sorties: Path = SORTIES, symboles=None,
-             debut_donnees: pd.Timestamp = DEBUT_DONNEES) -> dict:
+             debut_donnees: pd.Timestamp = DEBUT_DONNEES, exiger_non_coin: bool = True) -> dict:
     if c6 is None:
         c6, c3 = charger_configs()
     if c6.get("statut_regles") != "figees":
         raise r3.Refus("Règles de STRAT-06 non figées (config_strat06.json, statut_regles). Aucun essai lancé.")
+    if exiger_non_coin and not (ICI / "exclusions_non_coin.json").exists():
+        raise r3.Refus("exclusions_non_coin.json absent : lancer exclusions_non_coin.py avant tout essai (fiche § 3.2).")
     bloc = r3.controles(essai, c6, registre)
     if c3.get("statut_regles") != "figees":
         raise r3.Refus("L'infrastructure de STRAT-03 n'est plus figée : refus.")

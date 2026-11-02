@@ -11,7 +11,21 @@
     "fenetre_liquidite_max_j": 30,
     "noms_max": 6,
     "memecoins": "inclus (decision du 02/11/2026)",
-    "faux_nouveaux_noms": []
+    "faux_nouveaux_noms": [
+      "RENDERUSDT",
+      "1000LUNCUSDT",
+      "FRAXUSDT",
+      "MANTRAUSDT",
+      "DODOXUSDT"
+    ],
+    "faux_nouveaux_sources": {
+      "RENDERUSDT": "RNDR -> RENDER, echange de jeton et changement de nom (annonce Binance, 2024)",
+      "1000LUNCUSDT": "ancien LUNA (Terra Classic) recote apres l'effondrement de mai 2022",
+      "FRAXUSDT": "FXS -> FRAX, echange sur le reseau principal et changement de nom (annonce Binance, janvier 2026)",
+      "MANTRAUSDT": "OM -> MANTRA, changement de nom et redenomination (annonces d'exchanges, mars 2026)",
+      "DODOXUSDT": "DODO recote sous un nouveau symbole apres l'arret de DODOUSDT en 2022 [rapprochement par les dates, annonce Binance non lue]"
+    },
+    "non_crypto": "exclusions_non_coin.json (underlyingType != COIN ou TRADIFI_PERPETUAL, exchangeInfo), obligatoire avant tout essai"
   },
   "portefeuille": {
     "sens": "short des jeunes cotations",

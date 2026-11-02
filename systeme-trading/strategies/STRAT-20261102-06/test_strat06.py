@@ -174,6 +174,20 @@ class Lanceur(unittest.TestCase):
         with self.assertRaises(r6.r3.Refus):
             r6.executer("E01", None, c6, c3)
 
+    def test_refus_sans_liste_non_crypto(self):
+        c6, c3 = r6.charger_configs()
+        c6 = copy.deepcopy(c6)
+        c6["statut_regles"] = "figees"
+        if not (r6.ICI / "exclusions_non_coin.json").exists():
+            with self.assertRaises(r6.r3.Refus):
+                r6.executer("E01", None, c6, c3)
+
+    def test_faux_nouveaux_charges(self):
+        c6, c3 = r6.charger_configs()
+        pc = r6.params_cotation(c6, c3)
+        for s in ("RENDERUSDT", "1000LUNCUSDT", "FRAXUSDT", "MANTRAUSDT", "DODOXUSDT"):
+            self.assertIn(s, pc.faux_nouveaux)
+
     def test_bout_en_bout_sur_faux_vision(self):
         tmp = Path(tempfile.mkdtemp())
         try:
@@ -197,14 +211,14 @@ class Lanceur(unittest.TestCase):
             r_ = pd.read_csv(r6.REGISTRE, dtype=str, keep_default_na=False)
             r_["date"] = ""  # copie de test : les essais réels déjà consommés ne bloquent pas le test
             r_.to_csv(reg, index=False)
-            out = r6.executer("E01", db.VisionLocale(vision), c6, c3, reg, tmp / "o", debut_donnees=pd.Timestamp("2020-06-01"))
+            out = r6.executer("E01", db.VisionLocale(vision), c6, c3, reg, tmp / "o", debut_donnees=pd.Timestamp("2020-06-01"), exiger_non_coin=False)
             mt = out["metriques"]
             self.assertEqual(mt["semaines"], 22)
             self.assertGreater(mt["lignes"], 0)
             self.assertLess(mt["semaines_vides"], 22)
             self.assertIn("alpha_positif", mt["portes_internes"])
             with self.assertRaises(r6.r3.Refus):
-                r6.executer("E01", db.VisionLocale(vision), c6, c3, reg, tmp / "o2", debut_donnees=pd.Timestamp("2020-06-01"))
+                r6.executer("E01", db.VisionLocale(vision), c6, c3, reg, tmp / "o2", debut_donnees=pd.Timestamp("2020-06-01"), exiger_non_coin=False)
         finally:
             shutil.rmtree(tmp)
 
