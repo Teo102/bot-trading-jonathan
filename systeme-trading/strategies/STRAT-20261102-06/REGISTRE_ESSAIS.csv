@@ -1,5 +1,5 @@
 id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire,glissement,semaines,sharpe_net_brut100
-E01,,STRAT-20261102-06,base (age 7-60 j / 20 M / 6 noms / stop 30 / couverture BTC 1x),developpement,20210104-20240701,0.0005,,,,,,,elimination seulement - contamination fiche § 0,0.0005,182,
+E01,2026-11-02T15:11:06Z,STRAT-20261102-06,base (age 7-60 j / 20 M / 6 noms / stop 30 / couverture BTC 1x),developpement,20210104-20240701,0.0005,947,0.0193,0.000440,0.009923,0.3087,,elimination seulement - contamination fiche § 0 - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,182,0.8376
 E02,,STRAT-20261102-06,base,validation,20240701-20250728,0.0005,,,,,,,elimination seulement,0.0005,56,
 E03,,STRAT-20261102-06,age maximal 30 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
 E04,,STRAT-20261102-06,age maximal 90 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,

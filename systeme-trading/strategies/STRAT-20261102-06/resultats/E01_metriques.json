@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "horodatage": "2026-11-02T15:11:06Z",
+  "essai": "E01",
+  "bloc": "developpement",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2024-06-24",
+  "fin_donnees": "2024-07-01T02:00:00Z",
+  "empreinte": "3aa493abaa0253ee3fc6f1797da905d30dda6d99f61268b1908ea16198ae5e83",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 151
+  },
+  "incidents": 0,
+  "appels": 65230
+ },
+ "metriques": {
+  "semaines": 182,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.269230769230769,
+  "lignes": 947,
+  "stops": 146,
+  "delistages": 0,
+  "rendement_net_total_brut100": 0.94133516462986,
+  "moyenne_hebdo_net": 0.00517217123423,
+  "ic90_moyenne_hebdo_blocs": [
+   0.0004402405690631263,
+   0.009922760236574403
+  ],
+  "sharpe_net_annualise": 0.8375607707030855,
+  "beta_btc_hebdo": -0.03317751596887327,
+  "alpha_hebdo_residuel": 0.005404901269612936,
+  "alpha_annualise_residuel": 0.2810548660198727,
+  "sharpe_residuel_annualise": 0.8769307025743389,
+  "drawdown_max_brut100": 0.308704673942075,
+  "esperance_par_ligne_R": 0.01930132282075968,
+  "jambe_longue": 0.03718463680904499,
+  "jambe_courte": 0.9622951284900549,
+  "pnl_prix": 0.9923098361324333,
+  "financement": 0.007169929166666663,
+  "couts": 0.05814460066923974,
+  "par_annee": {
+   "2021": -0.021942074120834022,
+   "2022": 0.09036341447289278,
+   "2023": 0.5386736946729327,
+   "2024": 0.3342401296048687
+  },
+  "annees_positives": 3,
+  "part_max_mois_du_gain": 0.210804391983022,
+  "part_max_nom_du_gain": 0.12546179244794203,
+  "nom_max": "DENTUSDT",
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.06593406593406594
+  }
+ }
+}
