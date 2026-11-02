@@ -10,7 +10,7 @@
     "liquidite_min_usdt": 20000000,
     "fenetre_liquidite_max_j": 30,
     "noms_max": 6,
-    "memecoins": "inclus (a confirmer)",
+    "memecoins": "inclus (decision du 02/11/2026)",
     "faux_nouveaux_noms": []
   },
   "portefeuille": {
@@ -38,12 +38,18 @@
   "seuil_sharpe_hors_echantillon": 1.72,
   "papier": {
     "semaines_minimum": 26,
-    "plateforme": "Binance Futures, dry_run sur donnees publiques reelles (a confirmer)"
+    "plateforme": "Binance Futures, dry_run sur donnees publiques reelles (decision du 02/11/2026)"
   },
   "bootstrap": {
     "bloc_semaines": 4,
     "tirages": 10000,
     "graine": 20261106,
     "niveau": 0.9
-  }
+  },
+  "decisions_02_11_2026": [
+    "memecoins inclus, variante E15 sans memecoins",
+    "20 M USDT et 6 noms au plus",
+    "couverture dollar-neutre par achat de BTC",
+    "gouvernance de STRAT-05 reconduite : passe pour eliminer, papier 26 semaines Binance dry_run, 0,2 R retire"
+  ]
 }

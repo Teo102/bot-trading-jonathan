@@ -240,11 +240,15 @@ def cout_de_rotation(tenues: dict, cible: dict, p: Params) -> float:
     return sum(abs(cible.get(s, 0.0) - tenues.get(s, 0.0)) for s in set(tenues) | set(cible)) * (p.frais + p.glissement)
 
 
-def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionnel: float = 1.0 / 6, fonction_scores=None):
+def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionnel: float = 1.0 / 6, fonction_scores=None,
+             fonction_cible=None):
     """Retourne (semaines, lignes). Notionnel par ligne en part du capital (1/6 = brut 100 %).
 
     `fonction_scores(jours, t, noms, p) -> Series` remplace le score de STRAT-03 (momentum résiduel) ; le plus haut
-    score va en long, le plus bas en short. Par défaut : `scores`, comportement de STRAT-03 inchangé (02/11/2026)."""
+    score va en long, le plus bas en short. Par défaut : `scores`, comportement de STRAT-03 inchangé (02/11/2026).
+
+    `fonction_cible(jours, t, p) -> ({symbole: poids signé}, taille_univers)` remplace univers, score et sélection
+    (STRAT-06, 02/11/2026) : la ligne vaut poids × notionnel. Par défaut : absent, comportement inchangé."""
     fonction_scores = fonction_scores or scores
     jours, heures, financement, _ = couper_zombies(jours, heures, financement)
     tenues: dict[str, float] = {}  # valeur signée détenue à la sortie précédente, lignes non soldées
@@ -252,17 +256,24 @@ def backtest(jours: dict, heures: dict, financement, lundis, p: Params, notionne
     lundis = list(lundis)
     for i, t in enumerate(lundis[:-1]):
         t_in, t_out = t + UNE_HEURE, lundis[i + 1] + UNE_HEURE
-        u = univers(jours, t, p)
-        sc = fonction_scores(jours, t, u, p)
-        longs, shorts = selection(sc, p.k) if len(sc) >= max(p.min_noms, 2 * p.k) else ([], [])
-        cible = {s: notionnel for s in longs} | {s: -notionnel for s in shorts}
+        if fonction_cible is not None:
+            poids, n_univers = fonction_cible(jours, t, p)
+            cible = {s: w * notionnel for s, w in poids.items() if w}
+            longs = [s for s, w in cible.items() if w > 0]
+            shorts = [s for s, w in cible.items() if w < 0]
+            u, sc = range(n_univers), range(n_univers)
+        else:
+            u = univers(jours, t, p)
+            sc = fonction_scores(jours, t, u, p)
+            longs, shorts = selection(sc, p.k) if len(sc) >= max(p.min_noms, 2 * p.k) else ([], [])
+            cible = {s: notionnel for s in longs} | {s: -notionnel for s in shorts}
         # rotation au lundi t_in : coût sur l'écart entre la tenue et la cible
         cout_rotation = cout_de_rotation(tenues, cible, p)
         tenues = {}
         tot = {"pnl_prix": 0.0, "financement": 0.0, "cout": cout_rotation, "long": 0.0, "short": 0.0}
         for s, n in cible.items():
             sens = 1 if n > 0 else -1
-            r = jouer_ligne(heures, financement, s, sens, t_in, t_out, notionnel, p)
+            r = jouer_ligne(heures, financement, s, sens, t_in, t_out, abs(n), p)
             r["lundi"] = t
             lignes.append(r)
             if r["statut"] == "absent":

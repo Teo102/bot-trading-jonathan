@@ -195,7 +195,9 @@ class Lanceur(unittest.TestCase):
             c5["bootstrap"]["tirages"] = 300
             c3["params_base"].update(volume_min=0, taille_univers=10)
             reg = tmp / "registre.csv"
-            shutil.copy(r5.REGISTRE, reg)
+            r_ = pd.read_csv(r5.REGISTRE, dtype=str, keep_default_na=False)
+            r_["date"] = ""  # copie de test : les essais réels déjà consommés ne bloquent pas le test
+            r_.to_csv(reg, index=False)
             out = r5.executer("E01", db.VisionLocale(vision), c5, c3, reg, tmp / "o")
             mt = out["metriques"]
             self.assertEqual(mt["semaines"], 13)
