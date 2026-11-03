@@ -143,6 +143,140 @@ def executer(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, so
     return {"meta": meta, "metriques": mt, "rapport": md}
 
 
+# ---------------------------------------------------------------- variantes E03 à E18 (03/11/2026)
+
+ESSAIS_BASE = ("E01", "E02")
+CONTROLE = "CDV"  # contrôle de reproduction de la base sur dév. + val., hors registre, non compté dans N
+
+
+def metriques_completes(sem, lig, btc, c6, pc, notionnel) -> dict:
+    mt = r3.metriques(sem, lig, btc, c6)
+    part, nom = calculer_concentration_noms(lig, mt["rendement_net_total_brut100"], pc.facteur)
+    mt["part_max_nom_du_gain"], mt["nom_max"] = part, nom
+    actives = lig[lig["statut"] != "absent"]
+    mt["esperance_par_ligne_R_notionnel"] = (float(mt["rendement_net_total_brut100"] / len(actives) / (r3.DISTANCE_R * notionnel))
+                                             if len(actives) else float("nan"))
+    mt["portes_internes"] = portes_internes(mt)
+    return mt
+
+
+def executer_variante(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, sorties: Path = SORTIES, symboles=None,
+                      debut_donnees: pd.Timestamp = DEBUT_DONNEES, exiger_non_coin: bool = True, variantes: dict | None = None) -> dict:
+    """E03 à E18 sur dév. + val. (238 semaines), ou CDV : la base sur le même bloc, comparée à E01 et E02, sans registre."""
+    import variantes06 as v6
+    if c6 is None:
+        c6, c3 = charger_configs()
+    if c6.get("statut_regles") != "figees" or c3.get("statut_regles") != "figees":
+        raise r3.Refus("Règles de STRAT-06 ou infrastructure de STRAT-03 non figées. Aucun essai lancé.")
+    if exiger_non_coin and not (ICI / "exclusions_non_coin.json").exists():
+        raise r3.Refus("exclusions_non_coin.json absent : aucun essai.")
+    d = variantes if variantes is not None else v6.charger_variantes()
+    p_base, pc_base = r3.params_depuis(c3), params_cotation(c6, c3)
+    controle = essai == CONTROLE
+    if controle:
+        for e in ESSAIS_BASE:
+            if not v6.ligne_registre(e, registre)["date"].strip():
+                raise r3.Refus(f"Contrôle de reproduction refusé : {e} n'est pas encore lancé.")
+        v = {"variante": "base (controle de reproduction, hors registre)"}
+    else:
+        v = v6.valider(essai, d, registre, pc_base, p_base)
+    pc, p, sp = v6.params_variante(v, pc_base, p_base, c3["exclusions"]["memecoins_liste_close_2026-11-01"])
+    if not controle:
+        v6.verifier_couts_registre(essai, registre, p)
+    bloc = d["bloc"]
+    dates = v6.dates_bloc(bloc, sp["calendrier"])
+    fin = db.naif(bloc["fin_donnees_prix"])
+    nt = v6.notionnel(pc)
+    syms = symboles or db.symboles_usdt(source)
+    comblement: dict = {}
+    jours = db.charger_jours(source, syms, debut_donnees, fin, journal=comblement)
+    jours = {k: x.rename(columns={"BTCUSDT": "BTC"}) for k, x in jours.items()}
+    jc, _, _, dernier = m.couper_zombies(jours, {}, None)
+    exclus_e16: dict = {}
+
+    def cible():
+        return v6.fabrique_cible_variante(pc, debut_donnees, dernier, sp["filtre_anticipe_delistage_j"], fin, exclus_e16)
+    f0 = cible()
+    choix = {t: f0(jc, t, p)[0] for t in dates[:-1]}
+    noms = sorted({s for x in choix.values() for s in x if s != "BTC"} | {"BTCUSDT"})
+    heures, fin_df, qualite = db.charger_heures(source, noms, dates[0] - pd.Timedelta(days=1), fin, journal=comblement)
+    btc = r3.rendements_btc(heures, dates)
+    ren = {"BTCUSDT": "BTC"}
+    heures = {k: x.rename(columns=ren) for k, x in heures.items()}
+    fin_df = fin_df.rename(columns=ren)
+    utiles = ["BTC"] + [s for s in noms if s != "BTCUSDT"]
+    heures = {k: x.reindex(columns=utiles) for k, x in heures.items()}
+    qualite["comblement"] = {n: {"symboles": len(x), "jours_combles": sum(len(y["jours_comble"]) for y in x.values()),
+                                 "jours_introuvables": sum(len(y["jours_introuvables"]) for y in x.values())}
+                             for n, x in comblement.items()}
+    qualite["sans_archive_1h"] = sorted(set(utiles) - set(heures["open"].dropna(axis=1, how="all").columns))
+    qualite["noms_differents"] = len(noms) - 1
+    sem, lig = m.backtest(jours, heures, fin_df, dates, p, notionnel=nt, fonction_cible=cible())
+    if lig.empty:
+        raise r3.Refus("Aucune ligne jouée sur le bloc : vérifier les données avant tout verdict.")
+    mt = metriques_completes(sem, lig, btc, c6, pc, nt)
+    mt["sous_blocs"] = {}
+    for nom_b, (s_b, l_b) in v6.decouper(sem, lig, bloc["coupure_sous_blocs"]).items():
+        if len(s_b) > 2 and not l_b.empty:
+            mt["sous_blocs"][nom_b] = metriques_completes(s_b, l_b, btc, c6, pc, nt)
+    h = r3.horo()
+    meta = {"horodatage": h, "essai": essai, "bloc": bloc["nom"], "calendrier": sp["calendrier"],
+            "premier_lundi": str(dates[0].date()), "dernier_lundi": str(dates[-2].date()), "fin_donnees": bloc["fin_donnees_prix"],
+            "variante": v["variante"], "surcharges": {k: v.get(k, {}) for k in ("cotation", "moteur", "special")},
+            "notionnel_par_ligne": nt, "exclusions_anticipees_e16": exclus_e16,
+            "empreinte": db.empreinte({**{f"j_{k}": x for k, x in jours.items()}, **{f"h_{k}": x for k, x in heures.items()}}),
+            "config06_sha256": hashlib.sha256(json.dumps(c6, sort_keys=True).encode()).hexdigest(),
+            "config03_sha256": hashlib.sha256(json.dumps(c3, sort_keys=True).encode()).hexdigest(),
+            "variantes_sha256": hashlib.sha256(json.dumps(d, sort_keys=True).encode()).hexdigest(),
+            "qualite": qualite, "incidents": len(getattr(source, "incidents", [])), "appels": getattr(source, "appels", None)}
+    sorties.mkdir(exist_ok=True)
+    prefixe = "CDV_controle_reproduction" if controle else essai
+    md = r3.rapport_md(essai, mt, meta).replace("STRAT-20261031-03", "STRAT-20261102-06").replace("porte que sur E25", "porte que sur E19/E20")
+    if sp["calendrier"] != "lundi":
+        md = md.replace(", lundis ", f", {sp['calendrier']}s ")
+    md += (f"\nVariante : {v['variante']}. Surcharges : {json.dumps(meta['surcharges'], ensure_ascii=False)}. "
+           f"Notionnel par ligne : {nt:.4f}. Commentaire du registre : {v.get('commentaire_registre', '')}.\n")
+    if sp["filtre_anticipe_delistage_j"]:
+        md += f"Filtre anticipé E16 : {len(exclus_e16)} dates avec au moins un nom retiré, {sum(len(x) for x in exclus_e16.values())} retraits.\n"
+    md += "\n| Sous-bloc | Semaines | Net brut 100 % | Sharpe | Alpha annualisé | DD | Nom max | Mois max | Portes net, alpha, nom, mois, DD |\n|---|---:|---:|---:|---:|---:|---:|---:|---|\n"
+    for nom_b, x in [("total", mt)] + list(mt["sous_blocs"].items()):
+        pi = x["portes_internes"]
+        md += (f"| {nom_b} | {x['semaines']} | {x['rendement_net_total_brut100']:+.2%} | {x['sharpe_net_annualise']:.3f} | "
+               f"{x['alpha_annualise_residuel']:+.2%} | {-x['drawdown_max_brut100']:+.2%} | {x['part_max_nom_du_gain']:.1%} ({x['nom_max']}) | "
+               f"{x['part_max_mois_du_gain']:.1%} | {pi['rendement_net_positif']}, {pi['alpha_positif']}, {pi['concentration_nom_ok']}, "
+               f"{pi['concentration_mois_ok']}, {pi['drawdown_brut100_ok']} |\n")
+    md += ("\nPortes de groupe (fiche § 7) : 9 voisins sur 11 rentables (E03 à E12, E14), E16 et E17 > 0, E18 < 0. "
+           "E13 et E18 ne sont jamais éligibles. Résultat de recherche, aucun ordre.\n")
+    if controle:
+        md += comparer_reproduction(sem, sorties)
+    (sorties / f"{prefixe}_metriques.json").write_text(json.dumps({"meta": meta, "metriques": mt}, ensure_ascii=False, indent=1, default=str))
+    (sorties / f"{prefixe}_metriques.md").write_text(md)
+    sem.to_csv(sorties / f"{prefixe}_semaines.csv", index=False)
+    lig.to_csv(sorties / f"{prefixe}_lignes.csv", index=False)
+    if not controle:
+        r3.ecrire_registre(essai, mt, h, registre)
+    return {"meta": meta, "metriques": mt, "rapport": md}
+
+
+def comparer_reproduction(sem: pd.DataFrame, sorties: Path, tolerance: float = 1e-9) -> str:
+    """Compare semaine par semaine la base continue sur dév. + val. à E01 et E02. Écart admis : semaines de jonction
+    (dernière de E01, première de E02) et dernière semaine (solde final). Tout autre écart arrête le train."""
+    sources = [sorties / f"{e}_semaines.csv" for e in ESSAIS_BASE]
+    if not all(x.exists() for x in sources):
+        return "\nComparaison impossible : E01_semaines.csv ou E02_semaines.csv absent.\n"
+    ref = pd.concat([pd.read_csv(x) for x in sources], ignore_index=True)
+    a = sem.assign(lundi=pd.to_datetime(sem["lundi"])).set_index("lundi")["net"]
+    b = ref.assign(lundi=pd.to_datetime(ref["lundi"])).set_index("lundi")["net"]
+    commun = a.index.intersection(b.index)
+    ecarts = (a.reindex(commun) - b.reindex(commun)).abs()
+    admis = {pd.Timestamp("2024-06-24"), pd.Timestamp("2024-07-01"), a.index.max()}
+    hors = ecarts[(ecarts > tolerance) & ~ecarts.index.isin(list(admis))]
+    verdict = "REPRODUCTION CONFORME" if hors.empty and len(commun) == len(a) == len(b) else "ECART : ARRET DU TRAIN"
+    return (f"\n## Contrôle de reproduction\n\nSemaines comparées : {len(commun)} (base continue {len(a)}, E01 + E02 {len(b)}). "
+            f"Écart maximal hors semaines admises : {hors.max() if not hors.empty else 0:.2e}, sur {len(hors)} semaines. "
+            f"Écart sur les semaines admises : {ecarts[ecarts.index.isin(list(admis))].to_dict()}. Verdict : **{verdict}**.\n")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--essai", required=True)
@@ -152,7 +286,7 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     source = db.VisionLocale(Path(a.source_locale)) if a.source_locale else db.VisionHTTP(Path(a.cache))
     try:
-        out = executer(a.essai, source)
+        out = executer(a.essai, source) if a.essai in ESSAIS_BASE else executer_variante(a.essai, source)
     except r3.Refus as e:
         print(f"REFUS : {e}", file=sys.stderr)
         return 2

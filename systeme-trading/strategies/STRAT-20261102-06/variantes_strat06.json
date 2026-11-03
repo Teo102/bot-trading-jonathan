@@ -1,0 +1,130 @@
+{
+ "strategie": "STRAT-20261102-06",
+ "source": "REGISTRE_ESSAIS.csv et FICHE § 6 au commit ebcb777 (regles figees). Transcription du 03/11/2026, avant tout essai E03 a E18.",
+ "decision_notionnel": "03/11/2026, Jonathan et Teo : notionnel par ligne = 1/(2 x noms_max) ; couverture BTC = multiple x somme des shorts. Base inchangee (1/12).",
+ "definition_E16": "Fiche § 6 : sans les noms delistes sous 7 j. Au lundi t, exclusion de l'univers (avant classement) de tout nom dont le dernier jour de volume D verifie t - 1 j <= D <= t + 7 j et D anterieur a la veille du verrou de bloc. Filtre volontairement anticipe, mesure de dependance, jamais eligible comme regle.",
+ "definition_E14": "Signal le jeudi 00:00 UTC, execution jeudi 01:00 UTC, memes regles. Premier jeudi 2021-01-07, derniere sortie 2025-07-24 01:00 UTC (avant le verrou du 28/07 02:00).",
+ "bloc": {
+  "nom": "dev+val",
+  "premier_jour": "2021-01-04",
+  "dernier_jour": "2025-07-21",
+  "fin_donnees_prix": "2025-07-28T02:00:00Z",
+  "coupure_sous_blocs": "2024-07-01"
+ },
+ "essais": {
+  "E03": {
+   "variante": "age maximal 30 j",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "age_max_j": 30
+   }
+  },
+  "E04": {
+   "variante": "age maximal 90 j",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "age_max_j": 90
+   }
+  },
+  "E05": {
+   "variante": "liquidite 10 M",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "liquidite_min": 10000000.0
+   }
+  },
+  "E06": {
+   "variante": "liquidite 50 M",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "liquidite_min": 50000000.0
+   }
+  },
+  "E07": {
+   "variante": "3 noms",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "noms_max": 3
+   }
+  },
+  "E08": {
+   "variante": "10 noms",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "noms_max": 10
+   }
+  },
+  "E09": {
+   "variante": "stop 20 %",
+   "commentaire_registre": "robustesse",
+   "moteur": {
+    "stop": 0.2
+   }
+  },
+  "E10": {
+   "variante": "stop 45 %",
+   "commentaire_registre": "robustesse",
+   "moteur": {
+    "stop": 0.45
+   }
+  },
+  "E11": {
+   "variante": "sans stop",
+   "commentaire_registre": "robustesse",
+   "moteur": {
+    "stop": null
+   }
+  },
+  "E12": {
+   "variante": "couverture BTC 1.5x",
+   "commentaire_registre": "robustesse",
+   "cotation": {
+    "multiple_couverture": 1.5
+   }
+  },
+  "E13": {
+   "variante": "sans couverture (short seul)",
+   "commentaire_registre": "comparaison - jamais eligible",
+   "cotation": {
+    "couverture": false
+   }
+  },
+  "E14": {
+   "variante": "reequilibrage jeudi",
+   "commentaire_registre": "robustesse",
+   "special": {
+    "calendrier": "jeudi"
+   }
+  },
+  "E15": {
+   "variante": "memecoins exclus",
+   "commentaire_registre": "comparaison",
+   "special": {
+    "memecoins_exclus": true
+   }
+  },
+  "E16": {
+   "variante": "exclusion des noms arretes sous 7 j",
+   "commentaire_registre": "porte - filtre volontairement anticipe",
+   "special": {
+    "filtre_anticipe_delistage_j": 7
+   }
+  },
+  "E17": {
+   "variante": "base",
+   "commentaire_registre": "porte - glissement au stop 0.0060",
+   "moteur": {
+    "frais": 0.001,
+    "glissement": 0.001,
+    "glissement_stop": 0.006
+   }
+  },
+  "E18": {
+   "variante": "signe inverse (long des jeunes cotations)",
+   "commentaire_registre": "controle - doit perdre - jamais eligible",
+   "cotation": {
+    "inverse": true
+   }
+  }
+ }
+}
