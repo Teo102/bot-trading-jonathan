@@ -34,7 +34,7 @@ import run_essai as r3  # noqa: E402
 import run_essai06 as r6  # noqa: E402
 
 VERROU = pd.Timestamp("2025-07-28 02:00:00")
-TRANCHES = [(7, 13, "7-13 j"), (14, 27, "14-27 j"), (28, 60, "28-60 j")]
+TRANCHES = [(7, 13, "7-13 j"), (14, 27, "14-27 j"), (28, 60, "28-60 j"), (61, 90, "61-90 j")]  # 61-90 : E04 seulement
 LISTE_S3 = "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?delimiter=/&prefix=data/spot/monthly/klines/{s}/1d/"
 
 
@@ -65,7 +65,9 @@ def rang_de_detention(x: pd.DataFrame) -> pd.Series:
     return out
 
 
-def profil_age(lig: pd.DataFrame, cotation: dict) -> pd.DataFrame:
+def profil_age(lig: pd.DataFrame, cotation: dict, f: pd.DataFrame | None = None, notionnel: float = 1.0 / 12) -> pd.DataFrame:
+    """Témoin : gain moyen hebdomadaire, par unité de notionnel, d'un short du panier d'alts anciennes (−rendement moyen du
+    panier) sur les mêmes semaines que les lignes du groupe. Couverture BTC exclue des deux côtés."""
     x = lignes_shorts(lig)
     x["age"] = [(t - cotation[s]).days if s in cotation else np.nan for s, t in zip(x["symbole"], x["lundi"])]
     x["tranche"] = None
@@ -78,7 +80,9 @@ def profil_age(lig: pd.DataFrame, cotation: dict) -> pd.DataFrame:
         for k, g in x.groupby(cle):
             st = g[g["statut"] == "stop"]
             rows.append({"axe": cle, "groupe": k, "lignes": len(g), "gain": g["g"].sum(), "part_gain_shorts": g["g"].sum() / tot if tot else np.nan,
-                         "gain_moyen_ligne": g["g"].mean(), "taux_stop": len(st) / len(g), "perte_moyenne_stop": st["g"].mean() if len(st) else np.nan})
+                         "gain_moyen_ligne": g["g"].mean(), "gain_par_notionnel": g["g"].mean() / notionnel,
+                         "temoin_short_alts_anciennes": (-f["alts"].reindex(g["lundi"]).mean()) if f is not None else np.nan,
+                         "taux_stop": len(st) / len(g), "perte_moyenne_stop": st["g"].mean() if len(st) else np.nan})
     return pd.DataFrame(rows)
 
 
@@ -172,12 +176,13 @@ def main(argv=None) -> int:
     ap.add_argument("--sans-reseau", action="store_true", help="saute la partie C (listes spot)")
     ap.add_argument("--resultats", default=str(r6.SORTIES))
     ap.add_argument("--debut-donnees", default=str(r6.DEBUT_DONNEES.date()))
+    ap.add_argument("--essais", default="E01,E02", help="essais déjà consommés, par exemple E01,E02,E04")
     a = ap.parse_args(argv)
     res = Path(a.resultats)
     source = db.VisionLocale(Path(a.source_locale)) if a.source_locale else db.VisionHTTP(Path(a.cache))
     c6, c3 = r6.charger_configs()
     p3 = r3.params_depuis(c3)
-    essais = {e: (pd.read_csv(res / f"{e}_semaines.csv"), pd.read_csv(res / f"{e}_lignes.csv")) for e in ("E01", "E02")}
+    essais = {e: (pd.read_csv(res / f"{e}_semaines.csv"), pd.read_csv(res / f"{e}_lignes.csv")) for e in a.essais.split(",")}
     debut = pd.Timestamp(a.debut_donnees)
     jours = db.charger_jours(source, db.symboles_usdt(source), debut, VERROU)
     jours = {k: v.rename(columns={"BTCUSDT": "BTC"}) for k, v in jours.items()}
@@ -189,32 +194,36 @@ def main(argv=None) -> int:
     h = r3.horo().replace(":", "").replace("-", "")
     cache_spot_f = res / "diag_premiers_mois_spot.json"
     cache_spot = json.loads(cache_spot_f.read_text()) if cache_spot_f.exists() else {}
-    md = [f"# Diagnostics a posteriori de E01 et E02 — STRAT-20261102-06\n",
+    md = [f"# Diagnostics a posteriori ({a.essais}) — STRAT-20261102-06\n",
           f"Passage {h}. Blocs consommés, aucune donnée après {VERROU} UTC. Aucune règle modifiée, hors N. Résultat de recherche.\n"]
     tous_sem = []
     for e, (sem, lig) in essais.items():
-        pa = profil_age(lig, cotation)
-        pa.to_csv(res / f"DIAG_{e}_profil_age.csv", index=False)
-        md += [f"\n## {e} — A. Profil par âge et par rang de détention\n", tableau(pa), ""]
         lundis = pd.to_datetime(sem["lundi"]).tolist()
         f = facteurs(jc, lundis, p3)
+        mj = res / f"{e}_metriques.json"
+        nt = json.loads(mj.read_text())["meta"].get("notionnel_par_ligne", 1.0 / 12) if mj.exists() else 1.0 / 12
+        pa = profil_age(lig, cotation, f, nt)
+        pa.to_csv(res / f"DIAG_{e}_profil_age.csv", index=False)
+        md += [f"\n## {e} — A. Profil par âge et par rang de détention (notionnel {nt:.4f})\n", tableau(pa), ""]
         f.to_csv(res / f"DIAG_{e}_facteurs.csv")
         rg = regression(sem, f)
         md += [f"\n## {e} — B. Régression (Newey-West, 4 retards)\n", "```", json.dumps(rg, indent=1, default=float), "```",
                f"Panier d'alts : {f['n_alts'].mean():.1f} noms en moyenne.\n"]
-        tous_sem.append((sem, f))
+        if e in ("E01", "E02"):
+            tous_sem.append((sem, f))
         if not a.sans_reseau:
             cl = classer(lig, cotation, cache_spot, a.sans_reseau)
             cl.to_csv(res / f"DIAG_{e}_classement_noms.csv", index=False)
             parts = cl.groupby("classe").agg(noms=("symbole", "count"), gain=("gain", "sum"), part=("part", "sum")).reset_index()
             md += [f"\n## {e} — C. Classement des {len(cl)} noms vendus\n", tableau(parts),
                    "\nDix premiers contributeurs :\n", tableau(cl.head(10)), ""]
-    sem_t = pd.concat([s for s, _ in tous_sem], ignore_index=True)
-    f_t = pd.concat([f for _, f in tous_sem])
-    md += ["\n## E01 + E02 — B. Régression sur 238 semaines\n", "```", json.dumps(regression(sem_t, f_t), indent=1, default=float), "```"]
+    if len(tous_sem) == 2:
+        sem_t = pd.concat([s for s, _ in tous_sem], ignore_index=True)
+        f_t = pd.concat([f for _, f in tous_sem])
+        md += ["\n## E01 + E02 — B. Régression sur 238 semaines\n", "```", json.dumps(regression(sem_t, f_t), indent=1, default=float), "```"]
     if cache_spot:
         cache_spot_f.write_text(json.dumps(cache_spot, indent=1, sort_keys=True))
-    sortie = res / f"DIAG_E01_E02_{h}.md"
+    sortie = res / f"DIAG_{a.essais.replace(',', '_')}_{h}.md"
     sortie.write_text("\n".join(md) + "\n")
     print(sortie.read_text())
     return 0
