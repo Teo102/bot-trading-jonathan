@@ -1,0 +1,192 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T12:14:32Z",
+  "essai": "E11",
+  "bloc": "dev+val",
+  "calendrier": "lundi",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "sans stop",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {
+    "stop": null
+   },
+   "special": {}
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "864f7048f588760fb05429065ce1c967ef12125a9e4b306e5f6b2b3ae083d19a",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 236
+  },
+  "incidents": 0,
+  "appels": 75774
+ },
+ "metriques": {
+  "semaines": 238,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.638655462184874,
+  "lignes": 1330,
+  "stops": 0,
+  "delistages": 0,
+  "rendement_net_total_brut100": 1.1579629935116433,
+  "moyenne_hebdo_net": 0.004865390729040518,
+  "ic90_moyenne_hebdo_blocs": [
+   -0.0023239536239672482,
+   0.011766734754566332
+  ],
+  "sharpe_net_annualise": 0.4922211791425198,
+  "beta_btc_hebdo": -0.16076591101700002,
+  "alpha_hebdo_residuel": 0.006248943330479265,
+  "alpha_annualise_residuel": 0.3249450531849218,
+  "sharpe_residuel_annualise": 0.6426727336169079,
+  "drawdown_max_brut100": 0.8200327310818329,
+  "esperance_par_ligne_R": 0.016905803248582284,
+  "jambe_longue": 0.42861333133601576,
+  "jambe_courte": 0.8001797596199431,
+  "pnl_prix": 1.2931775076226253,
+  "financement": -0.06438441666666668,
+  "couts": 0.07083009744431552,
+  "par_annee": {
+   "2021": -0.46304071006777503,
+   "2022": -0.005315075796965454,
+   "2023": 0.3276846379760549,
+   "2024": 0.1497670374713419,
+   "2025": 1.148867103928987
+  },
+  "annees_positives": 3,
+  "part_max_mois_du_gain": 0.3099999451883727,
+  "part_max_nom_du_gain": 0.10078901831198796,
+  "nom_max": "DENTUSDT",
+  "esperance_par_ligne_R_notionnel": 0.03381160649716457,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": false,
+   "part_semaines_vides": 0.05042016806722689
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 12,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.269230769230769,
+    "lignes": 947,
+    "stops": 0,
+    "delistages": 0,
+    "rendement_net_total_brut100": -0.2752289040567888,
+    "moyenne_hebdo_net": -0.0015122467255867516,
+    "ic90_moyenne_hebdo_blocs": [
+     -0.009658888427492704,
+     0.005967109139180574
+    ],
+    "sharpe_net_annualise": -0.154685163139598,
+    "beta_btc_hebdo": -0.12006151701283752,
+    "alpha_hebdo_residuel": -0.0006700522367425141,
+    "alpha_annualise_residuel": -0.034842716310610734,
+    "sharpe_residuel_annualise": -0.0692354476747965,
+    "drawdown_max_brut100": 0.8200327310818329,
+    "esperance_par_ligne_R": -0.005643348008668945,
+    "jambe_longue": 0.09589131337210338,
+    "jambe_courte": -0.3233104817344339,
+    "pnl_prix": -0.24498473752899713,
+    "financement": 0.017565569166666656,
+    "couts": 0.047809735694457955,
+    "par_annee": {
+     "2021": -0.46304071006777503,
+     "2022": -0.005315075796965454,
+     "2023": 0.3276846379760549,
+     "2024": -0.13455775616810314
+    },
+    "annees_positives": 1,
+    "part_max_mois_du_gain": NaN,
+    "part_max_nom_du_gain": NaN,
+    "nom_max": null,
+    "esperance_par_ligne_R_notionnel": -0.01128669601733789,
+    "portes_internes": {
+     "rendement_net_positif": false,
+     "alpha_positif": false,
+     "concentration_nom_ok": null,
+     "concentration_mois_ok": null,
+     "drawdown_brut100_ok": false,
+     "part_semaines_vides": 0.06593406593406594
+    }
+   },
+   "validation": {
+    "semaines": 56,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.839285714285714,
+    "lignes": 383,
+    "stops": 0,
+    "delistages": 0,
+    "rendement_net_total_brut100": 1.433191897568432,
+    "moyenne_hebdo_net": 0.025592712456579143,
+    "ic90_moyenne_hebdo_blocs": [
+     0.013853079539420924,
+     0.0373209508460419
+    ],
+    "sharpe_net_annualise": 2.6190659898640285,
+    "beta_btc_hebdo": -0.39222718809290213,
+    "alpha_hebdo_residuel": 0.030996733920137173,
+    "alpha_annualise_residuel": 1.611830163847133,
+    "sharpe_residuel_annualise": 3.427961967924277,
+    "drawdown_max_brut100": 0.2884554349203042,
+    "esperance_par_ligne_R": 0.07266049317186403,
+    "jambe_longue": 0.33272201796391243,
+    "jambe_courte": 1.123490241354377,
+    "pnl_prix": 1.5381622451516228,
+    "financement": -0.08194998583333335,
+    "couts": 0.02302036174985756,
+    "par_annee": {
+     "2024": 0.2843247936394449,
+     "2025": 1.148867103928987
+    },
+    "annees_positives": 2,
+    "part_max_mois_du_gain": 0.2504678299729457,
+    "part_max_nom_du_gain": 0.06555413613363446,
+    "nom_max": "MUBARAKUSDT",
+    "esperance_par_ligne_R_notionnel": 0.14532098634372806,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}

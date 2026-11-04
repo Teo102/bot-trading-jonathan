@@ -1,0 +1,192 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T10:48:42Z",
+  "essai": "E10",
+  "bloc": "dev+val",
+  "calendrier": "lundi",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "stop 45 %",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {
+    "stop": 0.45
+   },
+   "special": {}
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "864f7048f588760fb05429065ce1c967ef12125a9e4b306e5f6b2b3ae083d19a",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 236
+  },
+  "incidents": 0,
+  "appels": 75774
+ },
+ "metriques": {
+  "semaines": 238,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.638655462184874,
+  "lignes": 1330,
+  "stops": 109,
+  "delistages": 0,
+  "rendement_net_total_brut100": 2.118672033802354,
+  "moyenne_hebdo_net": 0.008901983335304007,
+  "ic90_moyenne_hebdo_blocs": [
+   0.004253331232309346,
+   0.013605881662523554
+  ],
+  "sharpe_net_annualise": 1.2390206072910912,
+  "beta_btc_hebdo": -0.10082732061785613,
+  "alpha_hebdo_residuel": 0.00976970399109765,
+  "alpha_annualise_residuel": 0.5080246075370778,
+  "sharpe_residuel_annualise": 1.3764707738846889,
+  "drawdown_max_brut100": 0.3272473778693995,
+  "esperance_par_ligne_R": 0.030931776535547913,
+  "jambe_longue": 0.42861333133601576,
+  "jambe_courte": 1.7660105042976961,
+  "pnl_prix": 2.2379652048003784,
+  "financement": -0.043341369166666685,
+  "couts": 0.07595180183135747,
+  "par_annee": {
+   "2021": 0.10945936228854489,
+   "2022": 0.1068905024136234,
+   "2023": 0.4391735942756922,
+   "2024": 0.6618663266774581,
+   "2025": 0.8012822481470354
+  },
+  "annees_positives": 5,
+  "part_max_mois_du_gain": 0.1189833898177973,
+  "part_max_nom_du_gain": 0.05309181280201618,
+  "nom_max": "FARTCOINUSDT",
+  "esperance_par_ligne_R_notionnel": 0.061863553071095825,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.05042016806722689
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 12,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.269230769230769,
+    "lignes": 947,
+    "stops": 73,
+    "delistages": 0,
+    "rendement_net_total_brut100": 0.8809493934816419,
+    "moyenne_hebdo_net": 0.004840381282866164,
+    "ic90_moyenne_hebdo_blocs": [
+     -0.00011698526297106011,
+     0.009679414912057855
+    ],
+    "sharpe_net_annualise": 0.7083306448711166,
+    "beta_btc_hebdo": -0.07201034647709628,
+    "alpha_hebdo_residuel": 0.005345511639800517,
+    "alpha_annualise_residuel": 0.2779666052696269,
+    "sharpe_residuel_annualise": 0.7880833882520091,
+    "drawdown_max_brut100": 0.3272473778693995,
+    "esperance_par_ligne_R": 0.01806316099858812,
+    "jambe_longue": 0.09589131337210338,
+    "jambe_courte": 0.835848000498365,
+    "pnl_prix": 0.9110330480371349,
+    "financement": 0.02070626583333332,
+    "couts": 0.050789920388826175,
+    "par_annee": {
+     "2021": 0.10945936228854489,
+     "2022": 0.1068905024136234,
+     "2023": 0.4391735942756922,
+     "2024": 0.22542593450378143
+    },
+    "annees_positives": 4,
+    "part_max_mois_du_gain": 0.22519781073116862,
+    "part_max_nom_du_gain": 0.1198393814255736,
+    "nom_max": "DENTUSDT",
+    "esperance_par_ligne_R_notionnel": 0.03612632199717624,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.06593406593406594
+    }
+   },
+   "validation": {
+    "semaines": 56,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.839285714285714,
+    "lignes": 383,
+    "stops": 36,
+    "delistages": 0,
+    "rendement_net_total_brut100": 1.2377226403207122,
+    "moyenne_hebdo_net": 0.022102190005727003,
+    "ic90_moyenne_hebdo_blocs": [
+     0.012489843792516738,
+     0.03163845876843093
+    ],
+    "sharpe_net_annualise": 2.756363877110425,
+    "beta_btc_hebdo": -0.262404213107001,
+    "alpha_hebdo_residuel": 0.025717538565966064,
+    "alpha_annualise_residuel": 1.3373120054302352,
+    "sharpe_residuel_annualise": 3.372340755399091,
+    "drawdown_max_brut100": 0.12817112161952499,
+    "esperance_par_ligne_R": 0.06275052043502813,
+    "jambe_longue": 0.33272201796391243,
+    "jambe_courte": 0.9301625037993306,
+    "pnl_prix": 1.3269321567632435,
+    "financement": -0.064047635,
+    "couts": 0.025161881442531286,
+    "par_annee": {
+     "2024": 0.4364403921736767,
+     "2025": 0.8012822481470354
+    },
+    "annees_positives": 2,
+    "part_max_mois_du_gain": 0.20366984676684227,
+    "part_max_nom_du_gain": 0.0908799236138681,
+    "nom_max": "FARTCOINUSDT",
+    "esperance_par_ligne_R_notionnel": 0.12550104087005626,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}
