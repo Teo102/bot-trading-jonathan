@@ -1,11 +1,11 @@
 id_essai,date,strategie,variante,bloc,timerange,frais,trades,esperance_R,ic90_bas,ic90_haut,dd_reel,dd_95,commentaire,glissement,semaines,sharpe_net_brut100
 E01,2026-11-02T15:11:06Z,STRAT-20261102-06,base (age 7-60 j / 20 M / 6 noms / stop 30 / couverture BTC 1x),developpement,20210104-20240701,0.0005,947,0.0193,0.000440,0.009923,0.3087,,elimination seulement - contamination fiche § 0 - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,182,0.8376
 E02,2026-11-02T17:24:00Z,STRAT-20261102-06,base,validation,20240701-20250728,0.0005,383,0.0575,0.010109,0.030228,0.1286,,elimination seulement - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,56,2.5460
-E03,,STRAT-20261102-06,age maximal 30 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
-E04,,STRAT-20261102-06,age maximal 90 j,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
-E05,,STRAT-20261102-06,liquidite 10 M,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
-E06,,STRAT-20261102-06,liquidite 50 M,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
-E07,,STRAT-20261102-06,3 noms,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
+E03,2026-11-03T12:33:00Z,STRAT-20261102-06,age maximal 30 j,dev+val,20210104-20250728,0.0005,968,0.0366,0.003821,0.011682,0.2209,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3572
+E04,2026-11-03T14:06:55Z,STRAT-20261102-06,age maximal 90 j,dev+val,20210104-20250728,0.0005,1496,0.0299,0.004747,0.014582,0.3080,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3878
+E05,2026-11-03T15:31:48Z,STRAT-20261102-06,liquidite 10 M,dev+val,20210104-20250728,0.0005,1405,0.0288,0.003931,0.013490,0.3610,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.2816
+E06,2026-11-03T16:48:31Z,STRAT-20261102-06,liquidite 50 M,dev+val,20210104-20250728,0.0005,1170,0.0339,0.004325,0.012832,0.2508,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3684
+E07,2026-11-03T17:56:51Z,STRAT-20261102-06,3 noms,dev+val,20210104-20250728,0.0005,858,0.0592,0.004780,0.017086,0.5767,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3219
 E08,,STRAT-20261102-06,10 noms,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
 E09,,STRAT-20261102-06,stop 20 %,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
 E10,,STRAT-20261102-06,stop 45 %,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
