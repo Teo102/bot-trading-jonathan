@@ -10,12 +10,12 @@ E08,2026-11-04T08:18:26Z,STRAT-20261102-06,10 noms,dev+val,20210104-20250728,0.0
 E09,2026-11-04T09:33:32Z,STRAT-20261102-06,stop 20 %,dev+val,20210104-20250728,0.0005,1330,0.0300,0.004460,0.012892,0.2787,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.4600
 E10,2026-11-04T10:48:42Z,STRAT-20261102-06,stop 45 %,dev+val,20210104-20250728,0.0005,1330,0.0309,0.004253,0.013606,0.3272,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.2390
 E11,2026-11-04T12:14:32Z,STRAT-20261102-06,sans stop,dev+val,20210104-20250728,0.0005,1330,0.0169,-0.002324,0.011767,0.8200,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,0.4922
-E12,,STRAT-20261102-06,couverture BTC 1.5x,dev+val,20210104-20250728,0.0005,,,,,,,robustesse,0.0005,238,
-E13,,STRAT-20261102-06,sans couverture (short seul),dev+val,20210104-20250728,0.0005,,,,,,,comparaison - jamais eligible,0.0005,238,
-E14,,STRAT-20261102-06,reequilibrage jeudi,dev+val,20210107-20250731,0.0005,,,,,,,robustesse,0.0005,238,
-E15,,STRAT-20261102-06,memecoins exclus,dev+val,20210104-20250728,0.0005,,,,,,,comparaison,0.0005,238,
-E16,,STRAT-20261102-06,exclusion des noms arretes sous 7 j,dev+val,20210104-20250728,0.0005,,,,,,,porte - filtre volontairement anticipe,0.0005,238,
-E17,,STRAT-20261102-06,base,dev+val frais et glissement doubles,20210104-20250728,0.0010,,,,,,,porte - glissement au stop 0.0060,0.0010,238,
-E18,,STRAT-20261102-06,signe inverse (long des jeunes cotations),dev+val,20210104-20250728,0.0005,,,,,,,controle - doit perdre - jamais eligible,0.0005,238,
+E12,2026-11-04T13:46:04Z,STRAT-20261102-06,couverture BTC 1.5x,dev+val,20210104-20250728,0.0005,1330,0.0329,0.004435,0.014537,0.3573,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3945
+E13,2026-11-04T15:13:39Z,STRAT-20261102-06,sans couverture (short seul),dev+val,20210104-20250728,0.0005,1104,0.0303,0.001630,0.012800,0.5001,,comparaison - jamais eligible - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,0.8481
+E14,2026-11-04T16:40:51Z,STRAT-20261102-06,reequilibrage jeudi,dev+val,20210107-20250731,0.0005,1323,0.0277,0.003429,0.012831,0.3104,,robustesse - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.1829
+E15,2026-11-04T18:12:47Z,STRAT-20261102-06,memecoins exclus,dev+val,20210104-20250728,0.0005,1299,0.0269,0.003344,0.011880,0.3087,,comparaison - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.2033
+E16,2026-11-04T19:41:37Z,STRAT-20261102-06,exclusion des noms arretes sous 7 j,dev+val,20210104-20250728,0.0005,1330,0.0303,0.004179,0.013248,0.3087,,porte - filtre volontairement anticipe - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,1.3068
+E17,2026-11-04T21:08:23Z,STRAT-20261102-06,base,dev+val frais et glissement doubles,20210104-20250728,0.0010,1330,0.0280,0.003483,0.012597,0.3204,,porte - glissement au stop 0.0060 - IC90 sur la moyenne hebdo nette a brut 100 %,0.0010,238,1.2016
+E18,2026-11-04T22:40:19Z,STRAT-20261102-06,signe inverse (long des jeunes cotations),dev+val,20210104-20250728,0.0005,1330,-0.0245,-0.013817,-0.000035,2.3976,,controle - doit perdre - jamais eligible - IC90 sur la moyenne hebdo nette a brut 100 %,0.0005,238,-0.7120
 E19,,STRAT-20261102-06,base,HORS ECHANTILLON (une seule fois),20250804-20261026,0.0005,,,,,,,verdict avant papier - regime connu,0.0005,64,
 E20,,STRAT-20261102-06,base,hors echantillon frais et glissement doubles,20250804-20261026,0.0010,,,,,,,stress des couts,0.0010,64,

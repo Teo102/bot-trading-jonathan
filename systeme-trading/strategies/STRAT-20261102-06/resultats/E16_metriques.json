@@ -1,0 +1,380 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T19:41:37Z",
+  "essai": "E16",
+  "bloc": "dev+val",
+  "calendrier": "lundi",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "exclusion des noms arretes sous 7 j",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {},
+   "special": {
+    "filtre_anticipe_delistage_j": 7
+   }
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {
+   "2021-02-15 00:00:00": [
+    "DOTECOUSDT"
+   ],
+   "2021-03-08 00:00:00": [
+    "BTCSTUSDT"
+   ],
+   "2021-12-13 00:00:00": [
+    "BZRXUSDT"
+   ],
+   "2021-12-20 00:00:00": [
+    "BZRXUSDT"
+   ],
+   "2022-01-10 00:00:00": [
+    "BTTUSDT"
+   ],
+   "2022-02-14 00:00:00": [
+    "KEEPUSDT",
+    "NUUSDT"
+   ],
+   "2022-04-04 00:00:00": [
+    "1000BTTCUSDT"
+   ],
+   "2022-04-11 00:00:00": [
+    "1000BTTCUSDT",
+    "YFIIUSDT"
+   ],
+   "2022-05-09 00:00:00": [
+    "ANCUSDT",
+    "LUNAUSDT"
+   ],
+   "2022-05-23 00:00:00": [
+    "AKROUSDT",
+    "DODOUSDT"
+   ],
+   "2022-06-13 00:00:00": [
+    "SCUSDT"
+   ],
+   "2022-08-15 00:00:00": [
+    "BTSUSDT"
+   ],
+   "2022-11-07 00:00:00": [
+    "FTTUSDT"
+   ],
+   "2022-11-14 00:00:00": [
+    "FTTUSDT",
+    "RAYUSDT",
+    "SRMUSDT"
+   ],
+   "2023-03-13 00:00:00": [
+    "HNTUSDT"
+   ],
+   "2023-03-20 00:00:00": [
+    "HNTUSDT"
+   ],
+   "2023-05-22 00:00:00": [
+    "COCOSUSDT"
+   ],
+   "2023-11-13 00:00:00": [
+    "TOMOUSDT"
+   ],
+   "2024-03-11 00:00:00": [
+    "STRAXUSDT"
+   ],
+   "2024-03-25 00:00:00": [
+    "ANTUSDT",
+    "BLUEBIRDUSDT",
+    "DGBUSDT",
+    "FOOTBALLUSDT"
+   ],
+   "2024-04-01 00:00:00": [
+    "ANTUSDT",
+    "DGBUSDT"
+   ],
+   "2024-05-06 00:00:00": [
+    "MBLUSDT",
+    "SNTUSDT",
+    "STPTUSDT"
+   ],
+   "2024-05-13 00:00:00": [
+    "AUDIOUSDT",
+    "GLMRUSDT",
+    "IDEXUSDT",
+    "MBLUSDT",
+    "MDTUSDT",
+    "RADUSDT",
+    "SNTUSDT",
+    "STPTUSDT"
+   ],
+   "2024-06-10 00:00:00": [
+    "WAVESUSDT"
+   ],
+   "2024-06-24 00:00:00": [
+    "AGIXUSDT",
+    "OCEANUSDT"
+   ],
+   "2024-07-08 00:00:00": [
+    "GALUSDT"
+   ],
+   "2024-07-15 00:00:00": [
+    "RNDRUSDT"
+   ],
+   "2024-08-19 00:00:00": [
+    "FRONTUSDT"
+   ],
+   "2024-09-02 00:00:00": [
+    "MATICUSDT"
+   ],
+   "2024-10-21 00:00:00": [
+    "KLAYUSDT"
+   ],
+   "2024-10-28 00:00:00": [
+    "UNFIUSDT"
+   ],
+   "2024-12-02 00:00:00": [
+    "KEYUSDT",
+    "LOOMUSDT",
+    "ORBSUSDT",
+    "RENUSDT",
+    "XEMUSDT"
+   ],
+   "2024-12-09 00:00:00": [
+    "BONDUSDT",
+    "LOOMUSDT",
+    "ORBSUSDT",
+    "XEMUSDT"
+   ],
+   "2024-12-16 00:00:00": [
+    "BLZUSDT",
+    "BONDUSDT"
+   ],
+   "2024-12-23 00:00:00": [
+    "BLZUSDT",
+    "DARUSDT"
+   ],
+   "2024-12-30 00:00:00": [
+    "FTMUSDT"
+   ],
+   "2025-01-06 00:00:00": [
+    "FTMUSDT"
+   ],
+   "2025-01-20 00:00:00": [
+    "REEFUSDT"
+   ],
+   "2025-01-27 00:00:00": [
+    "LITUSDT",
+    "OMGUSDT"
+   ],
+   "2025-02-17 00:00:00": [
+    "AMBUSDT",
+    "STMXUSDT"
+   ],
+   "2025-03-10 00:00:00": [
+    "BNXUSDT"
+   ],
+   "2025-03-17 00:00:00": [
+    "BNXUSDT"
+   ],
+   "2025-03-24 00:00:00": [
+    "COMBOUSDT",
+    "LINAUSDT"
+   ],
+   "2025-04-07 00:00:00": [
+    "BADGERUSDT",
+    "BALUSDT",
+    "NULSUSDT",
+    "TROYUSDT",
+    "VIDTUSDT"
+   ],
+   "2025-04-14 00:00:00": [
+    "BADGERUSDT",
+    "BALUSDT",
+    "NULSUSDT",
+    "TROYUSDT",
+    "VIDTUSDT"
+   ],
+   "2025-04-28 00:00:00": [
+    "ALPACAUSDT"
+   ],
+   "2025-05-19 00:00:00": [
+    "EOSUSDT"
+   ],
+   "2025-07-14 00:00:00": [
+    "LOKAUSDT"
+   ],
+   "2025-07-21 00:00:00": [
+    "LOKAUSDT"
+   ]
+  },
+  "empreinte": "864f7048f588760fb05429065ce1c967ef12125a9e4b306e5f6b2b3ae083d19a",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 236
+  },
+  "incidents": 0,
+  "appels": 75774
+ },
+ "metriques": {
+  "semaines": 238,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.638655462184874,
+  "lignes": 1330,
+  "stops": 220,
+  "delistages": 0,
+  "rendement_net_total_brut100": 2.076808438468053,
+  "moyenne_hebdo_net": 0.00872608587591619,
+  "ic90_moyenne_hebdo_blocs": [
+   0.004179149481855214,
+   0.013248403189358056
+  ],
+  "sharpe_net_annualise": 1.3068469076564793,
+  "beta_btc_hebdo": -0.06803582234095859,
+  "alpha_hebdo_residuel": 0.009311602658643245,
+  "alpha_annualise_residuel": 0.4842033382494487,
+  "sharpe_residuel_annualise": 1.4034737571869194,
+  "drawdown_max_brut100": 0.308704673942075,
+  "esperance_par_ligne_R": 0.03032058454585084,
+  "jambe_longue": 0.3699066547729575,
+  "jambe_courte": 1.7914184246876168,
+  "pnl_prix": 2.215343856127241,
+  "financement": -0.05401877666666668,
+  "couts": 0.08451664099252094,
+  "par_annee": {
+   "2021": -0.021942074120834022,
+   "2022": 0.09036341447289278,
+   "2023": 0.5386736946729327,
+   "2024": 0.8492640208418185,
+   "2025": 0.620449382601243
+  },
+  "annees_positives": 4,
+  "part_max_mois_du_gain": 0.12199164843127584,
+  "part_max_nom_du_gain": 0.05686687075282584,
+  "nom_max": "DENTUSDT",
+  "esperance_par_ligne_R_notionnel": 0.06064116909170168,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.05042016806722689
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 12,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.269230769230769,
+    "lignes": 947,
+    "stops": 146,
+    "delistages": 0,
+    "rendement_net_total_brut100": 0.9423033099336983,
+    "moyenne_hebdo_net": 0.005177490713921419,
+    "ic90_moyenne_hebdo_blocs": [
+     0.00044750534521745397,
+     0.009928079870429134
+    ],
+    "sharpe_net_annualise": 0.8385085211311027,
+    "beta_btc_hebdo": -0.03318456146822482,
+    "alpha_hebdo_residuel": 0.005410270171307948,
+    "alpha_annualise_residuel": 0.2813340489080133,
+    "sharpe_residuel_annualise": 0.8778932482030448,
+    "drawdown_max_brut100": 0.308704673942075,
+    "esperance_par_ligne_R": 0.019321173863989467,
+    "jambe_longue": 0.03718463680904499,
+    "jambe_courte": 0.9622951284900549,
+    "pnl_prix": 0.9923098361324333,
+    "financement": 0.007169929166666663,
+    "couts": 0.05717645536540156,
+    "par_annee": {
+     "2021": -0.021942074120834022,
+     "2022": 0.09036341447289278,
+     "2023": 0.5386736946729327,
+     "2024": 0.33520827490870686
+    },
+    "annees_positives": 3,
+    "part_max_mois_du_gain": 0.21058780643145347,
+    "part_max_nom_du_gain": 0.12533288995562442,
+    "nom_max": "DENTUSDT",
+    "esperance_par_ligne_R_notionnel": 0.038642347727978935,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.06593406593406594
+    }
+   },
+   "validation": {
+    "semaines": 56,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.839285714285714,
+    "lignes": 383,
+    "stops": 74,
+    "delistages": 0,
+    "rendement_net_total_brut100": 1.1345051285343546,
+    "moyenne_hebdo_net": 0.02025902015239919,
+    "ic90_moyenne_hebdo_blocs": [
+     0.010132313521707294,
+     0.030238288504173958
+    ],
+    "sharpe_net_annualise": 2.54743715053758,
+    "beta_btc_hebdo": -0.2564542113926782,
+    "alpha_hebdo_residuel": 0.023792390874414572,
+    "alpha_annualise_residuel": 1.2372043254695577,
+    "sharpe_residuel_annualise": 3.1409516823920858,
+    "drawdown_max_brut100": 0.12859367112464182,
+    "esperance_par_ligne_R": 0.057517560827111194,
+    "jambe_longue": 0.33272201796391243,
+    "jambe_courte": 0.8291232961975614,
+    "pnl_prix": 1.2230340199948073,
+    "financement": -0.06118870583333334,
+    "couts": 0.027340185627119394,
+    "par_annee": {
+     "2024": 0.5140557459331114,
+     "2025": 0.620449382601243
+    },
+    "annees_positives": 2,
+    "part_max_mois_du_gain": 0.2233161212871765,
+    "part_max_nom_du_gain": 0.08188825020821872,
+    "nom_max": "MUBARAKUSDT",
+    "esperance_par_ligne_R_notionnel": 0.11503512165422239,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}

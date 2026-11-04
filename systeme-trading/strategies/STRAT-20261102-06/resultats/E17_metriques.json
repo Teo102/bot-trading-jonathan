@@ -1,0 +1,194 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T21:08:23Z",
+  "essai": "E17",
+  "bloc": "dev+val",
+  "calendrier": "lundi",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "base",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {
+    "frais": 0.001,
+    "glissement": 0.001,
+    "glissement_stop": 0.006
+   },
+   "special": {}
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "864f7048f588760fb05429065ce1c967ef12125a9e4b306e5f6b2b3ae083d19a",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 236
+  },
+  "incidents": 0,
+  "appels": 75774
+ },
+ "metriques": {
+  "semaines": 238,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.638655462184874,
+  "lignes": 1330,
+  "stops": 220,
+  "delistages": 0,
+  "rendement_net_total_brut100": 1.9197643974755292,
+  "moyenne_hebdo_net": 0.008066236964182896,
+  "ic90_moyenne_hebdo_blocs": [
+   0.0034834522662455427,
+   0.012597316107471277
+  ],
+  "sharpe_net_annualise": 1.2015588276529081,
+  "beta_btc_hebdo": -0.06975668555356515,
+  "alpha_hebdo_residuel": 0.008666563508254631,
+  "alpha_annualise_residuel": 0.45066130242924085,
+  "sharpe_residuel_annualise": 1.2995929471630638,
+  "drawdown_max_brut100": 0.3204169591944424,
+  "esperance_par_ligne_R": 0.02802780345244951,
+  "jambe_longue": 0.36815665477295756,
+  "jambe_courte": 1.7205684246876136,
+  "pnl_prix": 2.142743856127238,
+  "financement": -0.05401877666666668,
+  "couts": 0.16896068198504188,
+  "par_annee": {
+   "2021": -0.06089081314843118,
+   "2022": 0.07231464949729838,
+   "2023": 0.5091495590741413,
+   "2024": 0.8072362678831275,
+   "2025": 0.5919547341693933
+  },
+  "annees_positives": 4,
+  "part_max_mois_du_gain": 0.1297099329048668,
+  "part_max_nom_du_gain": 0.06134950580582486,
+  "nom_max": "DENTUSDT",
+  "esperance_par_ligne_R_notionnel": 0.05605560690489902,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.05042016806722689
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 12,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.269230769230769,
+    "lignes": 947,
+    "stops": 146,
+    "delistages": 0,
+    "rendement_net_total_brut100": 0.836625404568295,
+    "moyenne_hebdo_net": 0.004596842882243379,
+    "ic90_moyenne_hebdo_blocs": [
+     -0.0001598003890042969,
+     0.009357690103614709
+    ],
+    "sharpe_net_annualise": 0.7399762438336692,
+    "beta_btc_hebdo": -0.03444814091514891,
+    "alpha_hebdo_residuel": 0.004838485959488239,
+    "alpha_annualise_residuel": 0.25160126989338844,
+    "sharpe_residuel_annualise": 0.780470080742887,
+    "drawdown_max_brut100": 0.3204169591944424,
+    "esperance_par_ligne_R": 0.017154333143361154,
+    "jambe_longue": 0.03543463680904507,
+    "jambe_courte": 0.9154951284900533,
+    "pnl_prix": 0.9437598361324313,
+    "financement": 0.007169929166666663,
+    "couts": 0.1143043607308031,
+    "par_annee": {
+     "2021": -0.06089081314843118,
+     "2022": 0.07231464949729838,
+     "2023": 0.5091495590741413,
+     "2024": 0.31605200914528675
+    },
+    "annees_positives": 3,
+    "part_max_mois_du_gain": 0.23559563812718434,
+    "part_max_nom_du_gain": 0.14077578376850083,
+    "nom_max": "DENTUSDT",
+    "esperance_par_ligne_R_notionnel": 0.03430866628672231,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.06593406593406594
+    }
+   },
+   "validation": {
+    "semaines": 56,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.839285714285714,
+    "lignes": 383,
+    "stops": 74,
+    "delistages": 0,
+    "rendement_net_total_brut100": 1.0831389929072341,
+    "moyenne_hebdo_net": 0.019341767730486324,
+    "ic90_moyenne_hebdo_blocs": [
+     0.009166453998243944,
+     0.02936450853457255
+    ],
+    "sharpe_net_annualise": 2.4188440529096993,
+    "beta_btc_hebdo": -0.2600468735829667,
+    "alpha_hebdo_residuel": 0.022924637376026187,
+    "alpha_annualise_residuel": 1.1920811435533618,
+    "sharpe_residuel_annualise": 3.0125265921790243,
+    "drawdown_max_brut100": 0.1354902324461591,
+    "esperance_par_ligne_R": 0.05491338147518235,
+    "jambe_longue": 0.33272201796391243,
+    "jambe_courte": 0.8050732961975602,
+    "pnl_prix": 1.198984019994806,
+    "financement": -0.06118870583333334,
+    "couts": 0.05465632125423878,
+    "par_annee": {
+     "2024": 0.4911842587378408,
+     "2025": 0.5919547341693933
+    },
+    "annees_positives": 2,
+    "part_max_mois_du_gain": 0.22989894447556805,
+    "part_max_nom_du_gain": 0.08547161577060627,
+    "nom_max": "MUBARAKUSDT",
+    "esperance_par_ligne_R_notionnel": 0.1098267629503647,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}

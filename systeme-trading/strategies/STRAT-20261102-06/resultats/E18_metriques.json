@@ -1,0 +1,192 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T22:40:19Z",
+  "essai": "E18",
+  "bloc": "dev+val",
+  "calendrier": "lundi",
+  "premier_lundi": "2021-01-04",
+  "dernier_lundi": "2025-07-21",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "signe inverse (long des jeunes cotations)",
+  "surcharges": {
+   "cotation": {
+    "inverse": true
+   },
+   "moteur": {},
+   "special": {}
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "864f7048f588760fb05429065ce1c967ef12125a9e4b306e5f6b2b3ae083d19a",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 76,
+     "jours_combles": 235,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 21,
+     "jours_combles": 166,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 236
+  },
+  "incidents": 0,
+  "appels": 75774
+ },
+ "metriques": {
+  "semaines": 238,
+  "semaines_vides": 12,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.638655462184874,
+  "lignes": 1330,
+  "stops": 183,
+  "delistages": 0,
+  "rendement_net_total_brut100": -1.6781624627437335,
+  "moyenne_hebdo_net": -0.0070511027846375356,
+  "ic90_moyenne_hebdo_blocs": [
+   -0.013817038729244384,
+   -3.511730337452827e-05
+  ],
+  "sharpe_net_annualise": -0.7119673855236622,
+  "beta_btc_hebdo": 0.1447765483504922,
+  "alpha_hebdo_residuel": -0.008297050814481156,
+  "alpha_annualise_residuel": -0.4314466423530201,
+  "sharpe_residuel_annualise": -0.8489401341586829,
+  "drawdown_max_brut100": 2.3975726479962765,
+  "esperance_par_ligne_R": -0.02450051044227657,
+  "jambe_longue": -1.1682062863506755,
+  "jambe_courte": -0.42861333133601576,
+  "pnl_prix": -1.6398886260200243,
+  "financement": 0.04306900833333335,
+  "couts": 0.08134284505704198,
+  "par_annee": {
+   "2021": 0.1757346781648996,
+   "2022": 0.09225247566148251,
+   "2023": -0.5169815098861847,
+   "2024": -0.34883663602183135,
+   "2025": -1.0803314706620992
+  },
+  "annees_positives": 2,
+  "part_max_mois_du_gain": NaN,
+  "part_max_nom_du_gain": NaN,
+  "nom_max": null,
+  "esperance_par_ligne_R_notionnel": -0.04900102088455314,
+  "portes_internes": {
+   "rendement_net_positif": false,
+   "alpha_positif": false,
+   "concentration_nom_ok": null,
+   "concentration_mois_ok": null,
+   "drawdown_brut100_ok": false,
+   "part_semaines_vides": 0.05042016806722689
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 12,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.269230769230769,
+    "lignes": 947,
+    "stops": 108,
+    "delistages": 0,
+    "rendement_net_total_brut100": -0.17916040411152784,
+    "moyenne_hebdo_net": -0.0009843978247886145,
+    "ic90_moyenne_hebdo_blocs": [
+     -0.008571747079146022,
+     0.007187823538559924
+    ],
+    "sharpe_net_annualise": -0.10027330371684084,
+    "beta_btc_hebdo": 0.11558084161192,
+    "alpha_hebdo_residuel": -0.001795161758507106,
+    "alpha_annualise_residuel": -0.09334841144236952,
+    "sharpe_residuel_annualise": -0.18456660230060626,
+    "drawdown_max_brut100": 1.2801867384991268,
+    "esperance_par_ligne_R": -0.0036735404416917573,
+    "jambe_longue": -0.02881961334951606,
+    "jambe_courte": -0.09589131337210338,
+    "pnl_prix": -0.09196172088828652,
+    "financement": -0.03274920583333332,
+    "couts": 0.054449477389908324,
+    "par_annee": {
+     "2021": 0.1757346781648996,
+     "2022": 0.09225247566148251,
+     "2023": -0.5169815098861847,
+     "2024": 0.06983395194827481
+    },
+    "annees_positives": 3,
+    "part_max_mois_du_gain": NaN,
+    "part_max_nom_du_gain": NaN,
+    "nom_max": null,
+    "esperance_par_ligne_R_notionnel": -0.0073470808833835145,
+    "portes_internes": {
+     "rendement_net_positif": false,
+     "alpha_positif": false,
+     "concentration_nom_ok": null,
+     "concentration_mois_ok": null,
+     "drawdown_brut100_ok": false,
+     "part_semaines_vides": 0.06593406593406594
+    }
+   },
+   "validation": {
+    "semaines": 56,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.839285714285714,
+    "lignes": 383,
+    "stops": 75,
+    "delistages": 0,
+    "rendement_net_total_brut100": -1.4990020586322055,
+    "moyenne_hebdo_net": -0.026767893904146526,
+    "ic90_moyenne_hebdo_blocs": [
+     -0.03752044671615982,
+     -0.016279186343301527
+    ],
+    "sharpe_net_annualise": -2.7387173209570244,
+    "beta_btc_hebdo": 0.3182212750082328,
+    "alpha_hebdo_residuel": -0.031152277884937712,
+    "alpha_annualise_residuel": -1.619918450016761,
+    "sharpe_residuel_annualise": -3.3495892465239754,
+    "drawdown_max_brut100": 1.5832841520590868,
+    "esperance_par_ligne_R": -0.0759969610703544,
+    "jambe_longue": -1.1393866730011595,
+    "jambe_courte": -0.33272201796391243,
+    "pnl_prix": -1.5479269051317386,
+    "financement": 0.07581821416666666,
+    "couts": 0.026893367667133652,
+    "par_annee": {
+     "2024": -0.41867058797010626,
+     "2025": -1.0803314706620992
+    },
+    "annees_positives": 0,
+    "part_max_mois_du_gain": NaN,
+    "part_max_nom_du_gain": NaN,
+    "nom_max": null,
+    "esperance_par_ligne_R_notionnel": -0.1519939221407088,
+    "portes_internes": {
+     "rendement_net_positif": false,
+     "alpha_positif": false,
+     "concentration_nom_ok": null,
+     "concentration_mois_ok": null,
+     "drawdown_brut100_ok": false,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}

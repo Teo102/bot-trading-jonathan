@@ -1,0 +1,192 @@
+{
+ "meta": {
+  "horodatage": "2026-11-04T16:40:51Z",
+  "essai": "E14",
+  "bloc": "dev+val",
+  "calendrier": "jeudi",
+  "premier_lundi": "2021-01-07",
+  "dernier_lundi": "2025-07-17",
+  "fin_donnees": "2025-07-28T02:00:00Z",
+  "variante": "reequilibrage jeudi",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {},
+   "special": {
+    "calendrier": "jeudi"
+   }
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "615fef9131b7d599db3478538aec5f238c52c916c5c3704e384973e48de26fff",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "57bc9daec52a6a281170e2faeaf0927667057f0edaa9d22fa65cb42e1f23438a",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 52,
+     "jours_combles": 318,
+     "jours_introuvables": 5
+    },
+    "marque": {
+     "symboles": 74,
+     "jours_combles": 232,
+     "jours_introuvables": 0
+    },
+    "1h": {
+     "symboles": 18,
+     "jours_combles": 151,
+     "jours_introuvables": 5
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 231
+  },
+  "incidents": 0,
+  "appels": 75339
+ },
+ "metriques": {
+  "semaines": 237,
+  "semaines_vides": 10,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 4.624472573839663,
+  "lignes": 1323,
+  "stops": 212,
+  "delistages": 0,
+  "rendement_net_total_brut100": 1.884702285340238,
+  "moyenne_hebdo_net": 0.007952330317891299,
+  "ic90_moyenne_hebdo_blocs": [
+   0.003429086583953444,
+   0.012830521966171233
+  ],
+  "sharpe_net_annualise": 1.1829242156907627,
+  "beta_btc_hebdo": 0.0032126360621793333,
+  "alpha_hebdo_residuel": 0.007925833645586916,
+  "alpha_annualise_residuel": 0.4121433495705196,
+  "sharpe_residuel_annualise": 1.179000154033567,
+  "drawdown_max_brut100": 0.31035083633275384,
+  "esperance_par_ligne_R": 0.02766149726409144,
+  "jambe_longue": 0.39467666107786814,
+  "jambe_courte": 1.5724362777258345,
+  "pnl_prix": 2.0428307954703695,
+  "financement": -0.07571785666666667,
+  "couts": 0.08241065346346518,
+  "par_annee": {
+   "2021": 0.012025993801373739,
+   "2022": 0.04268872963115966,
+   "2023": 0.5122567129856693,
+   "2024": 0.6249713954464827,
+   "2025": 0.6927594534755526
+  },
+  "annees_positives": 5,
+  "part_max_mois_du_gain": 0.24479306701813633,
+  "part_max_nom_du_gain": 0.06388397334311922,
+  "nom_max": "AI16ZUSDT",
+  "esperance_par_ligne_R_notionnel": 0.05532299452818288,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.04219409282700422
+  },
+  "sous_blocs": {
+   "developpement": {
+    "semaines": 182,
+    "semaines_vides": 10,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 4.247252747252747,
+    "lignes": 945,
+    "stops": 147,
+    "delistages": 0,
+    "rendement_net_total_brut100": 0.7509506113063011,
+    "moyenne_hebdo_net": 0.0041261022599247315,
+    "ic90_moyenne_hebdo_blocs": [
+     9.256943184309931e-06,
+     0.008264614062842771
+    ],
+    "sharpe_net_annualise": 0.6770383659882231,
+    "beta_btc_hebdo": -0.006875803863725793,
+    "alpha_hebdo_residuel": 0.004170915383292236,
+    "alpha_annualise_residuel": 0.2168875999311963,
+    "sharpe_residuel_annualise": 0.6844566863255216,
+    "drawdown_max_brut100": 0.31035083633275384,
+    "esperance_par_ligne_R": 0.015430227796913776,
+    "jambe_longue": 0.03561384898848263,
+    "jambe_courte": 0.7718612585252038,
+    "pnl_prix": 0.8059167925136863,
+    "financement": 0.0015583149999999785,
+    "couts": 0.05652449620738541,
+    "par_annee": {
+     "2021": 0.012025993801373739,
+     "2022": 0.04268872963115966,
+     "2023": 0.5122567129856693,
+     "2024": 0.18397917488809817
+    },
+    "annees_positives": 4,
+    "part_max_mois_du_gain": 0.178929636338906,
+    "part_max_nom_du_gain": 0.1386286449272454,
+    "nom_max": "ANCUSDT",
+    "esperance_par_ligne_R_notionnel": 0.03086045559382755,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": true,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.054945054945054944
+    }
+   },
+   "validation": {
+    "semaines": 55,
+    "semaines_vides": 0,
+    "semaines_avec_exclusion_h1": 0,
+    "exclusions_h1_moyenne": 0.0,
+    "univers_moyen": 5.872727272727273,
+    "lignes": 378,
+    "stops": 65,
+    "delistages": 0,
+    "rendement_net_total_brut100": 1.1337516740339368,
+    "moyenne_hebdo_net": 0.020613666800617034,
+    "ic90_moyenne_hebdo_blocs": [
+     0.008120687680835903,
+     0.03403483706917091
+    ],
+    "sharpe_net_annualise": 2.4828185543304855,
+    "beta_btc_hebdo": 0.0547247207478703,
+    "alpha_hebdo_residuel": 0.019849008953584765,
+    "alpha_annualise_residuel": 1.0321484655864077,
+    "sharpe_residuel_annualise": 2.3939576158371945,
+    "drawdown_max_brut100": 0.1758780624580124,
+    "esperance_par_ligne_R": 0.058239670932035595,
+    "jambe_longue": 0.35906281208938556,
+    "jambe_courte": 0.8005750192006312,
+    "pnl_prix": 1.2369140029566834,
+    "financement": -0.07727617166666664,
+    "couts": 0.025886157256079786,
+    "par_annee": {
+     "2024": 0.44099222055838444,
+     "2025": 0.6927594534755526
+    },
+    "annees_positives": 2,
+    "part_max_mois_du_gain": 0.4069339551252716,
+    "part_max_nom_du_gain": 0.10619809726762759,
+    "nom_max": "AI16ZUSDT",
+    "esperance_par_ligne_R_notionnel": 0.11647934186407119,
+    "portes_internes": {
+     "rendement_net_positif": true,
+     "alpha_positif": true,
+     "concentration_nom_ok": true,
+     "concentration_mois_ok": false,
+     "drawdown_brut100_ok": true,
+     "part_semaines_vides": 0.0
+    }
+   }
+  }
+ }
+}
