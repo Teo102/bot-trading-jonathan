@@ -16,10 +16,9 @@ Usage :
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
 import json
-import sys
 from pathlib import Path
+import sys
 
 import numpy as np
 import pandas as pd
@@ -60,45 +59,75 @@ def charger_facteurs() -> pd.DataFrame:
     return fac
 
 
-def charger_klines_stops(source, symboles: list[str], debut: pd.Timestamp, fin: pd.Timestamp) -> dict:
-    """Charge les klines 1h et marque pour les symboles nécessaires via un pool de threads."""
-    print(f"Chargement des klines 1h et marque pour {len(symboles)} symboles...")
-    k_res = {}
-    mk_res = {}
+class CacheDirect:
+    def __init__(self, racine: Path):
+        self.racine = racine
+        self.mem_k = {}
+        self.mem_mk = {}
 
-    def charger_un(s):
-        s_binance = "BTCUSDT" if s == "BTC" else s
-        k = db.charger_symbole(source, s_binance, "1h", debut, fin)
-        mk = db.charger_symbole(source, s_binance, "marque", debut, fin)
-        return s, k, mk
-
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        for s, k, mk in ex.map(charger_un, symboles):
-            if k is not None and not k.empty:
-                k_res[s] = k
-            if mk is not None and not mk.empty:
-                mk_res[s] = mk
-
-    return {"k": k_res, "mk": mk_res}
-
-
-def extraire_prix_bougie(klines: dict, s: str, t: pd.Timestamp) -> dict | None:
-    k_df = klines["k"].get(s)
-    mk_df = klines["mk"].get(s)
-    if k_df is None or t not in k_df.index:
+    def _lire_fichier(self, rel: str) -> bytes | None:
+        p = self.racine / rel
+        if p.exists():
+            return p.read_bytes()
         return None
-    k_row = k_df.loc[t]
-    mk_row = mk_df.loc[t] if (mk_df is not None and t in mk_df.index) else k_row
-    return {
-        "open": float(k_row["open"]),
-        "high": float(k_row["high"]),
-        "low": float(k_row["low"]),
-        "close": float(k_row["close"]),
-        "mark_open": float(mk_row.get("open", k_row["open"])),
-        "mark_high": float(mk_row.get("high", k_row["high"])),
-        "mark_low": float(mk_row.get("low", k_row["low"])),
-        "mark_close": float(mk_row.get("close", k_row["close"])),
-    }
+
+    def obtenir_bougie(self, s: str, t: pd.Timestamp) -> dict | None:
+        s_binance = "BTCUSDT" if s == "BTC" else s
+        m = str(t.to_period("M"))
+        d = t.strftime("%Y-%m-%d")
+
+        # 1. Contrat 1h
+        cle_k = (s_binance, m)
+        if cle_k not in self.mem_k:
+            rel_m = f"data/futures/um/monthly/klines/{s_binance}/1h/{s_binance}-1h-{m}.zip"
+            b = self._lire_fichier(rel_m)
+            if b is None:
+                rel_d = f"data/futures/um/daily/klines/{s_binance}/1h/{s_binance}-1h-{d}.zip"
+                b = self._lire_fichier(rel_d)
+            if b is not None:
+                try:
+                    self.mem_k[cle_k] = db.lire_klines(b)
+                except Exception:
+                    self.mem_k[cle_k] = None
+            else:
+                self.mem_k[cle_k] = None
+
+        df_k = self.mem_k.get(cle_k)
+
+        # 2. Marque 1h
+        cle_mk = (s_binance, m)
+        if cle_mk not in self.mem_mk:
+            rel_m = f"data/futures/um/monthly/markPriceKlines/{s_binance}/1h/{s_binance}-1h-{m}.zip"
+            b = self._lire_fichier(rel_m)
+            if b is None:
+                rel_d = f"data/futures/um/daily/markPriceKlines/{s_binance}/1h/{s_binance}-1h-{d}.zip"
+                b = self._lire_fichier(rel_d)
+            if b is not None:
+                try:
+                    self.mem_mk[cle_mk] = db.lire_klines(b)
+                except Exception:
+                    self.mem_mk[cle_mk] = None
+            else:
+                self.mem_mk[cle_mk] = None
+
+        df_mk = self.mem_mk.get(cle_mk)
+
+        if df_k is None or t not in df_k.index:
+            return None
+
+        row_k = df_k.loc[t]
+        row_mk = df_mk.loc[t] if (df_mk is not None and t in df_mk.index) else row_k
+
+        return {
+            "open": float(row_k["open"]),
+            "high": float(row_k["high"]),
+            "low": float(row_k["low"]),
+            "close": float(row_k["close"]),
+            "mark_open": float(row_mk.get("open", row_k["open"])),
+            "mark_high": float(row_mk.get("high", row_k["high"])),
+            "mark_low": float(row_mk.get("low", row_k["low"])),
+            "mark_close": float(row_mk.get("close", row_k["close"])),
+        }
 
 
 def main():
@@ -108,7 +137,6 @@ def main():
 
     cache_path = Path(args.cache).expanduser().resolve()
     print(f"Démarrage du stress-test des stops. Cache : {cache_path}")
-    source = db.VisionHTTP(cache_path)
 
     lig_base, sem_base = charger_lignes_base()
     fac = charger_facteurs()
@@ -116,14 +144,8 @@ def main():
     stops = lig_base[lig_base["statut"] == "stop"].copy()
     print(f"Lignes totales : {len(lig_base)}, dont {len(stops)} stops.")
 
-    # Dates min et max pour le chargement des klines
-    t_min = stops["t_sortie"].min() - pd.Timedelta(hours=2)
-    t_max = stops["t_sortie"].max() + pd.Timedelta(hours=2)
-    syms = sorted(stops["symbole"].unique())
+    cache = CacheDirect(cache_path)
 
-    klines = charger_klines_stops(source, syms, t_min, t_max)
-
-    # Vérification et extraction des bougies pour chaque stop
     donnees_stops = []
     manquants = 0
     for idx, row in stops.iterrows():
@@ -132,11 +154,10 @@ def main():
         sens = int(row["sens"])
         p_in = float(row["entree"])
         p_out_base = float(row["sortie"])
-        
-        b = extraire_prix_bougie(klines, s, t)
+
+        b = cache.obtenir_bougie(s, t)
         if b is None:
             manquants += 1
-            # Repli sur le prix base si bougie introuvable
             donnees_stops.append({
                 "index": idx, "symbole": s, "t_sortie": t, "sens": sens, "entree": p_in,
                 "sortie_base": p_out_base,
@@ -193,8 +214,7 @@ def main():
 
     df_stops = pd.DataFrame(donnees_stops).set_index("index")
     print(f"Extraction terminée. Bougies récupérées : {len(df_stops) - manquants}/{len(df_stops)}.")
-    
-    # Calcul des scénarios
+
     modes = [
         ("Base (Modèle actuel)", "sortie_base"),
         ("Stress 1 (Midpoint Mèche Mark)", "sortie_mid"),
@@ -207,7 +227,6 @@ def main():
     for nom_mode, col_sortie in modes:
         lig_m = lig_base.copy()
         
-        # Remplacer les sorties des stops
         for idx_stop, r_stop in df_stops.iterrows():
             px_out = r_stop[col_sortie]
             sens = lig_m.loc[idx_stop, "sens"]
@@ -216,7 +235,6 @@ def main():
             rend_base = sens * (lig_m.loc[idx_stop, "sortie"] / px_in - 1)
             rend_stresse = sens * (px_out / px_in - 1)
             
-            # Notionnel effectif de la ligne déduit du ratio exact
             ratio_rend = rend_stresse / rend_base if abs(rend_base) > 1e-12 else 1.0
             pnl_px_stresse = lig_m.loc[idx_stop, "pnl_prix"] * ratio_rend
             
@@ -227,7 +245,6 @@ def main():
             lig_m.loc[idx_stop, "pnl_prix"] = pnl_px_stresse
             lig_m.loc[idx_stop, "cout_sortie_force"] = cout_force_stresse
 
-        # Calculer le delta par rapport à la base
         delta_lignes = (lig_m["pnl_prix"] - lig_base["pnl_prix"]) - (lig_m["cout_sortie_force"] - lig_base["cout_sortie_force"])
         lig_m["delta_net"] = delta_lignes
 
@@ -236,18 +253,15 @@ def main():
         sem_m = sem_base.copy()
         sem_m["net"] = sem_m["net"] + sem_m["lundi"].map(delta_par_semaine).fillna(0.0)
 
-        # Calcul des métriques
         net_tot = sem_m["net"].sum()
         moy_hebdo = sem_m["net"].mean()
         std_hebdo = sem_m["net"].std(ddof=1)
         sharpe = (moy_hebdo / std_hebdo * np.sqrt(52)) if std_hebdo > 0 else 0.0
 
-        # Drawdown
         cum = sem_m["net"].cumsum()
         peak = cum.cummax()
         dd = (cum - peak).min()
 
-        # Par sous-bloc
         coupure = pd.Timestamp("2024-07-01")
         dev = sem_m[sem_m["lundi"] < coupure]
         val = sem_m[sem_m["lundi"] >= coupure]
@@ -255,18 +269,15 @@ def main():
         sharpe_dev = (dev["net"].mean() / dev["net"].std(ddof=1) * np.sqrt(52)) if len(dev) > 1 else np.nan
         sharpe_val = (val["net"].mean() / val["net"].std(ddof=1) * np.sqrt(52)) if len(val) > 1 else np.nan
 
-        # Par année
         sem_m["annee"] = sem_m["lundi"].dt.year
         par_an = sem_m.groupby("annee")["net"].sum().to_dict()
 
-        # Régression 2 facteurs
         rg = diag.regression(sem_m, fac)
         alpha_ann = rg.get("deux_facteurs", {}).get("alpha_annualise", np.nan)
         t_alpha = rg.get("deux_facteurs", {}).get("t_alpha", np.nan)
         beta_btc = rg.get("deux_facteurs", {}).get("beta_btc", np.nan)
         beta_alts = rg.get("deux_facteurs", {}).get("beta_alts_moins_btc", np.nan)
 
-        # Glissement moyen subi par rapport à la base
         gliss_moyen = (df_stops[col_sortie] / df_stops["sortie_base"] - 1).abs().mean() * 100
         perte_extra = (lig_base["pnl_prix"].sum() - lig_m["pnl_prix"].sum()) * 100
 
@@ -289,11 +300,10 @@ def main():
             "cs3_valide": (net_tot > 0 and alpha_ann > 0)
         })
 
-    # Affichage du tableau de synthèse
     print("\n" + "=" * 95)
     print("RÉSULTATS DU STRESS-TEST D'EXÉCUTION DES 220 STOPS (CONDITION CS3)")
     print("=" * 95)
-    
+
     for r in resultats:
         print(f"\n--- {r['mode']} ---")
         print(f"  Rendement Net Total   : {r['net_total']:+.2f} % (Perte extra vs Base : -{r['perte_extra_pts']:.2f} pts)")
@@ -305,7 +315,6 @@ def main():
         print(f"  Par année             : {an_str}")
         print(f"  Verdict Condition CS3 : {'VALIDE (Net > 0 et Alpha > 0)' if r['cs3_valide'] else 'ECHEC'}")
 
-    # Génération du rapport Markdown
     md_lines = [
         "# Rapport de Stress-Test d'Exécution des Stops (Condition CS3)",
         "",
@@ -321,7 +330,7 @@ def main():
         md_lines.append(
             f"| **{r['mode']}** | **{r['net_total']:+.1f} %** | **{r['sharpe']:.3f}** | {r['alpha_2fac']:+.1f} %/an (t={r['t_alpha']:.2f}) | {r['drawdown']:.1f} % | +{r['gliss_moyen_pts']:.2f} % | -{r['perte_extra_pts']:.1f} pts | {'FRANCHIE' if r['cs3_valide'] else 'ÉCHOUÉE'} |"
         )
-    
+
     md_lines.extend([
         "",
         "## 2. Décomposition par Sous-bloc et par Année",
@@ -350,7 +359,6 @@ def main():
     out_file.write_text("\n".join(md_lines) + "\n")
     print(f"\nRapport complet écrit dans {out_file}")
 
-    # Exporter les détails des stops sous stress
     df_stops.to_csv(RES / "detail_stress_stops.csv")
     print(f"Détails des stops exportés dans {RES / 'detail_stress_stops.csv'}")
 
