@@ -1,0 +1,320 @@
+{
+ "A_stops": {
+  "stops_shorts": 218,
+  "stops_btc": 2,
+  "taux_stop": 0.19746376811594202,
+  "quantiles_heures": {
+   "0.1": 17.0,
+   "0.25": 39.0,
+   "0.5": 71.0,
+   "0.75": 119.0,
+   "0.9": 145.3
+  },
+  "part_24h": 0.16055045871559634,
+  "part_48h": 0.3211009174311927,
+  "par_jour_de_tenue": {
+   "1": 35,
+   "2": 35,
+   "3": 41,
+   "4": 27,
+   "5": 26,
+   "6": 30,
+   "7": 24
+  },
+  "par_jour_semaine": {
+   "Wednesday": 40,
+   "Tuesday": 37,
+   "Monday": 32,
+   "Saturday": 31,
+   "Thursday": 30,
+   "Friday": 25,
+   "Sunday": 23
+  },
+  "par_tranche_horaire_utc": {
+   "00-05": 76,
+   "06-11": 45,
+   "12-17": 62,
+   "18-23": 35
+  },
+  "taux_stop_par_tranche_age": {
+   "(6, 13]": "0.246",
+   "(13, 27]": "0.215",
+   "(27, 60]": "0.171"
+  },
+  "taux_stop_par_annee": {
+   "2021": 0.25,
+   "2022": 0.15,
+   "2023": 0.157,
+   "2024": 0.195,
+   "2025": 0.23
+  },
+  "perte_moyenne_stop_brut": -0.02520376764525988,
+  "perte_totale_stops_prix": -5.520849999999983,
+  "gain_total_non_stop_prix": 7.1447133830209255,
+  "chi2_uniformite_7_jours": 7.155963302752292
+ },
+ "B_top20": {
+  "gains": {
+   "gain_total": 0.798013969103444,
+   "r_px_median": -0.46907978552328555,
+   "age_median_j": 24.5,
+   "vol_hebdo_mediane": 0.27612304615301037,
+   "stops": 0,
+   "classes": {
+    "comptant récent (≤ 180 j)": 8,
+    "sans comptant Binance": 7,
+    "ancien au comptant (> 180 j avant le perpétuel)": 5
+   },
+   "annees": {
+    "2021": 4,
+    "2022": 6,
+    "2024": 3,
+    "2025": 7
+   },
+   "noms_distincts": 20
+  },
+  "pertes": {
+   "gain_total": -0.5193209349999978,
+   "r_px_median": 0.30389999999999984,
+   "age_median_j": 14.0,
+   "vol_hebdo_mediane": 0.1980186489657668,
+   "stops": 20,
+   "classes": {
+    "comptant récent (≤ 180 j)": 17,
+    "ancien au comptant (> 180 j avant le perpétuel)": 3
+   },
+   "annees": {
+    "2021": 5,
+    "2022": 2,
+    "2023": 3,
+    "2024": 4,
+    "2025": 6
+   },
+   "noms_distincts": 16
+  },
+  "part_gain_net_top20_gains": 0.44546486633496263,
+  "vol_hebdo_mediane_tous": 0.1989870649390891
+ },
+ "C_persistance": {
+  "noms": 236,
+  "series": 266,
+  "semaines_par_serie_distribution": {
+   "1": 62,
+   "2": 35,
+   "3": 36,
+   "4": 20,
+   "5": 17,
+   "6": 16,
+   "7": 37,
+   "8": 43
+  },
+  "semaines_par_serie_moyenne": 4.150375939849624,
+  "lignes_par_nom_moyenne": 4.677966101694915,
+  "gain_moyen_par_serie_selon_longueur": {
+   "1": 0.0067,
+   "2": 0.0018,
+   "3": 0.0007,
+   "4": 0.0155,
+   "5": 0.0152,
+   "6": 0.0075
+  },
+  "noms_perdants": 81,
+  "part_noms_perdants": 0.3432203389830508,
+  "top10": {
+   "DENTUSDT": 0.1181,
+   "MUBARAKUSDT": 0.0929,
+   "USUALUSDT": 0.0773,
+   "MYROUSDT": 0.0766,
+   "ARCUSDT": 0.0745,
+   "ICPUSDT": 0.0689,
+   "DUSKUSDT": 0.0682,
+   "DARUSDT": 0.0663,
+   "ALICEUSDT": 0.0655,
+   "KAITOUSDT": 0.063
+  },
+  "bottom10": {
+   "ALTUSDT": -0.0621,
+   "WCTUSDT": -0.0632,
+   "JUPUSDT": -0.0643,
+   "BERAUSDT": -0.0708,
+   "ORDIUSDT": -0.0779,
+   "TIAUSDT": -0.0796,
+   "BIGTIMEUSDT": -0.0894,
+   "1INCHUSDT": -0.0973,
+   "GRTUSDT": -0.1287,
+   "LUNAUSDT": -0.1377
+  },
+  "part_gain_top10_noms": 0.4305074564045205,
+  "part_gain_top30_noms": 1.0338396765169193,
+  "gain_median_par_nom": 0.0102311733025396
+ },
+ "D_financement": {
+  "lignes": 1104,
+  "quantiles_ann": {
+   "0.01": -1.667,
+   "0.05": -0.657,
+   "0.1": -0.234,
+   "0.25": 0.0,
+   "0.5": 0.103,
+   "0.75": 0.197,
+   "0.9": 0.547,
+   "0.95": 0.947,
+   "0.99": 1.869
+  },
+  "part_short_paie_plus_10pct": 0.15489130434782608,
+  "part_short_paie_plus_50pct": 0.06068840579710145,
+  "part_short_paie_plus_100pct": 0.026268115942028984,
+  "part_short_recoit_plus_10pct": 0.5208333333333334,
+  "financement_total_shorts": 0.16755504166664312,
+  "par_annee_total": {
+   "2021": 0.1221,
+   "2022": -0.006,
+   "2023": 0.0368,
+   "2024": 0.0757,
+   "2025": -0.061
+  },
+  "par_annee_part_paie_10pct": {
+   "2021": 0.118,
+   "2022": 0.204,
+   "2023": 0.093,
+   "2024": 0.094,
+   "2025": 0.356
+  },
+  "par_tranche_age_median": {
+   "(6, 13]": "0.109",
+   "(13, 27]": "0.109",
+   "(27, 60]": "0.099"
+  },
+  "taux_stop_si_paie_50pct": 0.23880597014925373,
+  "taux_stop_sinon": 0.19479267116682739,
+  "financement_btc_total": -0.22157381833332748,
+  "pires_10": [
+   "MYXUSDT 2025-06-30 semaine -940.0%/an r_px -14.0%",
+   "KAITOUSDT 2025-03-03 semaine -515.5%/an r_px -30.6%",
+   "1000SHIBUSDT 2021-05-17 semaine -426.7%/an r_px -50.4%",
+   "ROSEUSDT 2022-01-10 stop -285.9%/an r_px +30.4%",
+   "AEVOUSDT 2024-04-15 semaine -237.2%/an r_px -1.2%",
+   "FUNUSDT 2025-04-07 semaine -218.2%/an r_px -10.7%",
+   "AEVOUSDT 2024-05-06 semaine -215.9%/an r_px -19.5%",
+   "AEVOUSDT 2024-03-25 stop -199.8%/an r_px +30.4%",
+   "HUSDT 2025-07-07 semaine -198.0%/an r_px -31.6%",
+   "WCTUSDT 2025-06-02 semaine -186.5%/an r_px -24.5%"
+  ]
+ },
+ "E_correlation": {
+  "lignes": 1104,
+  "semaines_2_noms_ou_plus": 215,
+  "rho_moyen_toutes_semaines": 0.284875368908554,
+  "rho_10pct_pires_semaines": 1.0618191282558864,
+  "rho_semaines_btc_sup_10pct": 1.0528783008345561,
+  "rho_semaines_alts_sup_15pct": 0.5649006375534742,
+  "rho_residuel_apres_facteur_alts": 0.15375285209157374,
+  "beta_nom_sur_btc": 1.4628144833576584,
+  "beta_nom_sur_panier_alts": 1.0284219576955764,
+  "r2_nom_sur_panier_alts": 0.1594810712863245,
+  "pires_semaines_moyenne_shorts_r_px": 0.2689079234491926,
+  "pires_semaines_alts": 0.08420284644462675,
+  "pires_semaines_btc": 0.03137033681369471,
+  "ecart_type_hebdo_nom": 0.31272078319449564,
+  "n_effectif_6_noms": 2.474862772883636
+ },
+ "F_queue": {
+  "r_px_sup_30pct": {
+   "lignes": 89,
+   "part": 0.0806159420289855,
+   "noms": 68,
+   "annees": {
+    "2021": 22,
+    "2022": 8,
+    "2023": 20,
+    "2024": 31,
+    "2025": 8
+   },
+   "age_median_j": 27.0,
+   "classes": {
+    "comptant récent (≤ 180 j)": 65,
+    "sans comptant Binance": 13,
+    "ancien au comptant (> 180 j avant le perpétuel)": 11
+   },
+   "perte_totale_sans_stop": -5.092143070000691
+  },
+  "r_px_sup_50pct": {
+   "lignes": 43,
+   "part": 0.03894927536231884,
+   "noms": 37,
+   "annees": {
+    "2021": 9,
+    "2022": 5,
+    "2023": 11,
+    "2024": 15,
+    "2025": 3
+   },
+   "age_median_j": 23.0,
+   "classes": {
+    "comptant récent (≤ 180 j)": 30,
+    "sans comptant Binance": 8,
+    "ancien au comptant (> 180 j avant le perpétuel)": 5
+   },
+   "perte_totale_sans_stop": -3.683050928596333
+  },
+  "r_px_sup_100pct": {
+   "lignes": 12,
+   "part": 0.010869565217391304,
+   "noms": 12,
+   "annees": {
+    "2021": 3,
+    "2022": 1,
+    "2023": 2,
+    "2024": 5,
+    "2025": 1
+   },
+   "age_median_j": 35.0,
+   "classes": {
+    "comptant récent (≤ 180 j)": 8,
+    "ancien au comptant (> 180 j avant le perpétuel)": 2,
+    "sans comptant Binance": 2
+   },
+   "perte_totale_sans_stop": -1.884397051710975
+  },
+  "r_px_inf_moins30pct": {
+   "lignes": 88,
+   "part": 0.07971014492753623,
+   "gain_total_sans_stop": 2.7894648243421094
+  },
+  "asymetrie_skew_r_px": 4.873630480202463,
+  "kurtosis_r_px": 45.6153081547127,
+  "quantiles_r_px": {
+   "0.01": -0.466,
+   "0.05": -0.345,
+   "0.25": -0.161,
+   "0.5": -0.045,
+   "0.75": 0.07,
+   "0.95": 0.402,
+   "0.99": 1.02
+  },
+  "part_lignes_baissieres": 0.615036231884058,
+  "top15": [
+   "CHZUSDT 2021-03-08 +385% age 46 j",
+   "NOTUSDT 2024-05-27 +344% age 11 j",
+   "GALAUSDT 2021-11-15 +304% age 58 j",
+   "GMTUSDT 2022-03-28 +215% age 13 j",
+   "MOODENGUSDT 2024-11-04 +175% age 10 j",
+   "CFXUSDT 2023-03-13 +134% age 21 j",
+   "BBUSDT 2024-05-20 +133% age 7 j",
+   "FARTCOINUSDT 2025-01-13 +133% age 24 j",
+   "GRTUSDT 2021-02-08 +129% age 51 j",
+   "BIGTIMEUSDT 2023-11-27 +114% age 46 j",
+   "NEIROUSDT 2024-11-04 +104% age 49 j",
+   "TURBOUSDT 2024-07-15 +102% age 46 j",
+   "PEOPLEUSDT 2022-01-24 +99% age 31 j",
+   "LUNAUSDT 2021-03-08 +98% age 39 j",
+   "IDUSDT 2023-04-10 +96% age 18 j"
+  ],
+  "semaine_suivante_apres_hausse_50pct": {
+   "cas": 37,
+   "moyenne": -0.03704270297411429,
+   "mediane": -0.10308110557317629,
+   "part_baisse": 0.6756756756756757
+  }
+ }
+}
