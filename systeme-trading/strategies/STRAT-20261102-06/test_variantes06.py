@@ -219,6 +219,10 @@ class Bout_en_bout(unittest.TestCase):
                 self.assertAlmostEqual(sum(x["rendement_net_total_brut100"] for x in mt["sous_blocs"].values()),
                                        mt["rendement_net_total_brut100"], places=10, msg=e)
                 self.assertTrue((tmp / "o" / f"{e}_metriques.md").exists())
+            sem13 = pd.read_csv(tmp / "o" / "E13_semaines.csv", keep_default_na=False)
+            vides13 = int(((sem13["longs"] == "") & (sem13["shorts"] == "")).sum())
+            self.assertEqual(json.loads((tmp / "o" / "E13_metriques.json").read_text())["metriques"]["semaines_vides"], vides13)
+            self.assertLess(vides13, len(sem13))
             lig13 = pd.read_csv(tmp / "o" / "E13_lignes.csv")
             self.assertNotIn("BTC", set(lig13["symbole"]))
             lig18 = pd.read_csv(tmp / "o" / "E18_lignes.csv")

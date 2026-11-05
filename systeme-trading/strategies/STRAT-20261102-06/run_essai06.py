@@ -151,6 +151,8 @@ CONTROLE = "CDV"  # contrôle de reproduction de la base sur dév. + val., hors 
 
 def metriques_completes(sem, lig, btc, c6, pc, notionnel) -> dict:
     mt = r3.metriques(sem, lig, btc, c6)
+    # 05/11/2026 : une semaine est vide si elle n'a ni long ni short (E13 sans couverture n'a jamais de long)
+    mt["semaines_vides"] = int(((sem["longs"].fillna("") == "") & (sem["shorts"].fillna("") == "")).sum())
     part, nom = calculer_concentration_noms(lig, mt["rendement_net_total_brut100"], pc.facteur)
     mt["part_max_nom_du_gain"], mt["nom_max"] = part, nom
     actives = lig[lig["statut"] != "absent"]
