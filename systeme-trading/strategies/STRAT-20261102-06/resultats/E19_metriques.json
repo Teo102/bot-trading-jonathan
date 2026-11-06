@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "horodatage": "2026-11-06T07:59:59Z",
+  "essai": "E19",
+  "bloc": "hors_echantillon",
+  "calendrier": "lundi",
+  "premier_lundi": "2025-08-04",
+  "dernier_lundi": "2026-10-19",
+  "fin_donnees": "2026-10-26T02:00:00Z",
+  "variante": "base",
+  "surcharges": {
+   "cotation": {},
+   "moteur": {},
+   "special": {}
+  },
+  "notionnel_par_ligne": 0.08333333333333333,
+  "exclusions_anticipees_e16": {},
+  "empreinte": "c65685de2dc9116b2503e3f165535ee873d4f858260c533793e0e98feb5d1d84",
+  "config06_sha256": "b55ed93708059f9b4a7855cd8718e2bf4d4c32bbeb0d3effd42935e157576f7c",
+  "config03_sha256": "48e114f68fdfbe54c7d1f8d09df643d59bb4f4d2fe7ed1300fa6772292b727a8",
+  "variantes_sha256": "37de44db5de080bd216d167940bd6b79064957810372bd6dc8b119f5d05f64b5",
+  "qualite": {
+   "marque_repli_contrat": [],
+   "sans_financement": [],
+   "comblement": {
+    "1d": {
+     "symboles": 53,
+     "jours_combles": 318,
+     "jours_introuvables": 13
+    },
+    "1h": {
+     "symboles": 1,
+     "jours_combles": 1,
+     "jours_introuvables": 0
+    },
+    "marque": {
+     "symboles": 86,
+     "jours_combles": 86,
+     "jours_introuvables": 0
+    }
+   },
+   "sans_archive_1h": [],
+   "noms_differents": 95
+  },
+  "incidents": 0,
+  "appels": 63838
+ },
+ "metriques": {
+  "semaines": 64,
+  "semaines_vides": 0,
+  "semaines_avec_exclusion_h1": 0,
+  "exclusions_h1_moyenne": 0.0,
+  "univers_moyen": 5.0625,
+  "lignes": 388,
+  "stops": 67,
+  "delistages": 0,
+  "rendement_net_total_brut100": 0.6405836041428581,
+  "moyenne_hebdo_net": 0.010009118814732158,
+  "ic90_moyenne_hebdo_blocs": [
+   -0.00035689472358825693,
+   0.021325497475592613
+  ],
+  "sharpe_net_annualise": 1.3980846757287886,
+  "beta_btc_hebdo": -0.01419136691432018,
+  "alpha_hebdo_residuel": 0.009951923106729162,
+  "alpha_annualise_residuel": 0.5175000015499164,
+  "sharpe_residuel_annualise": 1.3902675780466864,
+  "drawdown_max_brut100": 0.22930308617644968,
+  "esperance_par_ligne_R": 0.03205803243633561,
+  "jambe_longue": -0.21964875008742346,
+  "jambe_courte": 0.8902533108898429,
+  "pnl_prix": 0.880738334969086,
+  "financement": -0.21013377416666665,
+  "couts": 0.030020956659561254,
+  "par_annee": {
+   "2025": 0.30380200522183515,
+   "2026": 0.3367815989210231
+  },
+  "annees_positives": 2,
+  "part_max_mois_du_gain": 0.3807994737727289,
+  "part_max_nom_du_gain": 0.18613962033806042,
+  "nom_max": "AVNTUSDT",
+  "esperance_par_ligne_R_notionnel": 0.06411606487267121,
+  "portes_internes": {
+   "rendement_net_positif": true,
+   "alpha_positif": true,
+   "concentration_nom_ok": true,
+   "concentration_mois_ok": true,
+   "drawdown_brut100_ok": true,
+   "part_semaines_vides": 0.0
+  },
+  "sous_blocs": {},
+  "descriptif": {
+   "part_shorts_payant_plus_10pct_an": 0.3765432098765432,
+   "lignes_shorts": 324,
+   "semaines_avec_position": 64
+  },
+  "verdict_e19": {
+   "portes": {
+    "sharpe_sup_seuil": false,
+    "ic90_bas_positif": false,
+    "alpha_btc_positif": true,
+    "drawdown_au_risque_prevu": true,
+    "semaines_avec_position": true,
+    "lignes": true,
+    "concentration_nom": true,
+    "concentration_mois": true
+   },
+   "drawdown_au_risque_prevu": 0.02224239935911562,
+   "toutes_franchies": false
+  }
+ }
+}
