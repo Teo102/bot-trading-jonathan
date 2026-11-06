@@ -2,9 +2,9 @@
 
 Dérive des perpétuels nouvellement cotés : short de jeunes cotations, couverture BTC.
 
-Rédigé le 04/11/2026 par le Cerveau, en application de `validation-edge` § 5 à § 8 et de `avocat-du-diable`. **Mis à jour le 05/11/2026** : E01 à E18 lus (commit 59e9c2e), CS1 levée, hors échantillon non lancé. La revue détaillée de E12 à E18 est au § 10. Résultat de recherche, aucune recommandation d'investissement, aucun ordre.
+Rédigé le 04/11/2026 par le Cerveau, en application de `validation-edge` § 5 à § 8 et de `avocat-du-diable`. **Mis à jour le 05/11/2026** : E01 à E18 lus (commit 59e9c2e), CS1 levée. **Mis à jour le 06/11/2026** : CS3 levée (stress des stops, commit d682206) ; spécification et lanceur du hors échantillon prêts, hors échantillon non lancé. La revue détaillée de E12 à E18 est au § 10. Résultat de recherche, aucune recommandation d'investissement, aucun ordre.
 
-**Verdict de l'avocat du diable : affaiblie.** La thèse reste défendable. Le dossier n'est **pas promouvable** aujourd'hui. Statut : `backtest`. Toutes les portes avant le hors échantillon sont franchies. Six conditions suspensives restent avant le papier (§ 7), et six autres avant le pilote réel (§ 8).
+**Verdict de l'avocat du diable : affaiblie.** La thèse reste défendable. Le dossier n'est **pas promouvable** aujourd'hui. Statut : `backtest`. Toutes les portes avant le hors échantillon sont franchies. Cinq conditions suspensives restent avant le papier (§ 7), et six autres avant le pilote réel (§ 8).
 
 ---
 
@@ -20,7 +20,7 @@ Rédigé le 04/11/2026 par le Cerveau, en application de `validation-edge` § 5 
 3. **La preuve reste concentrée sur 2024-2025.** En développement seul, l'alpha à deux facteurs de la base vaut +28 % par an (t = 2,02). Sur les 14 essais lus en régression, aucun ne dépasse t = 2,7 en développement.
 4. La règle a capté deux mécanismes successifs (C14) : d'anciens jetons recevant un premier perpétuel en 2021-2024, des jetons neufs à faible flottant qui se dégonflent en 2024-2025.
 5. **Le stop porte l'edge (C15), et E18 le confirme par l'autre côté.** En développement, le signe inversé ne perd que −17,9 % quand la base gagne +94,2 %. Environ 40 % du résultat de développement viendrait de la seule coupe des queues par le stop, quel que soit le sens [approximation symétrique, § 10.5].
-6. **Sensibilité aux stops, mesurée et corrigée.** E17 ajoute 0,30 point de glissement au stop et coûte 7,3 points. Chaque point supplémentaire coûte donc environ **24 points** de rendement sur 207, et non 18 comme écrit le 04/11. Le gain s'annule vers **8,6 points** au-delà du modèle, et non 11.
+6. **Sensibilité aux stops, mesurée deux fois.** Le stress sur bougies réelles du 05/11 (CS3, levée) coûte −38,4 points au mi-chemin de la mèche de marque (glissement moyen +1,56 point) : Sharpe 1,04, alpha +35,6 %/an (t = 2,51). Au pire de la mèche du contrat : Sharpe 0,72, alpha t = 1,72. Mesure antérieure : E17 ajoute 0,30 point de glissement au stop et coûte 7,3 points. Chaque point supplémentaire coûte donc environ **24 points** de rendement sur 207, et non 18 comme écrit le 04/11. Le gain s'annule vers **8,6 points** au-delà du modèle, et non 11.
 7. **La couverture BTC par perpétuel coûte cher.** Elle a payé 22,2 points de financement sur 238 semaines, soit environ 4,8 % par an à brut 100 %. Avec un ratio de 1×, la base est proche de la neutralité de bêta (−0,07). À 1,5×, E12 surcouvre (bêta +0,12) : son Sharpe plus élevé vient de la hausse de BTC, car son alpha baisse (39,3 % contre 43,8 %).
 8. **Les règles de risque en vigueur (`commun-trading` § 3 et § 8.2) sont incompatibles avec la stratégie telle qu'elle est figée.** La couverture BTC dépasse 1 % de risque par position, et le portefeuille compte 7 positions.
 9. Au dimensionnement conforme le plus large, l'exposition brute vaut environ 4,9 % du capital. Le rendement en échantillon serait alors d'environ **+2,2 % par an**, avant toute dégradation hors échantillon.
@@ -100,6 +100,30 @@ La distribution du gain d'un short de jeune cotation est asymétrique : de petit
 - Correction : le 04/11, j'avais écrit 18 points et 11 points, en oubliant le facteur de 1,3. L'erreur allait dans le sens favorable à la stratégie.
 
 Le modèle actuel remplit au pire du niveau et de l'ouverture de l'heure, plus 0,30 %. Il couvre les sauts à l'ouverture, pas ceux qui se produisent dans l'heure. E17 double le glissement au stop (0,60 %), sans modéliser de saut.
+
+### 3.2 bis Stress sur bougies réelles (condition CS3, 05/11/2026)
+
+`stress_stops.py` remplace le prix de sortie des 220 stops de la base par trois prix tirés des bougies horaires réelles (contrat et prix de marque). Rapport : `resultats/STRESS_STOPS_20261105.md`.
+
+| Mode | Glissement moyen au stop | Net | Sharpe | Alpha à deux facteurs (t) | Développement : net (Sharpe) | 2021 |
+|---|---:|---:|---:|---:|---:|---:|
+| Modèle actuel | 0 | +207,7 % | 1,31 | +43,8 % (3,13) | +94,2 % (0,84) | −2,2 % |
+| 1. Mi-chemin de la mèche de marque (critère de CS3) | +1,56 point | +169,3 % | 1,04 | +35,6 % (2,51) | +69,2 % (0,60) | −14,2 % |
+| 2. Plus haut de la mèche de marque | +3,13 points | +131,0 % | 0,78 | +27,3 % (1,90) | +44,1 % (0,37) | −26,3 % |
+| 3. Pire du contrat et de la marque | +3,53 points | +120,6 % | 0,72 | +25,1 % (1,72) | +37,0 % (0,31) | −28,7 % |
+
+**CS3 est levée** : net et alpha restent positifs en mode 1. Le critère avait été écrit dans cet audit le 04/11, avant le calcul, et les trois modes sont publiés.
+
+**Ce que le stress apprend :**
+
+1. **La mesure confirme la sensibilité calculée au § 3.2.** 1,56 point × 24 ≈ 37 points pour 38,4 mesurés.
+2. **L'écart d'exécution réel coûte environ 20 % du Sharpe au mode 1, et 45 % au pire.** E19 est calculé avec le modèle actuel : **son Sharpe est donc optimiste d'autant**. Le seuil de 1,72 ne se renégocie pas, mais le stress de E19 est publié à titre descriptif (spécification du hors échantillon).
+3. **Le développement est fragile sous stress.** Sharpe 0,60 au mode 1, et 2021 à −14 %.
+
+**Trois remarques de contrôle :**
+- le rapport de stress donne un drawdown de base de −27,8 % au lieu de −30,87 % : sa méthode de drawdown diffère, et ses drawdowns ne se comparent pas aux rapports officiels [à corriger] ;
+- 219 bougies sur 220 ont été trouvées : un stop reste au modèle actuel ;
+- il n'y a pas eu de ligne de journal de décision avant le calcul. Le critère figurait dans l'audit commité, ce qui suffit ici, mais la règle reste d'écrire la décision au journal (L6).
 
 ### 3.3 Risques réels non modélisés
 
@@ -183,6 +207,7 @@ Dimensionnement conforme le plus large, sans compensation entre la couverture et
 | Délistages E16 > 0 | **franchie à vide** (résultat identique à la base, L12) |
 | Coûts doublés E17 > 0 | **franchie** (+192,0 %, Sharpe 1,20) |
 | Concentration, drawdown (base) | franchies |
+| Stress d'exécution des stops (CS3, hors N) | **franchie** (mode 1 : net +169,3 %, alpha +35,6 %/an, t = 2,51) |
 | Hors échantillon (E19, E20) | **non lancé** ; seuil de Sharpe 1,72 (20 essais) |
 
 ### 5.2 Alpha à deux facteurs de tous les essais (Newey-West, 4 retards)
@@ -268,14 +293,14 @@ Toutes sont requises, dans cet ordre.
 | N° | Condition | Critère | État au 05/11/2026 |
 |---|---|---|---|
 | CS1 | Fin du train E12 à E18, lu sur la grille du § 17 | E16 > 0, E17 > 0, E18 < 0 | **Levée.** E16 +207,7 % (à vide), E17 +192,0 %, E18 −167,8 % ; 11 voisins sur 11 |
-| CS2 | Chargeur des archives journalières pour le dernier mois, testé, puis E19 et E20 **une seule fois** | Verdict du § 7 de la fiche : Sharpe > 1,72, borne basse de l'IC > 0, alpha > 0, drawdown < 20 % au risque prévu, E20 > 0, au moins 30 semaines et 100 lignes, concentration. Lectures descriptives du § 19 publiées | Ouverte : chargeur à écrire |
-| CS3 | Stress d'exécution des stops, hors N, décidé par écrit **avant** E19 | Base : net > 0 et alpha > 0 avec remplissage à mi-chemin du plus haut de l'heure. Remplissage au plus haut de l'heure publié. Résultat publié quel qu'il soit. Repère mesuré par E17 : 24 points par point de glissement | Ouverte : décision écrite attendue |
+| CS2 | Hors échantillon E19 puis E20, **une seule fois** | Verdict du § 7 de la fiche : Sharpe > 1,72, borne basse de l'IC > 0, alpha > 0, drawdown < 20 % au risque prévu, E20 > 0, au moins 30 semaines avec position et 100 lignes, concentration. Lectures descriptives publiées | **Prête sous conditions (06/11)** : archives mensuelles d'octobre 2026 publiées, donc pas de chargeur journalier nécessaire ; spécification `hors_echantillon_strat06.json` et lanceur testés (5 tests). Préalables : décision écrite sur les 4 points ouverts, empreinte enregistrée, contrôle sans prix du bloc refait avec l'exclusion des contrats non crypto |
+| CS3 | Stress d'exécution des stops, hors N | Base : net > 0 et alpha > 0 avec remplissage à mi-chemin du plus haut de l'heure | **Levée le 05/11/2026** (§ 3.2 bis) : net +169,3 %, alpha +35,6 %/an (t = 2,51) |
 | CS4 | Compatibilité avec `commun-trading` § 3 et § 8.2, exigée par `validation-edge` § 5 | Décision écrite de Jonathan : soit dimensionnement conforme strict (≈ 4,9 % brut, ≈ +2,2 %/an en échantillon), soit règle de compensation de la couverture, avec le rendement attendu chiffré et accepté par écrit. Statut de la couverture : 7e position ou « jambe de couverture » | Ouverte, **prioritaire** |
-| CS5 | Conflit sur le critère de 0,2 R | Décision écrite : le critère ne s'applique pas à STRAT-06 (Sharpe hors échantillon à la place, D3), ou s'applique et rejette | Ouverte |
+| CS5 | Conflit sur le critère de 0,2 R | Décision écrite : le critère ne s'applique pas à STRAT-06 (Sharpe hors échantillon à la place, D3), ou s'applique et rejette | Ouverte. **À trancher avant E19** : décidée après, elle serait choisie au vu du résultat |
 | CS6 | Drawdown du 95e centile (tirage par blocs de 4 semaines sur E19) | Valeur inscrite. Elle fixe le coupe-circuit « moteur » (1,5 fois ce centile) | Après E19 |
 | CS7 | Moteur de papier | Calcul en direct du lundi, à partir de l'`exchangeInfo` du jour (exclusion des contrats non crypto par `underlyingType` et `contractType`, L10) et des volumes journaliers. `dry_run: true`. Journal des signaux. Rejeu hebdomadaire dans le moteur de backtest sur les mêmes données : sélection identique exigée chaque semaine | Ouverte : à construire après CS4 |
 
-**Ordre recommandé.** CS4 et CS5, qui ne demandent que des décisions, puis CS3, à décider avant E19 pour que le stress ne soit pas choisi au vu du hors échantillon. Ensuite CS2 et CS6, puis CS7.
+**Ordre recommandé (mis à jour le 06/11).** CS3 est faite. Puis CS5 et les autres points ouverts de la spécification, avant E19. Ensuite CS2 (E19 puis E20), CS6, puis CS4 avant de construire CS7.
 
 **Papier.** 26 semaines (décision reconduite, plus stricte que les 8 à 12 semaines du § 7 du skill), sur données publiques réelles en `dry_run`. Réussite : moyenne hebdomadaire réalisée dans l'IC à 90 % du hors échantillon, drawdown sous le 95e centile (fiche § 7). Le papier ne mesure ni les remplissages ni les stops réels : c'est écrit d'avance.
 

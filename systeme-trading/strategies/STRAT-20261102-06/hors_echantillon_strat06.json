@@ -1,0 +1,55 @@
+{
+ "strategie": "STRAT-20261102-06",
+ "source": "REGISTRE_ESSAIS.csv (E19, E20) et FICHE § 6, § 7, § 19 au commit ebcb777 ; transcription du 06/11/2026, avant tout essai hors échantillon.",
+ "bloc": {
+  "nom": "hors_echantillon",
+  "premier_jour": "2025-08-04",
+  "dernier_jour": "2026-10-19",
+  "fin_donnees_prix": "2026-10-26T02:00:00Z",
+  "timerange_registre": "20250804-20261026"
+ },
+ "essais": {
+  "E19": {
+   "variante": "base",
+   "moteur": {}
+  },
+  "E20": {
+   "variante": "base",
+   "moteur": {
+    "frais": 0.001,
+    "glissement": 0.001,
+    "glissement_stop": 0.006
+   }
+  }
+ },
+ "criteres": {
+  "sharpe_min": 1.72,
+  "ic90_bas_min": 0.0,
+  "alpha_min": 0.0,
+  "dd_max_au_risque_prevu": 0.2,
+  "exposition_brute_prevue": 0.097,
+  "semaines_avec_position_min": 30,
+  "lignes_min": 100,
+  "part_nom_max": 0.25,
+  "part_mois_max": 0.4
+ },
+ "points_ouverts": {
+  "cs5_critere_02R": {
+   "proposition": "non applicable à STRAT-06 : décisions D3 (01/11) et du 02/11 reconduites ; le Sharpe hors échantillon > 1,72 en tient lieu",
+   "statut": "a_trancher"
+  },
+  "e20_glissement_stop": {
+   "proposition": "0,60 % comme E17 (« coûts doublés » au sens de la fiche § 6)",
+   "statut": "a_trancher"
+  },
+  "exposition_brute_prevue": {
+   "proposition": "9,7 % (risque de 0,25 % par ligne, commun-trading § 8.2, couverture comptée) ; porte non discriminante à tout dimensionnement conforme, publiée avec le drawdown à brut 100 %",
+   "statut": "a_trancher"
+  },
+  "lectures_descriptives": {
+   "proposition": "§ 19 de la fiche (classes au comptant, alpha à deux facteurs, avance par âge) + décomposition par jambe et par année + part des shorts payant > 10 %/an de financement ; aucune n'est éliminatoire ; stress des stops (mode 1, mi-chemin du plus haut de marque) appliqué aux stops de E19, publié",
+   "statut": "a_trancher"
+  }
+ },
+ "decision_ecrite": ""
+}

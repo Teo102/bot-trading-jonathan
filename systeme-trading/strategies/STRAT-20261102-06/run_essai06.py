@@ -163,8 +163,10 @@ def metriques_completes(sem, lig, btc, c6, pc, notionnel) -> dict:
 
 
 def executer_variante(essai: str, source, c6=None, c3=None, registre: Path = REGISTRE, sorties: Path = SORTIES, symboles=None,
-                      debut_donnees: pd.Timestamp = DEBUT_DONNEES, exiger_non_coin: bool = True, variantes: dict | None = None) -> dict:
-    """E03 à E18 sur dév. + val. (238 semaines), ou CDV : la base sur le même bloc, comparée à E01 et E02, sans registre."""
+                      debut_donnees: pd.Timestamp = DEBUT_DONNEES, exiger_non_coin: bool = True, variantes: dict | None = None,
+                      definition: dict | None = None) -> dict:
+    """E03 à E18 sur dév. + val. (238 semaines), ou CDV : la base sur le même bloc, comparée à E01 et E02, sans registre.
+    `definition` (06/11/2026) : essai déjà validé ailleurs (hors échantillon E19, E20, voir hors_echantillon06.py)."""
     import variantes06 as v6
     if c6 is None:
         c6, c3 = charger_configs()
@@ -180,6 +182,8 @@ def executer_variante(essai: str, source, c6=None, c3=None, registre: Path = REG
             if not v6.ligne_registre(e, registre)["date"].strip():
                 raise r3.Refus(f"Contrôle de reproduction refusé : {e} n'est pas encore lancé.")
         v = {"variante": "base (controle de reproduction, hors registre)"}
+    elif definition is not None:
+        v = definition
     else:
         v = v6.valider(essai, d, registre, pc_base, p_base)
     pc, p, sp = v6.params_variante(v, pc_base, p_base, c3["exclusions"]["memecoins_liste_close_2026-11-01"])
@@ -218,7 +222,7 @@ def executer_variante(essai: str, source, c6=None, c3=None, registre: Path = REG
         raise r3.Refus("Aucune ligne jouée sur le bloc : vérifier les données avant tout verdict.")
     mt = metriques_completes(sem, lig, btc, c6, pc, nt)
     mt["sous_blocs"] = {}
-    for nom_b, (s_b, l_b) in v6.decouper(sem, lig, bloc["coupure_sous_blocs"]).items():
+    for nom_b, (s_b, l_b) in (v6.decouper(sem, lig, bloc["coupure_sous_blocs"]).items() if "coupure_sous_blocs" in bloc else []):
         if len(s_b) > 2 and not l_b.empty:
             mt["sous_blocs"][nom_b] = metriques_completes(s_b, l_b, btc, c6, pc, nt)
     h = r3.horo()
@@ -247,8 +251,9 @@ def executer_variante(essai: str, source, c6=None, c3=None, registre: Path = REG
                f"{x['alpha_annualise_residuel']:+.2%} | {-x['drawdown_max_brut100']:+.2%} | {x['part_max_nom_du_gain']:.1%} ({x['nom_max']}) | "
                f"{x['part_max_mois_du_gain']:.1%} | {pi['rendement_net_positif']}, {pi['alpha_positif']}, {pi['concentration_nom_ok']}, "
                f"{pi['concentration_mois_ok']}, {pi['drawdown_brut100_ok']} |\n")
-    md += ("\nPortes de groupe (fiche § 7) : 9 voisins sur 11 rentables (E03 à E12, E14), E16 et E17 > 0, E18 < 0. "
-           "E13 et E18 ne sont jamais éligibles. Résultat de recherche, aucun ordre.\n")
+    if definition is None:
+        md += ("\nPortes de groupe (fiche § 7) : 9 voisins sur 11 rentables (E03 à E12, E14), E16 et E17 > 0, E18 < 0. "
+               "E13 et E18 ne sont jamais éligibles. Résultat de recherche, aucun ordre.\n")
     if controle:
         md += comparer_reproduction(sem, sorties)
     (sorties / f"{prefixe}_metriques.json").write_text(json.dumps({"meta": meta, "metriques": mt}, ensure_ascii=False, indent=1, default=str))
@@ -288,7 +293,13 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     source = db.VisionLocale(Path(a.source_locale)) if a.source_locale else db.VisionHTTP(Path(a.cache))
     try:
-        out = executer(a.essai, source) if a.essai in ESSAIS_BASE else executer_variante(a.essai, source)
+        if a.essai in ESSAIS_BASE:
+            out = executer(a.essai, source)
+        elif a.essai in ("E19", "E20"):
+            import hors_echantillon06 as h6
+            out = h6.executer_hors_echantillon(a.essai, source)
+        else:
+            out = executer_variante(a.essai, source)
     except r3.Refus as e:
         print(f"REFUS : {e}", file=sys.stderr)
         return 2

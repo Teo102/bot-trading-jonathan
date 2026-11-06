@@ -177,6 +177,7 @@ def main(argv=None) -> int:
     ap.add_argument("--resultats", default=str(r6.SORTIES))
     ap.add_argument("--debut-donnees", default=str(r6.DEBUT_DONNEES.date()))
     ap.add_argument("--essais", default="E01,E02", help="essais déjà consommés, par exemple E01,E02,E04")
+    ap.add_argument("--verrou", default=str(VERROU), help="dernière donnée lue (E19/E20 : 2026-10-26 02:00:00)")
     a = ap.parse_args(argv)
     res = Path(a.resultats)
     source = db.VisionLocale(Path(a.source_locale)) if a.source_locale else db.VisionHTTP(Path(a.cache))
@@ -184,7 +185,8 @@ def main(argv=None) -> int:
     p3 = r3.params_depuis(c3)
     essais = {e: (pd.read_csv(res / f"{e}_semaines.csv"), pd.read_csv(res / f"{e}_lignes.csv")) for e in a.essais.split(",")}
     debut = pd.Timestamp(a.debut_donnees)
-    jours = db.charger_jours(source, db.symboles_usdt(source), debut, VERROU)
+    verrou = pd.Timestamp(a.verrou)
+    jours = db.charger_jours(source, db.symboles_usdt(source), debut, verrou)
     jours = {k: v.rename(columns={"BTCUSDT": "BTC"}) for k, v in jours.items()}
     jc = m.couper_zombies(jours, {}, None)[0]
     vol = jours["volume"].fillna(0) > 0
@@ -195,7 +197,7 @@ def main(argv=None) -> int:
     cache_spot_f = res / "diag_premiers_mois_spot.json"
     cache_spot = json.loads(cache_spot_f.read_text()) if cache_spot_f.exists() else {}
     md = [f"# Diagnostics a posteriori ({a.essais}) — STRAT-20261102-06\n",
-          f"Passage {h}. Blocs consommés, aucune donnée après {VERROU} UTC. Aucune règle modifiée, hors N. Résultat de recherche.\n"]
+          f"Passage {h}. Blocs consommés, aucune donnée après {verrou} UTC. Aucune règle modifiée, hors N. Résultat de recherche.\n"]
     tous_sem = []
     for e, (sem, lig) in essais.items():
         lundis = pd.to_datetime(sem["lundi"]).tolist()
