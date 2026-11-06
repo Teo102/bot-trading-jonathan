@@ -62,12 +62,17 @@ class Specification(unittest.TestCase):
             with self.assertRaises(h6.Refus):  # pas d'empreinte
                 h6.charger_spec(j)
             import hashlib
+            d_vide = json.loads(j.read_text())
+            d_vide["decision_ecrite"] = ""
+            j.write_text(json.dumps(d_vide))
             (tmp / "hors_echantillon_strat06.json.sha256").write_text(hashlib.sha256(j.read_bytes()).hexdigest())
             with self.assertRaises(h6.Refus):  # décision vide
                 h6.charger_spec(j)
             d = json.loads(j.read_text()); d["decision_ecrite"] = "x"; j.write_text(json.dumps(d))
             with self.assertRaises(h6.Refus):  # empreinte périmée
                 h6.charger_spec(j)
+            d["points_ouverts"]["cs5_critere_02R"]["statut"] = "a_trancher"
+            j.write_text(json.dumps(d))
             (tmp / "hors_echantillon_strat06.json.sha256").write_text(hashlib.sha256(j.read_bytes()).hexdigest())
             with self.assertRaises(h6.Refus):  # points ouverts non tranchés
                 h6.charger_spec(j)

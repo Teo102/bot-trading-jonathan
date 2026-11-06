@@ -36,20 +36,20 @@
  "points_ouverts": {
   "cs5_critere_02R": {
    "proposition": "non applicable à STRAT-06 : décisions D3 (01/11) et du 02/11 reconduites ; le Sharpe hors échantillon > 1,72 en tient lieu",
-   "statut": "a_trancher"
+   "statut": "tranche"
   },
   "e20_glissement_stop": {
    "proposition": "0,60 % comme E17 (« coûts doublés » au sens de la fiche § 6)",
-   "statut": "a_trancher"
+   "statut": "tranche"
   },
   "exposition_brute_prevue": {
    "proposition": "9,7 % (risque de 0,25 % par ligne, commun-trading § 8.2, couverture comptée) ; porte non discriminante à tout dimensionnement conforme, publiée avec le drawdown à brut 100 %",
-   "statut": "a_trancher"
+   "statut": "tranche"
   },
   "lectures_descriptives": {
    "proposition": "§ 19 de la fiche (classes au comptant, alpha à deux facteurs, avance par âge) + décomposition par jambe et par année + part des shorts payant > 10 %/an de financement ; aucune n'est éliminatoire ; stress des stops (mode 1, mi-chemin du plus haut de marque) appliqué aux stops de E19, publié",
-   "statut": "a_trancher"
+   "statut": "tranche"
   }
  },
- "decision_ecrite": ""
+ "decision_ecrite": "Décision conjointe Jonathan et Téo du 06/11/2026 : les 4 propositions du Cerveau sont adoptées et tranchées avant tout calcul hors échantillon. 1. Critère 0,2 R non applicable (décision D3 reconduite, le seuil de Sharpe 1,72 en tient lieu). 2. Glissement au stop de E20 fixé à 0,60 % (identique à E17). 3. Exposition brute prévue de 9,7 % (risque 0,25 % par ligne, porte de drawdown). 4. Lectures descriptives du § 19, décompositions par jambe et année, part du financement > 10 %/an et stress mode 1 des stops de E19 adoptées pour publication non éliminatoire."
 }
