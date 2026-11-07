@@ -1,0 +1,44 @@
+{
+  "horodatage_utc": "2026-11-07T08:32:23+00:00",
+  "capital_compte_usdt": 10000.0,
+  "risque_par_ligne_pct": 0.005,
+  "exposition_brute_pct": 3.333333333333334,
+  "nombre_shorts": 1,
+  "lignes_shorts": [
+    {
+      "symbole": "CTUSDT",
+      "sens": "SHORT",
+      "age_jours": 37,
+      "date_cotation_utc": "2026-10-01T07:45:00+00:00",
+      "volume_median_usdt": 21328639.841495,
+      "prix_repere": 0.13553,
+      "stop_loss_30pct": 0.176189,
+      "notionnel_usdt": 166.66666666666669,
+      "quantite": 1229.740032957033,
+      "funding_rate_8h": 5e-05,
+      "funding_rate_annualise_pct": 5.4750000000000005,
+      "alerte_anti_funding_v2": false,
+      "tranche_age": "28-60j"
+    }
+  ],
+  "couverture_btc": {
+    "symbole": "BTCUSDT",
+    "sens": "LONG",
+    "age_jours": 9999,
+    "date_cotation_utc": "2019-09-08T17:55:00Z",
+    "volume_median_usdt": 1000000000.0,
+    "prix_repere": 76079.49105172,
+    "stop_loss_30pct": null,
+    "notionnel_usdt": 166.66666666666669,
+    "quantite": 0.00219069113584585,
+    "funding_rate_8h": 1.003e-05,
+    "funding_rate_annualise_pct": 1.098285,
+    "alerte_anti_funding_v2": false,
+    "tranche_age": "couverture"
+  },
+  "shadow_v2_filtres": {
+    "anti_funding_exclus": [],
+    "demi_tailles_recommandees": []
+  },
+  "statut": "SIGNAL_ACTIF"
+}
