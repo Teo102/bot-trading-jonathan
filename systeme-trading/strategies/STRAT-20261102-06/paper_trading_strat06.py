@@ -438,7 +438,7 @@ def main() -> int:
     parser.add_argument("--check-now", action="store_true", help="Exécute un scan complet immédiatement")
     parser.add_argument("--cron", action="store_true", help="Tourne en démon en attendant chaque lundi 00:05 UTC")
     parser.add_argument("--capital", type=float, default=10000.0, help="Capital du portefeuille en USDT (défaut: 10000)")
-    parser.add_argument("--risque", type=float, default=0.005, help="Risque par ligne (défaut: 0.005 soit 0.50%)")
+    parser.add_argument("--risque", type=float, default=0.005, help="Risque par ligne (défaut: 0.005 soit 0.50%%)")
     
     args = parser.parse_args()
     
