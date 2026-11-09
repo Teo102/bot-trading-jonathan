@@ -54,7 +54,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H28 | Dérive selon le flottant et les calendriers de déblocage | 05/11/2026 | 0 | à trier, T4 élevé | idem |
 | H29 | Encombrement des shorts (financement payé) comme filtre | 05/11/2026 | 0 | à trier, voisine de STRAT-05 (T9) | idem |
 | H30 | Emprunt sur marge avant le perpétuel (test direct de Miller) | 05/11/2026 | 0 | à trier, T4 élevé | idem |
-| H31 | STRAT-07 : portage de financement conditionnel aux pointes (long comptant, short perpétuel) | 09/11/2026 | 1 (criblage prêt) | affaiblie au tri ; règle du criblage écrite avant calcul (brut médian ≥ 1,5 % et rendement indicatif > 3,875 %/an), en attente d'exécution | `recherche/criblage_strat07/CRIBLAGE_STRAT-07.md` |
-| H32 | STRAT-08 : contre-tendance après cascade de liquidations, données 1m | 09/11/2026 | 2 (fiche) | fiche écrite, règles proposées ; 16 essais, seuil 1,63 ; liquidationSnapshot absent, détection par intérêt ouvert 5 min ; disque bloquant (1,2 Go libres) | `recherche/FICHE_STRAT-08.md` |
+| H31 | STRAT-07 : portage de financement conditionnel aux pointes (long comptant, short perpétuel) | 09/11/2026 | 2 (fiche) | criblage favorable (50/10 : brut médian +2,16 %, +6,89 %/an ; 50/20 négatif) ; fiche écrite, règles proposées ; N = 19 (lectures du criblage comptées), seuil 1,70 | `strategies/STRAT-20261109-07/FICHE_STRAT-20261109-07.md` |
+| H32 | STRAT-08 : contre-tendance après cascade de liquidations, données 1m | 09/11/2026 | 2 (fiche, décisions prises) | règles validées le 09/11 sauf précision sur Y (intérêt ouvert en contrats) ; détection et contrôle sans rendement codés (11 tests) ; contrôle à lancer | `strategies/STRAT-20261109-08/FICHE_STRAT-20261109-08.md` |
 
 Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, H12, soit **7** (09/11/2026 ; H12 rejetée au hors échantillon, rouverte en H12-bis dont le seul test est le papier).
