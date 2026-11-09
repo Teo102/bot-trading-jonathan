@@ -33,7 +33,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H09 | Tokens pump.fun franchissant 5 M$ | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/` |
 | H10 | Portage couvert sur financement **positif** des alts encombrés | 02/11/2026 | 1 | **écartée au criblage** (voir `PISTES_20261102.md`) | ce registre |
 | H11 | Portage couvert sur financement **négatif** (long perpétuel, short spot emprunté) | 02/11/2026 | 0 | **écartée au tri (T4)** : aucun historique public des taux d'emprunt sur marge, API limitée à 90 jours avec clé (contrôle de Téo, 02/11/2026) | `PISTES_20261102.md` |
-| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 2 (gel) | règles figées le 02/11, E01 en attente | `strategies/STRAT-20261102-06/FICHE_STRAT-20261102-06.md` |
+| H12 | Dérive des perpétuels nouvellement cotés | 02/11/2026 | 3 | **rejetée au hors échantillon** le 06/11 (E19 : Sharpe 1,398 < 1,72, borne basse de l'IC −0,04 %) ; rouverte en H12-bis | `strategies/STRAT-20261102-06/FICHE_STRAT-20261102-06.md` |
 | H13 | Levier agrégé comme filtre de risque sur BTC | 02/11/2026 | 0 | en tri, puissance faible | `PISTES_20261102.md` |
 | H09b | Cycle de vie des tokens pump.fun (taux de base à 30 jours) | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/taux_de_base_cycle_de_vie.sql` |
 | H14 | Dérive de prix autour de l'heure de versement du financement | 02/11/2026 | 0 | à trier (T2 : mouvement contre coût) | `PISTES_20261102.md` |
@@ -48,5 +48,13 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H23 | Réservé | 02/11/2026 | — | — | — |
 | H24 | Biais du longshot Polymarket (contrats 1 à 10 c) | 02/11/2026 | 0 | passe le tri sous conditions T2, T4, T6 ; fusion avec H25 | `recherche/TRI_H24_H25_POLYMARKET.md` |
 | H25 | Portage de quasi-certitude Polymarket (95 à 99 c, derniers jours) | 02/11/2026 | 0 | passe le tri, affaiblie (prime de risque probable) ; bloquée par T6 | `recherche/TRI_H24_H25_POLYMARKET.md` |
+| H12-bis | STRAT-06-bis : dérive des jeunes perpétuels, cohortes quotidiennes (1/7 par jour), verdict par le papier aveugle | 09/11/2026 | 4 (papier) | rouverte après rejet de la v1 au hors échantillon (E19 : Sharpe 1,398 < 1,72, borne basse de l'IC < 0) ; critères du papier à figer | `strategies/STRAT-20261102-06/FICHE_STRAT-06-BIS.md` |
+| H26 | Témoin « short de petites alts spéculatives couvert » (contrôle de taille et d'illiquidité de STRAT-06) | 05/11/2026 | 0 | à trier | `recherche/RECHERCHE_FONDAMENTALE_STRAT-06.md` § 6.3 |
+| H27 | Couverture moins chère que le perpétuel BTC | 05/11/2026 | 0 | à trier | idem |
+| H28 | Dérive selon le flottant et les calendriers de déblocage | 05/11/2026 | 0 | à trier, T4 élevé | idem |
+| H29 | Encombrement des shorts (financement payé) comme filtre | 05/11/2026 | 0 | à trier, voisine de STRAT-05 (T9) | idem |
+| H30 | Emprunt sur marge avant le perpétuel (test direct de Miller) | 05/11/2026 | 0 | à trier, T4 élevé | idem |
+| H31 | STRAT-07 : portage de financement conditionnel aux pointes (long comptant, short perpétuel) | 09/11/2026 | 0 | affaiblie au tri (T2, T9 : proche de H10 et H02) ; criblage de la durée des pointes avant toute fiche | `recherche/TRI_STRAT-07_STRAT-08.md` |
+| H32 | STRAT-08 : contre-tendance après cascade de liquidations, données 1m | 09/11/2026 | 0 | passe le tri sous conditions (T4 audit, T5 retard d'entrée, T8 grille déclarée) | `recherche/TRI_STRAT-07_STRAT-08.md` |
 
-Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, soit **6** (inchangé au 02/11 : H12 figée, E01 non lancé).
+Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, H12, soit **7** (09/11/2026 ; H12 rejetée au hors échantillon, rouverte en H12-bis dont le seul test est le papier).
