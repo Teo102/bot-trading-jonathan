@@ -1,0 +1,152 @@
+# Fiche STRAT-08 — Contre-tendance après une cascade de liquidations (données 1 minute)
+
+Rédigée le 09/11/2026 par le Cerveau, avant toute lecture de rendement, selon `validation-edge` § 1. **Statut des règles : PROPOSÉES.** Aucun essai avant les décisions du § 11 et le gel. Résultat de recherche, aucun ordre, `dry_run` permanent, capital nul.
+
+## 0. Contamination déclarée
+
+- Aucune donnée 1 minute ni de l'intérêt ouvert à 5 minutes n'a été lue sur des rendements par ce système.
+- Le récit est connu de tous : « acheter les mèches de liquidation ». Les grands krachs de la période aussi : mai 2021, mai 2022, novembre 2022, et le **10/10/2025**, plus grande vague de liquidations de l'histoire des cryptos [ordre de grandeur publié, non vérifié ici]. Ce dernier tombe **dans le hors échantillon**, d'où la porte de robustesse « hors 10 et 11/10/2025 » (§ 7).
+- L'archive des liquidations (`liquidationSnapshot`) est **absente** de data.binance.vision (audit du 09/11/2026 : 0 symbole). La détection passe donc par un indicateur indirect.
+
+## 1. Hypothèse économique
+
+Quand le prix d'un perpétuel chute vite, les longs à fort levier sont liquidés. Le moteur de liquidation vend au marché, sans tenir compte du prix. Cette vente forcée pousse le prix sous sa valeur d'équilibre de court terme. **Le payeur est le liquidé**, une contrepartie forcée. Le rebond rémunère celui qui fournit la liquidité au moment de la vente forcée.
+
+**Ce qui pourrait empêcher l'edge (T5) :** les teneurs de marché rapides captent le rebond en secondes. La fiche impose donc un retard d'entrée et un test à 5 minutes (E11).
+
+## 2. Données (audit du 09/11/2026)
+
+| Jeu | Usage | Disponibilité |
+|---|---|---|
+| Klines 1 minute des perpétuels | Détection, entrée, sortie, stop | 923 symboles, 2020-01 à 2026-10, 30,5 Go compressés |
+| metrics (intérêt ouvert à 5 minutes) | Détection de la cascade | 921 symboles, 2020-09-01 à 2026-11-08 |
+| Klines journalières (déjà en cache) | Univers et liquidité | Oui |
+| Prix de marque 1 minute | Non utilisé : le stop se lit sur le plus bas 1 minute du **contrat**, plus défavorable que la marque. Économise environ 16,5 Go | — |
+
+**À vérifier avant le gel (test de non-anticipation) :** l'heure portée par une ligne de metrics doit désigner l'état de l'intérêt ouvert **à** cette heure, pas à la fin d'un intervalle ultérieur. Un écart d'un pas (5 minutes) ferait lire l'avenir. Test : comparer sur quelques jours l'intérêt ouvert des metrics à l'API publique d'intérêt ouvert historique, pour les mêmes horodatages [à faire par Téo].
+
+## 3. Règles (proposées)
+
+**Univers, au jour J, lu sur J − 1 :**
+- perpétuels USDT ;
+- contrats non crypto exclus (`exclusions_non_coin.json`, L10), ainsi que les stablecoins et indices ;
+- âge ≥ 30 jours, pour éviter le recouvrement avec STRAT-06 ;
+- médiane du volume journalier sur 30 jours ≥ 20 M USDT.
+
+**Détection, toutes les 5 minutes, sur les barres closes alignées sur les horodatages des metrics.** Une cascade est déclarée à l'instant t si, sur les 15 minutes précédentes :
+- le rendement du contrat est ≤ **−X** (X = 4 %) ;
+- **et** l'intérêt ouvert baisse d'au moins **Y** (Y = 3 %) ;
+- **et** les deux sont mesurés sur des données strictement antérieures ou égales à t.
+
+**Entrée :** achat (long) à l'ouverture de la minute t + d, avec d = 1 minute pour la base.
+
+**Sortie, à la première des deux :**
+- stop à **−S** sous le prix d'entrée (S = 5 %), lu sur le plus bas 1 minute du contrat, rempli au pire du niveau et de l'ouverture de la minute, plus 0,30 % ;
+- fin de tenue après **H** heures (H = 4), à l'ouverture de la minute.
+
+**Contraintes de portefeuille :**
+- une position au plus par symbole ;
+- période réfractaire de H heures après une sortie ;
+- au plus **K = 5** positions simultanées ; une cascade sans emplacement libre est ignorée et comptée ;
+- **perte maximale par jour UTC :** après 2 stops dans la journée, plus aucune entrée jusqu'au lendemain.
+
+**Taille :** notionnel de 1/K du capital par position à « brut 100 % ». Le dimensionnement réel suivra `commun-trading` § 3 et § 8.2, à fixer par décision de Jonathan (CS4 de l'audit de STRAT-06).
+
+**Coûts :** frais de 0,05 % par côté ; glissement de 0,10 % à l'entrée (dans la cascade) et de 0,05 % à la sortie ; 0,30 % de glissement au stop. Financement réel sur la tenue (faible sur 4 heures).
+
+**Paramètres réglables : X, Y, S, H. Le retard d est fixé par l'infrastructure (1 minute) et testé à 5 minutes.** Quatre paramètres réglables, sous le plafond de cinq du critère T8.
+
+## 4. Blocs
+
+| Bloc | Période | Essai de base |
+|---|---|---|
+| Développement | 01/01/2021 au 31/12/2023 | E01 |
+| Validation | 01/01/2024 au 27/07/2025 | E02 |
+| Hors échantillon | 28/07/2025 au 31/10/2026 (environ 66 semaines) | E15, E16, une seule fois |
+
+## 5. Contrôle sans rendement avant le gel (T3)
+
+Compter les cascades détectées par bloc, par mois et par symbole, avec la base X = 4 % et Y = 3 %, sans calculer de rendement après l'entrée.
+- Exigence : **au moins 300 cascades jouables en développement et 100 hors échantillon**.
+- Publier la part des cascades simultanées, celles qui se produisent dans la même heure sur plus de K symboles.
+- Ce contrôle lit des prix passés (la chute qui définit l'événement), pas l'issue d'une position. Il se déclare, comme le contrôle de couverture de STRAT-06.
+
+## 6. Registre des essais (N = 16)
+
+| Essai | Contenu | Bloc |
+|---|---|---|
+| E01, E02 | Base (X 4 %, Y 3 %, S 5 %, H 4 h, d 1 min) | Développement, validation |
+| E03, E04 | X = 3 %, 6 % | Dév. + val. |
+| E05, E06 | Y = 2 %, 5 % | Dév. + val. |
+| E07, E08 | S = 3 %, 8 % | Dév. + val. |
+| E09, E10 | H = 1 h, 12 h | Dév. + val. |
+| E11 | **Retard d'entrée de 5 minutes** (porte T5) | Dév. + val. |
+| E12 | Coûts doublés, glissement au stop 0,60 % | Dév. + val. |
+| E13 | Symétrique : short après une hausse forcée (prix +X, intérêt ouvert −Y). Comparaison, jamais éligible | Dév. + val. |
+| E14 | **Placebo** : mêmes symboles et heures d'entrée, décalés de 24 heures. Doit être nul | Dév. + val. |
+| E15, E16 | Base, puis coûts doublés | Hors échantillon, une seule fois |
+
+**Seuil de Sharpe hors échantillon.** E[max z] pour 16 essais = 1,80, soit **1,80 × 0,903 ≈ 1,63**, avec la méthode du § 3 de STRAT-03 et le facteur de 64 semaines.
+
+## 7. Portes, annoncées avant tout test
+
+**Avant le hors échantillon (une seule porte échouée rejette) :**
+
+| Porte | Seuil |
+|---|---|
+| Rendement net, E01 et E02 | > 0 sur chaque bloc |
+| Alpha à deux facteurs (BTC, alts anciennes moins BTC) | > 0 sur E01 et E02. La stratégie est acheteuse : son gain ne doit pas venir du bêta |
+| Nombre de positions | ≥ 300 en développement |
+| Voisins (E03 à E10) | Au moins 6 sur 8 rentables |
+| Retard de 5 minutes (E11) | Net > 0 et au moins la moitié du net de la base |
+| Coûts doublés (E12) | Net > 0 |
+| Placebo (E14) | Rendement moyen par position non significativement > 0 (t < 1,65) **et** moins du quart de celui de la base |
+| Années | Au moins 3 années civiles sur 4 positives (2021 à 2024), **dont 2022** |
+| Concentration | Aucun symbole > 15 %, aucun mois > 30 %, **aucun jour > 20 %** du gain net |
+| Drawdown | < 50 % à brut 100 % |
+
+**Verdict hors échantillon (E15, E16) :**
+- Sharpe net > **1,63** ;
+- borne basse de l'IC à 90 % (blocs de 4 semaines) > 0 ;
+- alpha à deux facteurs > 0 ;
+- E16 > 0 ;
+- au moins 100 positions ;
+- **net > 0 hors 10 et 11/10/2025** ;
+- concentration comme ci-dessus.
+
+**Papier ensuite :** 26 semaines, dans l'IC à 90 % du hors échantillon.
+
+## 8. Avocat du diable, avant test
+
+1. **La vitesse.** À la minute, l'essentiel du rebond est peut-être déjà pris. E11 et le placebo E14 sont les deux pièges prévus pour le voir.
+2. **Le couteau qui tombe.** Les cascades se suivent dans les krachs. Le plafond K, la règle des 2 stops par jour et la porte « 2022 positive » visent ce risque. Les journées comme le 10/10/2025 peuvent dominer le résultat, d'où la porte « hors 10 et 11/10/2025 ».
+3. **L'indicateur indirect est imparfait.** Une baisse de l'intérêt ouvert peut venir de clôtures volontaires. On paie alors le coût d'une entrée sans contrepartie forcée. L'edge, s'il existe, est dilué.
+4. **Le surapprentissage.** Quatre paramètres et une grille de 8 voisins déclarés d'avance. Aucun paramètre ajouté après lecture.
+5. **La capacité.** Les cascades sur les petites capitalisations ont peu de profondeur. Le filtre de 20 M USDT et le glissement d'entrée de 0,10 % sont peut-être optimistes : E12 les double.
+
+## 9. Infrastructure (bloquant)
+
+- **Disque : 1,2 Go libres pour 30,5 Go compressés de klines 1 minute.** Trois options, à trancher :
+  - **(a)** ajouter un volume de stockage d'au moins 100 Go au serveur Scaleway [coût mensuel à vérifier] ;
+  - **(b)** télécharger, prétraiter et effacer symbole par symbole, puis garder un format compact : barres de 5 minutes alignées sur les metrics, et minutes seulement autour des événements. Le prétraitement se fait une fois ; les 16 essais relisent le format compact ;
+  - **(c)** restreindre le téléchargement aux mois où le symbole est éligible (≥ 20 M USDT), connus par les klines journalières déjà en cache.
+
+  **Recommandation : (c) et (b), plus (a) si le compact dépasse le disque.**
+- **Mémoire :** traitement symbole par symbole, environ 0,05 Go par symbole. Les 2 Go suffisent, sauf pour la contrainte de portefeuille K, qui se résout en deuxième passe sur la liste des événements (léger).
+- **Processeur :** un seul cœur. Prétraitement estimé à plusieurs heures [à mesurer sur 10 symboles].
+
+## 10. Code prévu (après les décisions)
+
+- `donnees_1m.py` : lecture des klines 1 minute et des metrics, verrou de bloc, comblement par les archives journalières, format compact.
+- `detection_cascades.py` : détection sans anticipation, tests synthétiques (une cascade fabriquée doit être détectée, une baisse sans chute de l'intérêt ouvert ne doit pas l'être, aucune donnée postérieure à t lue).
+- `moteur_intraday.py` : entrée, stop sur le plus bas 1 minute, sortie temporelle, contraintes K et réfractaire, perte journalière.
+- `run_essai08.py` : registre, refus avant gel, refus des essais consommés, hors échantillon refusé avant les portes.
+- `controle_cascades.py` : contrôle sans rendement du § 5.
+
+## 11. Décisions attendues de Jonathan et Téo avant le gel
+
+1. Valeurs de base : X = 4 %, Y = 3 %, S = 5 %, H = 4 h, K = 5, d = 1 minute.
+2. Long seul pour la base, la version short n'étant qu'une comparaison (E13).
+3. Stop sur le plus bas du contrat plutôt que sur la marque.
+4. Option d'infrastructure du § 9.
+5. Seuil de Sharpe de 1,63 (16 essais) et portes du § 7.

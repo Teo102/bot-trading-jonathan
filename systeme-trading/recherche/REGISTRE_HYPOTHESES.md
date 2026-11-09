@@ -54,7 +54,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H28 | Dérive selon le flottant et les calendriers de déblocage | 05/11/2026 | 0 | à trier, T4 élevé | idem |
 | H29 | Encombrement des shorts (financement payé) comme filtre | 05/11/2026 | 0 | à trier, voisine de STRAT-05 (T9) | idem |
 | H30 | Emprunt sur marge avant le perpétuel (test direct de Miller) | 05/11/2026 | 0 | à trier, T4 élevé | idem |
-| H31 | STRAT-07 : portage de financement conditionnel aux pointes (long comptant, short perpétuel) | 09/11/2026 | 0 | affaiblie au tri (T2, T9 : proche de H10 et H02) ; criblage de la durée des pointes avant toute fiche | `recherche/TRI_STRAT-07_STRAT-08.md` |
-| H32 | STRAT-08 : contre-tendance après cascade de liquidations, données 1m | 09/11/2026 | 0 | passe le tri sous conditions (T4 audit, T5 retard d'entrée, T8 grille déclarée) | `recherche/TRI_STRAT-07_STRAT-08.md` |
+| H31 | STRAT-07 : portage de financement conditionnel aux pointes (long comptant, short perpétuel) | 09/11/2026 | 1 (criblage prêt) | affaiblie au tri ; règle du criblage écrite avant calcul (brut médian ≥ 1,5 % et rendement indicatif > 3,875 %/an), en attente d'exécution | `recherche/criblage_strat07/CRIBLAGE_STRAT-07.md` |
+| H32 | STRAT-08 : contre-tendance après cascade de liquidations, données 1m | 09/11/2026 | 2 (fiche) | fiche écrite, règles proposées ; 16 essais, seuil 1,63 ; liquidationSnapshot absent, détection par intérêt ouvert 5 min ; disque bloquant (1,2 Go libres) | `recherche/FICHE_STRAT-08.md` |
 
 Hypothèses testées sur des rendements à ce jour : H01, H02, H03, H05, H06, H07, H12, soit **7** (09/11/2026 ; H12 rejetée au hors échantillon, rouverte en H12-bis dont le seul test est le papier).
