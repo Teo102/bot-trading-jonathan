@@ -1,0 +1,65 @@
+{
+ "genere_utc": "20261109T211309Z",
+ "verrou": {
+  "fin_max": "2025-07-28 00:00:00",
+  "episodes_finissant_le_28_07_2025_ou_apres": 3,
+  "ouverts_au_verrou": 9
+ },
+ "comptant": {
+  "symboles": 297,
+  "episodes": 1371,
+  "episodes_sans_comptant_complet": 8,
+  "exemples": [
+   [
+    "BNXUSDT",
+    "2025-03-14 12:00:00",
+    "2025-06-19 08:00:00",
+    "comptant listé de 2021-11 à 2025-03, mois sans archive : ['2025-04', '2025-05']"
+   ],
+   [
+    "BONDUSDT",
+    "2024-07-15 12:00:00",
+    "2024-09-21 12:00:00",
+    "comptant listé de 2021-07 à 2024-07, mois sans archive : ['2024-08']"
+   ],
+   [
+    "DARUSDT",
+    "2024-12-25 16:00:00",
+    "2025-06-19 08:00:00",
+    "comptant listé de 2021-11 à 2025-01, mois sans archive : ['2025-02', '2025-03', '2025-04', '2025-05']"
+   ],
+   [
+    "FTMUSDT",
+    "2025-01-04 00:00:00",
+    "2025-06-19 08:00:00",
+    "comptant listé de 2019-06 à 2025-01, mois sans archive : ['2025-02', '2025-03', '2025-04', '2025-05']"
+   ],
+   [
+    "MATICUSDT",
+    "2024-09-03 08:00:00",
+    "2025-07-28 00:00:00",
+    "comptant listé de 2019-04 à 2024-09, mois sans archive : ['2024-10', '2024-11', '2024-12', '2025-01']"
+   ],
+   [
+    "REEFUSDT",
+    "2024-10-16 08:00:00",
+    "2024-12-11 04:00:00",
+    "comptant listé de 2020-12 à 2024-08, mois sans archive : ['2024-11']"
+   ],
+   [
+    "UNFIUSDT",
+    "2024-10-30 08:00:00",
+    "2025-06-19 08:00:00",
+    "comptant listé de 2020-11 à 2024-11, mois sans archive : ['2024-12', '2025-01', '2025-02', '2025-03']"
+   ],
+   [
+    "XMRUSDT",
+    "2025-05-28 08:00:00",
+    "2025-07-24 08:00:00",
+    "comptant listé de 2019-03 à 2024-02, mois sans archive : ['2025-06']"
+   ]
+  ],
+  "net_des_episodes_en_cause": 0.5244,
+  "net_total": 45.353
+ }
+}

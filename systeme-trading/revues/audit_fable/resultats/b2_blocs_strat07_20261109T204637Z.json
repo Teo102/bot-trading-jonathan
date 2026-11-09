@@ -1,0 +1,96 @@
+{
+ "genere_utc": "20261109T204637Z",
+ "note": "épisodes rattachés au bloc de leur début",
+ "entree_50_sortie_10": {
+  "episodes_pris": 233,
+  "rendement_annuel_capital_reproduit": 0.0689,
+  "par_periode": {
+   "developpement (2021-2023)": {
+    "episodes_pris": 149,
+    "points_de_capital": 0.2585,
+    "rendement_annualise": 0.0862
+   },
+   "validation (2024 au 27/07/2025)": {
+    "episodes_pris": 84,
+    "points_de_capital": 0.0564,
+    "rendement_annualise": 0.0359
+   },
+   "2021": {
+    "episodes_pris": 83,
+    "points_de_capital": 0.2111,
+    "rendement_annualise": 0.2113
+   },
+   "2022": {
+    "episodes_pris": 10,
+    "points_de_capital": -0.002,
+    "rendement_annualise": -0.002
+   },
+   "2023": {
+    "episodes_pris": 56,
+    "points_de_capital": 0.0494,
+    "rendement_annualise": 0.0494
+   },
+   "2024": {
+    "episodes_pris": 58,
+    "points_de_capital": 0.0505,
+    "rendement_annualise": 0.0504
+   },
+   "2025 (au 27/07)": {
+    "episodes_pris": 26,
+    "points_de_capital": 0.0059,
+    "rendement_annualise": 0.0104
+   },
+   "2022 au 27/07/2025": {
+    "episodes_pris": 150,
+    "points_de_capital": 0.1037,
+    "rendement_annualise": 0.029
+   }
+  }
+ },
+ "entree_30_sortie_10": {
+  "episodes_pris": 297,
+  "rendement_annuel_capital_reproduit": 0.0621,
+  "par_periode": {
+   "developpement (2021-2023)": {
+    "episodes_pris": 193,
+    "points_de_capital": 0.2382,
+    "rendement_annualise": 0.0794
+   },
+   "validation (2024 au 27/07/2025)": {
+    "episodes_pris": 104,
+    "points_de_capital": 0.0456,
+    "rendement_annualise": 0.029
+   },
+   "2021": {
+    "episodes_pris": 90,
+    "points_de_capital": 0.1981,
+    "rendement_annualise": 0.1983
+   },
+   "2022": {
+    "episodes_pris": 30,
+    "points_de_capital": -0.0059,
+    "rendement_annualise": -0.0059
+   },
+   "2023": {
+    "episodes_pris": 73,
+    "points_de_capital": 0.0459,
+    "rendement_annualise": 0.0459
+   },
+   "2024": {
+    "episodes_pris": 70,
+    "points_de_capital": 0.0412,
+    "rendement_annualise": 0.0411
+   },
+   "2025 (au 27/07)": {
+    "episodes_pris": 34,
+    "points_de_capital": 0.0044,
+    "rendement_annualise": 0.0078
+   },
+   "2022 au 27/07/2025": {
+    "episodes_pris": 207,
+    "points_de_capital": 0.0856,
+    "rendement_annualise": 0.024
+   }
+  }
+ }
+}

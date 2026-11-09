@@ -1,0 +1,190 @@
+{
+ "genere_utc": "20261109T204223Z",
+ "total": {
+  "brut": 12,
+  "corrige": 7,
+  "communs": 4,
+  "brut_seul": 8,
+  "corrige_seul": 3,
+  "brut_lache": 38,
+  "corrige_lache": 39
+ },
+ "detail": [
+  {
+   "symbole": "SOLUSDT",
+   "mois": "2024-08",
+   "brut": 2,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 2,
+   "corrige_seul": 0,
+   "brut_lache": 3,
+   "corrige_lache": 1
+  },
+  {
+   "symbole": "SOLUSDT",
+   "mois": "2024-12",
+   "brut": 1,
+   "corrige": 1,
+   "communs": 1,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 1,
+   "corrige_lache": 1
+  },
+  {
+   "symbole": "DOGEUSDT",
+   "mois": "2024-08",
+   "brut": 1,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 1,
+   "corrige_seul": 0,
+   "brut_lache": 2,
+   "corrige_lache": 2
+  },
+  {
+   "symbole": "DOGEUSDT",
+   "mois": "2024-12",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 3,
+   "corrige_lache": 2
+  },
+  {
+   "symbole": "AVAXUSDT",
+   "mois": "2024-08",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 0,
+   "corrige_lache": 0
+  },
+  {
+   "symbole": "AVAXUSDT",
+   "mois": "2024-12",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 1,
+   "corrige_lache": 0
+  },
+  {
+   "symbole": "NEARUSDT",
+   "mois": "2024-08",
+   "brut": 0,
+   "corrige": 1,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 1,
+   "brut_lache": 0,
+   "corrige_lache": 2
+  },
+  {
+   "symbole": "NEARUSDT",
+   "mois": "2024-12",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 0,
+   "corrige_lache": 0
+  },
+  {
+   "symbole": "ARBUSDT",
+   "mois": "2024-08",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 3,
+   "corrige_lache": 4
+  },
+  {
+   "symbole": "ARBUSDT",
+   "mois": "2024-12",
+   "brut": 0,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 3,
+   "corrige_lache": 4
+  },
+  {
+   "symbole": "SUIUSDT",
+   "mois": "2024-08",
+   "brut": 1,
+   "corrige": 1,
+   "communs": 0,
+   "brut_seul": 1,
+   "corrige_seul": 1,
+   "brut_lache": 2,
+   "corrige_lache": 3
+  },
+  {
+   "symbole": "SUIUSDT",
+   "mois": "2024-12",
+   "brut": 1,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 1,
+   "corrige_seul": 0,
+   "brut_lache": 4,
+   "corrige_lache": 4
+  },
+  {
+   "symbole": "1000PEPEUSDT",
+   "mois": "2024-08",
+   "brut": 2,
+   "corrige": 1,
+   "communs": 1,
+   "brut_seul": 1,
+   "corrige_seul": 0,
+   "brut_lache": 6,
+   "corrige_lache": 6
+  },
+  {
+   "symbole": "1000PEPEUSDT",
+   "mois": "2024-12",
+   "brut": 2,
+   "corrige": 0,
+   "communs": 0,
+   "brut_seul": 2,
+   "corrige_seul": 0,
+   "brut_lache": 5,
+   "corrige_lache": 4
+  },
+  {
+   "symbole": "WIFUSDT",
+   "mois": "2024-08",
+   "brut": 2,
+   "corrige": 2,
+   "communs": 2,
+   "brut_seul": 0,
+   "corrige_seul": 0,
+   "brut_lache": 3,
+   "corrige_lache": 4
+  },
+  {
+   "symbole": "WIFUSDT",
+   "mois": "2024-12",
+   "brut": 0,
+   "corrige": 1,
+   "communs": 0,
+   "brut_seul": 0,
+   "corrige_seul": 1,
+   "brut_lache": 2,
+   "corrige_lache": 2
+  }
+ ]
+}

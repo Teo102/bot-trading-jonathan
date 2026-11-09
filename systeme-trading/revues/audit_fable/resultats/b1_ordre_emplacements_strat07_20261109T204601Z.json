@@ -1,0 +1,61 @@
+{
+ "genere_utc": "20261109T204601Z",
+ "entree_50_sortie_10": {
+  "episodes": 1371,
+  "pris_ordre_publie": 228,
+  "part_debuts_simultanes": 0.726,
+  "rendement_publie": 0.0668,
+  "ordre_alphabetique": 0.0668,
+  "ordre_alphabetique_inverse": 0.0678,
+  "aleatoire_2000_tirages": {
+   "min": 0.0658,
+   "q05": 0.0666,
+   "mediane": 0.0679,
+   "q95": 0.069,
+   "max": 0.07,
+   "part_sous_le_taux_court": 0.0,
+   "part_au_dessus_du_publie": 0.919
+  },
+  "contribution_par_annee_de_debut_points_de_capital": {
+   "2021": 0.2052,
+   "2022": -0.002,
+   "2023": 0.0434,
+   "2024": 0.0526,
+   "2025": 0.0059
+  },
+  "part_2021_dans_le_gain_pris": 0.672,
+  "rendement_annuel_hors_episodes_debutes_en_2021": 0.028,
+  "top5_symboles_part_du_gain_pris": 0.281,
+  "duree_mediane_pris_h": 252.0,
+  "ouverts_au_verrou_pris": 7
+ },
+ "entree_30_sortie_10": {
+  "episodes": 1724,
+  "pris_ordre_publie": 311,
+  "part_debuts_simultanes": 0.709,
+  "rendement_publie": 0.0614,
+  "ordre_alphabetique": 0.0614,
+  "ordre_alphabetique_inverse": 0.0639,
+  "aleatoire_2000_tirages": {
+   "min": 0.0597,
+   "q05": 0.0614,
+   "mediane": 0.0627,
+   "q95": 0.0639,
+   "max": 0.0653,
+   "part_sous_le_taux_court": 0.0,
+   "part_au_dessus_du_publie": 0.953
+  },
+  "contribution_par_annee_de_debut_points_de_capital": {
+   "2021": 0.1965,
+   "2022": -0.0059,
+   "2023": 0.0364,
+   "2024": 0.0489,
+   "2025": 0.0045
+  },
+  "part_2021_dans_le_gain_pris": 0.701,
+  "rendement_annuel_hors_episodes_debutes_en_2021": 0.0235,
+  "top5_symboles_part_du_gain_pris": 0.3,
+  "duree_mediane_pris_h": 176.0,
+  "ouverts_au_verrou_pris": 6
+ }
+}

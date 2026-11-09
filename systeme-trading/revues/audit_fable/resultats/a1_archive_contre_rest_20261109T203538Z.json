@@ -1,0 +1,637 @@
+{
+ "genere_utc": "20261109T203538Z",
+ "lignes_archive": 13824,
+ "egalites_par_decalage_k": {
+  "-2": 0,
+  "-1": 0,
+  "0": 0,
+  "1": 13824,
+  "2": 0
+ },
+ "detail": {
+  "BTCUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "BTCUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "BTCUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "ETHUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "ETHUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "ETHUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "SOLUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "SOLUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "SOLUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "XRPUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "XRPUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "XRPUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "DOGEUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "DOGEUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "DOGEUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "SUIUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "SUIUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "SUIUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "WIFUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "WIFUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "WIFUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "ENAUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "ENAUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "ENAUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "1000PEPEUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "1000PEPEUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "1000PEPEUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "AVAXUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "AVAXUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "AVAXUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "LINKUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "LINKUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "LINKUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "ARBUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "ARBUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "ARBUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "TIAUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "TIAUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "TIAUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "ORDIUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "ORDIUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "ORDIUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "NEARUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "NEARUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "NEARUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  },
+  "APTUSDT 2026-11-03": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-03 00:00:00",
+   "derniere_heure_archive": "2026-11-03 23:55:00"
+  },
+  "APTUSDT 2026-11-05": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-05 00:00:00",
+   "derniere_heure_archive": "2026-11-05 23:55:00"
+  },
+  "APTUSDT 2026-11-07": {
+   "lignes_archive": 288,
+   "points_rest": 801,
+   "egalites_par_decalage": {
+    "-2": 0,
+    "-1": 0,
+    "0": 0,
+    "1": 288,
+    "2": 0
+   },
+   "premiere_heure_archive": "2026-11-07 00:00:00",
+   "derniere_heure_archive": "2026-11-07 23:55:00"
+  }
+ }
+}

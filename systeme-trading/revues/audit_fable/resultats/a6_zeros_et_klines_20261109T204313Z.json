@@ -1,0 +1,124 @@
+{
+ "genere_utc": "20261109T204313Z",
+ "zeros": {
+  "SUIUSDT 2024-08": {
+   "lignes": 8928,
+   "nulles": 6,
+   "vides": 0,
+   "heures_nulles": [
+    "2024-08-12 09:25:00",
+    "2024-08-12 09:40:00",
+    "2024-08-12 10:30:00",
+    "2024-08-12 10:40:00",
+    "2024-08-12 10:50:00",
+    "2024-08-12 11:00:00"
+   ],
+   "instants_ou_Y_serait_rempli_par_un_zero": 5
+  },
+  "1000PEPEUSDT 2024-08": {
+   "lignes": 8928,
+   "nulles": 6,
+   "vides": 0,
+   "heures_nulles": [
+    "2024-08-12 09:25:00",
+    "2024-08-12 09:40:00",
+    "2024-08-12 10:30:00",
+    "2024-08-12 10:40:00",
+    "2024-08-12 10:50:00",
+    "2024-08-12 11:00:00"
+   ],
+   "instants_ou_Y_serait_rempli_par_un_zero": 5
+  },
+  "WIFUSDT 2024-12": {
+   "lignes": 8928,
+   "nulles": 0,
+   "vides": 0,
+   "heures_nulles": [],
+   "instants_ou_Y_serait_rempli_par_un_zero": 0
+  },
+  "ARBUSDT 2024-12": {
+   "lignes": 8928,
+   "nulles": 0,
+   "vides": 0,
+   "heures_nulles": [],
+   "instants_ou_Y_serait_rempli_par_un_zero": 0
+  }
+ },
+ "klines": {
+  "SOLUSDT 2021-05": {
+   "entete": false,
+   "unite": "ms",
+   "lignes": 44640,
+   "minutes_attendues": 44640,
+   "manquantes": 0,
+   "doublons": 0,
+   "durees_anormales": 0,
+   "heure_non_ronde": 0,
+   "volume_nul": 0,
+   "premiere": "2021-05-01 00:00:00",
+   "derniere": "2021-05-31 23:59:00",
+   "lecteur_identique": true,
+   "trie": true
+  },
+  "SOLUSDT 2022-11": {
+   "entete": true,
+   "unite": "ms",
+   "lignes": 43200,
+   "minutes_attendues": 43200,
+   "manquantes": 0,
+   "doublons": 0,
+   "durees_anormales": 0,
+   "heure_non_ronde": 0,
+   "volume_nul": 0,
+   "premiere": "2022-11-01 00:00:00",
+   "derniere": "2022-11-30 23:59:00",
+   "lecteur_identique": true,
+   "trie": true
+  },
+  "SUIUSDT 2024-08": {
+   "entete": true,
+   "unite": "ms",
+   "lignes": 44640,
+   "minutes_attendues": 44640,
+   "manquantes": 0,
+   "doublons": 0,
+   "durees_anormales": 0,
+   "heure_non_ronde": 0,
+   "volume_nul": 0,
+   "premiere": "2024-08-01 00:00:00",
+   "derniere": "2024-08-31 23:59:00",
+   "lecteur_identique": true,
+   "trie": true
+  },
+  "1000PEPEUSDT 2025-06": {
+   "entete": true,
+   "unite": "ms",
+   "lignes": 43200,
+   "minutes_attendues": 43200,
+   "manquantes": 0,
+   "doublons": 0,
+   "durees_anormales": 0,
+   "heure_non_ronde": 0,
+   "volume_nul": 0,
+   "premiere": "2025-06-01 00:00:00",
+   "derniere": "2025-06-30 23:59:00",
+   "lecteur_identique": true,
+   "trie": true
+  },
+  "WIFUSDT 2024-12": {
+   "entete": true,
+   "unite": "ms",
+   "lignes": 44640,
+   "minutes_attendues": 44640,
+   "manquantes": 0,
+   "doublons": 0,
+   "durees_anormales": 0,
+   "heure_non_ronde": 0,
+   "volume_nul": 0,
+   "premiere": "2024-12-01 00:00:00",
+   "derniere": "2024-12-31 23:59:00",
+   "lecteur_identique": true,
+   "trie": true
+  }
+ }
+}
