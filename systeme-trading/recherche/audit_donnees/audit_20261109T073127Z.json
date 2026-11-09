@@ -1,0 +1,100 @@
+{
+ "horodatage": "20261109T073127Z",
+ "source": "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision",
+ "perpetuels_usdt_listes": 30,
+ "A_klines_1m": {
+  "symboles_interroges": 30,
+  "symboles_avec_archives": 30,
+  "erreurs": 0,
+  "archives": 868,
+  "octets_zip": 1277873718,
+  "go_zip": 1.277873718,
+  "debut_min": "2020-10",
+  "fin_max": "2026-10",
+  "mois_moyen_par_symbole": 28.933333333333334,
+  "go_csv_estime": 7.667242308
+ },
+ "C_liquidationSnapshot": {
+  "symboles": 0,
+  "exemples": []
+ },
+ "D_metrics": {
+  "symboles_interroges": 30,
+  "symboles_avec_archives": 30,
+  "erreurs": 0,
+  "archives": 24662,
+  "octets_zip": 270982555,
+  "go_zip": 0.270982555,
+  "debut_min": "2021-12-01",
+  "fin_max": "2026-11-08"
+ },
+ "F_fundingRate": {
+  "symboles_interroges": 30,
+  "symboles_avec_archives": 30,
+  "erreurs": 0,
+  "archives": 834,
+  "octets_zip": 874571,
+  "go_zip": 0.000874571,
+  "debut_min": "2020-10",
+  "fin_max": "2026-10"
+ },
+ "G_comptant": {
+  "symboles_comptant": 3767,
+  "perpetuels_avec_paire_comptant_meme_nom": 12,
+  "klines_1h": {
+   "symboles_interroges": 12,
+   "symboles_avec_archives": 12,
+   "erreurs": 0,
+   "archives": 403,
+   "octets_zip": 13118640,
+   "go_zip": 0.01311864,
+   "debut_min": "2020-10",
+   "fin_max": "2026-10"
+  }
+ },
+ "B_markPrice_1m_echantillon": {
+  "symboles_interroges": 30,
+  "symboles_avec_archives": 30,
+  "erreurs": 0,
+  "archives": 871,
+  "octets_zip": 614808144,
+  "go_zip": 0.614808144,
+  "debut_min": "2020-10",
+  "fin_max": "2026-10",
+  "rapport_marque_sur_contrat_1m": 0.48111807554993474
+ },
+ "E_aggTrades_echantillon": {
+  "symboles_interroges": 30,
+  "symboles_avec_archives": 30,
+  "erreurs": 0,
+  "archives": 834,
+  "octets_zip": 64069314885,
+  "go_zip": 64.069314885,
+  "debut_min": "2020-10",
+  "fin_max": "2026-10",
+  "rapport_aggTrades_sur_klines_1m": 50.13743845148868
+ },
+ "H_machine": {
+  "processeurs": 1,
+  "ram_go": 2.004256,
+  "ram_libre_go": 1.481396,
+  "swap_go": 2.097148,
+  "disque_total_go": 8.467795968,
+  "disque_libre_go": 1.201831936,
+  "chemin_disque": "/root/cache_binance_vision",
+  "cache_go": 0.650671654
+ },
+ "besoins": {
+  "ram_go_1_symbole_float32": 0.06082944,
+  "ram_go_50_symboles_float32": 3.041472,
+  "ram_go_tous_symboles_float32": 1.8248832,
+  "disque_go_klines_1m_zip": 1.277873718,
+  "disque_go_klines_1m_et_marque_zip": 1.8926818619999999,
+  "disque_go_aggTrades_estime": 64.069314885
+ },
+ "appels": {
+  "n": 205,
+  "erreurs": 0
+ },
+ "duree_s": 46.4
+}
