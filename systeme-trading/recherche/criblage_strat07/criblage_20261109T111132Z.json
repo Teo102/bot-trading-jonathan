@@ -1,0 +1,149 @@
+{
+ "periode": [
+  "2021-01-01 00:00:00",
+  "2025-07-28 02:00:00"
+ ],
+ "symboles_avec_comptant": 474,
+ "cout_aller_retour": 0.005,
+ "emplacements": 10,
+ "grille": {
+  "entree_30_sortie_10": {
+   "episodes": 1724,
+   "symboles": 303,
+   "brut_median": 0.015249874999999998,
+   "brut_moyen": 0.03225032825406032,
+   "net_median": 0.010249874999999999,
+   "net_moyen": 0.02725032825406032,
+   "part_brut_sup_3x_cout": 0.5023201856148491,
+   "part_net_positif": 0.6931554524361949,
+   "duree_mediane_h": 480.0,
+   "duree_q90_h": 1512.0,
+   "versements_medians": 68.0,
+   "par_annee": {
+    "2021": {
+     "episodes": 689,
+     "net_total": 29.05466985999999,
+     "net_median": 0.020899359999999995
+    },
+    "2022": {
+     "episodes": 31,
+     "net_total": -0.1142831,
+     "net_median": -0.00432082
+    },
+    "2023": {
+     "episodes": 403,
+     "net_total": 8.074311860000005,
+     "net_median": 0.003617470000000002
+    },
+    "2024": {
+     "episodes": 552,
+     "net_total": 9.931964409999996,
+     "net_median": 0.010476539999999993
+    },
+    "2025": {
+     "episodes": 49,
+     "net_total": 0.03290287999999944,
+     "net_median": -0.00360248
+    }
+   },
+   "part_net_top10_symboles": 0.11142857428756517,
+   "portefeuille_indicatif": {
+    "episodes_pris": 297,
+    "episodes_refuses": 1427,
+    "rendement_annuel_capital": 0.06210412836511379
+   }
+  },
+  "entree_50_sortie_10": {
+   "episodes": 1371,
+   "symboles": 297,
+   "brut_median": 0.021572289999999987,
+   "brut_moyen": 0.038080197031363956,
+   "net_median": 0.016572289999999986,
+   "net_moyen": 0.03308019703136395,
+   "part_brut_sup_3x_cout": 0.5835156819839533,
+   "part_net_positif": 0.8030634573304157,
+   "duree_mediane_h": 552.0,
+   "duree_q90_h": 1540.0,
+   "versements_medians": 80.0,
+   "par_annee": {
+    "2021": {
+     "episodes": 618,
+     "net_total": 28.749330529999988,
+     "net_median": 0.022777089999999996
+    },
+    "2022": {
+     "episodes": 10,
+     "net_total": -0.04064192,
+     "net_median": -0.00456594
+    },
+    "2023": {
+     "episodes": 262,
+     "net_total": 7.381858790000001,
+     "net_median": 0.007399339999999987
+    },
+    "2024": {
+     "episodes": 454,
+     "net_total": 9.147936219999995,
+     "net_median": 0.012371740000000011
+    },
+    "2025": {
+     "episodes": 27,
+     "net_total": 0.11446650999999942,
+     "net_median": -0.0028659600000000007
+    }
+   },
+   "part_net_top10_symboles": 0.1124074931264014,
+   "portefeuille_indicatif": {
+    "episodes_pris": 233,
+    "episodes_refuses": 1138,
+    "rendement_annuel_capital": 0.06889784544068296
+   }
+  },
+  "entree_50_sortie_20": {
+   "episodes": 6211,
+   "symboles": 297,
+   "brut_median": 0.00157931,
+   "brut_moyen": 0.006111474361616487,
+   "net_median": -0.00342069,
+   "net_moyen": 0.0011114743616164869,
+   "part_brut_sup_3x_cout": 0.0948317501207535,
+   "part_net_positif": 0.27934310094992754,
+   "duree_mediane_h": 32.0,
+   "duree_q90_h": 160.0,
+   "versements_medians": 5.0,
+   "par_annee": {
+    "2021": {
+     "episodes": 3064,
+     "net_total": 11.8130719,
+     "net_median": -0.0026439850000000006
+    },
+    "2022": {
+     "episodes": 14,
+     "net_total": -0.06902394,
+     "net_median": -0.0049
+    },
+    "2023": {
+     "episodes": 844,
+     "net_total": -2.2467974,
+     "net_median": -0.00407976
+    },
+    "2024": {
+     "episodes": 2233,
+     "net_total": -2.3974738900000006,
+     "net_median": -0.00379887
+    },
+    "2025": {
+     "episodes": 56,
+     "net_total": -0.19640941,
+     "net_median": -0.004840585
+    }
+   },
+   "part_net_top10_symboles": 0.37419930632518605,
+   "portefeuille_indicatif": {
+    "episodes_pris": 1770,
+    "episodes_refuses": 4441,
+    "rendement_annuel_capital": -0.026647444238466152
+   }
+  }
+ }
+}
