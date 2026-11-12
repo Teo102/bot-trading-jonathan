@@ -48,6 +48,7 @@ Règles génériques tirées des erreurs relevées, chacune datée et sourcée a
 | L10 | Tout univers construit par noms ou volumes vérifie le type du contrat (`underlyingType`, `contractType`) : une plateforme peut coter des actions ou des métaux sous le même format | STRAT-06, perpétuels non crypto cotés depuis décembre 2025 |
 | L11 | Un code repris d'une autre stratégie se reteste contre les définitions de la nouvelle fiche, notamment quand elle ajoute une jambe de couverture | STRAT-06, porte de concentration de E02 |
 | L12 | Un essai de dépendance (exclusion d'un type d'événement) vérifie d'abord que l'événement touche le portefeuille joué. Sinon la porte est franchie à vide, et elle se publie comme telle | STRAT-06, E16 : 89 retraits sur 49 dates, aucun sur un nom retenu, résultat identique à la base (05/11/2026) |
+| L13 | Un criblage ou un essai publie son résultat bloc par bloc et **hors de sa meilleure année** avant toute conclusion, et vérifie que **chaque jambe existe à la date de chaque épisode**, du début à la fin de sa cotation (une paire déjà délistée ne se trade pas) | STRAT-07, 12/11/2026 : +6,89 %/an au criblage, mais +2,90 %/an hors 2021 et 46 % du gain de la validation sur des paires au comptant déjà délistées |
 
 ## 1. Fiche de stratégie
 

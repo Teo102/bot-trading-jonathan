@@ -1,0 +1,17 @@
+id_essai,date,strategie,variante,bloc,positions,net_brut100,sharpe_hebdo_annualise,ic90_bas,ic90_haut,dd,commentaire
+E01,,STRAT-20261109-08,base,developpement,,,,,,,
+E02,,STRAT-20261109-08,base,validation,,,,,,,
+E03,,STRAT-20261109-08,X = 3 %,dev+val,,,,,,,
+E04,,STRAT-20261109-08,X = 6 %,dev+val,,,,,,,
+E05,,STRAT-20261109-08,Y = 2 %,dev+val,,,,,,,
+E06,,STRAT-20261109-08,Y = 5 %,dev+val,,,,,,,
+E07,,STRAT-20261109-08,S = 3 %,dev+val,,,,,,,
+E08,,STRAT-20261109-08,S = 8 %,dev+val,,,,,,,
+E09,,STRAT-20261109-08,H = 1 h,dev+val,,,,,,,
+E10,,STRAT-20261109-08,H = 12 h,dev+val,,,,,,,
+E11,,STRAT-20261109-08,retard d'entree 10 min (porte T5),dev+val,,,,,,,porte T5
+E12,,STRAT-20261109-08,"couts doubles, glissement au stop 0,60 %",dev+val,,,,,,,porte couts
+E13,,STRAT-20261109-08,symetrique short apres hausse forcee (comparaison),dev+val,,,,,,,comparaison - jamais eligible - m1
+E14,,STRAT-20261109-08,placebo +24 h,dev+val,,,,,,,porte placebo
+E15,,STRAT-20261109-08,base,hors_echantillon,,,,,,,verdict une seule fois
+E16,,STRAT-20261109-08,couts doubles,hors_echantillon,,,,,,,verdict une seule fois

@@ -1,0 +1,160 @@
+{
+ "strategie": "STRAT-20261109-08",
+ "version": "2026-11-12",
+ "statut_regles": "proposees",
+ "note_statut": "run_essai08.py refuse tout essai tant que statut_regles ne vaut pas \"figees\". Gel par ligne de journal de Jonathan et Teo apres le controle sans rendement.",
+ "params_base": {
+  "x": 0.04,
+  "y": 0.03,
+  "s": 0.05,
+  "h_heures": 4,
+  "d_minutes": 5,
+  "k": 5,
+  "stops_par_jour": 2,
+  "frais": 0.0005,
+  "gliss_entree": 0.001,
+  "gliss_sortie": 0.0005,
+  "gliss_stop": 0.003
+ },
+ "blocs": {
+  "developpement": [
+   "2021-12-01",
+   "2024-01-01"
+  ],
+  "validation": [
+   "2024-01-01",
+   "2025-07-28"
+  ],
+  "dev+val": [
+   "2021-12-01",
+   "2025-07-28"
+  ],
+  "hors_echantillon": [
+   "2025-07-28",
+   "2026-11-01"
+  ]
+ },
+ "essais": {
+  "E01": {
+   "variante": "base",
+   "bloc": "developpement"
+  },
+  "E02": {
+   "variante": "base",
+   "bloc": "validation"
+  },
+  "E03": {
+   "variante": "X = 3 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "x": 0.03
+   }
+  },
+  "E04": {
+   "variante": "X = 6 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "x": 0.06
+   }
+  },
+  "E05": {
+   "variante": "Y = 2 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "y": 0.02
+   }
+  },
+  "E06": {
+   "variante": "Y = 5 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "y": 0.05
+   }
+  },
+  "E07": {
+   "variante": "S = 3 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "s": 0.03
+   }
+  },
+  "E08": {
+   "variante": "S = 8 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "s": 0.08
+   }
+  },
+  "E09": {
+   "variante": "H = 1 h",
+   "bloc": "dev+val",
+   "surcharges": {
+    "h_heures": 1
+   }
+  },
+  "E10": {
+   "variante": "H = 12 h",
+   "bloc": "dev+val",
+   "surcharges": {
+    "h_heures": 12
+   }
+  },
+  "E11": {
+   "variante": "retard d'entree 10 min (porte T5)",
+   "bloc": "dev+val",
+   "surcharges": {
+    "d_minutes": 10
+   }
+  },
+  "E12": {
+   "variante": "couts doubles, glissement au stop 0,60 %",
+   "bloc": "dev+val",
+   "surcharges": {
+    "frais": 0.001,
+    "gliss_entree": 0.002,
+    "gliss_sortie": 0.001,
+    "gliss_stop": 0.006
+   }
+  },
+  "E13": {
+   "variante": "symetrique short apres hausse forcee (comparaison)",
+   "bloc": "dev+val",
+   "surcharges": {
+    "sens": -1
+   }
+  },
+  "E14": {
+   "variante": "placebo +24 h",
+   "bloc": "dev+val",
+   "surcharges": {
+    "placebo_heures": 24
+   }
+  },
+  "E15": {
+   "variante": "base",
+   "bloc": "hors_echantillon"
+  },
+  "E16": {
+   "variante": "couts doubles",
+   "bloc": "hors_echantillon",
+   "surcharges": {
+    "frais": 0.001,
+    "gliss_entree": 0.002,
+    "gliss_sortie": 0.001,
+    "gliss_stop": 0.006
+   }
+  }
+ },
+ "seuil_sharpe_hors_echantillon": 1.63,
+ "portes_avant_hors_echantillon": "",
+ "journees_exclues_robustesse": [
+  "2025-10-10",
+  "2025-10-11"
+ ],
+ "bootstrap": {
+  "bloc_semaines": 4,
+  "tirages": 10000,
+  "graine": 20261112,
+  "niveau": 0.9
+ }
+}
