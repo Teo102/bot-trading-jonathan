@@ -116,13 +116,6 @@
     "gliss_stop": 0.006
    }
   },
-  "E13": {
-   "variante": "symetrique short apres hausse forcee (comparaison)",
-   "bloc": "dev+val",
-   "surcharges": {
-    "sens": -1
-   }
-  },
   "E14": {
    "variante": "placebo +24 h",
    "bloc": "dev+val",
@@ -145,7 +138,7 @@
    }
   }
  },
- "seuil_sharpe_hors_echantillon": 1.63,
+ "seuil_sharpe_hors_echantillon": 1.6,
  "portes_avant_hors_echantillon": "",
  "journees_exclues_robustesse": [
   "2025-10-10",
@@ -156,5 +149,6 @@
   "tirages": 10000,
   "graine": 20261112,
   "niveau": 0.9
- }
+ },
+ "note_retrait_E13": "12/11/2026 : E13 retire (decision m1 de Jonathan et Teo), N = 15, seuil 1,77 x 0,903 = 1,60."
 }

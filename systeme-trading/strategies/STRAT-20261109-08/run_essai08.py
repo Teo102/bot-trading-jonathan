@@ -2,7 +2,7 @@
 """Lanceur des essais de STRAT-20261109-08 (fiche § 6, § 7). Refus stricts :
 - tout essai tant que `statut_regles` ne vaut pas « figees » ;
 - un essai déjà daté au registre (un essai ne se relance pas) ;
-- E13 tant que le constat m1 est ouvert (le format compact ne garde que les baisses) ;
+- E13, retiré le 12/11/2026 (décision m1, N = 15) ;
 - E15 et E16 tant que les essais E01 à E12 et E14 ne sont pas tous datés **et** que la décision écrite
   `portes_avant_hors_echantillon = "franchies"` n'est pas dans la configuration ; E16 avant E15.
 Verrou (m2) : le magasin de minutes refuse toute lecture au-delà de la fin du bloc de l'essai.
@@ -62,7 +62,7 @@ def controles(essai: str, c: dict, registre: Path) -> None:
     if reg[essai]["date"].strip():
         raise Refus(f"{essai} déjà lancé le {reg[essai]['date']}. Un essai ne se relance pas.")
     if essai == "E13":
-        raise Refus("E13 refusé : constat m1 ouvert (le format compact ne garde que les cascades à la baisse). Décision attendue.")
+        raise Refus("E13 retiré le 12/11/2026 (décision m1) : N = 15.")
     if essai in ("E15", "E16"):
         manquants = [e for e in AVANT_HE if not reg[e]["date"].strip()]
         if manquants:

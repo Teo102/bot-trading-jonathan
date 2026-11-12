@@ -11,7 +11,6 @@ E09,,STRAT-20261109-08,H = 1 h,dev+val,,,,,,,
 E10,,STRAT-20261109-08,H = 12 h,dev+val,,,,,,,
 E11,,STRAT-20261109-08,retard d'entree 10 min (porte T5),dev+val,,,,,,,porte T5
 E12,,STRAT-20261109-08,"couts doubles, glissement au stop 0,60 %",dev+val,,,,,,,porte couts
-E13,,STRAT-20261109-08,symetrique short apres hausse forcee (comparaison),dev+val,,,,,,,comparaison - jamais eligible - m1
 E14,,STRAT-20261109-08,placebo +24 h,dev+val,,,,,,,porte placebo
 E15,,STRAT-20261109-08,base,hors_echantillon,,,,,,,verdict une seule fois
 E16,,STRAT-20261109-08,couts doubles,hors_echantillon,,,,,,,verdict une seule fois
