@@ -132,6 +132,7 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 | STRAT-DEX | Rétro-ingénierie de wallets Solana (pilote) | rejetée pour l'approche par wallets (non concluant, 6 wallets sur 30 requis) | — | — | Avenant 2, 02/11/2026 |
 | STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | rejetée (E01 −23,5 %, prix net de coûts −66,2 %) | — | — | Verdict E01 du 02/11/2026, hors échantillon non ouvert |
 | STRAT-20261102-06 | Dérive des perpétuels nouvellement cotés, short couvert par BTC | validation, E01 +94,1 % net, E02 autorisé | — | — | E01 validé le 02/11/2026, E21 écarté (N=20 maintenu) |
+| STRAT-20261109-07 | Portage de financement conditionnel aux pointes (long comptant, short perpétuel) | écartée avant gel, comme H10 (aucun essai, hors échantillon non ouvert) | — | — | Décision du 12/11/2026 sur l'audit du 09/11/2026 |
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
 
