@@ -71,4 +71,6 @@ Proposition initiale de Claude, remplacée par la décision ci-dessus :
 
 `python -B score_calibration.py` imprime : nombre retenu, Brier propre et marché, différence et IC 95 % et 60 % par événement, décision des paliers 1 et 2 (`palier1_arret`, `palier2_papier_autorise`, vides tant que le nombre requis n'est pas atteint), perte logarithmique, paris pris, gain moyen par dollar et IC, table de calibration par tranches de 10 points.
 
+Scripts du protocole « estimer sans voir le prix » (09 et 12/11/2026) : `liste_candidats_sans_prix.py`, `saisir_lot.py`, puis commit, puis `relever_prix.py` ; `relever_resolutions.py` remplit les issues des marchés clos sans afficher le prix des marchés ouverts. Une prévision résolue sans prix de marché sort du score et se compte dans `resolues_sans_prix`.
+
 Limites : le gain par pari suppose une exécution au meilleur prix affiché, sans profondeur ni frais (nuls sur la plupart des marchés au 31/10/2026, à relire marché par marché). Les journaux synthétiques ne disent rien de notre vraie précision.

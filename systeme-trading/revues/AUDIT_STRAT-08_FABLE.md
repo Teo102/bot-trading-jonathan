@@ -232,7 +232,7 @@ Décisions reçues en session le 12/11/2026 et corrections de code appliquées (
 | M1 délai de publication | **Atténué** : entrée de base à 5 minutes, E11 à 10 minutes. Délai sous charge [non mesuré] |
 | M2 valeurs nulles | **Levé** : rejetées par le lecteur |
 | M3 lignes manquantes | **Compté** par le contrôle, non corrigeable |
-| M4 comptage « jouable » | **Traité** par deux bornes ; lecture de l'exigence [décision attendue] |
+| M4 comptage « jouable » | **Traité** par deux bornes ; exigence lue sur la pause de 4 h (décision du 12/11/2026) |
 | M5 glissements, M6 fréquence, m1 à m6 | Ouverts |
 
 Les scripts `a1_archive_contre_rest.py` et `a5_effet_sur_detection.py` appellent le lecteur de la stratégie. Relancés aujourd'hui, ils ne reproduiraient plus les sorties du 09/11 : le lecteur corrige désormais lui-même. Les sorties datées dans `revues/audit_fable/resultats/` font foi.

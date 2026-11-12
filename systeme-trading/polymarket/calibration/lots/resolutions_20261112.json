@@ -1,0 +1,38 @@
+{
+ "0xb0c7d40fe772cf0b89bdf081575d194399138228e46a14acc4be2e2c695b0b2d": {
+  "horodatage_resolution_utc": "2026-11-12 00:07:19.84974+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-12T11:58:00Z",
+  "slug": "elon-musk-of-tweets-november-6-november-13-2026-160-179",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0x717c8db5d4cd6c4a916d24b57c97ecbd74e284b9a2322bf632af05c32f0fa09a": {
+  "horodatage_resolution_utc": "2026-11-10 18:03:27.632942+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-12T11:58:00Z",
+  "slug": "gemini-carbon-released-by-november-15-2026-20261026",
+  "issue_resolue": 1,
+  "annule": "non"
+ },
+ "0x385caa8a6b86f602065720731ddb21a7689e11441d778d825448d726d5d3b4b9": {
+  "horodatage_resolution_utc": "2026-11-10 17:01:50.227951+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-12T11:58:00Z",
+  "slug": "israel-election-arab-party-disqualified",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0xfba1944e3a766b128d79d1c344e6b87bbbcd422a9eebe8a2111d4cf97262f238": {
+  "horodatage_resolution_utc": "2026-11-10 10:56:48.291836+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-12T11:58:01Z",
+  "slug": "russia-ukraine-peace-talks-by-november-30-2026",
+  "issue_resolue": 1,
+  "annule": "non"
+ }
+}

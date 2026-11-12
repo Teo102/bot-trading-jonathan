@@ -131,7 +131,7 @@ def rapport(c: pd.DataFrame, journal: dict | None = None) -> tuple[str, dict]:
     l = ["# Contrôle sans rendement de STRAT-20261109-08", "",
          "Cascades détectées seulement : aucune issue de position lue. Base : X = 4 %, Y = 3 % (intérêt ouvert en contrats, daté à `create_time` + 5 minutes, valeurs nulles rejetées), entrée à t + 5 minutes, K = 5, départage par le volume sur 15 minutes.", "",
          "Deux comptes : pause de 4 h après l'événement (borne haute) et de 8 h (tenue de 4 h puis pause de 4 h, borne basse). La règle des 2 stops par jour n'est pas comptée : elle demande une issue.", "",
-         "| Bloc | Cascades (pause 4 h) | Symboles | Par semaine | Part simultanées | Heures avec plus de 5 symboles | Jouables, borne haute | Jouables, borne basse | Exigence |",
+         "| Bloc | Cascades (pause 4 h) | Symboles | Par semaine | Part simultanées | Heures avec plus de 5 symboles | Jouables, pause 4 h (nominale) | Jouables, borne basse (8 h) | Exigence |",
          "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
     for nom, a, b in BLOCS:
         x, x2 = base[(base["t"] >= a) & (base["t"] < b)], base2[(base2["t"] >= a) & (base2["t"] < b)]
@@ -146,7 +146,8 @@ def rapport(c: pd.DataFrame, journal: dict | None = None) -> tuple[str, dict]:
                            "cascades_borne_basse": int(len(x2)), "jouables_borne_basse": bas,
                            "par_annee": x.groupby(x["t"].dt.year).size().to_dict(),
                            "top_symboles": x["symbole"].value_counts().head(10).to_dict()}
-        etat = "—" if exig is None else f"≥ {exig} : borne haute {'oui' if haut >= exig else 'NON'}, borne basse {'oui' if bas >= exig else 'NON'}"
+        # décision de Jonathan et Téo du 12/11/2026 : l'exigence se lit sur la borne nominale (pause de 4 h)
+        etat = "—" if exig is None else f"≥ {exig} sur la pause de 4 h : {'oui' if haut >= exig else 'NON'} (borne basse : {'oui' if bas >= exig else 'non'})"
         l.append(f"| {nom} | {len(x)} | {x['symbole'].nunique()} | {len(x)/sem:.1f} | {simult:.0%} | {(heures > 5).sum()} | {haut} | {bas} | {etat} |")
     l += ["", "Par année (pause 4 h) : " + ", ".join(f"{y} {n}" for y, n in base.groupby(base['t'].dt.year).size().items()) + ".",
           f"Candidats au seuil le plus lâche (X 3 %, Y 2 %, avant pause) : {len(c)}.", "",

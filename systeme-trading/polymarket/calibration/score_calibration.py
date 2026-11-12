@@ -37,7 +37,11 @@ def retenues(df: pd.DataFrame) -> pd.DataFrame:
     r["y"] = r["issue_resolue"].astype(int)
     for c in ("proba_propre", "milieu", "bid", "ask"):
         r[c] = r[c].astype(float)
-    return r
+    # Une prévision résolue sans prix de marché relevé ne peut pas être comparée au marché. Elle sort du score et se
+    # compte à part (`resolues_sans_prix`), au lieu de fausser les moyennes : avant le 12/11/2026, le Brier propre se
+    # calculait sur ces lignes et le Brier du marché sans elles.
+    r.attrs["sans_prix"] = int((r["milieu"].isna() | r["proba_propre"].isna()).sum())
+    return r[r["milieu"].notna() & r["proba_propre"].notna()]
 
 
 def pari(r: pd.DataFrame) -> np.ndarray:
@@ -69,8 +73,8 @@ def bootstrap_evenements(r: pd.DataFrame, valeur, iterations: int, graine: int, 
 
 def scorer(df: pd.DataFrame, iterations: int = 5000, graine: int = 20261101) -> dict:
     r = retenues(df)
-    out = {"prevues": int(len(df)), "resolues_retenues": int(len(r)), "objectif": OBJECTIF,
-           "evenements": int(r["evenement"].nunique()) if len(r) else 0}
+    out = {"prevues": int(len(df)), "resolues_retenues": int(len(r)), "resolues_sans_prix": int(r.attrs.get("sans_prix", 0)),
+           "objectif": OBJECTIF, "evenements": int(r["evenement"].nunique()) if len(r) else 0}
     if len(r) == 0:
         out["lecture"] = "aucune prévision résolue"
         return out

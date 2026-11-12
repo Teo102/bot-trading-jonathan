@@ -38,6 +38,15 @@ class Tests(unittest.TestCase):
         j.iloc[0, j.columns.get_loc("annule")] = "oui"
         self.assertEqual(s.scorer(j, iterations=50)["resolues_retenues"], 49)
 
+    def test_resolue_sans_prix_exclue_du_score(self):
+        j = journal(60)
+        avec = s.scorer(j.iloc[1:], iterations=50)
+        j.iloc[0, j.columns.get_loc("milieu")] = np.nan   # carnet vide au moment du relevé
+        out = s.scorer(j, iterations=50)
+        self.assertEqual((out["resolues_retenues"], out["resolues_sans_prix"]), (59, 1))
+        self.assertAlmostEqual(out["brier_propre"], avec["brier_propre"])   # les deux Brier portent sur les mêmes lignes
+        self.assertAlmostEqual(out["brier_marche"], avec["brier_marche"])
+
     def test_paliers(self):
         bon = s.scorer(journal(n=300), iterations=300)
         self.assertFalse(bon["palier1_arret"])
@@ -54,7 +63,10 @@ class Tests(unittest.TestCase):
         self.assertAlmostEqual(g[1], -1.0)
 
     def test_journal_vide(self):
-        self.assertEqual(s.scorer(s.charger(s.ICI / "JOURNAL_CALIBRATION.csv"))["resolues_retenues"], 0)
+        # Le journal réel n'est plus vide depuis le 12/11/2026 : le test porte sur son en-tête seul, sans aucune ligne.
+        vide = s.charger(s.ICI / "JOURNAL_CALIBRATION.csv").iloc[0:0]
+        out = s.scorer(vide)
+        self.assertEqual((out["resolues_retenues"], out["lecture"]), (0, "aucune prévision résolue"))
 
 
 if __name__ == "__main__":
