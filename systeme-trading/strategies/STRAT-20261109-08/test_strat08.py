@@ -139,12 +139,72 @@ def zip_klines(k):
 
 
 def zip_metrics(o, s):
-    df = pd.DataFrame({"create_time": o.index.strftime("%Y-%m-%d %H:%M:%S"), "symbol": s, "sum_open_interest": o.values,
+    """Fichier metrics à la convention de l'archive réelle : une observation faite à l'heure h est datée h − 5 minutes
+    (audit du 09/11/2026 : archive(t) = API(t + 5 min)). `o` est indexé à l'heure réelle."""
+    df = pd.DataFrame({"create_time": (o.index - d1.DECALAGE_METRICS).strftime("%Y-%m-%d %H:%M:%S"), "symbol": s, "sum_open_interest": o.values,
                        "sum_open_interest_value": o.values * 100})
     b = io.BytesIO()
     with zipfile.ZipFile(b, "w") as z:
         z.writestr("m.csv", df.to_csv(index=False))
     return b.getvalue()
+
+
+class Corrections(unittest.TestCase):
+    """Corrections du 12/11/2026 (fiche § 13) : horodatage, valeurs nulles, départage, blocs."""
+
+    def test_lecteur_decale_de_5_minutes(self):
+        o = pd.Series([1000.0, 990.0], index=pd.to_datetime(["2024-08-05 10:00", "2024-08-05 10:05"]))  # heures réelles
+        lu = d1.lire_metrics_contrats(zip_metrics(o, "XUSDT"))
+        self.assertEqual(list(lu.index), list(o.index))          # heure réelle retrouvée
+        brut = pd.DataFrame({"create_time": ["2024-08-05 10:00:00"], "symbol": "X", "sum_open_interest": [7.0], "sum_open_interest_value": [1.0]})
+        b = io.BytesIO()
+        with zipfile.ZipFile(b, "w") as z:
+            z.writestr("m.csv", brut.to_csv(index=False))
+        self.assertEqual(d1.lire_metrics_contrats(b.getvalue()).index[0], pd.Timestamp("2024-08-05 10:05"))  # create_time + 5 min
+
+    def test_avance_de_5_minutes_impossible(self):
+        # L'intérêt ouvert chute réellement à 10:15, après la baisse du prix (10:00 à 10:10). L'archive date cette
+        # chute 10:10. Lue telle quelle, elle déclencherait une cascade à 10:10, avant que la chute soit observable.
+        k, _ = cascade(k1_plat(), oi_plat(k1_plat()), baisse_oi=0)
+        o = oi_plat(k1_plat()); o[o.index >= pd.Timestamp("2022-03-01 10:15")] = 950.0
+        lu = d1.lire_metrics_contrats(zip_metrics(o, "XUSDT"))
+        t = set(dc.candidats(k, lu)["t"])
+        self.assertNotIn(pd.Timestamp("2022-03-01 10:10"), t)
+        self.assertIn(pd.Timestamp("2022-03-01 10:15"), t)
+        archive_brute = lu.copy(); archive_brute.index = archive_brute.index - d1.DECALAGE_METRICS   # ce que lisait l'ancien code
+        self.assertIn(pd.Timestamp("2022-03-01 10:10"), set(dc.candidats(k, archive_brute)["t"]))    # le défaut, reproduit
+
+    def test_valeur_nulle_rejetee(self):
+        k, _ = cascade(k1_plat(), oi_plat(k1_plat()), baisse_oi=0)
+        o = oi_plat(k1_plat()); o[pd.Timestamp("2022-03-01 10:10")] = 0.0   # incident de la source pendant la chute du prix
+        lu = d1.lire_metrics_contrats(zip_metrics(o, "XUSDT"))
+        self.assertNotIn(pd.Timestamp("2022-03-01 10:10"), lu.index)
+        self.assertTrue(dc.candidats(k, lu).empty)                         # pas de cascade fabriquée par un zéro
+
+    def test_departage_par_volume_et_permutation(self):
+        t = pd.Timestamp("2022-03-01 10:00")
+        ev = pd.DataFrame({"symbole": list("ABCDEFG"), "t": t, "volume_15m": [1.0, 7.0, 3.0, 6.0, 2.0, 5.0, 4.0]})
+        prises, ignorees = dc.attribuer(ev, 5, pd.Timedelta(hours=4))
+        self.assertEqual(list(prises["symbole"]), ["B", "D", "F", "G", "C"])   # les 5 plus gros volumes, dans l'ordre
+        self.assertEqual(sorted(ignorees["symbole"]), ["A", "E"])              # et non les deux derniers de l'alphabet
+        for graine in range(20):                                               # l'ordre du fichier ne change rien
+            m = ev.sample(frac=1, random_state=graine)
+            self.assertEqual(sorted(dc.attribuer(m, 5, pd.Timedelta(hours=4))[1]["symbole"]), ["A", "E"])
+            self.assertEqual(cc.occupation_ignoree(m, 5, pd.Timedelta(hours=4)), 2)
+        egal = pd.DataFrame({"symbole": ["Z", "A", "M"], "t": t, "volume_15m": 1.0})
+        self.assertEqual(list(dc.attribuer(egal, 2, pd.Timedelta(hours=4))[0]["symbole"]), ["A", "M"])  # égalité : alphabet
+
+    def test_blocs_et_bornes(self):
+        self.assertEqual(cc.BLOCS[0], ("developpement", "2021-12-01", "2024-01-01"))
+        self.assertEqual(cc.BASE["d"], pd.Timedelta(minutes=5))
+        # une cascade toutes les 5 h sur un symbole : pause de 4 h → toutes comptées ; tenue 4 h + pause 4 h → une sur deux
+        t = pd.date_range("2022-06-01", periods=8, freq="5h")
+        c = pd.DataFrame({"symbole": "A", "t": t.astype(str), "rendement_15m": -0.05, "var_oi_15m": -0.04, "volume_15m": 1.0})
+        avant = pd.DataFrame({"symbole": "B", "t": ["2021-06-01 10:00:00"], "rendement_15m": -0.05, "var_oi_15m": -0.04, "volume_15m": 1.0})
+        md, R = cc.rapport(pd.concat([c, avant]))
+        self.assertEqual(R["blocs"]["developpement"]["cascades"], 8)               # l'événement de juin 2021 n'est dans aucun bloc
+        self.assertEqual(R["blocs"]["developpement"]["jouables_borne_basse"], 4)
+        self.assertIn("borne basse", md)
 
 
 class Flux(unittest.TestCase):
@@ -170,6 +230,7 @@ class Flux(unittest.TestCase):
             el = pd.Series(True, index=pd.date_range("2022-03-01", "2022-04-30"))
             cands = cc.traiter_symbole(Source(), s, ["2022-03"], el, tmp, {})
             self.assertTrue(any(pd.Timestamp(c["t"]) == pd.Timestamp("2022-03-31 22:10") for c in cands))
+            self.assertEqual(len({c["t"] for c in cands}), len(cands))  # aucun instant compté deux fois
             self.assertTrue((tmp / s / "2022-03.npz").exists())
             self.assertTrue((tmp / s / "2022-04.npz").exists())  # mois chargé pour le report seulement
             self.assertFalse((tmp / s / "2022-04.json").exists())  # pas de détection sur un mois non éligible
@@ -181,6 +242,33 @@ class Flux(unittest.TestCase):
             self.assertEqual(len(cands2), len(cands))
         finally:
             shutil.rmtree(tmp)
+
+    def test_instant_de_minuit_en_fin_de_mois(self):
+        """Avec le décalage de 5 minutes, la dernière ligne d'un mois porte 00:00 du mois suivant. Cet instant se
+        détecte une seule fois, dans le mois suivant s'il est éligible, jamais deux fois."""
+        s = "XUSDT"
+        k = k1_plat("2022-03-01", jours=61)
+        k, o = cascade(k, oi_plat(k), t0="2022-03-31 23:50")  # chute de 23:50 à 23:59, détectable à 00:00 le 01/04
+        stock = {}
+        for m in ("2022-03", "2022-04"):
+            stock[f"{d1.RACINE_M}/klines/{s}/1m/{s}-1m-{m}.zip"] = zip_klines(k[k.index.strftime("%Y-%m") == m])
+        archive = o.copy(); archive.index = archive.index - d1.DECALAGE_METRICS       # heures telles que l'archive les écrit
+        for d, g in archive.groupby(archive.index.normalize()):
+            g = g.copy(); g.index = g.index + d1.DECALAGE_METRICS                      # zip_metrics retire les 5 minutes
+            stock[f"{d1.RACINE_J}/metrics/{s}/{s}-metrics-{d.date().isoformat()}.zip"] = zip_metrics(g, s)
+
+        class Source:
+            def lire(self, cle):
+                return stock.get(cle)
+        el = pd.Series(True, index=pd.date_range("2022-03-01", "2022-04-30"))
+        minuit = pd.Timestamp("2022-04-01 00:00")
+        for mois, attendu in ((["2022-03", "2022-04"], 1), (["2022-03"], 0)):
+            tmp = Path(tempfile.mkdtemp())
+            try:
+                cands = cc.traiter_symbole(Source(), s, mois, el, tmp, {})
+                self.assertEqual(sum(pd.Timestamp(c["t"]) == minuit for c in cands), attendu, mois)
+            finally:
+                shutil.rmtree(tmp)
 
     def test_rapport_et_occupation(self):
         t = pd.to_datetime(["2022-01-01 10:00"] * 7)

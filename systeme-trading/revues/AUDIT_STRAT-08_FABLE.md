@@ -219,3 +219,20 @@ Aucune de ces décisions n'a été prise ni appliquée par l'audit.
 | `strategies/STRAT-20261031-04/FICHE_STRAT-20261031-04.md` § 2.3 | 31/10/2026 |
 
 Données lues : archives publiques `data.binance.vision` (metrics, klines 1 minute et 5 minutes) et API publique `fapi.binance.com` (intérêt ouvert), sans clé. Les contrôles A2 et A5 lisent des prix passés des blocs de développement et de validation pour dater ou détecter l'événement, jamais l'issue d'une position. Rien n'a été lu dans le hors échantillon, sauf le nombre de lignes de deux fichiers d'intérêt ouvert des 10 et 11/10/2025.
+
+## Suites du 12/11/2026
+
+Décisions reçues en session le 12/11/2026 et corrections de code appliquées (fiche § 13). L'audit ci-dessus décrit le code au commit `57dcd3c` et n'est pas réécrit.
+
+| Constat | État au 12/11/2026 |
+|---|---|
+| B1 horodatage | **Levé dans le code** : + 5 minutes sur tout l'historique. Test sur données réelles : 1 728 heures sur 1 728 (10:47 UTC) |
+| B2 début de l'archive | **Levé** : développement dès le 01/12/2021, porte « 2 années sur 3, dont 2022 » |
+| B3 départage | **Levé** : volume sur 15 minutes, tri stable, test de permutation |
+| M1 délai de publication | **Atténué** : entrée de base à 5 minutes, E11 à 10 minutes. Délai sous charge [non mesuré] |
+| M2 valeurs nulles | **Levé** : rejetées par le lecteur |
+| M3 lignes manquantes | **Compté** par le contrôle, non corrigeable |
+| M4 comptage « jouable » | **Traité** par deux bornes ; lecture de l'exigence [décision attendue] |
+| M5 glissements, M6 fréquence, m1 à m6 | Ouverts |
+
+Les scripts `a1_archive_contre_rest.py` et `a5_effet_sur_detection.py` appellent le lecteur de la stratégie. Relancés aujourd'hui, ils ne reproduiraient plus les sorties du 09/11 : le lecteur corrige désormais lui-même. Les sorties datées dans `revues/audit_fable/resultats/` font foi.

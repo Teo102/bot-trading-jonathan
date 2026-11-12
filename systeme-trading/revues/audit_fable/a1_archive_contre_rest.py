@@ -6,6 +6,9 @@ L'archive est lue par le lecteur même de STRAT-08 (`donnees_1m.lire_metrics_con
 Pour chaque ligne d'archive d'heure t, on cherche le décalage k tel que archive(t) = REST(t + k x 5 min).
 k = 0 : horodatage juste. k = +1 : l'archive est datée 5 minutes trop tôt (lire archive(t) en t lit l'avenir).
 
+ATTENTION : preuve datée du 09/11/2026, sur le code du commit 57dcd3c. Depuis le 12/11/2026 le lecteur de la stratégie
+ajoute lui-même 5 minutes ; relancé tel quel, ce script ne reproduit plus ses sorties d'origine.
+
 Usage : python3 -B a1_archive_contre_rest.py
 """
 import json, sys, time

@@ -43,15 +43,25 @@ class LectureEphemere:
         return z
 
 
+# Décision de Jonathan et Téo du 12/11/2026 (fiche § 13, constat B1 de revues/AUDIT_STRAT-08_FABLE.md) :
+# l'archive date ses lignes 5 minutes trop tôt depuis mars 2024 (archive(t) = API(t + 5 min), 13 824 lignes sur 13 824).
+# Le décalage s'applique à TOUT l'historique : avant mars 2024 l'information arrive 5 minutes plus tard qu'en réalité
+# (prudent), après elle est à l'heure. Aucune avance possible, et aucune dépendance à la date de bascule.
+DECALAGE_METRICS = pd.Timedelta(minutes=5)
+
+
 def lire_metrics_contrats(z: bytes) -> pd.Series:
-    """Intérêt ouvert en contrats (`sum_open_interest`) à l'horodatage `create_time`."""
+    """Intérêt ouvert en contrats (`sum_open_interest`), indexé à `create_time` + 5 minutes (heure d'observation retenue).
+    Les valeurs nulles, négatives ou vides sont rejetées : une ligne à zéro est un incident de la source, pas une
+    liquidation (constat M2 de l'audit, 12/08/2024)."""
     with zipfile.ZipFile(io.BytesIO(z)) as zf, zf.open(zf.namelist()[0]) as f:
         df = pd.read_csv(f)
     if "create_time" not in df.columns or "sum_open_interest" not in df.columns:
         raise ValueError("colonnes metrics inattendues : " + ",".join(df.columns))
     s = pd.Series(pd.to_numeric(df["sum_open_interest"], errors="coerce").values, index=pd.to_datetime(df["create_time"]).values)
-    s.index = pd.DatetimeIndex(s.index).round("min")
-    return s[~s.index.duplicated(keep="last")].sort_index()
+    s.index = pd.DatetimeIndex(s.index).round("min") + DECALAGE_METRICS
+    s = s[~s.index.duplicated(keep="last")].sort_index()
+    return s[s > 0]
 
 
 def mois_eligibles(volume_jour: pd.DataFrame, liquidite_min: float = 20e6, age_min_j: int = 30,

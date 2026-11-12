@@ -7,6 +7,9 @@ Sur deux mois du bloc de validation (2024-08 et 2024-12) et 8 alts, le détecteu
 - « corrigé » : heures de l'archive + 5 minutes (heure réelle de l'observation depuis mars 2024, contrôles A1 et A2).
 Seuls la chute passée (15 minutes avant t) et l'intérêt ouvert sont lus, comme dans le contrôle du § 5 de la fiche.
 
+ATTENTION : preuve datée du 09/11/2026, sur le code du commit 57dcd3c. Depuis le 12/11/2026 le lecteur de la stratégie
+ajoute lui-même 5 minutes ; relancé tel quel, ce script ne reproduit plus ses sorties d'origine.
+
 Usage : python3 -B a5_effet_sur_detection.py"""
 import io, json, sys, time
 from concurrent.futures import ThreadPoolExecutor
