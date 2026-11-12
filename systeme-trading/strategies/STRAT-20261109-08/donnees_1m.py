@@ -10,6 +10,7 @@ from __future__ import annotations
 import io
 import sys
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -116,16 +117,19 @@ def charger_1m(source, s: str, mois: str, fin) -> tuple[pd.DataFrame | None, int
     return x[x.index < db.naif(fin)], manquants
 
 
-def charger_oi(source, s: str, mois: str, fin) -> tuple[pd.Series | None, int]:
-    morceaux, manquants = [], 0
-    for d in pd.date_range(f"{mois}-01", pd.Period(mois).end_time.normalize(), freq="D"):
-        if d >= db.naif(fin):
-            break
+def charger_oi(source, s: str, mois: str, fin, fils: int = 12) -> tuple[pd.Series | None, int]:
+    """Intérêt ouvert d'un mois (une archive par jour). Les jours se téléchargent en parallèle : une archive et sa somme
+    par jour, soit 60 requêtes par mois, étaient lues une à une (pilote du 12/11/2026 : 36 minutes pour 3 symboles).
+    Le résultat ne dépend pas de l'ordre d'arrivée : les jours sont réassemblés puis triés."""
+    jours = [d for d in pd.date_range(f"{mois}-01", pd.Period(mois).end_time.normalize(), freq="D") if d < db.naif(fin)]
+
+    def un(d):
         z = source.lire(f"{RACINE_J}/metrics/{s}/{s}-metrics-{d.date().isoformat()}.zip")
-        if z is None:
-            manquants += 1
-            continue
-        morceaux.append(lire_metrics_contrats(z))
+        return None if z is None else lire_metrics_contrats(z)
+
+    with ThreadPoolExecutor(fils) as ex:
+        res = list(ex.map(un, jours))
+    morceaux, manquants = [x for x in res if x is not None], sum(x is None for x in res)
     if not morceaux:
         return None, manquants
     x = pd.concat(morceaux)
