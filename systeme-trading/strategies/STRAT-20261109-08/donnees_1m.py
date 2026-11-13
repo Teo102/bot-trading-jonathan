@@ -1,6 +1,6 @@
 """Données 1 minute et intérêt ouvert 5 minutes de STRAT-20261109-08, en flux (fiche § 9, option (c) + (b)).
 
-- Seuls les mois où le symbole est éligible au moins un jour (âge ≥ 30 j, médiane 30 j du volume ≥ 20 M USDT, lue
+- Seuls les mois où le symbole est éligible au moins un jour (âge ≥ 61 j depuis le 13/11/2026, médiane 30 j du volume ≥ 20 M USDT, lue
   sur la veille) sont téléchargés (option c).
 - Chaque archive est vérifiée (SHA-256), lue, puis **effacée du cache** si elle n'y était pas avant (option b).
 - Format compact conservé : candidats au seuil le plus lâche, et minutes autour d'eux et de leur placebo.
@@ -65,7 +65,12 @@ def lire_metrics_contrats(z: bytes) -> pd.Series:
     return s[s > 0]
 
 
-def mois_eligibles(volume_jour: pd.DataFrame, liquidite_min: float = 20e6, age_min_j: int = 30,
+# Décision de Jonathan et Téo du 13/11/2026 (fiche § 3 et § 18) : âge minimal porté de 30 à 61 jours, pour qu'aucun symbole
+# ne soit à la fois dans l'univers de STRAT-06-bis (cotations de 7 à 60 jours, vendues) et dans celui de STRAT-08 (acheté).
+AGE_MIN_J = 61
+
+
+def mois_eligibles(volume_jour: pd.DataFrame, liquidite_min: float = 20e6, age_min_j: int = AGE_MIN_J,
                    exclus: set | None = None, debut=None, fin=None) -> dict:
     """{symbole: [mois 'AAAA-MM']} où le symbole est éligible au moins un jour. Lecture sur la veille seulement."""
     exclus = exclus or set()
@@ -88,7 +93,7 @@ def mois_eligibles(volume_jour: pd.DataFrame, liquidite_min: float = 20e6, age_m
     return out
 
 
-def jours_eligibles(volume_jour: pd.DataFrame, s: str, liquidite_min: float = 20e6, age_min_j: int = 30) -> pd.Series:
+def jours_eligibles(volume_jour: pd.DataFrame, s: str, liquidite_min: float = 20e6, age_min_j: int = AGE_MIN_J) -> pd.Series:
     v = volume_jour[s].fillna(0)
     prem = v.index[(v > 0).to_numpy()][0]
     med = volume_jour.fillna(0)[s].rolling(30, min_periods=20).median().shift(1)

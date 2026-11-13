@@ -122,11 +122,30 @@ class Donnees(unittest.TestCase):
         v = pd.DataFrame({"AUSDT": 30e6, "BUSDT": 5e6, "CUSDT": 0.0}, index=idx)
         v.loc[v.index < "2021-03-01", "CUSDT"] = 0.0
         v.loc[v.index >= "2021-03-01", "CUSDT"] = 50e6
-        me = d1.mois_eligibles(v)
+        me = d1.mois_eligibles(v, age_min_j=30)   # règle d'avant le 13/11/2026
         self.assertNotIn("BUSDT", me)
         self.assertEqual(me["AUSDT"][0], "2021-02")  # âge ≥ 31 j depuis le 01/01 : février
         self.assertTrue(all(m >= "2021-04" for m in me["CUSDT"]))  # coté le 01/03 : âge de 30 j atteint en avril
         self.assertNotIn("CUSDT", d1.mois_eligibles(v, exclus={"CUSDT"}))
+        # règle courante, âge ≥ 61 jours la veille (62 jours d'écart) : A coté le 01/01 devient éligible le 04/03, C coté le 01/03 le 02/05
+        self.assertEqual(d1.AGE_MIN_J, 61)
+        me61 = d1.mois_eligibles(v)
+        self.assertEqual(me61["AUSDT"][0], "2021-03")
+        self.assertEqual(me61["CUSDT"][0], "2021-05")
+        el = d1.jours_eligibles(v, "AUSDT")
+        self.assertFalse(el[pd.Timestamp("2021-03-03")])
+        self.assertTrue(el[pd.Timestamp("2021-03-04")])
+
+    def test_refiltrage_sans_telechargement(self):
+        idx = pd.date_range("2021-01-01", "2021-06-30", freq="D")
+        v = pd.DataFrame({"AUSDT": 30e6, "CUSDT": 0.0}, index=idx)
+        v.loc[v.index >= "2021-03-01", "CUSDT"] = 50e6
+        c = pd.DataFrame({"symbole": ["AUSDT", "AUSDT", "CUSDT", "CUSDT", "ZUSDT"],
+                          "t": ["2021-02-20 10:00", "2021-03-10 10:00", "2021-04-05 10:00", "2021-05-05 10:00", "2021-05-05 10:00"],
+                          "rendement_15m": -0.05, "var_oi_15m": -0.04, "volume_15m": 1.0})
+        r, info = cc.refiltrer(c, v)
+        self.assertEqual(list(zip(r["symbole"], r["t"].astype(str))), [("AUSDT", "2021-03-10 10:00:00"), ("CUSDT", "2021-05-05 10:00:00")])
+        self.assertEqual((info["candidats_avant"], info["candidats_apres"], info["symboles_sans_volume"]), (5, 2, ["ZUSDT"]))
 
 
 def zip_klines(k):

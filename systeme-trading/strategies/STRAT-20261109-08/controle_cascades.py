@@ -161,6 +161,23 @@ def rapport(c: pd.DataFrame, journal: dict | None = None) -> tuple[str, dict]:
     return "\n".join(l) + "\n", R
 
 
+def refiltrer(candidats: pd.DataFrame, vol: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Applique l'éligibilité courante (`donnees_1m.jours_eligibles`, âge ≥ 61 jours depuis le 13/11/2026) à des candidats déjà
+    détectés, sans rien télécharger. Valide parce que la règle courante est plus stricte que celle du passage d'origine
+    (âge ≥ 30 jours) : les candidats retenus sont un sous-ensemble, et le format compact contient déjà leurs minutes."""
+    c = candidats.copy()
+    c["t"] = pd.to_datetime(c["t"])
+    garde = np.zeros(len(c), dtype=bool)
+    absents = []
+    for s, idx in c.groupby("symbole").groups.items():
+        if s not in vol.columns:
+            absents.append(s); continue
+        el = d1.jours_eligibles(vol, s)
+        garde[c.index.get_indexer(idx)] = [bool(el.get(t.normalize(), False)) for t in c.loc[idx, "t"]]
+    return c[garde].reset_index(drop=True), {"candidats_avant": int(len(c)), "candidats_apres": int(garde.sum()),
+                                              "symboles_sans_volume": absents, "age_min_jours": d1.AGE_MIN_J}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
@@ -169,8 +186,29 @@ def main(argv=None) -> int:
     ap.add_argument("--compact", default=str(Path.home() / "strat08_compact"))
     ap.add_argument("--max-symboles", type=int, default=0)
     ap.add_argument("--debut-volumes", default="2021-09-01")
+    ap.add_argument("--refiltrer", help="candidats d'un passage antérieur : applique l'éligibilité courante sans téléchargement")
     a = ap.parse_args(argv)
     brut = db.VisionLocale(Path(a.source_locale)) if a.source_locale else db.VisionHTTP(Path(a.cache).expanduser())
+    if a.refiltrer:
+        source = Path(a.refiltrer)
+        cand = pd.read_csv(source)
+        jours = db.charger_jours(brut, sorted(cand["symbole"].unique()), pd.Timestamp(a.debut_volumes), FIN)
+        c, info = refiltrer(cand, jours["volume"])
+        h = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        out = ICI / "resultats"
+        out.mkdir(exist_ok=True)
+        nom = f"candidats_age{d1.AGE_MIN_J}_{h}.csv"
+        c.assign(t=c["t"].astype(str)).to_csv(out / nom, index=False)
+        md, R = rapport(c)
+        md = md.replace("# Contrôle sans rendement de STRAT-20261109-08",
+                        f"# Contrôle sans rendement de STRAT-20261109-08, refiltré à l'âge minimal de {d1.AGE_MIN_J} jours", 1)
+        md += (f"\nRefiltrage sans téléchargement de `{source.name}` : {info['candidats_avant']} candidats au seuil lâche avant, "
+               f"{info['candidats_apres']} après. Symboles sans volume : {len(info['symboles_sans_volume'])}. Candidats écrits dans `{nom}`.\n")
+        R.update(info, source=source.name, fichier_candidats=nom)
+        (out / f"controle_cascades_age{d1.AGE_MIN_J}_{h}.md").write_text(md)
+        (out / f"controle_cascades_age{d1.AGE_MIN_J}_{h}.json").write_text(json.dumps(R, indent=1, default=str, ensure_ascii=False))
+        print(md)
+        return 0
     src = d1.LectureEphemere(brut)
     dossier = Path(a.compact).expanduser()
     dossier.mkdir(parents=True, exist_ok=True)
