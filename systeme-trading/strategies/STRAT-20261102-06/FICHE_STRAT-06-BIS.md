@@ -91,7 +91,7 @@ Sur accord de Jonathan et Téo du 13/11/2026. **Fonctionnement à blanc : aucun 
 - Jour 0 à blanc : **14/11/2026**. La cohorte 0 reçoit son premier signal le 14/11 à 00:05 UTC, la cohorte 6 le 20/11.
 - Exécution à la main avant l'installation : 3,7 s, 346 Mo de mémoire, collecte seule (avant le jour 0).
 - Premier passage automatique vérifié : 13/11/2026 à 14:05 UTC (trace CRON du système), battement écrit, une heure de BTC ajoutée à la collecte avec son empreinte.
-- La crontab contenait déjà une ligne hebdomadaire de l'ancien module (`paper_trading_strat06.py --check-now`, lundi 00:05 UTC). Elle est laissée telle quelle ; ses signaux ne comptent pas (§ 4 de `PLAN_PAPIER_COHORTES.md`).
+- La crontab contenait une ligne hebdomadaire de l'ancien module (`paper_trading_strat06.py --check-now`, lundi 00:05 UTC). **Retirée le 13/11/2026 à 16:11 UTC** sur décision de Jonathan et Téo, pour une seule source de signaux ; copie dans `/root/crontab_avant_retrait_ancien_module.txt`. Seule reste la tâche horaire du papier à 7 cohortes.
 
 **Limite :** aucune alerte n'est envoyée si la tâche s'arrête (aucun canal de notification configuré). La surveillance se fait en lisant `battement.txt` et `cron.log`. Un battement de plus de 2 heures signale une panne.
 
