@@ -80,7 +80,8 @@ class Collecteur:
         f = self._fichier(nom)
         if not f.exists():
             return pd.DataFrame(columns=COLS[nom])
-        return pd.read_csv(f, dtype={"symbole": str})
+        num = {c: "float64" for c in COLS[nom] if c not in CLES[nom] + ["lu_utc"]}
+        return pd.read_csv(f, dtype={"symbole": "category", CLES[nom][0]: str, "lu_utc": str, **num})
 
     def _ajouter(self, nom: str, lignes: list[dict], lu: pd.Timestamp) -> int:
         """Ajoute seulement les clés jamais vues. Inscrit l'ajout et son empreinte au journal de collecte."""
@@ -184,8 +185,9 @@ class Collecteur:
     def _premiere(df: pd.DataFrame, cles: list[str]) -> tuple[pd.DataFrame, int]:
         if df.empty:
             return df, 0
-        df = df.sort_values("lu_utc", kind="mergesort")
-        doublons = df.duplicated(cles, keep="first")
+        doublons = df.duplicated(cles, keep="first")   # le fichier est écrit dans l'ordre des lectures : la première ligne fait foi
+        if not doublons.any():
+            return df, 0
         return df[~doublons], int(doublons.sum())
 
     def charger_jours(self) -> dict:
