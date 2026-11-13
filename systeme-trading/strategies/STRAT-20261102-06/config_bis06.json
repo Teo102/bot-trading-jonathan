@@ -1,0 +1,35 @@
+{
+ "strategie": "STRAT-06-bis (H12-bis)",
+ "statut": "a_blanc",
+ "note_statut": "a_blanc : fonctionnement a blanc, non compte. figee : apres la ligne de journal de gel de Jonathan et Teo ; jour_0 = premier jour compte.",
+ "jour_0_a_blanc": "",
+ "jour_0": "",
+ "empreinte_config_v1": "84f43d5b11382909832edd71b525c296a9d5f84eb8781c20c0a962791298ca0c",
+ "notionnel_par_ligne": "1/84",
+ "cohortes": 7,
+ "capital_indicatif_usdt": 10000,
+ "signal_manque": "semaine vide, lignes precedentes soldees a t + 1 h (lecture proposee, a confirmer au gel)",
+ "verdict": {
+  "semaines": 52,
+  "point_etape_semaines": 26,
+  "drawdown_arret": 0.4,
+  "sharpe_min": 0.8,
+  "alpha_min": 0.0,
+  "part_max_nom": 0.25,
+  "part_max_mois": 0.4,
+  "lignes_shorts_min": 300,
+  "serie": "stressee"
+ },
+ "rejeu": {
+  "selection": "identique",
+  "tolerance_prix_entree_relative": 0.0001
+ },
+ "points_a_trancher_au_gel": [
+  "montee en charge comptee ou non",
+  "tolerance du rejeu",
+  "facteurs de l'alpha",
+  "signal indicatif",
+  "filtres v2",
+  "signal manque"
+ ]
+}
