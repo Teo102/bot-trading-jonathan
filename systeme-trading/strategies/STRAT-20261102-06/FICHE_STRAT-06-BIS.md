@@ -54,3 +54,29 @@ Les remplissages réels, la profondeur des carnets pendant une forte hausse, l'�
 2. Rejeu : chaque semaine, le moteur de backtest relancé sur les mêmes données publiques retrouve la même sélection. Un écart est un incident.
 3. Gel des § 1 et § 2 par une ligne de journal de Jonathan et Téo.
 4. `dry_run: true`, capital nul, aucune clé de trading sur le serveur.
+
+## 5. Module à 7 cohortes : écrit et essayé à blanc (13/11/2026)
+
+Préalable 1 du § 4 rempli, préalable 2 outillé. Rien n'est gelé, aucun jour n'est compté, aucune tâche planifiée n'est installée sur le serveur.
+
+**Code** (commits `04b94c7` et `c2295f4`) :
+- `collecte_papier06.py` : volumes journaliers depuis la première bougie de chaque symbole, bougies horaires du contrat et du prix de marque, financement. Fichiers en ajout seul ; une clé déjà lue n'est jamais réécrite ; chaque ajout est inscrit avec son empreinte SHA-256. Contrats non crypto écartés par `underlyingType` (L10).
+- `paper_cohortes06.py` : les 7 cohortes, en base et en stressé (mode 1), avec le moteur de la v1 (`jouer_ligne`, `cout_de_rotation`, `fabrique_cible`, configuration figée de la v1, empreinte vérifiée). Sorties en ajout seul : signaux avec leur heure d'écriture, semaines de cohortes closes, lignes, série quotidienne à 01:00 UTC, incidents, journal Markdown. Un signal écrit après son heure d'exécution rend la date manquée.
+- `rejeu_cohortes06.py` : sélection et prix d'entrée refaits sur les archives publiques (journalières pour le mois en cours), écarts consignés comme incidents.
+- `verdict_bis06.py` : critères du § 2, refus de tout verdict avant les dates.
+- `config_bis06.json` : statut `a_blanc`, paramètres du verdict et du rejeu.
+
+**Tests** : 15 tests synthétiques, dont l'égalité exacte entre une cohorte et `moteur_xsmom.backtest` sur des semaines closes (seule différence : le solde final que le backtest impute à sa dernière semaine). Les suites de la v1 restent vertes.
+
+**Essai à blanc sur le serveur** (13/11/2026, hors des fichiers officiels, cohortes démarrées le 06/11/2026) :
+- collecte initiale : 654 perpétuels, 633 880 jours, 787 appels publics, 328 s, 38 Mo ;
+- sélection identique à celle des archives sur les 7 dates du 06 au 12/11 (un seul nom éligible : CTUSDT, âge 37 à 42 jours, médiane 20,4 M USDT, tout près du seuil) ;
+- 16 226 volumes journaliers et 1 344 valeurs horaires (ouverture, clôture, plus haut et plus bas de marque) identiques aux archives, écart relatif maximal nul ;
+- 14 lignes jouées, aucun stop, aucun faux délistage ; mémoire de lecture ramenée de 793 à 277 Mo ; rejeu d'une semaine en 15 s.
+
+**Ce que l'essai montre sur la stratégie elle-même :** au 13/11/2026, l'univers est presque vide. Un seul nom passe les filtres, et la médiane de volume de CTUSDT (20,4 M USDT) frôle le seuil. Le flux de jeunes cotations crypto liquides est mince depuis août 2026 (5 nouveaux symboles collectés depuis le 15/08). Un papier lancé maintenant risque de compter beaucoup de semaines vides ou à un seul nom, et d'atteindre difficilement les 300 lignes de shorts exigées en 52 semaines. À trancher avant le gel : garder le critère des 300 lignes, ou le remplacer par une durée prolongée jusqu'à 300 lignes.
+
+**Reste avant le premier jour compté :**
+1. Accord pour installer la tâche horaire sur le serveur (`cron`, à :05 chaque heure), puis 3 jours à blanc.
+2. Décisions sur les points du § 3 de `PLAN_PAPIER_COHORTES.md` (montée en charge, tolérance du rejeu, facteurs de l'alpha, signal indicatif, filtres v2), sur la règle du signal manqué et sur le critère des 300 lignes.
+3. Ligne de journal de gel, avec l'empreinte du commit du module et la date du jour 0.

@@ -48,7 +48,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H23 | Réservé | 02/11/2026 | — | — | — |
 | H24 | Biais du longshot Polymarket (contrats 1 à 10 c) | 02/11/2026 | 0 | passe le tri sous conditions T2, T4, T6 ; fusion avec H25 | `recherche/TRI_H24_H25_POLYMARKET.md` |
 | H25 | Portage de quasi-certitude Polymarket (95 à 99 c, derniers jours) | 02/11/2026 | 0 | passe le tri, affaiblie (prime de risque probable) ; bloquée par T6 | `recherche/TRI_H24_H25_POLYMARKET.md` |
-| H12-bis | STRAT-06-bis : dérive des jeunes perpétuels, cohortes quotidiennes (1/7 par jour), verdict par le papier aveugle | 09/11/2026 | 4 (papier) | rouverte après rejet de la v1 au hors échantillon (E19 : Sharpe 1,398 < 1,72, borne basse de l'IC < 0) ; critères du papier à figer | `strategies/STRAT-20261102-06/FICHE_STRAT-06-BIS.md` |
+| H12-bis | STRAT-06-bis : dérive des jeunes perpétuels, cohortes quotidiennes (1/7 par jour), verdict par le papier aveugle | 09/11/2026 | 4 (papier) | rouverte après rejet de la v1 au hors échantillon (E19 : Sharpe 1,398 < 1,72, borne basse de l'IC < 0) ; critères du papier à figer ; **13/11 : module à 7 cohortes écrit et essayé à blanc** (données identiques aux archives), univers presque vide (un nom), critères du papier pas encore figés | `strategies/STRAT-20261102-06/FICHE_STRAT-06-BIS.md` |
 | H26 | Témoin « short de petites alts spéculatives couvert » (contrôle de taille et d'illiquidité de STRAT-06) | 05/11/2026 | 0 | à trier | `recherche/RECHERCHE_FONDAMENTALE_STRAT-06.md` § 6.3 |
 | H27 | Couverture moins chère que le perpétuel BTC | 05/11/2026 | 0 | à trier | idem |
 | H28 | Dérive selon le flottant et les calendriers de déblocage | 05/11/2026 | 0 | à trier, T4 élevé | idem |
