@@ -1,0 +1,1961 @@
+{
+ "horodatage_utc": "20261113T095028Z",
+ "regles": "aucun rendement, aucune valeur de volatilité implicite",
+ "A_source_liste_expiree": "appel direct",
+ "A_history_expired": {
+  "n_instruments": 125528,
+  "n_noms_distincts": 125528,
+  "doublons_de_nom": 0,
+  "premiere_echeance": "2016-07-15 15:00",
+  "derniere_echeance": "2026-11-17 08:00",
+  "echeances_futures_dans_la_liste": 18,
+  "creation_absente": 0,
+  "premiere_echeance_par_classe": {
+   "hebdomadaire": "2016-07-15 15:00",
+   "mensuelle": "2016-07-29 15:00",
+   "quotidienne": "2020-02-04 08:00",
+   "trimestrielle": "2016-09-30 15:00"
+  },
+  "classe_contre_settlement_period": {
+   "hebdomadaire / week": 23180,
+   "mensuelle / month": 5944,
+   "mensuelle / week": 280,
+   "quotidienne / day": 92172,
+   "quotidienne / month": 4,
+   "trimestrielle / month": 3826,
+   "trimestrielle / week": 122
+  },
+  "duree_de_vie_mediane_jours": {
+   "hebdomadaire": 22.0,
+   "mensuelle": 67.5,
+   "trimestrielle": 183.9,
+   "quotidienne": 3.0
+  },
+  "par_annee_d_echeance": {
+   "2016": {
+    "instruments": {
+     "hebdomadaire": 536,
+     "total": 758,
+     "mensuelle": 128,
+     "trimestrielle": 94
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 19,
+     "mensuelle": 4,
+     "trimestrielle": 2
+    },
+    "strikes_par_echeance_mediane": 13,
+    "strikes_par_echeance_max": 27
+   },
+   "2017": {
+    "instruments": {
+     "hebdomadaire": 848,
+     "total": 1610,
+     "mensuelle": 408,
+     "trimestrielle": 354
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 28,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 17.0,
+    "strikes_par_echeance_max": 47
+   },
+   "2018": {
+    "instruments": {
+     "hebdomadaire": 960,
+     "total": 1548,
+     "mensuelle": 332,
+     "trimestrielle": 256
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 12.0,
+    "strikes_par_echeance_max": 35
+   },
+   "2019": {
+    "instruments": {
+     "hebdomadaire": 1356,
+     "total": 2074,
+     "mensuelle": 380,
+     "trimestrielle": 338
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 18.5,
+    "strikes_par_echeance_max": 47
+   },
+   "2020": {
+    "instruments": {
+     "hebdomadaire": 2100,
+     "total": 13194,
+     "mensuelle": 418,
+     "quotidienne": 10394,
+     "trimestrielle": 282
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "quotidienne": 285,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 18,
+    "strikes_par_echeance_max": 48
+   },
+   "2021": {
+    "instruments": {
+     "hebdomadaire": 2412,
+     "total": 13734,
+     "quotidienne": 10440,
+     "mensuelle": 520,
+     "trimestrielle": 362
+    },
+    "echeances_distinctes": {
+     "hebdomadaire": 41,
+     "quotidienne": 312,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 17,
+    "strikes_par_echeance_max": 48
+   },
+   "2022": {
+    "instruments": {
+     "quotidienne": 9048,
+     "total": 12388,
+     "hebdomadaire": 2408,
+     "mensuelle": 584,
+     "trimestrielle": 348
+    },
+    "echeances_distinctes": {
+     "quotidienne": 313,
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 15,
+    "strikes_par_echeance_max": 49
+   },
+   "2023": {
+    "instruments": {
+     "quotidienne": 13970,
+     "total": 19022,
+     "hebdomadaire": 3930,
+     "mensuelle": 710,
+     "trimestrielle": 412
+    },
+    "echeances_distinctes": {
+     "quotidienne": 314,
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 20.0,
+    "strikes_par_echeance_max": 71
+   },
+   "2024": {
+    "instruments": {
+     "quotidienne": 19728,
+     "total": 24698,
+     "hebdomadaire": 3370,
+     "mensuelle": 1004,
+     "trimestrielle": 596
+    },
+    "echeances_distinctes": {
+     "quotidienne": 314,
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 30.5,
+    "strikes_par_echeance_max": 88
+   },
+   "2025": {
+    "instruments": {
+     "quotidienne": 14866,
+     "total": 19300,
+     "hebdomadaire": 3018,
+     "mensuelle": 940,
+     "trimestrielle": 476
+    },
+    "echeances_distinctes": {
+     "quotidienne": 313,
+     "hebdomadaire": 40,
+     "mensuelle": 8,
+     "trimestrielle": 4
+    },
+    "strikes_par_echeance_mediane": 26,
+    "strikes_par_echeance_max": 80
+   },
+   "2026": {
+    "instruments": {
+     "quotidienne": 13730,
+     "total": 17202,
+     "hebdomadaire": 2242,
+     "mensuelle": 800,
+     "trimestrielle": 430
+    },
+    "echeances_distinctes": {
+     "quotidienne": 272,
+     "hebdomadaire": 36,
+     "mensuelle": 7,
+     "trimestrielle": 3
+    },
+    "strikes_par_echeance_mediane": 27.0,
+    "strikes_par_echeance_max": 76
+   }
+  },
+  "champs_echantillon": [
+   "base_currency",
+   "block_trade_commission",
+   "block_trade_min_trade_amount",
+   "block_trade_tick_size",
+   "contract_size",
+   "counter_currency",
+   "creation_timestamp",
+   "expiration_timestamp",
+   "instrument_id",
+   "instrument_name",
+   "is_active",
+   "kind",
+   "maker_commission",
+   "min_trade_amount",
+   "option_type",
+   "price_index",
+   "quote_currency",
+   "rfq",
+   "settlement_currency",
+   "settlement_period",
+   "strike",
+   "taker_commission",
+   "tick_size",
+   "tick_size_steps"
+  ],
+  "echeances_futures_detail": {
+   "2026-11-17 08:00 is_active=False state=None": 18
+  }
+ },
+ "A_www_expired": {
+  "n": 68,
+  "premiere_echeance": "2026-11-13 08:00",
+  "derniere_echeance": "2026-11-13 08:00",
+  "presents_dans_history": 68
+ },
+ "A_www_actifs": {
+  "n_instruments": 974,
+  "n_noms_distincts": 974,
+  "doublons_de_nom": 0,
+  "premiere_echeance": "2026-11-14 08:00",
+  "derniere_echeance": "2027-09-24 08:00",
+  "echeances_futures_dans_la_liste": 974,
+  "creation_absente": 0,
+  "premiere_echeance_par_classe": {
+   "hebdomadaire": "2026-11-20 08:00",
+   "mensuelle": "2026-11-27 08:00",
+   "quotidienne": "2026-11-14 08:00",
+   "trimestrielle": "2026-12-25 08:00"
+  },
+  "classe_contre_settlement_period": {
+   "hebdomadaire / week": 104,
+   "mensuelle / month": 202,
+   "quotidienne / day": 234,
+   "trimestrielle / month": 434
+  },
+  "duree_de_vie_mediane_jours": {
+   "quotidienne": 4.0,
+   "hebdomadaire": 22.0,
+   "mensuelle": 92.0,
+   "trimestrielle": 365.0
+  },
+  "par_annee_d_echeance": {
+   "2026": {
+    "instruments": {
+     "quotidienne": 234,
+     "total": 558,
+     "hebdomadaire": 104,
+     "mensuelle": 100,
+     "trimestrielle": 120
+    },
+    "echeances_distinctes": {
+     "quotidienne": 4,
+     "hebdomadaire": 2,
+     "mensuelle": 1,
+     "trimestrielle": 1
+    },
+    "strikes_par_echeance_mediane": 31.5,
+    "strikes_par_echeance_max": 60
+   },
+   "2027": {
+    "instruments": {
+     "mensuelle": 102,
+     "total": 416,
+     "trimestrielle": 314
+    },
+    "echeances_distinctes": {
+     "mensuelle": 1,
+     "trimestrielle": 3
+    },
+    "strikes_par_echeance_mediane": 51.5,
+    "strikes_par_echeance_max": 54
+   }
+  },
+  "champs_echantillon": [
+   "base_currency",
+   "base_currency_uuid",
+   "block_trade_commission",
+   "block_trade_min_trade_amount",
+   "block_trade_tick_size",
+   "contract_size",
+   "counter_currency",
+   "creation_timestamp",
+   "expiration_timestamp",
+   "index_id",
+   "instrument_id",
+   "instrument_name",
+   "instrument_type",
+   "is_active",
+   "kind",
+   "lot_size",
+   "maker_commission",
+   "min_trade_amount",
+   "option_type",
+   "price_index",
+   "product_group",
+   "quote_currency",
+   "quote_currency_uuid",
+   "settlement_currency",
+   "settlement_period",
+   "state",
+   "strike",
+   "taker_commission",
+   "tick_size",
+   "tick_size_steps",
+   "underlying_type"
+  ],
+  "presents_dans_history": 18
+ },
+ "E_prix_de_livraison_btc_usd": {
+  "n_jours": 2668,
+  "records_total": 2668,
+  "premier_jour": "2016-03-18",
+  "dernier_jour": "2026-11-13",
+  "champs": [
+   "date",
+   "delivery_price"
+  ]
+ },
+ "A_couverture_hebdomadaire": {
+  "par_annee": {
+   "2019": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 46,
+    "avec_echeance_21_49j_cotee": 49
+   },
+   "2020": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 50,
+    "avec_echeance_21_49j_cotee": 52
+   },
+   "2021": {
+    "vendredis": 53,
+    "avec_echeance_5_9j_cotee": 53,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 51,
+    "avec_echeance_21_49j_cotee": 53
+   },
+   "2022": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 52,
+    "avec_echeance_21_49j_cotee": 52
+   },
+   "2023": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 52,
+    "avec_echeance_21_49j_cotee": 52
+   },
+   "2024": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 52,
+    "avec_echeance_21_49j_cotee": 52
+   },
+   "2025": {
+    "vendredis": 52,
+    "avec_echeance_5_9j_cotee": 52,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 51,
+    "avec_echeance_21_49j_cotee": 52
+   },
+   "2026": {
+    "vendredis": 44,
+    "avec_echeance_5_9j_cotee": 44,
+    "echeance_5_9j_avec_2puts_2calls_3a15pct_et_atm": 44,
+    "avec_echeance_21_49j_cotee": 44
+   }
+  },
+  "vendredis_sans_echeance_5_9j": []
+ },
+ "B_premiere_transaction_options_btc": "2016-11-29 08:23",
+ "B_par_instrument_2016": {
+  "ok": true,
+  "n": 0,
+  "has_more": false,
+  "cles": []
+ },
+ "B_www_meme_requete_2022": {
+  "ok": true,
+  "n": 0
+ },
+ "B_par_instrument_2019": {
+  "instrument": "BTC-28JUN19-7500-P",
+  "n_premiere_page": 658,
+  "has_more": false,
+  "premiere": "2019-05-11 11:58"
+ },
+ "B_jours": [
+  {
+   "jour": "2019-06-12",
+   "transactions": 664,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2019-06-12 00:01",
+   "derniere": "2019-06-12 23:52",
+   "champs_presence": {
+    "amount": "664/664",
+    "direction": "664/664",
+    "index_price": "664/664",
+    "instrument_name": "664/664",
+    "iv": "664/664",
+    "liquidation": "4/664",
+    "mark_price": "664/664",
+    "price": "664/664",
+    "tick_direction": "664/664",
+    "timestamp": "664/664",
+    "trade_id": "664/664",
+    "trade_seq": "664/664"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 13,
+   "iv_absente": 0,
+   "transactions_de_bloc": 0,
+   "liquidations": 4,
+   "combos": 0,
+   "instruments_distincts": 105,
+   "echeances_distinctes": 6,
+   "strikes_distincts": 28,
+   "par_tranche_echeance": {
+    ">=100j": 83,
+    "10-40j": 201,
+    "1-3j": 213,
+    "3-10j": 128,
+    "40-100j": 39
+   },
+   "par_tranche_monnaie": {
+    "15-30%": 97,
+    "3-15%": 332,
+    "|ln K/S|<3%": 173,
+    ">=30%": 62
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 70,
+    "strikes_distincts": 4,
+    "heures_avec_put": 10,
+    "heures_avec_call": 16,
+    "heures_avec_put_et_call": 10
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 26,
+    "strikes_3_10j": 1
+   },
+   "pages": 1
+  },
+  {
+   "jour": "2021-06-16",
+   "transactions": 5381,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2021-06-16 00:00",
+   "derniere": "2021-06-16 23:58",
+   "champs_presence": {
+    "amount": "5381/5381",
+    "block_trade_id": "72/5381",
+    "direction": "5381/5381",
+    "index_price": "5381/5381",
+    "instrument_name": "5381/5381",
+    "iv": "5381/5381",
+    "liquidation": "1/5381",
+    "mark_price": "5381/5381",
+    "price": "5381/5381",
+    "tick_direction": "5381/5381",
+    "timestamp": "5381/5381",
+    "trade_id": "5381/5381",
+    "trade_seq": "5381/5381"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 20,
+   "iv_absente": 0,
+   "transactions_de_bloc": 72,
+   "liquidations": 1,
+   "combos": 0,
+   "instruments_distincts": 208,
+   "echeances_distinctes": 10,
+   "strikes_distincts": 47,
+   "par_tranche_echeance": {
+    "1-3j": 1276,
+    ">=100j": 168,
+    "40-100j": 1172,
+    "<1j": 914,
+    "3-10j": 1292,
+    "10-40j": 559
+   },
+   "par_tranche_monnaie": {
+    "3-15%": 2142,
+    ">=30%": 923,
+    "15-30%": 1070,
+    "|ln K/S|<3%": 1246
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 388,
+    "strikes_distincts": 7,
+    "heures_avec_put": 22,
+    "heures_avec_call": 20,
+    "heures_avec_put_et_call": 19
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 462,
+    "strikes_3_10j": 13
+   },
+   "pages": 6
+  },
+  {
+   "jour": "2022-05-12",
+   "transactions": 28258,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2022-05-12 00:00",
+   "derniere": "2022-05-12 23:59",
+   "champs_presence": {
+    "amount": "28258/28258",
+    "block_trade_id": "141/28258",
+    "direction": "28258/28258",
+    "index_price": "28258/28258",
+    "instrument_name": "28258/28258",
+    "iv": "28258/28258",
+    "liquidation": "766/28258",
+    "mark_price": "28258/28258",
+    "price": "28258/28258",
+    "tick_direction": "28258/28258",
+    "timestamp": "28258/28258",
+    "trade_id": "28258/28258",
+    "trade_seq": "28258/28258"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 168,
+   "iv_absente": 0,
+   "transactions_de_bloc": 141,
+   "liquidations": 766,
+   "combos": 0,
+   "instruments_distincts": 392,
+   "echeances_distinctes": 11,
+   "strikes_distincts": 51,
+   "par_tranche_echeance": {
+    "1-3j": 2276,
+    ">=100j": 4607,
+    "3-10j": 4381,
+    "40-100j": 8713,
+    "10-40j": 5724,
+    "<1j": 2557
+   },
+   "par_tranche_monnaie": {
+    "15-30%": 5328,
+    ">=30%": 9811,
+    "3-15%": 9683,
+    "|ln K/S|<3%": 3436
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 1569,
+    "strikes_distincts": 11,
+    "heures_avec_put": 24,
+    "heures_avec_call": 24,
+    "heures_avec_put_et_call": 24
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 4258,
+    "strikes_3_10j": 24
+   },
+   "pages": 29
+  },
+  {
+   "jour": "2023-03-08",
+   "transactions": 6489,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2023-03-08 00:00",
+   "derniere": "2023-03-08 23:59",
+   "champs_presence": {
+    "amount": "6489/6489",
+    "block_trade_id": "203/6489",
+    "combo_id": "158/6489",
+    "direction": "6489/6489",
+    "index_price": "6489/6489",
+    "instrument_name": "6489/6489",
+    "iv": "6489/6489",
+    "mark_price": "6489/6489",
+    "price": "6489/6489",
+    "tick_direction": "6489/6489",
+    "timestamp": "6489/6489",
+    "trade_id": "6489/6489",
+    "trade_seq": "6489/6489"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "combo_id": [
+     "str"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 7,
+   "iv_absente": 0,
+   "transactions_de_bloc": 203,
+   "liquidations": 0,
+   "combos": 158,
+   "instruments_distincts": 265,
+   "echeances_distinctes": 11,
+   "strikes_distincts": 48,
+   "par_tranche_echeance": {
+    "3-10j": 1036,
+    "1-3j": 1574,
+    "10-40j": 1709,
+    "40-100j": 651,
+    ">=100j": 247,
+    "<1j": 1272
+   },
+   "par_tranche_monnaie": {
+    "|ln K/S|<3%": 3228,
+    "15-30%": 479,
+    "3-15%": 2488,
+    ">=30%": 294
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 456,
+    "strikes_distincts": 13,
+    "heures_avec_put": 21,
+    "heures_avec_call": 24,
+    "heures_avec_put_et_call": 21
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 856,
+    "strikes_3_10j": 14
+   },
+   "pages": 7
+  },
+  {
+   "jour": "2024-01-17",
+   "transactions": 10329,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2024-01-17 00:00",
+   "derniere": "2024-01-17 23:59",
+   "champs_presence": {
+    "amount": "10329/10329",
+    "block_trade_id": "200/10329",
+    "block_trade_leg_count": "200/10329",
+    "combo_id": "205/10329",
+    "combo_trade_id": "29/10329",
+    "contracts": "10329/10329",
+    "direction": "10329/10329",
+    "index_price": "10329/10329",
+    "instrument_name": "10329/10329",
+    "iv": "10329/10329",
+    "liquidation": "6/10329",
+    "mark_price": "10329/10329",
+    "price": "10329/10329",
+    "tick_direction": "10329/10329",
+    "timestamp": "10329/10329",
+    "trade_id": "10329/10329",
+    "trade_seq": "10329/10329"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "block_trade_leg_count": [
+     "int"
+    ],
+    "combo_id": [
+     "str"
+    ],
+    "combo_trade_id": [
+     "str"
+    ],
+    "contracts": [
+     "float"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 34,
+   "iv_absente": 0,
+   "transactions_de_bloc": 200,
+   "liquidations": 6,
+   "combos": 205,
+   "instruments_distincts": 422,
+   "echeances_distinctes": 11,
+   "strikes_distincts": 84,
+   "par_tranche_echeance": {
+    "1-3j": 2630,
+    "<1j": 2907,
+    "10-40j": 1587,
+    "40-100j": 395,
+    "3-10j": 2391,
+    ">=100j": 419
+   },
+   "par_tranche_monnaie": {
+    "3-15%": 5153,
+    "|ln K/S|<3%": 3665,
+    "15-30%": 923,
+    ">=30%": 588
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 1357,
+    "strikes_distincts": 12,
+    "heures_avec_put": 23,
+    "heures_avec_call": 24,
+    "heures_avec_put_et_call": 23
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 1988,
+    "strikes_3_10j": 20
+   },
+   "pages": 11
+  },
+  {
+   "jour": "2025-10-10",
+   "transactions": 41233,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2025-10-10 00:00",
+   "derniere": "2025-10-10 23:59",
+   "champs_presence": {
+    "amount": "41233/41233",
+    "block_rfq_id": "122/41233",
+    "block_trade_id": "764/41233",
+    "block_trade_leg_count": "764/41233",
+    "combo_id": "1073/41233",
+    "combo_trade_id": "474/41233",
+    "contracts": "41233/41233",
+    "direction": "41233/41233",
+    "index_price": "41233/41233",
+    "instrument_name": "41233/41233",
+    "iv": "41233/41233",
+    "liquidation": "1934/41233",
+    "mark_price": "41233/41233",
+    "price": "41233/41233",
+    "tick_direction": "41233/41233",
+    "timestamp": "41233/41233",
+    "trade_id": "41233/41233",
+    "trade_seq": "41233/41233"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_rfq_id": [
+     "int"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "block_trade_leg_count": [
+     "int"
+    ],
+    "combo_id": [
+     "str"
+    ],
+    "combo_trade_id": [
+     "str"
+    ],
+    "contracts": [
+     "float"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 589,
+   "iv_absente": 0,
+   "transactions_de_bloc": 764,
+   "liquidations": 1934,
+   "combos": 1073,
+   "instruments_distincts": 691,
+   "echeances_distinctes": 13,
+   "strikes_distincts": 76,
+   "par_tranche_echeance": {
+    "<1j": 7430,
+    "3-10j": 7392,
+    ">=100j": 1343,
+    "1-3j": 6902,
+    "40-100j": 7379,
+    "10-40j": 10787
+   },
+   "par_tranche_monnaie": {
+    "|ln K/S|<3%": 18225,
+    ">=30%": 2195,
+    "3-15%": 17582,
+    "15-30%": 3231
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 3171,
+    "strikes_distincts": 35,
+    "heures_avec_put": 24,
+    "heures_avec_call": 24,
+    "heures_avec_put_et_call": 24
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 2262,
+    "strikes_3_10j": 29
+   },
+   "pages": 42
+  },
+  {
+   "jour": "2026-11-11",
+   "transactions": 5465,
+   "tronque_par_plafond_de_pages": false,
+   "premiere": "2026-11-11 00:00",
+   "derniere": "2026-11-11 23:59",
+   "champs_presence": {
+    "amount": "5465/5465",
+    "block_rfq_id": "94/5465",
+    "block_trade_id": "180/5465",
+    "block_trade_leg_count": "180/5465",
+    "combo_id": "134/5465",
+    "combo_trade_id": "42/5465",
+    "contracts": "5465/5465",
+    "direction": "5465/5465",
+    "index_price": "5465/5465",
+    "instrument_name": "5465/5465",
+    "iv": "5465/5465",
+    "liquidation": "10/5465",
+    "mark_price": "5465/5465",
+    "price": "5465/5465",
+    "tick_direction": "5465/5465",
+    "timestamp": "5465/5465",
+    "trade_id": "5465/5465",
+    "trade_seq": "5465/5465"
+   },
+   "champs_types": {
+    "amount": [
+     "float"
+    ],
+    "block_rfq_id": [
+     "int"
+    ],
+    "block_trade_id": [
+     "str"
+    ],
+    "block_trade_leg_count": [
+     "int"
+    ],
+    "combo_id": [
+     "str"
+    ],
+    "combo_trade_id": [
+     "str"
+    ],
+    "contracts": [
+     "float"
+    ],
+    "direction": [
+     "str"
+    ],
+    "index_price": [
+     "float"
+    ],
+    "instrument_name": [
+     "str"
+    ],
+    "iv": [
+     "float"
+    ],
+    "liquidation": [
+     "str"
+    ],
+    "mark_price": [
+     "float"
+    ],
+    "price": [
+     "float"
+    ],
+    "tick_direction": [
+     "int"
+    ],
+    "timestamp": [
+     "int"
+    ],
+    "trade_id": [
+     "str"
+    ],
+    "trade_seq": [
+     "int"
+    ]
+   },
+   "iv_nulle": 10,
+   "iv_absente": 0,
+   "transactions_de_bloc": 180,
+   "liquidations": 10,
+   "combos": 134,
+   "instruments_distincts": 454,
+   "echeances_distinctes": 12,
+   "strikes_distincts": 73,
+   "par_tranche_echeance": {
+    "<1j": 1224,
+    "40-100j": 722,
+    "1-3j": 1657,
+    "3-10j": 557,
+    "10-40j": 824,
+    ">=100j": 481
+   },
+   "par_tranche_monnaie": {
+    "|ln K/S|<3%": 2454,
+    "15-30%": 495,
+    "3-15%": 2216,
+    ">=30%": 300
+   },
+   "heures_avec_transaction": 24,
+   "cible_strangle_3_10j_3_15pct": {
+    "transactions": 319,
+    "strikes_distincts": 21,
+    "heures_avec_put": 24,
+    "heures_avec_call": 20,
+    "heures_avec_put_et_call": 20
+   },
+   "fenetre_07_09_utc": {
+    "transactions": 594,
+    "strikes_3_10j": 17
+   },
+   "pages": 6
+  }
+ ],
+ "C_actif_creation": "2025-12-25 08:00",
+ "C_tests_cotations": [
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "www.deribit.com",
+   "methode": "ticker",
+   "ok": false,
+   "erreur": {
+    "code": -32602,
+    "data": {
+     "reason": "instrument is not active",
+     "param": "instrument_name"
+    },
+    "message": "Invalid params"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "www.deribit.com",
+   "methode": "get_order_book",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "ask_iv",
+     "asks",
+     "best_ask_amount",
+     "best_ask_price",
+     "best_bid_amount",
+     "best_bid_price",
+     "bid_iv",
+     "bids",
+     "change_id",
+     "estimated_delivery_price",
+     "greeks",
+     "index_price",
+     "instrument_name",
+     "interest_rate",
+     "last_price",
+     "mark_iv",
+     "mark_price",
+     "max_price",
+     "min_price",
+     "open_interest",
+     "settlement_price",
+     "state",
+     "stats",
+     "timestamp",
+     "underlying_index",
+     "underlying_price"
+    ],
+    "longueur_bids": 0,
+    "longueur_asks": 0,
+    "horodatage_de_l_objet": "2024-12-27 08:00",
+    "state": "closed",
+    "champ_mark_iv": "float",
+    "champ_bid_iv": "float",
+    "champ_ask_iv": "float",
+    "champ_greeks": "dict",
+    "champ_best_bid_price": "float",
+    "champ_underlying_price": "float"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "www.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": false,
+   "erreur": {
+    "code": -32602,
+    "data": {
+     "reason": "instrument is not active",
+     "param": "instrument_name"
+    },
+    "message": "Invalid params"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "www.deribit.com",
+   "methode": "get_tradingview_chart_data",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "close",
+     "cost",
+     "high",
+     "low",
+     "open",
+     "status",
+     "ticks",
+     "volume"
+    ],
+    "longueur_ticks": 721,
+    "premier_horodatage": "2024-11-27 07:00",
+    "dernier_horodatage": "2024-12-27 07:00",
+    "status": "ok",
+    "ticks_avec_volume_non_nul": 580
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "www.deribit.com",
+   "methode": "get_book_summary_by_instrument",
+   "ok": false,
+   "erreur": {
+    "code": -32602,
+    "data": {
+     "reason": "instrument is not open",
+     "param": "instrument_name"
+    },
+    "message": "Invalid params"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "history.deribit.com",
+   "methode": "ticker",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "history.deribit.com",
+   "methode": "get_order_book",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "history.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "history.deribit.com",
+   "methode": "get_tradingview_chart_data",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "close",
+     "cost",
+     "high",
+     "low",
+     "open",
+     "status",
+     "ticks",
+     "volume"
+    ],
+    "longueur_ticks": 721,
+    "premier_horodatage": "2024-11-27 07:00",
+    "dernier_horodatage": "2024-12-27 07:00",
+    "status": "ok",
+    "ticks_avec_volume_non_nul": 580
+   }
+  },
+  {
+   "instrument": "BTC-27DEC24-100000-C",
+   "hote": "history.deribit.com",
+   "methode": "get_book_summary_by_instrument",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "www.deribit.com",
+   "methode": "ticker",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "ask_iv",
+     "best_ask_amount",
+     "best_ask_price",
+     "best_bid_amount",
+     "best_bid_price",
+     "bid_iv",
+     "delivery_price",
+     "estimated_delivery_price",
+     "greeks",
+     "index_price",
+     "instrument_name",
+     "interest_rate",
+     "last_price",
+     "mark_iv",
+     "mark_price",
+     "max_price",
+     "min_price",
+     "open_interest",
+     "state",
+     "stats",
+     "timestamp",
+     "underlying_index",
+     "underlying_price"
+    ],
+    "horodatage_de_l_objet": "2026-11-13 08:00",
+    "state": "delivered",
+    "champ_mark_iv": "float",
+    "champ_bid_iv": "float",
+    "champ_ask_iv": "float",
+    "champ_greeks": "dict",
+    "champ_best_bid_price": "float",
+    "champ_underlying_price": "float"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "www.deribit.com",
+   "methode": "get_order_book",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "ask_iv",
+     "asks",
+     "best_ask_amount",
+     "best_ask_price",
+     "best_bid_amount",
+     "best_bid_price",
+     "bid_iv",
+     "bids",
+     "change_id",
+     "delivery_price",
+     "estimated_delivery_price",
+     "greeks",
+     "index_price",
+     "instrument_name",
+     "interest_rate",
+     "last_price",
+     "mark_iv",
+     "mark_price",
+     "max_price",
+     "min_price",
+     "open_interest",
+     "state",
+     "stats",
+     "timestamp",
+     "underlying_index",
+     "underlying_price"
+    ],
+    "longueur_bids": 0,
+    "longueur_asks": 0,
+    "horodatage_de_l_objet": "2026-11-13 08:00",
+    "state": "delivered",
+    "champ_mark_iv": "float",
+    "champ_bid_iv": "float",
+    "champ_ask_iv": "float",
+    "champ_greeks": "dict",
+    "champ_best_bid_price": "float",
+    "champ_underlying_price": "float"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "www.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": true,
+   "forme": {
+    "type": "liste",
+    "longueur": 0
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "www.deribit.com",
+   "methode": "get_tradingview_chart_data",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "close",
+     "cost",
+     "high",
+     "low",
+     "open",
+     "status",
+     "ticks",
+     "volume"
+    ],
+    "longueur_ticks": 345,
+    "premier_horodatage": "2026-10-30 01:00",
+    "dernier_horodatage": "2026-11-13 09:00",
+    "status": "ok",
+    "ticks_avec_volume_non_nul": 138
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "www.deribit.com",
+   "methode": "get_book_summary_by_instrument",
+   "ok": false,
+   "erreur": {
+    "code": -32602,
+    "data": {
+     "reason": "instrument is not open",
+     "param": "instrument_name"
+    },
+    "message": "Invalid params"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "history.deribit.com",
+   "methode": "ticker",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "history.deribit.com",
+   "methode": "get_order_book",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "history.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "history.deribit.com",
+   "methode": "get_tradingview_chart_data",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "close",
+     "cost",
+     "high",
+     "low",
+     "open",
+     "status",
+     "ticks",
+     "volume"
+    ],
+    "longueur_ticks": 345,
+    "premier_horodatage": "2026-10-30 01:00",
+    "dernier_horodatage": "2026-11-13 09:00",
+    "status": "ok",
+    "ticks_avec_volume_non_nul": 138
+   }
+  },
+  {
+   "instrument": "BTC-13NOV26-68000-P",
+   "hote": "history.deribit.com",
+   "methode": "get_book_summary_by_instrument",
+   "ok": false,
+   "erreur": {
+    "message": "réponse non JSON",
+    "texte": "Bad request"
+   }
+  },
+  {
+   "instrument": "BTC-25DEC26-70000-C (actif)",
+   "hote": "www.deribit.com",
+   "methode": "ticker",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "ask_iv",
+     "best_ask_amount",
+     "best_ask_price",
+     "best_bid_amount",
+     "best_bid_price",
+     "bid_iv",
+     "estimated_delivery_price",
+     "greeks",
+     "index_price",
+     "instrument_name",
+     "interest_rate",
+     "last_price",
+     "mark_iv",
+     "mark_price",
+     "max_price",
+     "min_price",
+     "open_interest",
+     "settlement_price",
+     "state",
+     "stats",
+     "timestamp",
+     "underlying_index",
+     "underlying_price"
+    ],
+    "horodatage_de_l_objet": "2026-11-13 09:52",
+    "state": "open",
+    "champ_mark_iv": "float",
+    "champ_bid_iv": "float",
+    "champ_ask_iv": "float",
+    "champ_greeks": "dict",
+    "champ_best_bid_price": "float",
+    "champ_underlying_price": "float"
+   }
+  },
+  {
+   "instrument": "BTC-25DEC26-70000-C (actif, depuis la création)",
+   "hote": "www.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": true,
+   "forme": {
+    "type": "liste",
+    "longueur": 241,
+    "element": "liste de 2 nombres",
+    "premier_horodatage": "2026-11-13 09:46",
+    "dernier_horodatage": "2026-11-13 09:50"
+   }
+  },
+  {
+   "instrument": "BTC-25DEC26-70000-C (actif, 10 derniers jours)",
+   "hote": "www.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": true,
+   "forme": {
+    "type": "liste",
+    "longueur": 241,
+    "element": "liste de 2 nombres",
+    "premier_horodatage": "2026-11-13 09:46",
+    "dernier_horodatage": "2026-11-13 09:50"
+   }
+  },
+  {
+   "instrument": "BTC-25DEC26-70000-C (actif, dernier jour)",
+   "hote": "www.deribit.com",
+   "methode": "get_mark_price_history",
+   "ok": true,
+   "forme": {
+    "type": "liste",
+    "longueur": 241,
+    "element": "liste de 2 nombres",
+    "premier_horodatage": "2026-11-13 09:46",
+    "dernier_horodatage": "2026-11-13 09:50"
+   }
+  },
+  {
+   "instrument": "BTC-25DEC26-70000-C (actif)",
+   "hote": "www.deribit.com",
+   "methode": "get_tradingview_chart_data",
+   "ok": true,
+   "forme": {
+    "type": "objet",
+    "cles": [
+     "close",
+     "cost",
+     "high",
+     "low",
+     "open",
+     "status",
+     "ticks",
+     "volume"
+    ],
+    "longueur_ticks": 5001,
+    "premier_horodatage": "2026-04-19 01:00",
+    "dernier_horodatage": "2026-11-13 09:00",
+    "status": "ok",
+    "ticks_avec_volume_non_nul": 386
+   }
+  },
+  {
+   "instrument": "toutes options BTC (instantané)",
+   "hote": "www.deribit.com",
+   "methode": "get_book_summary_by_currency",
+   "ok": true,
+   "forme": {
+    "type": "liste",
+    "longueur": 974,
+    "cles": [
+     "ask_price",
+     "base_currency",
+     "bid_price",
+     "creation_timestamp",
+     "estimated_delivery_price",
+     "high",
+     "instrument_name",
+     "interest_rate",
+     "last",
+     "low",
+     "mark_iv",
+     "mark_price",
+     "mid_price",
+     "open_interest",
+     "price_change",
+     "quote_currency",
+     "underlying_index",
+     "underlying_price",
+     "volume",
+     "volume_delayed",
+     "volume_delayed_usd",
+     "volume_realtime",
+     "volume_realtime_usd",
+     "volume_usd"
+    ]
+   }
+  }
+ ],
+ "D_dvol_1D": {
+  "points": 2061,
+  "premier": "2021-03-24 00:00",
+  "dernier": "2026-11-13 00:00",
+  "pages": 3,
+  "element": "horodatage, ouverture, haut, bas, clôture",
+  "trous_de_plus_d_un_jour": 0
+ },
+ "D_dvol_3600s_le_2021-03-24": {
+  "type": "objet",
+  "cles": [
+   "continuation",
+   "data"
+  ],
+  "longueur_data": 25,
+  "premier_horodatage": "2021-03-24 00:00",
+  "dernier_horodatage": "2021-03-25 00:00"
+ },
+ "D_dvol_60s_le_2021-05-19": {
+  "type": "objet",
+  "cles": [
+   "continuation",
+   "data"
+  ],
+  "longueur_data": 0
+ },
+ "D_dvol_1s_le_2021-05-19": {
+  "type": "objet",
+  "cles": [
+   "continuation",
+   "data"
+  ],
+  "longueur_data": 0
+ },
+ "D_volatilite_historique": {
+  "type": "liste",
+  "longueur": 384,
+  "element": "liste de 2 nombres",
+  "premier_horodatage": "2026-10-28 12:00",
+  "dernier_horodatage": "2026-11-13 10:00"
+ },
+ "E_bougies_1D_BTC-PERPETUAL_www.deribit.com": {
+  "type": "objet",
+  "cles": [
+   "close",
+   "cost",
+   "high",
+   "low",
+   "open",
+   "status",
+   "ticks",
+   "volume"
+  ],
+  "longueur_ticks": 3014,
+  "premier_horodatage": "2018-08-14 08:00",
+  "dernier_horodatage": "2026-11-13 08:00",
+  "status": "ok",
+  "ticks_avec_volume_non_nul": 3014
+ },
+ "E_bougies_1D_BTC-25JUN21_www.deribit.com": {
+  "type": "objet",
+  "cles": [
+   "close",
+   "cost",
+   "high",
+   "low",
+   "open",
+   "status",
+   "ticks",
+   "volume"
+  ],
+  "longueur_ticks": 2241,
+  "premier_horodatage": "2020-09-25 08:00",
+  "dernier_horodatage": "2026-11-13 08:00",
+  "status": "ok",
+  "ticks_avec_volume_non_nul": 273
+ },
+ "E_bougies_1D_BTC-25JUN21_history.deribit.com": {
+  "type": "objet",
+  "cles": [
+   "close",
+   "cost",
+   "high",
+   "low",
+   "open",
+   "status",
+   "ticks",
+   "volume"
+  ],
+  "longueur_ticks": 2241,
+  "premier_horodatage": "2020-09-25 08:00",
+  "dernier_horodatage": "2026-11-13 08:00",
+  "status": "ok",
+  "ticks_avec_volume_non_nul": 273
+ },
+ "E_bougies_1min_BTC-PERPETUAL_2019-06-12": {
+  "type": "objet",
+  "cles": [
+   "close",
+   "cost",
+   "high",
+   "low",
+   "open",
+   "status",
+   "ticks",
+   "volume"
+  ],
+  "longueur_ticks": 1441,
+  "premier_horodatage": "2019-06-12 00:00",
+  "dernier_horodatage": "2019-06-13 00:00",
+  "status": "ok",
+  "ticks_avec_volume_non_nul": 1381
+ },
+ "E_indice_btc_usd_range_all": {
+  "type": "liste",
+  "longueur": 15580,
+  "element": "liste de 2 nombres",
+  "premier_horodatage": "2016-03-15 18:00",
+  "dernier_horodatage": "2026-11-13 12:00"
+ },
+ "appels": {
+  "n": 174,
+  "erreurs": 12,
+  "par_methode": {
+   "history.deribit.com get_book_summary_by_instrument ok=False": 2,
+   "history.deribit.com get_instruments ok=True": 1,
+   "history.deribit.com get_last_trades_by_currency_and_time ok=True": 103,
+   "history.deribit.com get_last_trades_by_instrument_and_time ok=True": 2,
+   "history.deribit.com get_mark_price_history ok=False": 2,
+   "history.deribit.com get_order_book ok=False": 2,
+   "history.deribit.com get_tradingview_chart_data ok=True": 3,
+   "history.deribit.com ticker ok=False": 2,
+   "www.deribit.com get_book_summary_by_currency ok=True": 1,
+   "www.deribit.com get_book_summary_by_instrument ok=False": 2,
+   "www.deribit.com get_delivery_prices ok=True": 27,
+   "www.deribit.com get_historical_volatility ok=True": 1,
+   "www.deribit.com get_index_chart_data ok=True": 1,
+   "www.deribit.com get_instruments ok=True": 2,
+   "www.deribit.com get_last_trades_by_currency_and_time ok=True": 1,
+   "www.deribit.com get_mark_price_history ok=False": 1,
+   "www.deribit.com get_mark_price_history ok=True": 4,
+   "www.deribit.com get_order_book ok=True": 2,
+   "www.deribit.com get_tradingview_chart_data ok=True": 6,
+   "www.deribit.com get_volatility_index_data ok=True": 6,
+   "www.deribit.com ticker ok=False": 1,
+   "www.deribit.com ticker ok=True": 2
+  },
+  "octets_total": 105200176,
+  "erreurs_detail": [
+   {
+    "hote": "www.deribit.com",
+    "methode": "ticker",
+    "http": 400,
+    "erreur": {
+     "code": -32602,
+     "data": {
+      "reason": "instrument is not active",
+      "param": "instrument_name"
+     },
+     "message": "Invalid params"
+    }
+   },
+   {
+    "hote": "www.deribit.com",
+    "methode": "get_mark_price_history",
+    "http": 400,
+    "erreur": {
+     "code": -32602,
+     "data": {
+      "reason": "instrument is not active",
+      "param": "instrument_name"
+     },
+     "message": "Invalid params"
+    }
+   },
+   {
+    "hote": "www.deribit.com",
+    "methode": "get_book_summary_by_instrument",
+    "http": 400,
+    "erreur": {
+     "code": -32602,
+     "data": {
+      "reason": "instrument is not open",
+      "param": "instrument_name"
+     },
+     "message": "Invalid params"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "ticker",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_order_book",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_mark_price_history",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_book_summary_by_instrument",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "www.deribit.com",
+    "methode": "get_book_summary_by_instrument",
+    "http": 400,
+    "erreur": {
+     "code": -32602,
+     "data": {
+      "reason": "instrument is not open",
+      "param": "instrument_name"
+     },
+     "message": "Invalid params"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "ticker",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_order_book",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_mark_price_history",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   },
+   {
+    "hote": "history.deribit.com",
+    "methode": "get_book_summary_by_instrument",
+    "http": 400,
+    "erreur": {
+     "message": "réponse non JSON",
+     "texte": "Bad request"
+    }
+   }
+  ]
+ },
+ "duree_secondes": 107.4
+}
