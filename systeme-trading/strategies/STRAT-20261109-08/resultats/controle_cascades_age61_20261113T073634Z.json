@@ -1,0 +1,95 @@
+{
+ "candidats_lache": 25512,
+ "cascades_base": 5389,
+ "cascades_base_borne_basse": 5217,
+ "blocs": {
+  "developpement": {
+   "cascades": 2126,
+   "symboles": 189,
+   "par_semaine": 19.555847568988174,
+   "part_simultanees": 0.7333019755409219,
+   "heures_plus_de_5": 56,
+   "ignorees_k": 1245,
+   "jouables": 881,
+   "cascades_borne_basse": 2077,
+   "jouables_borne_basse": 857,
+   "par_annee": {
+    "2021": 153,
+    "2022": 853,
+    "2023": 1120
+   },
+   "top_symboles": {
+    "UNFIUSDT": 65,
+    "GALAUSDT": 47,
+    "MASKUSDT": 42,
+    "LINAUSDT": 36,
+    "TRBUSDT": 36,
+    "DYDXUSDT": 34,
+    "GMTUSDT": 33,
+    "LITUSDT": 28,
+    "FILUSDT": 28,
+    "OGNUSDT": 27
+   }
+  },
+  "validation": {
+   "cascades": 2034,
+   "symboles": 314,
+   "par_semaine": 24.804878048780488,
+   "part_simultanees": 0.5939036381514258,
+   "heures_plus_de_5": 37,
+   "ignorees_k": 1006,
+   "jouables": 1028,
+   "cascades_borne_basse": 1981,
+   "jouables_borne_basse": 989,
+   "par_annee": {
+    "2024": 1465,
+    "2025": 569
+   },
+   "top_symboles": {
+    "TRBUSDT": 40,
+    "PEOPLEUSDT": 36,
+    "BOMEUSDT": 24,
+    "1000BONKUSDT": 21,
+    "BAKEUSDT": 20,
+    "XLMUSDT": 18,
+    "1000PEPEUSDT": 18,
+    "MEMEUSDT": 18,
+    "BNXUSDT": 18,
+    "BANUSDT": 18
+   }
+  },
+  "hors_echantillon": {
+   "cascades": 1229,
+   "symboles": 249,
+   "par_semaine": 18.66160520607375,
+   "part_simultanees": 0.2611879576891782,
+   "heures_plus_de_5": 13,
+   "ignorees_k": 232,
+   "jouables": 997,
+   "cascades_borne_basse": 1159,
+   "jouables_borne_basse": 930,
+   "par_annee": {
+    "2025": 539,
+    "2026": 690
+   },
+   "top_symboles": {
+    "PIPPINUSDT": 39,
+    "RIVERUSDT": 35,
+    "SIRENUSDT": 34,
+    "MYXUSDT": 28,
+    "ESPORTSUSDT": 28,
+    "BEATUSDT": 25,
+    "UBUSDT": 20,
+    "CLOUSDT": 19,
+    "HUSDT": 18,
+    "DASHUSDT": 18
+   }
+  }
+ },
+ "candidats_avant": 29733,
+ "candidats_apres": 25512,
+ "symboles_sans_volume": [],
+ "age_min_jours": 61,
+ "source": "candidats_20261113T002005Z.csv",
+ "fichier_candidats": "candidats_age61_20261113T073634Z.csv"
+}
