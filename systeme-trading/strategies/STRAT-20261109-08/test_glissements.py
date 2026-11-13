@@ -43,6 +43,20 @@ class Glissement(unittest.TestCase):
         self.assertTrue(df["acheteur_teneur"].iloc[0])
         self.assertEqual(df["t"].iloc[0], pd.Timestamp("2022-03-01 10:00"))
 
+    def test_lecture_par_fenetres_et_microsecondes(self):
+        b = io.BytesIO()
+        lignes = [f"{i},{100 + i / 100},1,{i},{i},{1735689600000000 + i * 60_000_000},{'true' if i % 2 else 'false'}" for i in range(10)]
+        with zipfile.ZipFile(b, "w") as z:
+            z.writestr("a.csv", "\n".join(lignes) + "\n")   # sans en-tête, temps en microsecondes (archives récentes)
+        t0 = pd.Timestamp("2025-01-01 00:00")
+        tout = mg.lire_aggtrades(b.getvalue(), morceau=3)
+        self.assertEqual(len(tout), 10)
+        f = mg.lire_aggtrades(b.getvalue(), [(t0 + pd.Timedelta(minutes=2), t0 + pd.Timedelta(minutes=4)),
+                                             (t0 + pd.Timedelta(minutes=8), t0 + pd.Timedelta(minutes=20))], morceau=3)
+        self.assertEqual([x.minute for x in f["t"]], [2, 3, 8, 9])
+        self.assertEqual(list(f["acheteur_teneur"]), [False, True, False, True])
+        self.assertTrue(mg.lire_aggtrades(b.getvalue(), [(t0 + pd.Timedelta(hours=5), t0 + pd.Timedelta(hours=6))]).empty)
+
     def test_echantillon_hors_he_et_reproductible(self):
         c = pd.DataFrame({"symbole": ["A", "B", "C"], "t": ["2023-01-01 10:00", "2024-06-01 10:00", "2025-09-01 10:00"],
                           "rendement_15m": -0.05, "var_oi_15m": -0.04, "volume_15m": 1.0})

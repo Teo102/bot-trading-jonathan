@@ -52,16 +52,38 @@ GRAINE = 20261112
 D, H = pd.Timedelta(minutes=5), pd.Timedelta(hours=4)
 
 
-def lire_aggtrades(z: bytes) -> pd.DataFrame:
-    """Colonnes : prix, quantité, temps, acheteur_teneur (True : l'acheteur est passif, donc vente agressive)."""
+FENETRE_APRES = pd.Timedelta(minutes=30)   # lecture après τ ; un ordre non rempli en 30 minutes est compté « non rempli »
+
+
+def lire_aggtrades(z: bytes, fenetres: list[tuple[pd.Timestamp, pd.Timestamp]] | None = None, morceau: int = 400_000) -> pd.DataFrame:
+    """Colonnes : prix, quantité, temps, acheteur_teneur (True : l'acheteur est passif, donc vente agressive).
+
+    Lecture par morceaux, en types numériques, en ne gardant que les transactions des `fenetres` [a, b) si elles sont
+    données. Correctif du 13/11/2026 : la lecture d'origine chargeait tout le fichier en chaînes de caractères ; une
+    journée de krach d'un nom liquide (67 Mo compressés pour SOLUSDT le 05/08/2024) dépassait les 2 Go de mémoire du
+    serveur. Le résultat est le même sur les transactions gardées."""
+    gardes = []
     with zipfile.ZipFile(io.BytesIO(z)) as zf, zf.open(zf.namelist()[0]) as f:
-        df = pd.read_csv(f, header=None, dtype=str)
-    df = df[df[0].str.fullmatch(r"\d+", na=False)]
-    t = df[5].astype("int64")
-    unite = "us" if t.max() > 10**14 else "ms"
-    return pd.DataFrame({"prix": df[1].astype(float).values, "qte": df[2].astype(float).values,
-                         "t": pd.to_datetime(t, unit=unite).values,
-                         "acheteur_teneur": df[6].str.lower().isin(["true", "1"]).values}).sort_values("t", kind="mergesort")
+        tete = f.readline().decode()
+        entete = not tete.split(",")[0].strip().isdigit()
+    with zipfile.ZipFile(io.BytesIO(z)) as zf, zf.open(zf.namelist()[0]) as f:
+        lecteur = pd.read_csv(f, header=None, skiprows=1 if entete else 0, usecols=[1, 2, 5, 6], names=list(range(7)),
+                              dtype={1: "float64", 2: "float64", 5: "int64", 6: str}, chunksize=morceau)
+        for m in lecteur:
+            unite = "us" if m[5].max() > 10**14 else "ms"
+            t = pd.to_datetime(m[5], unit=unite)
+            garde = np.ones(len(m), dtype=bool)
+            if fenetres:
+                garde[:] = False
+                for a, b in fenetres:
+                    garde |= ((t >= a) & (t < b)).to_numpy()
+            if garde.any():
+                gardes.append(pd.DataFrame({"prix": m[1].to_numpy()[garde], "qte": m[2].to_numpy()[garde], "t": t.to_numpy()[garde],
+                                            "acheteur_teneur": m[6].str.lower().isin(["true", "1"]).to_numpy()[garde]}))
+    if not gardes:
+        return pd.DataFrame({"prix": pd.Series(dtype=float), "qte": pd.Series(dtype=float), "t": pd.Series(dtype="datetime64[ns]"),
+                             "acheteur_teneur": pd.Series(dtype=bool)})
+    return pd.concat(gardes, ignore_index=True).sort_values("t", kind="mergesort").reset_index(drop=True)
 
 
 def glissement(tr: pd.DataFrame, tau: pd.Timestamp, q: float, achat: bool) -> dict | None:
@@ -123,7 +145,8 @@ def main(argv=None) -> int:
             ecartes["absent"] += 1; continue
         if max(tailles) > MAX_OCTETS or shutil.disk_usage(Path(a.cache).expanduser()).free < sum(tailles) + 2e8:
             ecartes["trop_gros"] += 1; continue
-        tr = pd.concat([lire_aggtrades(src.lire(k)) for k in cles]).sort_values("t", kind="mergesort")
+        fenetres = [(r.t - pd.Timedelta(minutes=15), r.t), (te, te + FENETRE_APRES), (tx, tx + FENETRE_APRES)]
+        tr = pd.concat([lire_aggtrades(src.lire(k), fenetres) for k in cles]).sort_values("t", kind="mergesort")
         fen = tr[(tr["t"] >= r.t - pd.Timedelta(minutes=15)) & (tr["t"] < r.t)]
         if fen.empty:
             ecartes["absent"] += 1; continue
