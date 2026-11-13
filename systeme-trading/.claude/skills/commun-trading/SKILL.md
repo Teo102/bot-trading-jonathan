@@ -133,7 +133,7 @@ Retraits suspendus, piratage annoncé, maintenance non prévue ou données incoh
 | STRAT-20261102-05 | Encombrement financement et intérêt ouvert, 3 longs et 3 shorts | rejetée (E01 −23,5 %, prix net de coûts −66,2 %) | — | — | Verdict E01 du 02/11/2026, hors échantillon non ouvert |
 | STRAT-20261102-06 | Dérive des perpétuels nouvellement cotés, short couvert par BTC | validation, E01 +94,1 % net, E02 autorisé | — | — | E01 validé le 02/11/2026, E21 écarté (N=20 maintenu) |
 | STRAT-20261109-07 | Portage de financement conditionnel aux pointes (long comptant, short perpétuel) | écartée avant gel, comme H10 (aucun essai, hors échantillon non ouvert) | — | — | Décision du 12/11/2026 sur l'audit du 09/11/2026 |
-| STRAT-20261109-08 | Contre-tendance après cascade de liquidations, données 1 minute, long seul | rejetée au verdict des portes de E01 (à confirmer) ; E02 à E16 non lancés, hors échantillon fermé | — | — | E01 du 13/11/2026 : net −48,4 % à brut 100 %, avant coûts −0,04 % par position |
+| STRAT-20261109-08 | Contre-tendance après cascade de liquidations, données 1 minute, long seul | rejetée au verdict des portes de E01 ; E02 à E16 non lancés, hors échantillon fermé | — | — | E01 du 13/11/2026 (net −48,4 % à brut 100 %, avant coûts −0,04 % par position) ; rejet confirmé par Jonathan et Téo le 13/11/2026 |
 
 Le registre est tenu par `validation-edge` ; un changement de statut vers le réel suit la porte humaine de `cerveau-trading` § 3.
 

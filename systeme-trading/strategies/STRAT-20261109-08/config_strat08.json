@@ -178,7 +178,8 @@
   "essai": "E01",
   "verdict_des_portes": "rejetee",
   "statut_propose": "rejetee",
-  "confirmation": "en attente de Jonathan et Teo",
+  "confirmation": "confirmee par Jonathan et Teo le 13/11/2026",
   "note": "E02 a E16 non lances ; hors echantillon ferme"
- }
+ },
+ "statut_strategie": "rejetee"
 }
