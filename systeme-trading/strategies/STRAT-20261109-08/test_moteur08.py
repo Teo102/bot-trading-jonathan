@@ -173,9 +173,10 @@ class Lanceur(unittest.TestCase):
         shutil.rmtree(self.tmp)
 
     def test_refus(self):
-        self.assertEqual(self.c["statut_regles"], "proposees")
+        # la configuration réelle est figée depuis le 13/11/2026 : le refus avant gel se teste sur une copie « proposees »
+        nf = copy.deepcopy(self.c); nf["statut_regles"] = "proposees"
         with self.assertRaises(r8.Refus):
-            r8.controles("E01", self.c, self.reg)          # non figée
+            r8.controles("E01", nf, self.reg)              # non figée
         c = copy.deepcopy(self.c); c["statut_regles"] = "figees"
         r8.controles("E01", c, self.reg)
         for e in ("E13", "E15", "E16", "E99"):

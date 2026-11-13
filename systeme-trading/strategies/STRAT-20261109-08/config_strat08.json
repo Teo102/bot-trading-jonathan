@@ -1,7 +1,7 @@
 {
  "strategie": "STRAT-20261109-08",
- "version": "2026-11-12",
- "statut_regles": "proposees",
+ "version": "2026-11-13",
+ "statut_regles": "figees",
  "note_statut": "run_essai08.py refuse tout essai tant que statut_regles ne vaut pas \"figees\". Gel par ligne de journal de Jonathan et Teo apres le controle sans rendement.",
  "params_base": {
   "x": 0.04,
@@ -13,7 +13,7 @@
   "stops_par_jour": 2,
   "frais": 0.0005,
   "gliss_entree": 0.001,
-  "gliss_sortie": 0.0005,
+  "gliss_sortie": 0.0006,
   "gliss_stop": 0.003
  },
  "blocs": {
@@ -112,7 +112,7 @@
    "surcharges": {
     "frais": 0.001,
     "gliss_entree": 0.002,
-    "gliss_sortie": 0.001,
+    "gliss_sortie": 0.0012,
     "gliss_stop": 0.006
    }
   },
@@ -133,7 +133,7 @@
    "surcharges": {
     "frais": 0.001,
     "gliss_entree": 0.002,
-    "gliss_sortie": 0.001,
+    "gliss_sortie": 0.0012,
     "gliss_stop": 0.006
    }
   }
@@ -154,8 +154,23 @@
  "age_min_jours": 61,
  "note_age": "13/11/2026 : age minimal porte de 30 a 61 jours (decision de Jonathan et Teo), univers etanche avec STRAT-06-bis (7 a 60 jours).",
  "candidats": {
-  "fichier": "",
-  "sha256": "",
-  "note": "rempli au gel : fichier des candidats a 61 jours produit par controle_cascades.py --refiltrer"
+  "fichier": "resultats/candidats_age61_20261113T073634Z.csv",
+  "sha256": "3d8cd87db96baece98f00da2856a5648571d548713fad8420a0a957633959f61",
+  "note": "univers a 61 jours, refiltrage du 13/11/2026 07:36 UTC (controle_cascades_age61_20261113T073634Z.md)"
+ },
+ "glissements": {
+  "source": "resultats/glissements_20261113T074128Z.md",
+  "regle": "max(hypothese de la fiche, 75e centile mesure a 10 000 USDT), arrondi au centieme de point superieur (fiche § 15, ecrite avant la mesure)",
+  "retenus": {
+   "entree": 0.001,
+   "stop": 0.003,
+   "sortie": 0.0006
+  },
+  "limite": "valables pour un notionnel d'environ 10 000 USDT par position ; a 50 000 USDT, 75e centile du stop 0,44 %"
+ },
+ "gel": {
+  "date_utc": "2026-11-13T07:44:41Z",
+  "decision": "Jonathan et Teo, 13/11/2026 : glissements mesures puis inscrits, gel des regles, E01 ensuite (message en session)",
+  "commit": "rempli par la ligne de journal du gel"
  }
 }
