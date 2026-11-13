@@ -150,5 +150,12 @@
   "graine": 20261112,
   "niveau": 0.9
  },
- "note_retrait_E13": "12/11/2026 : E13 retire (decision m1 de Jonathan et Teo), N = 15, seuil 1,77 x 0,903 = 1,60."
+ "note_retrait_E13": "12/11/2026 : E13 retire (decision m1 de Jonathan et Teo), N = 15, seuil 1,77 x 0,903 = 1,60.",
+ "age_min_jours": 61,
+ "note_age": "13/11/2026 : age minimal porte de 30 a 61 jours (decision de Jonathan et Teo), univers etanche avec STRAT-06-bis (7 a 60 jours).",
+ "candidats": {
+  "fichier": "",
+  "sha256": "",
+  "note": "rempli au gel : fichier des candidats a 61 jours produit par controle_cascades.py --refiltrer"
+ }
 }

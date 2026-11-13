@@ -5,6 +5,8 @@
 - E13, retiré le 12/11/2026 (décision m1, N = 15) ;
 - E15 et E16 tant que les essais E01 à E12 et E14 ne sont pas tous datés **et** que la décision écrite
   `portes_avant_hors_echantillon = "franchies"` n'est pas dans la configuration ; E16 avant E15.
+- un fichier de candidats dont l'empreinte SHA-256 n'est pas celle inscrite dans la configuration au gel (13/11/2026) :
+  l'univers à 61 jours est figé par son fichier, et l'ancien fichier à 30 jours ne peut plus servir par erreur.
 Verrou (m2) : le magasin de minutes refuse toute lecture au-delà de la fin du bloc de l'essai.
 
 Usage : python3 -B run_essai08.py --essai E01 --candidats resultats/candidats_<h>.csv --compact ~/strat08_compact --cache ~/cache_binance_vision
@@ -49,6 +51,17 @@ def params(c: dict, essai: str) -> mi.ParamsIntraday:
                              k=int(b["k"]), stops_par_jour=int(b["stops_par_jour"]), frais=b["frais"], gliss_entree=b["gliss_entree"],
                              gliss_sortie=b["gliss_sortie"], gliss_stop=b["gliss_stop"],
                              placebo=pd.Timedelta(hours=b.get("placebo_heures", 0)), sens=int(b.get("sens", 1)))
+
+
+def verifier_candidats(chemin: Path, c: dict) -> None:
+    """Le fichier de candidats doit être celui du gel : même empreinte que `c["candidats"]["sha256"]`."""
+    import hashlib
+    attendu = (c.get("candidats") or {}).get("sha256", "")
+    if not attendu:
+        raise Refus("Aucun fichier de candidats inscrit dans la configuration (clé « candidats »). Aucun essai lancé.")
+    lu = hashlib.sha256(Path(chemin).read_bytes()).hexdigest()
+    if lu != attendu:
+        raise Refus(f"Fichier de candidats différent de celui du gel ({Path(chemin).name} : {lu[:12]}…, attendu {attendu[:12]}…).")
 
 
 def controles(essai: str, c: dict, registre: Path) -> None:
@@ -186,6 +199,7 @@ def main(argv=None) -> int:
     c = json.loads(CONFIG.read_text())
     try:
         controles(a.essai, c, REGISTRE)
+        verifier_candidats(Path(a.candidats), c)
         cand = pd.read_csv(a.candidats)
         debut, fin = (pd.Timestamp(x) for x in c["blocs"][c["essais"][a.essai]["bloc"]])
         syms = sorted(set(cand.loc[(pd.to_datetime(cand["t"]) >= debut) & (pd.to_datetime(cand["t"]) < fin), "symbole"]))

@@ -193,6 +193,19 @@ class Lanceur(unittest.TestCase):
         with self.assertRaises(r8.Refus):
             r8.controles("E01", c, self.reg)               # déjà lancé
 
+    def test_fichier_de_candidats_du_gel(self):
+        import hashlib
+        f = self.tmp / "candidats.csv"
+        f.write_text("symbole,t,rendement_15m,var_oi_15m,volume_15m\nAUSDT,2022-03-01 10:00:00,-0.05,-0.04,1.0\n")
+        c = copy.deepcopy(self.c); c["candidats"] = {"fichier": "candidats.csv", "sha256": ""}
+        with self.assertRaises(r8.Refus):
+            r8.verifier_candidats(f, c)                    # aucune empreinte inscrite
+        c["candidats"]["sha256"] = hashlib.sha256(f.read_bytes()).hexdigest()
+        r8.verifier_candidats(f, c)
+        f.write_text(f.read_text() + "BUSDT,2022-03-01 10:00:00,-0.05,-0.04,1.0\n")
+        with self.assertRaises(r8.Refus):
+            r8.verifier_candidats(f, c)                    # fichier modifié ou ancien fichier à 30 jours
+
     def test_bout_en_bout(self):
         c = copy.deepcopy(self.c); c["statut_regles"] = "figees"
         c["blocs"]["developpement"] = ["2022-03-01", "2022-03-20"]
