@@ -416,12 +416,13 @@ def main(argv=None) -> int:
     ap.add_argument("--tout", action="store_true")
     ap.add_argument("--sans-reseau", action="store_true")
     ap.add_argument("--donnees", default=str(SORTIES / "donnees"))
+    ap.add_argument("--sorties", default=str(SORTIES), help="dossier des sorties, hors du code déployé")
     a = ap.parse_args(argv)
     import collecte_papier06 as cp
     cb = charger_config_bis()
     mode = "compte" if cb["statut"] == "figee" else "a_blanc"
     jour0 = pd.Timestamp(cb["jour_0"] if mode == "compte" else cb["jour_0_a_blanc"])
-    dossier = SORTIES / mode
+    dossier = Path(a.sorties) / mode
     p, pc = parametres()
     if cb.get("empreinte_config_v1") and empreinte_fichier(ICI / "config_strat06.json") != cb["empreinte_config_v1"]:
         raise Refus("config_strat06.json a changé depuis le gel du papier : refus.")
@@ -436,8 +437,10 @@ def main(argv=None) -> int:
         col.maj_heures(sorted(noms), jour0 - UN_JOUR, maintenant)
         col.maj_financement(sorted(noms), jour0 - UN_JOUR, maintenant)
     heures, fin = col.charger_heures(), col.charger_financement()
-    if heures["open"].empty:
-        print("Aucune heure collectée : rien à valoriser.")
+    if heures["open"].empty or maintenant + UNE_HEURE < jour0:
+        (dossier / "battement.txt").parent.mkdir(parents=True, exist_ok=True)
+        (dossier / "battement.txt").write_text(iso(maintenant) + "\n")
+        print(json.dumps({"mode": mode, "jour_0": str(jour0.date()), "note": "avant le jour 0 ou aucune heure : collecte seule"}, ensure_ascii=False))
         return 0
     h_eval = heures["open"]["BTC"].dropna().index.max()
     res = calculer(jours, heures, fin, jour0, h_eval, p, pc, lire_manquees(dossier), NOTIONNEL, jours["volume"].index.max())

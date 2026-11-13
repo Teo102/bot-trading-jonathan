@@ -2,7 +2,7 @@
  "strategie": "STRAT-06-bis (H12-bis)",
  "statut": "a_blanc",
  "note_statut": "a_blanc : fonctionnement a blanc, non compte. figee : apres la ligne de journal de gel de Jonathan et Teo ; jour_0 = premier jour compte.",
- "jour_0_a_blanc": "",
+ "jour_0_a_blanc": "2026-11-14",
  "jour_0": "",
  "empreinte_config_v1": "84f43d5b11382909832edd71b525c296a9d5f84eb8781c20c0a962791298ca0c",
  "notionnel_par_ligne": "1/84",
@@ -31,5 +31,6 @@
   "signal indicatif",
   "filtres v2",
   "signal manque"
- ]
+ ],
+ "note_a_blanc": "13/11/2026 : tache horaire installee sur accord de Jonathan et Teo ; 3 jours a blanc a partir du 14/11/2026, non comptes"
 }

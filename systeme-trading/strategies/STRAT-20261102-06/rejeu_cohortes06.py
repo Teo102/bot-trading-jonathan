@@ -134,10 +134,11 @@ def main(argv=None) -> int:
     ap.add_argument("--fin", required=True)
     ap.add_argument("--cache", required=True)
     ap.add_argument("--donnees", default=str(pc6.SORTIES / "donnees"))
+    ap.add_argument("--sorties", default=str(pc6.SORTIES))
     a = ap.parse_args(argv)
     cb = pc6.charger_config_bis()
     mode = "compte" if cb["statut"] == "figee" else "a_blanc"
-    dossier = pc6.SORTIES / mode
+    dossier = Path(a.sorties) / mode
     p, pc = pc6.parametres()
     debut, fin = pd.Timestamp(a.debut), pd.Timestamp(a.fin)
     src = db.VisionHTTP(Path(a.cache).expanduser())

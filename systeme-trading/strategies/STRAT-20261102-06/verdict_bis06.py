@@ -95,10 +95,11 @@ def main(argv=None) -> int:
     import collecte_papier06 as cp
     ap = argparse.ArgumentParser()
     ap.add_argument("--donnees", default=str(pc6.SORTIES / "donnees"))
+    ap.add_argument("--sorties", default=str(pc6.SORTIES))
     a = ap.parse_args(argv)
     cb = pc6.charger_config_bis()
     mode = "compte" if cb["statut"] == "figee" else "a_blanc"
-    d = pc6.SORTIES / mode
+    d = Path(a.sorties) / mode
     jour0 = pd.Timestamp(cb["jour_0"] if mode == "compte" else cb["jour_0_a_blanc"])
     lire = lambda n: pd.read_csv(d / n, dtype=str, keep_default_na=False) if (d / n).exists() else pd.DataFrame()
     q, s, l = lire("serie_quotidienne.csv"), lire("semaines_cohortes.csv"), lire("lignes.csv")
