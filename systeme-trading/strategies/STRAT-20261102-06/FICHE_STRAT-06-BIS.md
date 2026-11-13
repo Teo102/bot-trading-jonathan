@@ -80,3 +80,19 @@ Préalable 1 du § 4 rempli, préalable 2 outillé. Rien n'est gelé, aucun jour
 1. Accord pour installer la tâche horaire sur le serveur (`cron`, à :05 chaque heure), puis 3 jours à blanc.
 2. Décisions sur les points du § 3 de `PLAN_PAPIER_COHORTES.md` (montée en charge, tolérance du rejeu, facteurs de l'alpha, signal indicatif, filtres v2), sur la règle du signal manqué et sur le critère des 300 lignes.
 3. Ligne de journal de gel, avec l'empreinte du commit du module et la date du jour 0.
+
+## 6. Tâche horaire à blanc installée (13/11/2026)
+
+Sur accord de Jonathan et Téo du 13/11/2026. **Fonctionnement à blanc : aucun jour n'est compté.**
+
+- Code déployé : `/root/papier06`, extrait du commit `2572a4d` (fichier `COMMIT`), 15 tests verts sur le serveur.
+- Données et sorties hors du code : `/root/papier06_data/donnees` (reprises de l'essai du 13/11, vérifiées égales aux archives) et `/root/papier06_data/sorties/a_blanc`.
+- Tâche : `5 * * * * /root/papier06/systeme-trading/strategies/STRAT-20261102-06/run_papier06.sh`, un seul passage à la fois (`flock`), arrêt si moins de 300 Mo de disque libre, journal d'exécution `cron.log`. Copie de la crontab d'avant dans `/root/crontab_avant_papier06.txt`.
+- Jour 0 à blanc : **14/11/2026**. La cohorte 0 reçoit son premier signal le 14/11 à 00:05 UTC, la cohorte 6 le 20/11.
+- Exécution à la main avant l'installation : 3,7 s, 346 Mo de mémoire, collecte seule (avant le jour 0).
+- Premier passage automatique vérifié : 13/11/2026 à 14:05 UTC (trace CRON du système), battement écrit, une heure de BTC ajoutée à la collecte avec son empreinte.
+- La crontab contenait déjà une ligne hebdomadaire de l'ancien module (`paper_trading_strat06.py --check-now`, lundi 00:05 UTC). Elle est laissée telle quelle ; ses signaux ne comptent pas (§ 4 de `PLAN_PAPIER_COHORTES.md`).
+
+**Limite :** aucune alerte n'est envoyée si la tâche s'arrête (aucun canal de notification configuré). La surveillance se fait en lisant `battement.txt` et `cron.log`. Un battement de plus de 2 heures signale une panne.
+
+**Après les 3 jours à blanc (à partir du 17/11/2026) :** lecture du journal et des incidents, premier rejeu sur les archives journalières, puis décisions du gel et ligne de journal fixant le jour 0 compté.
