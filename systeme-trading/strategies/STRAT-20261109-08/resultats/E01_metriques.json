@@ -1,0 +1,70 @@
+{
+ "meta": {
+  "horodatage": "2026-11-13T07:56:42Z",
+  "essai": "E01",
+  "variante": "base",
+  "bloc": "developpement",
+  "debut": "2021-12-01 00:00:00",
+  "fin": "2024-01-01 00:00:00",
+  "params": {
+   "x": "0.04",
+   "y": "0.03",
+   "s": "0.05",
+   "h": "0 days 04:00:00",
+   "d": "0 days 00:05:00",
+   "k": "5",
+   "stops_par_jour": "2",
+   "frais": "0.0005",
+   "gliss_entree": "0.001",
+   "gliss_sortie": "0.0006",
+   "gliss_stop": "0.003",
+   "placebo": "0 days 00:00:00",
+   "sens": "1"
+  }
+ },
+ "metriques": {
+  "positions": 782,
+  "semaines": 109,
+  "semaines_avec_position": 99,
+  "net_brut100": -0.48413566660453977,
+  "moyenne_hebdo": -0.004441611620225136,
+  "sharpe_hebdo_annualise": -1.063567529944665,
+  "ic90": [
+   -0.008387281308287255,
+   -0.0003806651614057448
+  ],
+  "drawdown_brut100": 0.5856625865868219,
+  "alpha": {
+   "semaines": 109,
+   "alpha_hebdo": -0.003866798200384871,
+   "alpha_annualise": -0.2010735064200133,
+   "t_alpha": -1.5357282249355722,
+   "beta_btc": -0.08651724995000448,
+   "beta_alts_moins_btc": 0.11041110557712364,
+   "r2": 0.07535482428062235
+  },
+  "stops": 231,
+  "taux_stop": 0.29539641943734013,
+  "net_moyen_position": -0.0006190993179086186,
+  "t_moyen_position": -1.7186839696893375,
+  "frais": 0.15640000000000004,
+  "financement": -0.048067660000000005,
+  "par_annee": {
+   "2021": 0.0051451153090291794,
+   "2022": -0.3662913242895943,
+   "2023": -0.1229894576239746
+  },
+  "part_max_symbole": null,
+  "part_max_mois": null,
+  "part_max_jour": null,
+  "ecarts": {
+   "emplacement": 1394,
+   "symbole_ouvert": 308,
+   "pause": 191,
+   "stops_du_jour": 780,
+   "fin_de_bloc": 0,
+   "absent": 0
+  },
+  "financement_compte": true
+ }
+}

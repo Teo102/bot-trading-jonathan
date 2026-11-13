@@ -172,5 +172,13 @@
   "date_utc": "2026-11-13T07:44:41Z",
   "decision": "Jonathan et Teo, 13/11/2026 : glissements mesures puis inscrits, gel des regles, E01 ensuite (message en session)",
   "commit": "rempli par la ligne de journal du gel"
+ },
+ "verdict": {
+  "date": "2026-11-13",
+  "essai": "E01",
+  "verdict_des_portes": "rejetee",
+  "statut_propose": "rejetee",
+  "confirmation": "en attente de Jonathan et Teo",
+  "note": "E02 a E16 non lances ; hors echantillon ferme"
  }
 }
