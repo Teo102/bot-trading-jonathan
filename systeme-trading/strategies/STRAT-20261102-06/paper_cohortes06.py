@@ -276,7 +276,9 @@ class JournalAjout:
             return pd.DataFrame(columns=self.colonnes)
         return pd.read_csv(self.chemin, dtype=str, keep_default_na=False)
 
-    def ajouter(self, lignes: list[dict], tolerance: float = 1e-10) -> tuple[int, list[dict]]:
+    def ajouter(self, lignes: list[dict], tolerance: float = 1e-10, comparer: list[str] | None = None) -> tuple[int, list[dict]]:
+        """`comparer` : colonnes comparées pour une clé déjà écrite (toutes par défaut). Les métadonnées d'écriture
+        (heure, drapeau « à l'heure ») ne se comparent pas : elles changent à chaque passage par construction."""
         deja = self.lire()
         connus = {tuple(r[k] for k in self.cle): r for r in deja.to_dict("records")}
         nouveaux, ecarts = [], []
@@ -284,7 +286,7 @@ class JournalAjout:
             l = {k: ("" if l.get(k) is None else str(l.get(k))) for k in self.colonnes}
             k = tuple(l[c] for c in self.cle)
             if k in connus:
-                for c in self.colonnes:
+                for c in (comparer or self.colonnes):
                     a, b = connus[k].get(c, ""), l[c]
                     if a != b and not _proches(a, b, tolerance):
                         ecarts.append({"cle": "|".join(k), "colonne": c, "ecrit": a, "recalcule": b})
@@ -365,7 +367,7 @@ def ecrire_signaux(jours, pc: uc.ParamsCotation, p: m.Params, jour0, maintenant:
             shorts = ",".join(sorted(s for s, w in poids.items() if w < 0))
             lignes.append({"cohorte": c, "date": iso(t), "ecrit_utc": iso(maintenant), "shorts": shorts,
                            "a_l_heure": "oui" if maintenant <= t + UNE_HEURE else "non"})
-    n, ecarts = j.ajouter(lignes)
+    n, ecarts = j.ajouter(lignes, comparer=["shorts"])  # correctif du 14/11/2026 : seul le contenu du signal se compare
     if ecarts:
         JournalAjout(dossier / "incidents.csv", ["heure_utc", "type", "detail"], ["heure_utc", "type", "detail"]).ajouter(
             [{"heure_utc": iso(maintenant), "type": "signal_recalcule_different", "detail": json.dumps(e, ensure_ascii=False)} for e in ecarts])
@@ -383,17 +385,29 @@ def lire_manquees(dossier: Path) -> dict:
     return out
 
 
-def journal_md(dossier: Path, etat: dict, signaux: dict, maintenant: pd.Timestamp, mode: str) -> None:
-    """Une entrée par jour dans JOURNAL_COHORTES.md, en ajout seul (la première exécution du jour après 01:00 UTC)."""
+def journal_md(dossier: Path, etat: dict, signaux: dict, maintenant: pd.Timestamp, mode: str,
+               h_eval: pd.Timestamp | None = None) -> None:
+    """Une entrée par jour dans JOURNAL_COHORTES.md, en ajout seul, écrite au premier passage dont l'heure d'évaluation
+    atteint 01:00 UTC du jour : l'entrée du jour sur le papier a alors eu lieu (correctif du 14/11/2026 : l'entrée
+    s'écrivait à 00:05, avant l'exécution, et ne montrait pas la cohorte du jour)."""
     f = dossier / "JOURNAL_COHORTES.md"
     jour = maintenant.strftime("%Y-%m-%d")
+    if h_eval is None or pd.Timestamp(h_eval) < maintenant.normalize() + UNE_HEURE:
+        return
     if f.exists() and f"## {jour}" in f.read_text():
         return
     if not f.exists():
         f.write_text(f"# Journal du papier de STRAT-06-bis ({mode})\n\nEn ajout seul. Aucun ordre, `dry_run` permanent. Montants indicatifs, sans valeur de décision.\n")
     l = [f"\n## {jour} (écrit {iso(maintenant)})", "",
          f"Cumul à brut 100 % : base {etat['cumul'].get('base', 0):+.4%}, stressée {etat['cumul'].get('stressee', 0):+.4%}. "
-         f"Signaux ajoutés : {signaux['ajoutes']}. Incidents nouveaux : {etat['incidents_nouveaux']}.", ""]
+         f"Incidents nouveaux : {etat['incidents_nouveaux']}.", ""]
+    sig = dossier / "signaux.csv"
+    if sig.exists():
+        for r in pd.read_csv(sig, dtype=str, keep_default_na=False).itertuples(index=False):
+            if r.date.startswith(jour):
+                l.append(f"Signal du jour, cohorte {r.cohorte} : {r.shorts.replace(',', ', ') or 'aucun nom éligible, semaine vide'} "
+                         f"(écrit {r.ecrit_utc}, à l'heure : {r.a_l_heure}).")
+        l.append("")
     for c in etat["cohortes_ouvertes"]:
         l.append(f"- cohorte {c['cohorte']} ({c['date'][:10]}) : {', '.join(c['shorts']) or 'aucun nom'} ; "
                  f"{c['notionnel_short_usdt_indicatif']:.0f} USDT par short et {c['couverture_btc_usdt_indicative']:.0f} USDT de BTC (indicatif) ; "
@@ -445,7 +459,8 @@ def main(argv=None) -> int:
     h_eval = heures["open"]["BTC"].dropna().index.max()
     res = calculer(jours, heures, fin, jour0, h_eval, p, pc, lire_manquees(dossier), NOTIONNEL, jours["volume"].index.max())
     etat = ecrire(res, dossier, h_eval, float(cb.get("capital_indicatif_usdt", 10000)), NOTIONNEL)
-    journal_md(dossier, etat, signaux, maintenant, mode)
+    etat["incidents_nouveaux"] += signaux["ecarts"]
+    journal_md(dossier, etat, signaux, maintenant, mode, h_eval)
     (dossier / "battement.txt").write_text(iso(maintenant) + "\n")
     print(json.dumps({"mode": mode, "h_eval": iso(h_eval), **{k: etat[k] for k in ("cumul", "ajouts", "incidents_nouveaux")}}, ensure_ascii=False, default=float))
     return 0

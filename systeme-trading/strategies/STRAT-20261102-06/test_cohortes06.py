@@ -156,8 +156,34 @@ class SignalManque(unittest.TestCase):
             s = pd.read_csv(tmp / "signaux.csv", dtype=str)
             self.assertEqual(list(s["a_l_heure"]), ["oui", "non"])
             self.assertEqual(pc6.lire_manquees(tmp), {1: {j0 + pd.Timedelta(days=1)}})
-            pc6.ecrire_signaux(j, PC, P, j0, j0 + pd.Timedelta(days=1, hours=5), tmp)   # rien de réécrit
+            r = pc6.ecrire_signaux(j, PC, P, j0, j0 + pd.Timedelta(days=1, hours=5), tmp)   # rien de réécrit
             self.assertEqual(len(pd.read_csv(tmp / "signaux.csv")), 2)
+            self.assertEqual(r["ecarts"], 0)                      # l'heure de réécriture n'est pas un écart (14/11/2026)
+            self.assertFalse((tmp / "incidents.csv").exists())
+            faux = pd.read_csv(tmp / "signaux.csv", dtype=str, keep_default_na=False)
+            faux.loc[0, "shorts"] = "S99"
+            faux.to_csv(tmp / "signaux.csv", index=False)
+            self.assertEqual(pc6.ecrire_signaux(j, PC, P, j0, j0 + pd.Timedelta(days=1, hours=6), tmp)["ecarts"], 1)  # un vrai écart reste signalé
+        finally:
+            shutil.rmtree(tmp)
+
+
+class JournalMarkdown(unittest.TestCase):
+    def test_entree_du_jour_apres_l_execution_seulement(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            pd.DataFrame([{"cohorte": 0, "date": "2026-11-14T00:00:00Z", "ecrit_utc": "2026-11-14T00:05:00Z", "shorts": "",
+                           "a_l_heure": "oui"}]).to_csv(tmp / "signaux.csv", index=False)
+            etat = {"cumul": {}, "incidents_nouveaux": 0, "cohortes_ouvertes": []}
+            m0 = pd.Timestamp("2026-11-14 00:05")
+            pc6.journal_md(tmp, etat, {}, m0, "a_blanc", h_eval=pd.Timestamp("2026-11-13 23:00"))
+            self.assertFalse((tmp / "JOURNAL_COHORTES.md").exists())            # 00:05 : exécution pas encore faite
+            pc6.journal_md(tmp, etat, {}, pd.Timestamp("2026-11-14 02:05"), "a_blanc", h_eval=pd.Timestamp("2026-11-14 01:00"))
+            t = (tmp / "JOURNAL_COHORTES.md").read_text()
+            self.assertIn("## 2026-11-14", t)
+            self.assertIn("aucun nom éligible, semaine vide", t)
+            pc6.journal_md(tmp, etat, {}, pd.Timestamp("2026-11-14 03:05"), "a_blanc", h_eval=pd.Timestamp("2026-11-14 02:00"))
+            self.assertEqual((tmp / "JOURNAL_COHORTES.md").read_text().count("## 2026-11-14"), 1)
         finally:
             shutil.rmtree(tmp)
 
