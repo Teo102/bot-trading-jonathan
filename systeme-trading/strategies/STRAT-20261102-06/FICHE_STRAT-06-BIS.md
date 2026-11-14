@@ -96,3 +96,11 @@ Sur accord de Jonathan et Téo du 13/11/2026. **Fonctionnement à blanc : aucun 
 **Limite :** aucune alerte n'est envoyée si la tâche s'arrête (aucun canal de notification configuré). La surveillance se fait en lisant `battement.txt` et `cron.log`. Un battement de plus de 2 heures signale une panne.
 
 **Après les 3 jours à blanc (à partir du 17/11/2026) :** lecture du journal et des incidents, premier rejeu sur les archives journalières, puis décisions du gel et ligne de journal fixant le jour 0 compté.
+
+### 6.1 Premier jour à blanc (14/11/2026)
+
+- **Signal de la cohorte 0** écrit le 14/11 à 00:05 UTC, à l'heure : **aucun nom éligible, semaine vide.** CTUSDT, seul nom retenu du 06 au 12/11, est passé sous le seuil : médiane de volume sur 30 jours à 19,62 M USDT pour 20 M (âge 44 jours). Aucune autre cotation de moins de 61 jours sur Binance au 14/11 (la plus récente avant CTUSDT date du 06/09). Lecture faite le 14/11 à 08:20 UTC sur les données collectées.
+- **Deux défauts du code trouvés et corrigés** (commit `0424460`, 16 tests verts, redéployé à 08:17 UTC sous le verrou, sans croiser la tâche) :
+  - le signal recalculé à chaque passage était comparé avec son heure d'écriture, ce qui produisait 16 faux incidents de 01:05 à 08:05 UTC. Ils restent dans `incidents.csv` (ajout seul), suivis d'une ligne de note qui les explique. Le signal lui-même n'a jamais changé ;
+  - l'entrée quotidienne du journal s'écrivait à 00:05, avant l'exécution de 01:00. Elle s'écrit désormais au premier passage après 01:00, avec le signal du jour. L'entrée du 14/11, déjà écrite, reste telle quelle.
+- **Constat pour le gel :** l'univers est vide au premier jour. Si cela dure, le papier comptera surtout des semaines vides et n'atteindra pas les 300 lignes de shorts. Le critère des 300 lignes est à trancher avant le gel (§ 5).
