@@ -1,14 +1,14 @@
 {
  "strategie": "STRAT-06-bis (H12-bis)",
- "statut": "a_blanc",
+ "statut": "figee",
  "note_statut": "a_blanc : fonctionnement a blanc, non compte. figee : apres la ligne de journal de gel de Jonathan et Teo ; jour_0 = premier jour compte.",
  "jour_0_a_blanc": "2026-11-14",
- "jour_0": "",
+ "jour_0": "2026-11-17",
  "empreinte_config_v1": "84f43d5b11382909832edd71b525c296a9d5f84eb8781c20c0a962791298ca0c",
  "notionnel_par_ligne": "1/84",
  "cohortes": 7,
  "capital_indicatif_usdt": 10000,
- "signal_manque": "semaine vide, lignes precedentes soldees a t + 1 h (lecture proposee, a confirmer au gel)",
+ "signal_manque": "semaine vide, lignes precedentes soldees a t + 1 h (retenu au gel du 16/11/2026)",
  "verdict": {
   "semaines": 52,
   "point_etape_semaines": 26,
@@ -24,13 +24,20 @@
   "selection": "identique",
   "tolerance_prix_entree_relative": 0.0001
  },
- "points_a_trancher_au_gel": [
-  "montee en charge comptee ou non",
-  "tolerance du rejeu",
-  "facteurs de l'alpha",
-  "signal indicatif",
-  "filtres v2",
-  "signal manque"
- ],
- "note_a_blanc": "13/11/2026 : tache horaire installee sur accord de Jonathan et Teo ; 3 jours a blanc a partir du 14/11/2026, non comptes"
+ "note_a_blanc": "13/11/2026 : tache horaire installee sur accord de Jonathan et Teo ; 3 jours a blanc a partir du 14/11/2026, non comptes",
+ "gel": {
+  "date_utc": "2026-11-16T08:52:17Z",
+  "decision": "Jonathan et Teo, 16/11/2026 : gel apres rejeu vert, exigence de 300 lignes de shorts maintenue",
+  "code_du_papier": "0424460",
+  "rejeu": "16/11/2026 08:51 UTC, 3 signaux, 0 ecart",
+  "points_retenus_au_gel": {
+   "montee_en_charge": "comptee : les 52 semaines partent du jour 0, la premiere semaine monte de 1/7 a 7/7 et se publie",
+   "tolerance_rejeu": "selection identique ; prix d'entree a 0,01 % pres",
+   "facteurs_alpha": "methode du diagnostic B (BTC ; panier des 30 alts anciennes de l'univers fige de STRAT-03 moins BTC ; Newey-West 4 retards), recalcules sur la periode du papier a partir des clotures collectees",
+   "signal_indicatif": "notionnel indicatif pour un capital de 10 000 USDT, sans valeur de decision ni d'ordre",
+   "filtres_v2": "hors du papier et du verdict",
+   "signal_manque": "semaine vide, lignes precedentes soldees a t + 1 h",
+   "lignes_shorts": "au moins 300 lignes de shorts exigees pour un verdict favorable a 52 semaines ; sinon rejet au verdict"
+  }
+ }
 }

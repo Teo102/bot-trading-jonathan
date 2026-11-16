@@ -2,7 +2,7 @@
 
 Rédigée le 09/11/2026 par le Cerveau, sur décision de Jonathan et Téo du même jour (réouverture après rejet de la v1). Résultat de recherche, aucun ordre, `dry_run` permanent, capital nul.
 
-**Statut des critères : PROPOSÉS.** Ils deviennent figés par une ligne de journal de Jonathan et Téo, **avant le premier jour compté**. Aucune semaine de papier antérieure à ce gel ne compte dans le verdict.
+**Statut des critères : FIGÉS le 16/11/2026 (2026-11-16T08:52:17Z, § 7). Premier jour compté : 17/11/2026 à 00:00 UTC.** Aucune semaine de papier antérieure ne compte dans le verdict.
 
 ## 0. Origine et contamination
 
@@ -104,3 +104,19 @@ Sur accord de Jonathan et Téo du 13/11/2026. **Fonctionnement à blanc : aucun 
   - le signal recalculé à chaque passage était comparé avec son heure d'écriture, ce qui produisait 16 faux incidents de 01:05 à 08:05 UTC. Ils restent dans `incidents.csv` (ajout seul), suivis d'une ligne de note qui les explique. Le signal lui-même n'a jamais changé ;
   - l'entrée quotidienne du journal s'écrivait à 00:05, avant l'exécution de 01:00. Elle s'écrit désormais au premier passage après 01:00, avec le signal du jour. L'entrée du 14/11, déjà écrite, reste telle quelle.
 - **Constat pour le gel :** l'univers est vide au premier jour. Si cela dure, le papier comptera surtout des semaines vides et n'atteindra pas les 300 lignes de shorts. Le critère des 300 lignes est à trancher avant le gel (§ 5).
+
+## 7. Rejeu des jours à blanc et gel (16/11/2026)
+
+**Rejeu** (serveur, code `0424460`, 16/11/2026 08:51 UTC, sous le verrou de la tâche horaire) : les 3 signaux à blanc (cohortes 0, 1 et 2 des 14, 15 et 16/11, tous écrits à 00:05 UTC, à l'heure) sont refaits sur les archives journalières de data.binance.vision. **0 écart.** Les trois signaux sont vides des deux côtés : CTUSDT, seule cotation de moins de 61 jours, reste sous le seuil (médiane 30 j à 19,29 M USDT au 16/11), avec des volumes collectés identiques aux archives (écart relatif maximal nul). **Limite :** aucune ligne n'ayant été jouée, le rejeu n'a comparé aucun prix d'entrée ; l'égalité des prix horaires avec les archives avait été vérifiée lors de l'essai du 13/11 (1 344 valeurs, écart nul). Aucun incident depuis la note du 14/11 à 08:17 UTC ; 69 passages horaires au 16/11 à 08:05 UTC.
+
+**Gel, décision de Jonathan et Téo du 16/11/2026.** Règles du § 1 et critères du § 2 figés, avec l'exigence d'**au moins 300 lignes de shorts** maintenue. Points laissés ouverts au § 5, fixés au gel selon les propositions de `PLAN_PAPIER_COHORTES.md` § 3 :
+- la semaine de montée en charge compte : les 52 semaines partent du jour 0 ;
+- rejeu : sélection identique, prix d'entrée à 0,01 % près ;
+- alpha : méthode du diagnostic B, facteurs recalculés sur la période du papier à partir des clôtures collectées ;
+- signal montré à Jonathan : notionnel indicatif pour 10 000 USDT, sans valeur de décision ;
+- filtres « v2 » : hors du papier et du verdict ;
+- signal manqué : semaine vide, lignes précédentes soldées à t + 1 h.
+
+Code du papier : commit `0424460`. Configuration de la v1 : `config_strat06.json`, SHA-256 `84f43d5b…298ca0c`, vérifiée à chaque passage. `config_bis06.json` : `statut = figee`, `jour_0 = 2026-11-17`. **Premier jour compté : 17/11/2026 à 00:00 UTC** (signal de la cohorte 0 à 00:05, exécution à 01:00). Point d'étape à 26 semaines : 18/05/2027. Verdict à 52 semaines : 16/11/2027.
+
+**Risque publié au gel :** l'univers est vide au 16/11. Si le flux de jeunes cotations liquides reste aussi mince, le papier n'atteindra pas les 300 lignes de shorts et le verdict sera un rejet, quel que soit le rendement. Le gel accepte ce risque en connaissance de cause.
