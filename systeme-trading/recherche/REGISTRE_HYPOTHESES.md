@@ -29,7 +29,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H05 | Encombrement financement et intérêt ouvert 3L/3S | 02/11/2026 | 2 | rejetée | `strategies/STRAT-20261102-05/resultats/VERDICT_E01.md` |
 | H06 | Wallets Solana, rétro-ingénierie | 01/11/2026 | 2 (pilote) | close, non concluant | `strategies/STRAT-DEX/` |
 | H07 | Maker passif Polymarket | 01/11/2026 | 1 | écartée (−15,42 $ pour 1 000 $ avec file) | `polymarket/resultats/20261101T091123Z_file_attente_rapport.md` |
-| H08 | Calibration Polymarket (lecture des clauses) | 01/11/2026 | 4 (journal) | en cours : 37 prévisions écrites sans prix le 09/11/2026 (36 avec prix relevé après), 4 résolues au 12/11/2026 dont 3 comparables au marché (Brier propre 0,2638 contre 0,0062 : pire, échantillon de 3) ; palier 1 à 100 résolues | `polymarket/calibration/` |
+| H08 | Calibration Polymarket (lecture des clauses) | 01/11/2026 | 4 (journal) | en cours : 37 prévisions écrites sans prix le 09/11/2026 (36 avec prix relevé après), 11 résolues au 16/11/2026 dont 10 comparables au marché (Brier propre 0,367 contre 0,318, IC 95 % [−0,047 ; +0,213]) ; palier 1 à 100 résolues | `polymarket/calibration/` |
 | H09 | Tokens pump.fun franchissant 5 M$ | 01/11/2026 | 1 | requête prête, jamais exécutée | `recherche/dex_faisabilite/` |
 | H10 | Portage couvert sur financement **positif** des alts encombrés | 02/11/2026 | 1 | **écartée au criblage** (voir `PISTES_20261102.md`) | ce registre |
 | H11 | Portage couvert sur financement **négatif** (long perpétuel, short spot emprunté) | 02/11/2026 | 0 | **écartée au tri (T4)** : aucun historique public des taux d'emprunt sur marge, API limitée à 90 jours avec clé (contrôle de Téo, 02/11/2026) | `PISTES_20261102.md` |

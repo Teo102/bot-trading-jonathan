@@ -1,0 +1,65 @@
+{
+ "0x5666adf59e1316dcc8babc1be3de6390e70f798dba4e42debb16274e869264e6": {
+  "horodatage_resolution_utc": "2026-11-12 17:12:12.24856+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "bitcoin-above-72k-on-november-12-2026",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0x6dc93818f7d5d48b7de35a3c56cec199e3a54f4d791dec524da39f1e69a42e4c": {
+  "horodatage_resolution_utc": "2026-11-13 17:12:11.992434+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "ethereum-above-2000-on-november-13-2026",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0xb4f8bb087c14c0462a5d9c7ee5743ad67a89105282d0ec082edd96426bbdc583": {
+  "horodatage_resolution_utc": "2026-11-13 17:12:11.127172+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "xrp-above-0pt9-on-november-13-2026",
+  "issue_resolue": 1,
+  "annule": "non"
+ },
+ "0xa9939f323c0368305088d929e061fe445c9c26ad5a3e51cbe727d7c390a15ce9": {
+  "horodatage_resolution_utc": "2026-11-15 17:12:38.369012+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "bitcoin-above-66k-on-november-15-2026",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0x7b505c3e576063a93a675dca35304a59a23040b73324f72e9c9ea27cc6b5913e": {
+  "horodatage_resolution_utc": "2026-11-16 05:12:30.314828+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "will-bitcoin-reach-76k-november-9-15-2026",
+  "issue_resolue": 0,
+  "annule": "non"
+ },
+ "0xc9b6750bca31cdba2afe6e6d7e3c300d368ae37628870e3f1863f964f294add4": {
+  "horodatage_resolution_utc": "2026-11-12 13:25:52.07962+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "will-bitcoin-dip-to-72pt5k-in-november-2026",
+  "issue_resolue": 1,
+  "annule": "non"
+ },
+ "0xf036481613a53faafdc7638824e5dfab03b4dda5b9bf13fbdfa2075e2d4a8bea": {
+  "horodatage_resolution_utc": "2026-11-16 07:01:14.392119+00",
+  "litige": "non",
+  "statut_uma": "resolved",
+  "lu_utc": "2026-11-16T08:53:17Z",
+  "slug": "us-announces-end-of-iranian-blockade-by-november-15-2026",
+  "issue_resolue": 0,
+  "annule": "non"
+ }
+}
