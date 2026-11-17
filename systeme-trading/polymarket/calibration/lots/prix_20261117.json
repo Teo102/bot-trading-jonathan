@@ -1,0 +1,182 @@
+{
+ "0x0302f736774cc7bc6034fec3f87bb6a0238faa67a068d23ef10bdccbe69433cc": {
+  "bid": 0.016,
+  "ask": 0.021,
+  "milieu": 0.0185,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0xaf69b7cc59b39091fc488dcc6a720adf6fd2366f8caed3b473f2c36edb3d94d6": {
+  "bid": 0.007,
+  "ask": 0.009,
+  "milieu": 0.008,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0x44ea2df300802f0ba92b3f996d29760d4cf9c84b9f677de94fc6b539c682ccce": {
+  "bid": 0.93,
+  "ask": 0.95,
+  "milieu": 0.94,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0xf6e1dbfa2e7484319f60387c687f2ddb6769a6641a455d4cecdc3622ec1c2c4a": {
+  "bid": 0.15,
+  "ask": 0.17,
+  "milieu": 0.16,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0x6368d1c0daed920fb7cb4444636b605e8b02d700dfdf70bba2758a7c0c4054cb": {
+  "bid": 0.036,
+  "ask": 0.037,
+  "milieu": 0.0365,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0x3dbbe95a36ae4403871bee2c2c16c79acc4bb74cda846469b9dc5715103fba13": {
+  "bid": 0.011,
+  "ask": 0.014,
+  "milieu": 0.0125,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0xca5c9aac1854c8358c003993254bc069a21a58930ffe2cb2bfbebd4f7d34c214": {
+  "bid": 0.22,
+  "ask": 0.23,
+  "milieu": 0.225,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0xdcb431c45911812e13749c7e71f376c97abf70b02f619b6c24558819fecf5766": {
+  "bid": 0.05,
+  "ask": 0.06,
+  "milieu": 0.055,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0x37704bd9b4067e31b3092f90493460278bc308fe7a0955cc3aea50da8dc15740": {
+  "bid": 0.064,
+  "ask": 0.073,
+  "milieu": 0.0685,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0x1f2602228e567099e8bb37498ae0159709b48836d24e520b26265ed46ac648a2": {
+  "bid": 0.34,
+  "ask": 0.37,
+  "milieu": 0.355,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:14Z"
+ },
+ "0xf62ab811893ddecfb15ca7a036d87fb68a1d1f0eb09de0332235177e73cb10e1": {
+  "bid": 0.884,
+  "ask": 0.888,
+  "milieu": 0.886,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x9be71d8e1d8c958e1868b6cbe0d028bc4e17e6737066b805c7dbbd8abffedff7": {
+  "bid": 0.022,
+  "ask": 0.025,
+  "milieu": 0.0235,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x222f9065c3d6c069932f4f23b2f7f3efeb078a2e475bec8bb8ff15a4d776b579": {
+  "bid": 0.017,
+  "ask": 0.025,
+  "milieu": 0.021,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x3c7507dd1bc657badd37831e75cfe4865eba54f0f237129b22698791b9383f53": {
+  "bid": 0.7,
+  "ask": 0.73,
+  "milieu": 0.715,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x0bbc86288e5937686b64b1a677fe8d4d413580ea046584b3924048b333f41e05": {
+  "bid": 0.02,
+  "ask": 0.021,
+  "milieu": 0.0205,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xea7f75f9bdedef80577109cf375cdb271b83d19b4e618288e03e0186200f2f4c": {
+  "bid": 0.046,
+  "ask": 0.07,
+  "milieu": 0.058,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x6693ebfeb4a1476a79f7c1581b59da9186ff138f6664a4f5b9817e0974839733": {
+  "bid": 0.29,
+  "ask": 0.3,
+  "milieu": 0.295,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x4d8293931a5409d12daf6f4a2db84042d8a89e8125f5d9c306b273e7dbba9a57": {
+  "bid": 0.04,
+  "ask": 0.05,
+  "milieu": 0.045,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x5425f742e6e5555daed9f9391fe91579dd5d576eb3fe07cdc7320c4a0ba15632": {
+  "bid": 0.992,
+  "ask": 0.993,
+  "milieu": 0.9925,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x91f622f380779dffaf2d2db2bc8c1683216bdf0b65906c387f338862745b1c03": {
+  "bid": 0.017,
+  "ask": 0.019,
+  "milieu": 0.018,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xc4c59a68ef6b2f9dfe4e6a4e55595d85a73cdce6f49482c294bb00b98f4fdecd": {
+  "bid": 0.009,
+  "ask": 0.022,
+  "milieu": 0.0155,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xf439b38b7158c80b08610ef08a291173c73899e42e5779d61e38e5a7da73638e": {
+  "bid": 0.08,
+  "ask": 0.1,
+  "milieu": 0.09,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xb1e2301d4b54aab2eb177f7d19322c0850b10abb310d94dcec410c25915364af": {
+  "bid": 0.27,
+  "ask": 0.28,
+  "milieu": 0.275,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x1e7ae690a400d22172fa951b2350f399169b6c61a1a61b7b82ff9b37b6abf242": {
+  "bid": 0.86,
+  "ask": 0.87,
+  "milieu": 0.865,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x598c99fbef3a7d4fb2c3a5af62e67e4ef5f5f7447e966569aee6c917bff12a25": {
+  "bid": 0.59,
+  "ask": 0.6,
+  "milieu": 0.595,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xe232f2c2d14a5ab8275e34cbc068944206df7fa382c279fca0745c8dd0522e0e": {
+  "bid": 0.227,
+  "ask": 0.241,
+  "milieu": 0.234,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x41db441fd76d4352e2cf9d063bb89633c083abbf624632ae653d0c29fdb3c664": {
+  "bid": 0.37,
+  "ask": 0.38,
+  "milieu": 0.375,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0xc613d3515fa3e87e6e0f9c2d0ae0a83d2271530caf877e8c4f4d80b393fb36c0": {
+  "bid": 0.043,
+  "ask": 0.059,
+  "milieu": 0.051,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:15Z"
+ },
+ "0x4c04cc7094bf35bd682eb4f0e492836b97392c213087a2b891d0b5d897a81eb2": {
+  "bid": 0.001,
+  "ask": 0.002,
+  "milieu": 0.0015,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:16Z"
+ },
+ "0x9c08dd09883c33419b3dc35ee73720c0f69c33246c1c8370f9572279707a40d5": {
+  "bid": 0.21,
+  "ask": 0.23,
+  "milieu": 0.22,
+  "heure_lecture_prix_utc": "2026-11-17T09:00:16Z"
+ }
+}
