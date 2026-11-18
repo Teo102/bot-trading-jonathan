@@ -221,17 +221,17 @@ def valoriser_semaine_ouverte(heures, fin, lignes_sem: pd.DataFrame, h: pd.Times
 
 
 def valorisation_quotidienne(heures_jours, heures, fin, semaines: pd.DataFrame, lignes: pd.DataFrame, jour0, h_eval,
-                             p: m.Params, notionnel: float) -> pd.DataFrame:
+                             p: m.Params, notionnel: float, series: tuple = ("base", "stressee")) -> pd.DataFrame:
     """Cumul, à chaque jour D à 01:00 UTC, des semaines de cohortes closes avant D 01:00 et de la valeur des semaines
     ouvertes à cette heure (lignes rejouées jusqu'à D 01:00, coût d'entrée compris, sans coût de sortie). Équivalent
     brut 100 %, somme simple (convention de la v1)."""
     if semaines.empty:
-        return pd.DataFrame(columns=["heure", "base", "stressee"])
+        return pd.DataFrame(columns=["heure", *series])
     heures_eval = pd.date_range(pd.Timestamp(jour0).normalize() + UN_JOUR, pd.Timestamp(h_eval).normalize(), freq="D") + UNE_HEURE
     out = []
     for h in [x for x in heures_eval if x <= h_eval]:
         rang = {"heure": h}
-        for serie in ("base", "stressee"):
+        for serie in series:
             s = semaines[semaines["serie"] == serie]
             v = 0.0
             for w in s.itertuples(index=False):
@@ -242,7 +242,7 @@ def valorisation_quotidienne(heures_jours, heures, fin, semaines: pd.DataFrame, 
                     continue
                 lw = lignes[(lignes["serie"] == serie) & (lignes["cohorte"] == w.cohorte) & (lignes["lundi"] == w.lundi)] if len(lignes) else lignes
                 forces = lw.loc[lw["statut"] != "absent", "cout_sortie_force"].sum() if len(lw) else 0.0
-                v += valoriser_semaine_ouverte(heures, fin, lw, h, p, serie == "stressee", w.cout - forces)
+                v += valoriser_semaine_ouverte(heures, fin, lw, h, p, serie.endswith("stressee"), w.cout - forces)
             rang[serie] = v
         out.append(rang)
     return pd.DataFrame(out)
@@ -260,6 +260,114 @@ def hebdomadaire(semaines: pd.DataFrame) -> pd.DataFrame:
     t = s.pivot_table(index="semaine", columns="serie", values="net", aggfunc="sum").reset_index()
     n = s[s["serie"] == "base"].groupby("semaine").size().rename("cohortes")
     return t.merge(n, left_on="semaine", right_index=True, how="left")
+
+
+# ---------------------------------------------------------------- série débridée (fantôme, descriptive)
+# Déclarée le 18/11/2026 sur demande de Jonathan et Téo, après le gel du 16/11 et avant son propre jour 0. Elle ne
+# change rien à la série officielle : autres fichiers, autre configuration (`config_debridee06.json`), calcul séparé, et
+# une erreur de la série débridée n'interrompt jamais la série officielle. Elle ne sert jamais au verdict.
+
+CONFIG_DEBRIDEE = ICI / "config_debridee06.json"
+SERIES_DEBRIDEE = ("debridee", "debridee_stressee")
+
+
+def fabrique_cible_debridee(pc: uc.ParamsCotation, debut: pd.Timestamp, seuil_plein: float = 20e6, poids_demi: float = 0.5):
+    """Cible de la série débridée. Éligibilité de la v1 avec le seuil de liquidité de `pc` (10 M USDT) ; un nom dont la
+    médiane atteint `seuil_plein` (20 M USDT) pèse −1 (1/84 de notionnel), un nom entre les deux pèse −`poids_demi`
+    (1/168). Couverture BTC = multiple × somme des poids des shorts (neutralité en dollars, comme la v1)."""
+    cache = {}
+
+    def f(jours, t, p):
+        cle = id(jours["volume"])
+        if cle not in cache:
+            cache.clear()
+            cache[cle] = uc.premiers_volumes(jours["volume"])
+        el = uc.eligibles(jours, t, pc, debut, cache[cle])
+        poids = {s: (-1.0 if med >= seuil_plein else -poids_demi) for s, med in el}
+        if poids and pc.couverture:
+            poids[pc.facteur] = pc.multiple_couverture * sum(-w for w in poids.values())
+        return poids, len(el)
+    return f
+
+
+def financement_sans_btc(fin: pd.DataFrame | None, facteur: str = "BTC"):
+    """Couverture au comptant : la jambe BTC ne paie ni ne reçoit de financement. Les shorts gardent le leur."""
+    if fin is None:
+        return None
+    return fin.drop(columns=[facteur], errors="ignore")
+
+
+def charger_config_debridee() -> dict | None:
+    if not CONFIG_DEBRIDEE.exists():
+        return None
+    c = json.loads(CONFIG_DEBRIDEE.read_text())
+    return c if c.get("statut") == "active" else None
+
+
+def params_debridee(pc: uc.ParamsCotation, cd: dict) -> uc.ParamsCotation:
+    from dataclasses import replace
+    return replace(pc, liquidite_min=float(cd["liquidite_min_usdt"]))
+
+
+def calculer_debridee(jours: dict, heures: dict, fin, jour0, h_eval, p: m.Params, pc: uc.ParamsCotation, cd: dict,
+                      manquees: dict | None = None, notionnel: float = NOTIONNEL, dernier_jour_clos=None) -> Resultat:
+    """Série débridée : même moteur, même calendrier à 7 cohortes, avec la cible débridée et la jambe BTC sans
+    financement ; en base et en stressé (mode 1)."""
+    jour0, h_eval = pd.Timestamp(jour0), pd.Timestamp(h_eval)
+    dernier_jour_clos = pd.Timestamp(dernier_jour_clos) if dernier_jour_clos is not None else jours["volume"].index.max()
+    jc, hc, fc = couper_zombies_vivants(jours, heures, fin, dernier_jour_clos)
+    fc = financement_sans_btc(fc, pc.facteur)
+    pcd = params_debridee(pc, cd)
+    manquees = manquees or {}
+    sem, lig = [], []
+    for stress, nom in ((False, SERIES_DEBRIDEE[0]), (True, SERIES_DEBRIDEE[1])):
+        cible = fabrique_cible_debridee(pcd, DEBUT_DONNEES, float(cd["seuil_taille_pleine_usdt"]), float(cd["poids_demi_taille"]))
+        for c in range(COHORTES):
+            d = dates_cohorte(jour0, c, h_eval)
+            s, l = jouer_cohorte(jc, hc, fc, d, p, notionnel, cible, h_eval, stress, manquees.get(c, set()), c)
+            for x in (s, l):
+                if len(x):
+                    x["serie"] = nom
+            sem.append(s); lig.append(l)
+    semaines = pd.concat([x for x in sem if len(x)], ignore_index=True) if any(len(x) for x in sem) else pd.DataFrame()
+    lignes = pd.concat([x for x in lig if len(x)], ignore_index=True) if any(len(x) for x in lig) else pd.DataFrame()
+    quotidien = valorisation_quotidienne(jc, hc, fc, semaines, lignes, jour0, h_eval, p, notionnel, SERIES_DEBRIDEE)
+    return Resultat(semaines, lignes, quotidien, pd.DataFrame())
+
+
+def ecrire_debridee(res: Resultat, dossier: Path, maintenant: pd.Timestamp, cd: dict, notionnel: float) -> dict:
+    """Fichiers propres à la série débridée, en ajout seul : semaines_debridee.csv, lignes_debridee.csv,
+    serie_debridee.csv, etat_debridee.json. Aucun fichier de la série officielle n'est touché."""
+    dossier.mkdir(parents=True, exist_ok=True)
+    s, l = res.semaines, res.lignes
+    closes = s[~s["provisoire"]] if len(s) else s
+    n_s, e_s = JournalAjout(dossier / "semaines_debridee.csv",
+                            ["serie", "cohorte", "lundi", "t_in", "t_out", "manquee", "shorts", "longs", "univers", "pnl_prix", "financement", "cout", "net"],
+                            ["serie", "cohorte", "lundi"]).ajouter(
+        [{**r, "lundi": iso(r["lundi"]), "t_in": iso(r["t_in"]), "t_out": iso(r["t_out"])} for r in closes.to_dict("records")])
+    lc = l[~l["provisoire"]] if len(l) else l
+    n_l, e_l = JournalAjout(dossier / "lignes_debridee.csv",
+                            ["serie", "cohorte", "lundi", "symbole", "sens", "notionnel", "statut", "entree", "sortie", "t_sortie", "pnl_prix", "financement", "cout_sortie_force"],
+                            ["serie", "cohorte", "lundi", "symbole"]).ajouter(
+        [{**r, "lundi": iso(r["lundi"]), "t_sortie": iso(r["t_sortie"]) if isinstance(r.get("t_sortie"), pd.Timestamp) else r.get("t_sortie", "")}
+         for r in lc.to_dict("records")])
+    n_q, e_q = JournalAjout(dossier / "serie_debridee.csv", ["heure", *SERIES_DEBRIDEE], ["heure"]).ajouter(
+        [{"heure": iso(r["heure"]), **{k: r[k] for k in SERIES_DEBRIDEE}} for r in res.quotidien.to_dict("records")])
+    ecarts = [{"fichier": n, **x} for n, e in (("semaines", e_s), ("lignes", e_l), ("quotidien", e_q)) for x in e]
+    if ecarts:
+        JournalAjout(dossier / "incidents_debridee.csv", ["heure_utc", "type", "detail"], ["heure_utc", "type", "detail"]).ajouter(
+            [{"heure_utc": iso(maintenant), "type": "ecart_recalcul", "detail": json.dumps(x, ensure_ascii=False)} for x in ecarts])
+    ouvertes = s[(s["provisoire"]) & (s["serie"] == SERIES_DEBRIDEE[0])] if len(s) else s
+    cohortes = []
+    for r in ouvertes.to_dict("records"):
+        lw = l[(l["serie"] == SERIES_DEBRIDEE[0]) & (l["cohorte"] == r["cohorte"]) & (l["lundi"] == r["lundi"]) & (l["sens"] < 0)] if len(l) else l
+        tailles = [(x.symbole, float(x.notionnel) / notionnel) for x in lw.itertuples(index=False)]
+        cohortes.append({"cohorte": int(r["cohorte"]), "date": iso(r["lundi"]), "shorts": tailles, "net_provisoire": r["net"]})
+    etat = {"declaree_utc": cd["declaree_utc"], "jour_0": cd["jour_0"], "heure_evaluation": iso(maintenant),
+            "cumul": res.quotidien.iloc[-1][list(SERIES_DEBRIDEE)].to_dict() if len(res.quotidien) else {},
+            "cohortes_ouvertes": cohortes, "ajouts": {"semaines": n_s, "lignes": n_l, "jours": n_q}, "ecarts": len(ecarts)}
+    (dossier / "etat_debridee.json").write_text(json.dumps(etat, indent=1, ensure_ascii=False, default=float))
+    return etat
 
 
 # ---------------------------------------------------------------- journal en ajout seul
@@ -353,18 +461,19 @@ def ecrire(res: Resultat, dossier: Path, maintenant: pd.Timestamp, capital_indic
     return etat
 
 
-def ecrire_signaux(jours, pc: uc.ParamsCotation, p: m.Params, jour0, maintenant: pd.Timestamp, dossier: Path) -> dict:
+def ecrire_signaux(jours, pc: uc.ParamsCotation, p: m.Params, jour0, maintenant: pd.Timestamp, dossier: Path,
+                   cible=None, nom: str = "signaux.csv") -> dict:
     """Écrit, en ajout seul, le signal de chaque date de cohorte dont le jour est commencé (t ≤ maintenant), avec l'heure
     d'écriture. Un signal écrit après t + 1 h est marqué « en retard » : la date est manquée (ni rejouée ni remplacée)."""
-    cible = uc.fabrique_cible(pc, DEBUT_DONNEES)
-    j = JournalAjout(dossier / "signaux.csv", ["cohorte", "date", "ecrit_utc", "shorts", "a_l_heure"], ["cohorte", "date"])
+    cible = cible or uc.fabrique_cible(pc, DEBUT_DONNEES)
+    j = JournalAjout(dossier / nom, ["cohorte", "date", "ecrit_utc", "shorts", "a_l_heure"], ["cohorte", "date"])
     lignes = []
     for c in range(COHORTES):
         for t in dates_cohorte(jour0, c, maintenant + UNE_HEURE):
             if t > maintenant:
                 continue
             poids, _ = cible(jours, t, p)
-            shorts = ",".join(sorted(s for s, w in poids.items() if w < 0))
+            shorts = ",".join(sorted(s if w <= -1 else f"{s}:{-w:g}" for s, w in poids.items() if w < 0))
             lignes.append({"cohorte": c, "date": iso(t), "ecrit_utc": iso(maintenant), "shorts": shorts,
                            "a_l_heure": "oui" if maintenant <= t + UNE_HEURE else "non"})
     n, ecarts = j.ajouter(lignes, comparer=["shorts"])  # correctif du 14/11/2026 : seul le contenu du signal se compare
@@ -374,8 +483,8 @@ def ecrire_signaux(jours, pc: uc.ParamsCotation, p: m.Params, jour0, maintenant:
     return {"ajoutes": n, "ecarts": len(ecarts)}
 
 
-def lire_manquees(dossier: Path) -> dict:
-    f = dossier / "signaux.csv"
+def lire_manquees(dossier: Path, nom: str = "signaux.csv") -> dict:
+    f = dossier / nom
     if not f.exists():
         return {}
     s = pd.read_csv(f, dtype=str)
@@ -386,7 +495,7 @@ def lire_manquees(dossier: Path) -> dict:
 
 
 def journal_md(dossier: Path, etat: dict, signaux: dict, maintenant: pd.Timestamp, mode: str,
-               h_eval: pd.Timestamp | None = None) -> None:
+               h_eval: pd.Timestamp | None = None, etat_debridee: dict | None = None) -> None:
     """Une entrée par jour dans JOURNAL_COHORTES.md, en ajout seul, écrite au premier passage dont l'heure d'évaluation
     atteint 01:00 UTC du jour : l'entrée du jour sur le papier a alors eu lieu (correctif du 14/11/2026 : l'entrée
     s'écrivait à 00:05, avant l'exécution, et ne montrait pas la cohorte du jour)."""
@@ -412,6 +521,14 @@ def journal_md(dossier: Path, etat: dict, signaux: dict, maintenant: pd.Timestam
         l.append(f"- cohorte {c['cohorte']} ({c['date'][:10]}) : {', '.join(c['shorts']) or 'aucun nom'} ; "
                  f"{c['notionnel_short_usdt_indicatif']:.0f} USDT par short et {c['couverture_btc_usdt_indicative']:.0f} USDT de BTC (indicatif) ; "
                  f"net provisoire {c['net_provisoire']:+.4%}")
+    if etat_debridee:
+        cu = etat_debridee.get("cumul") or {}
+        l += ["", f"Série débridée (fantôme déclarée le {etat_debridee['declaree_utc'][:10]}, descriptive, hors verdict ; jour 0 {etat_debridee['jour_0']}) : "
+              f"cumul à brut 100 % base {cu.get('debridee', 0):+.4%}, stressée {cu.get('debridee_stressee', 0):+.4%} "
+              f"(écart avec la série officielle stressée : {cu.get('debridee_stressee', 0) - etat['cumul'].get('stressee', 0):+.4%})."]
+        for c in etat_debridee.get("cohortes_ouvertes", []):
+            noms = ", ".join(f"{s} ({'demi-taille' if t < 1 else 'taille pleine'})" for s, t in c["shorts"]) or "aucun nom"
+            l.append(f"- débridée, cohorte {c['cohorte']} ({c['date'][:10]}) : {noms} ; net provisoire {c['net_provisoire']:+.4%}")
     with f.open("a") as x:
         x.write("\n".join(l) + "\n")
 
@@ -447,6 +564,18 @@ def main(argv=None) -> int:
     jours = col.charger_jours()
     signaux = ecrire_signaux(jours, pc, p, jour0, maintenant, dossier)
     noms = cp.noms_a_suivre(dossier / "signaux.csv") | {"BTCUSDT"}
+    cd, erreur_debridee = None, None
+    try:  # la série débridée ne doit jamais interrompre la série officielle
+        cd = charger_config_debridee()
+        if cd:
+            j0d = pd.Timestamp(cd["jour_0"])
+            pcd = params_debridee(pc, cd)
+            ecrire_signaux(jours, pcd, p, j0d, maintenant, dossier,
+                           cible=fabrique_cible_debridee(pcd, DEBUT_DONNEES, float(cd["seuil_taille_pleine_usdt"]), float(cd["poids_demi_taille"])),
+                           nom="signaux_debridee.csv")
+            noms |= {x.split(":")[0] for x in cp.noms_a_suivre(dossier / "signaux_debridee.csv")}
+    except Exception as e:  # noqa: BLE001
+        erreur_debridee, cd = repr(e), None
     if not a.sans_reseau:
         col.maj_heures(sorted(noms), jour0 - UN_JOUR, maintenant)
         col.maj_financement(sorted(noms), jour0 - UN_JOUR, maintenant)
@@ -460,7 +589,18 @@ def main(argv=None) -> int:
     res = calculer(jours, heures, fin, jour0, h_eval, p, pc, lire_manquees(dossier), NOTIONNEL, jours["volume"].index.max())
     etat = ecrire(res, dossier, h_eval, float(cb.get("capital_indicatif_usdt", 10000)), NOTIONNEL)
     etat["incidents_nouveaux"] += signaux["ecarts"]
-    journal_md(dossier, etat, signaux, maintenant, mode, h_eval)
+    etat_d = None
+    if cd and maintenant + UNE_HEURE >= pd.Timestamp(cd["jour_0"]):
+        try:
+            res_d = calculer_debridee(jours, heures, fin, cd["jour_0"], h_eval, p, pc, cd, lire_manquees(dossier, "signaux_debridee.csv"),
+                                      NOTIONNEL, jours["volume"].index.max())
+            etat_d = ecrire_debridee(res_d, dossier, h_eval, cd, NOTIONNEL)
+        except Exception as e:  # noqa: BLE001
+            erreur_debridee = repr(e)
+    if erreur_debridee:
+        JournalAjout(dossier / "incidents_debridee.csv", ["heure_utc", "type", "detail"], ["heure_utc", "type", "detail"]).ajouter(
+            [{"heure_utc": iso(maintenant), "type": "erreur_serie_debridee", "detail": erreur_debridee[:500]}])
+    journal_md(dossier, etat, signaux, maintenant, mode, h_eval, etat_d)
     (dossier / "battement.txt").write_text(iso(maintenant) + "\n")
     print(json.dumps({"mode": mode, "h_eval": iso(h_eval), **{k: etat[k] for k in ("cumul", "ajouts", "incidents_nouveaux")}}, ensure_ascii=False, default=float))
     return 0

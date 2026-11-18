@@ -1,0 +1,19 @@
+{
+ "serie": "debridee (fantome de STRAT-06-bis)",
+ "statut": "active",
+ "declaree_utc": "2026-11-18T18:45:38Z",
+ "decision": "Jonathan et Teo, 18/11/2026 : serie fantome debridee, calculee en parallele, sans effet sur la serie officielle ni sur son verdict",
+ "jour_0": "2026-11-19",
+ "note_jour_0": "premier jour apres la declaration : aucun jour anterieur n'est calcule, pour que les regles precedent les donnees",
+ "liquidite_min_usdt": 10000000,
+ "seuil_taille_pleine_usdt": 20000000,
+ "poids_demi_taille": 0.5,
+ "couverture": "BTC au comptant : financement de la jambe BTC annule ; les shorts gardent leur financement reel",
+ "inchange_par_rapport_a_la_v1": "age 7 a 60 jours, 6 noms au plus, stop 30 % sur le prix de marque, frais et glissements, 7 cohortes, 1/84 par ligne a taille pleine",
+ "valeur": "descriptive seulement ; jamais utilisee pour le verdict de STRAT-06-bis ; une promotion eventuelle serait une nouvelle strategie",
+ "limites": [
+  "le cout du capital immobilise par un BTC au comptant n'est pas compte (environ le taux court sur le notionnel BTC)",
+  "les noms entre 10 et 20 M USDT ont un carnet plus mince : le glissement de 0,05 % et de 0,30 % au stop y est plus optimiste",
+  "le seuil de 10 M USDT est la variante E05 de la v1, deja lue sur les blocs consommes (Sharpe 1,28) : la serie n'est pas aveugle"
+ ]
+}

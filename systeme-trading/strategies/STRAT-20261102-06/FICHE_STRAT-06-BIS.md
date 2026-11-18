@@ -120,3 +120,21 @@ Sur accord de Jonathan et Téo du 13/11/2026. **Fonctionnement à blanc : aucun 
 Code du papier : commit `0424460`. Configuration de la v1 : `config_strat06.json`, SHA-256 `84f43d5b…298ca0c`, vérifiée à chaque passage. `config_bis06.json` : `statut = figee`, `jour_0 = 2026-11-17`. **Premier jour compté : 17/11/2026 à 00:00 UTC** (signal de la cohorte 0 à 00:05, exécution à 01:00). Point d'étape à 26 semaines : 18/05/2027. Verdict à 52 semaines : 16/11/2027.
 
 **Risque publié au gel :** l'univers est vide au 16/11. Si le flux de jeunes cotations liquides reste aussi mince, le papier n'atteindra pas les 300 lignes de shorts et le verdict sera un rejet, quel que soit le rendement. Le gel accepte ce risque en connaissance de cause.
+
+## 8. Série débridée, fantôme descriptive (déclarée le 18/11/2026)
+
+Demande de Jonathan et Téo du 18/11/2026 : suivre en parallèle une version débridée, sans toucher au gel. **La série officielle (§ 1, § 2, § 7) reste la seule référence du verdict à 52 semaines.** Déclaration écrite le 2026-11-18T18:45:38Z, configuration `config_debridee06.json`.
+
+**Deux écarts avec la v1, et rien d'autre :**
+- liquidité : noms dont la médiane de volume sur 30 jours atteint 10 M USDT. Taille pleine (1/84) à partir de 20 M USDT, demi-taille (1/168) entre 10 et 20 M USDT ;
+- couverture : jambe BTC sans financement, comme un BTC détenu au comptant. Les shorts gardent leur financement réel.
+
+Âge, nombre de noms, stop, frais, glissements, 7 cohortes et calendrier sont ceux de la v1. **Jour 0 de la série débridée : 19/11/2026**, premier jour après la déclaration ; aucun jour antérieur n'est calculé.
+
+**Intégrité.** Fichiers séparés (`signaux_debridee.csv`, `semaines_debridee.csv`, `lignes_debridee.csv`, `serie_debridee.csv`, `etat_debridee.json`, `incidents_debridee.csv`), calcul séparé, et une erreur de la série débridée n'interrompt jamais la série officielle. Le journal quotidien affiche la série débridée sous la série officielle, avec l'écart entre les deux. Tests : 4 nouveaux (cible à demi-taille, BTC sans financement et série officielle identique, fichiers officiels intacts et rien avant le jour 0, signal marquant les demi-tailles), 20 au total.
+
+**Limites, à publier avec tout chiffre :**
+- le coût du capital immobilisé par un BTC au comptant n'est pas compté (de l'ordre du taux court sur le notionnel BTC) : la série surestime l'économie de financement ;
+- entre 10 et 20 M USDT, les carnets sont plus minces : les glissements de 0,05 % et de 0,30 % au stop y sont plus optimistes ;
+- le seuil de 10 M USDT est la variante E05 de la v1, déjà lue sur les blocs consommés (Sharpe 1,28 contre 1,40 pour la base E09 au stop de 20 %) : la série n'est pas aveugle ;
+- une promotion éventuelle de la série débridée serait une nouvelle stratégie, avec sa propre porte (`cerveau-trading` § 1, règle 2).

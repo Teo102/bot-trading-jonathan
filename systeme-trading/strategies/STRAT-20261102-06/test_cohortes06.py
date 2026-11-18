@@ -168,6 +168,93 @@ class SignalManque(unittest.TestCase):
             shutil.rmtree(tmp)
 
 
+class SerieDebridee(unittest.TestCase):
+    CD = {"liquidite_min_usdt": 10e6, "seuil_taille_pleine_usdt": 20e6, "poids_demi_taille": 0.5,
+          "declaree_utc": "2026-11-18T14:00:00Z", "jour_0": "2026-11-19", "statut": "active"}
+
+    def jours_volumes(self, medianes: dict, cotation: pd.Timestamp, debut="2022-01-01", fin="2022-06-30"):
+        idx = pd.date_range(debut, fin, freq="D")
+        vol = pd.DataFrame({"BTC": 1e9, "VIEUXUSDT": 5e8}, index=idx)
+        for s, v in medianes.items():
+            vol[s] = 0.0
+            vol.loc[vol.index >= cotation, s] = v
+        return {"volume": vol, "close": pd.DataFrame(1.0, index=idx, columns=vol.columns)}
+
+    def test_demi_taille_et_couverture(self):
+        L = pd.Timestamp("2022-03-01")
+        j = self.jours_volumes({"AUSDT": 25e6, "BUSDT": 15e6, "CUSDT": 5e6}, L)
+        t = L + pd.Timedelta(days=20)
+        pcd = uc.ParamsCotation(liquidite_min=10e6)
+        poids, n = pc6.fabrique_cible_debridee(pcd, pd.Timestamp("2022-01-01"))(j, t, P)
+        self.assertEqual(poids, {"AUSDT": -1.0, "BUSDT": -0.5, "BTC": 1.5})     # C sous 10 M exclu, BTC = somme des poids
+        off, _ = uc.fabrique_cible(uc.ParamsCotation(liquidite_min=20e6), pd.Timestamp("2022-01-01"))(j, t, P)
+        self.assertEqual(off, {"AUSDT": -1.0, "BTC": 1.0})                       # la série officielle ne voit que A
+        j2 = self.jours_volumes({"AUSDT": 25e6, "DUSDT": 30e6}, L)               # sans nom entre 10 et 20 M : même cible
+        a, _ = pc6.fabrique_cible_debridee(pcd, pd.Timestamp("2022-01-01"))(j2, t, P)
+        b, _ = uc.fabrique_cible(uc.ParamsCotation(liquidite_min=20e6), pd.Timestamp("2022-01-01"))(j2, t, P)
+        self.assertEqual(a, b)
+
+    def test_btc_sans_financement_et_officielle_inchangee(self):
+        j, h, f, _ = marche(22)
+        f = f.copy(); f["BTC"] = 0.0004                                          # financement BTC non nul
+        j0 = ts.lundis(j, depuis=t6.DEBUT + pd.Timedelta(days=60))[0]
+        h_eval = j0 + pd.Timedelta(days=12, hours=1)
+        avant = pc6.calculer(j, h, f, j0, h_eval, P, PC, dernier_jour_clos=j["volume"].index.max())
+        cd = dict(self.CD, liquidite_min_usdt=0.0, seuil_taille_pleine_usdt=0.0)   # synthétique : tous les noms en taille pleine
+        d = pc6.calculer_debridee(j, h, f, j0, h_eval, P, PC, cd, dernier_jour_clos=j["volume"].index.max())
+        apres = pc6.calculer(j, h, f, j0, h_eval, P, PC, dernier_jour_clos=j["volume"].index.max())
+        pd.testing.assert_frame_equal(avant.semaines, apres.semaines)            # la série officielle ne bouge pas
+        lo = avant.lignes[(avant.lignes["serie"] == "base") & (avant.lignes["statut"] != "absent")]
+        ld = d.lignes[(d.lignes["serie"] == "debridee") & (d.lignes["statut"] != "absent")]
+        self.assertTrue((lo[lo["symbole"] == "BTC"]["financement"] != 0).any())
+        self.assertTrue((ld[ld["symbole"] == "BTC"]["financement"] == 0).all())  # couverture au comptant
+        k = ["cohorte", "lundi", "symbole"]
+        m_ = lo[lo["symbole"] != "BTC"].merge(ld[ld["symbole"] != "BTC"], on=k, suffixes=("_o", "_d"))
+        self.assertGreater(len(m_), 0)
+        np.testing.assert_allclose(m_["financement_o"], m_["financement_d"])     # les shorts gardent leur financement
+        np.testing.assert_allclose(m_["pnl_prix_o"], m_["pnl_prix_d"])
+        self.assertEqual(set(d.quotidien.columns), {"heure", "debridee", "debridee_stressee"})
+
+    def test_fichiers_separes_et_jour0_propre(self):
+        j, h, f, _ = marche(23)
+        j0 = ts.lundis(j, depuis=t6.DEBUT + pd.Timedelta(days=60))[0]
+        cd = dict(self.CD, liquidite_min_usdt=0.0, seuil_taille_pleine_usdt=0.0, jour_0=str((j0 + pd.Timedelta(days=3)).date()))
+        h_eval = j0 + pd.Timedelta(days=12, hours=1)
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            off = pc6.calculer(j, h, f, j0, h_eval, P, PC, dernier_jour_clos=j["volume"].index.max())
+            pc6.ecrire(off, tmp, h_eval, 10000.0, 1 / 84)
+            avant = {x.name: x.read_bytes() for x in tmp.iterdir()}
+            d = pc6.calculer_debridee(j, h, f, cd["jour_0"], h_eval, P, PC, cd, dernier_jour_clos=j["volume"].index.max())
+            e = pc6.ecrire_debridee(d, tmp, h_eval, cd, 1 / 84)
+            for nom, contenu in avant.items():
+                self.assertEqual((tmp / nom).read_bytes(), contenu, nom)            # aucun fichier officiel touché
+            self.assertTrue((tmp / "serie_debridee.csv").exists())
+            self.assertGreaterEqual(d.semaines["t_in"].min(), pd.Timestamp(cd["jour_0"]) + pd.Timedelta(hours=1))   # rien avant son jour 0
+            self.assertEqual(len(e["cohortes_ouvertes"]), 7)
+            etat = {"cumul": {"base": 0.0, "stressee": 0.0}, "incidents_nouveaux": 0, "cohortes_ouvertes": []}
+            pc6.journal_md(tmp, etat, {}, h_eval + pd.Timedelta(hours=1), "compte", h_eval, e)
+            self.assertIn("Série débridée (fantôme", (tmp / "JOURNAL_COHORTES.md").read_text())
+        finally:
+            shutil.rmtree(tmp)
+
+    def test_signal_debride_marque_les_demi_tailles(self):
+        L = pd.Timestamp("2022-03-01")
+        j = self.jours_volumes({"AUSDT": 25e6, "BUSDT": 15e6}, L)
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            pcd = uc.ParamsCotation(liquidite_min=10e6)
+            t = L + pd.Timedelta(days=20)
+            pc6.ecrire_signaux(j, pcd, P, t, t + pd.Timedelta(minutes=5), tmp,
+                               cible=pc6.fabrique_cible_debridee(pcd, pd.Timestamp("2022-01-01")), nom="signaux_debridee.csv")
+            s = pd.read_csv(tmp / "signaux_debridee.csv", dtype=str, keep_default_na=False)
+            self.assertEqual(s.loc[0, "shorts"], "AUSDT,BUSDT:0.5")
+            self.assertEqual(cp.noms_a_suivre(tmp / "signaux_debridee.csv"), {"AUSDT", "BUSDT:0.5"})
+            self.assertFalse((tmp / "signaux.csv").exists())
+        finally:
+            shutil.rmtree(tmp)
+
+
 class JournalMarkdown(unittest.TestCase):
     def test_entree_du_jour_apres_l_execution_seulement(self):
         tmp = Path(tempfile.mkdtemp())
