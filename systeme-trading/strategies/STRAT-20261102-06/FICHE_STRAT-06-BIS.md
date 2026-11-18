@@ -138,3 +138,6 @@ Demande de Jonathan et Téo du 18/11/2026 : suivre en parallèle une version dé
 - entre 10 et 20 M USDT, les carnets sont plus minces : les glissements de 0,05 % et de 0,30 % au stop y sont plus optimistes ;
 - le seuil de 10 M USDT est la variante E05 de la v1, déjà lue sur les blocs consommés (Sharpe 1,28 contre 1,40 pour la base E09 au stop de 20 %) : la série n'est pas aveugle ;
 - une promotion éventuelle de la série débridée serait une nouvelle stratégie, avec sa propre porte (`cerveau-trading` § 1, règle 2).
+
+**Déploiement (18/11/2026, 18:47 UTC).** Code du commit `7076667` déployé dans `/root/papier06` sous le verrou de la tâche horaire, 20 tests verts sur le serveur. Passage manuel : 6,4 s, 356 Mo ; série officielle inchangée (empreintes SHA-256 de `signaux.csv`, `serie_quotidienne.csv` et `JOURNAL_COHORTES.md` identiques avant et après) ; aucun signal débridé avant le jour 0. Lecture à blanc, sans écriture, sur les données collectées : la cible débridée des 17 et 18/11 aurait été CTUSDT en demi-taille (médiane entre 10 et 20 M USDT) avec 1/168 de BTC en couverture, quand la cible officielle est vide. Premier signal débridé attendu le 19/11 à 00:05 UTC.
+
