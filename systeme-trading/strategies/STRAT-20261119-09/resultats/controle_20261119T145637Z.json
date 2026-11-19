@@ -1,0 +1,89 @@
+{
+ "genere_utc": "2026-11-19T14:56:37Z",
+ "coupure_donnees_utc": "2026-11-16 13:00:00",
+ "regle": "mouvement définissant le signal seulement ; aucun prix après la décision ; aucun rendement",
+ "parametres": {
+  "k": 1.0,
+  "K": 6,
+  "N_sigma": 20,
+  "seuil_volume_usdt": 500000.0
+ },
+ "actions_cotees": 204,
+ "univers_actions": [
+  "CRCLUSDT",
+  "DRAMUSDT",
+  "EWYUSDT",
+  "GOOGLUSDT",
+  "INTCUSDT",
+  "KORUUSDT",
+  "MSTRUSDT",
+  "MUUSDT",
+  "NVDAUSDT",
+  "QQQUSDT",
+  "SKHYUSDT",
+  "SNDKUSDT",
+  "SNXXUSDT",
+  "SOXLUSDT",
+  "SOXSUSDT",
+  "SPCXUSDT",
+  "SPYUSDT"
+ ],
+ "volumes_univers": {
+  "CRCLUSDT": 1528330,
+  "DRAMUSDT": 604671,
+  "EWYUSDT": 575163,
+  "GOOGLUSDT": 692385,
+  "INTCUSDT": 1369606,
+  "KORUUSDT": 2871578,
+  "MSTRUSDT": 1849229,
+  "MUUSDT": 3003232,
+  "NVDAUSDT": 1149003,
+  "QQQUSDT": 1476725,
+  "SKHYUSDT": 1439602,
+  "SNDKUSDT": 8861259,
+  "SNXXUSDT": 1327384,
+  "SOXLUSDT": 11632684,
+  "SOXSUSDT": 2294416,
+  "SPCXUSDT": 2375199,
+  "SPYUSDT": 782130
+ },
+ "proches_du_seuil": {
+  "TSLAUSDT": 485608,
+  "TQQQUSDT": 445651,
+  "AMDUSDT": 376305,
+  "NBISUSDT": 343807,
+  "COINUSDT": 303211
+ },
+ "week_ends": 28,
+ "week_ends_exclus": [
+  "2026-05-22",
+  "2026-06-19",
+  "2026-07-03",
+  "2026-09-04"
+ ],
+ "week_ends_comptes": 24,
+ "signaux_par_week_end_moyenne": {
+  "mp": 0.29,
+  "act": 1.96,
+  "temoin_mp": 0.21,
+  "temoin_act": 0.54
+ },
+ "signaux_total": {
+  "mp": 7,
+  "act": 47,
+  "temoin_mp": 5,
+  "temoin_act": 13
+ },
+ "positions_apres_plafond_moyenne": 1.79,
+ "positions_apres_plafond_total": 43,
+ "week_ends_sans_signal": 10,
+ "week_ends_au_plafond": 2,
+ "part_meme_sens_mediane": 1.0,
+ "projection_52_week_ends_positions": 93,
+ "exigence_2_signaux_par_week_end": true,
+ "appels": {
+  "total": 296,
+  "erreurs": []
+ },
+ "duree_s": 181.8
+}
