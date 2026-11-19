@@ -1,0 +1,46 @@
+{
+  "strategie": "STRAT-20261119-09",
+  "hypothese": "H33",
+  "statut": "en_preparation",
+  "note": "Rien n'est figé. Le gel se fera par une ligne de journal après les décisions restantes. Aucun ordre, dry_run permanent, capital nul.",
+  "decide_le_19_11_2026": {
+    "H_heures": 2,
+    "m": 2,
+    "K_positions_max_par_week_end": 6,
+    "k_sigma": 0.75,
+    "N_sigma_rendements": 20,
+    "univers": {
+      "matieres_premieres": ["BZUSDT", "CLUSDT", "XAGUSDT", "XAUUSDT"],
+      "actions": ["CRCLUSDT", "DRAMUSDT", "GOOGLUSDT", "INTCUSDT", "MSTRUSDT", "MUUSDT", "NVDAUSDT", "QQQUSDT", "SNDKUSDT", "SNXXUSDT", "SOXLUSDT", "SPCXUSDT", "SPYUSDT"],
+      "retires": {"SOXSUSDT": "inverse de SOXL", "EWYUSDT": "marché coréen rouvert avant la décision", "KORUUSDT": "marché coréen rouvert avant la décision", "SKHYUSDT": "marché coréen rouvert avant la décision"},
+      "source": "resultats/univers_20261119T145637Z.txt (seuil 0,5 M USDT, 8 week-ends du 25/09 au 13/11/2026), sans recalcul au gel"
+    },
+    "temoins": ["BTCUSDT", "ETHUSDT"]
+  },
+  "precisions_de_regles_a_valider_au_gel": {
+    "calendrier_mp_new_york": {"cloture": "vendredi 17:00", "decision": "dimanche 17:00", "reouverture": "dimanche 18:00", "sortie": "dimanche 20:00"},
+    "calendrier_actions_new_york": {"cloture": "vendredi 16:00", "decision": "lundi 08:00", "reouverture": "lundi 09:30", "sortie": "lundi 12:00"},
+    "sigma": "écart-type des 20 derniers rendements entre jours ouvrés consécutifs, rendement du lundi exclu",
+    "plafond": "matières premières d'abord le dimanche, actions dans les places restantes le lundi, par |M|/σ décroissant, égalité par ordre alphabétique",
+    "feries_proposes_vendredi_ou_lundi": ["2026-12-25", "2027-01-01", "2027-01-18", "2027-02-15", "2027-03-26", "2027-05-31", "2027-06-18", "2027-07-05", "2027-09-06", "2027-12-24"],
+    "feries_source": "[calendrier du NYSE de mémoire, à vérifier sur les pages officielles du NYSE et du CME avant le gel]",
+    "seances_courtes_a_trancher": ["2026-11-27 (vendredi, clôture des actions à 13:00)", "2027-11-26 (vendredi, clôture des actions à 13:00)"]
+  },
+  "a_decider_au_gel": {
+    "couts": "après les relevés du carnet des 21, 22 et 23/11/2026 ; base proposée : frais 0,05 % par côté, glissement 0,10 % à l'entrée, 0,05 % à la sortie, 0,30 % au stop",
+    "series": ["base", "stressee (verdict)", "temoin_crypto", "couts_doubles"],
+    "criteres_proposes": {
+      "duree_week_ends": 52,
+      "point_etape_week_ends": 26,
+      "arret_drawdown_stressee": 0.25,
+      "sharpe_annualise_min": 0.8,
+      "ic90_bootstrap_blocs_4_borne_basse_min": 0.0,
+      "week_ends_actifs_min": 35,
+      "temoin_net_max_fraction_de_la_base": 0.5,
+      "couts_doubles_net_min": 0.0,
+      "part_max_d_un_week_end_du_gain": 0.25,
+      "part_max_d_un_contrat_du_gain": 0.30
+    },
+    "nature_a_verifier": ["SNXXUSDT", "SPCXUSDT"]
+  }
+}
