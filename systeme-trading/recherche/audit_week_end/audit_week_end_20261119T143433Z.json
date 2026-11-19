@@ -1,0 +1,1030 @@
+{
+ "genere_utc": "2026-11-19T14:34:33Z",
+ "regle": "aucun rendement, aucune variation de prix calculée",
+ "A_contrats": {
+  "total": 247,
+  "par_type": {
+   "EQUITY": 204,
+   "HK_EQUITY": 15,
+   "COMMODITY": 8,
+   "KR_EQUITY": 8,
+   "PREMARKET": 6,
+   "INDEX": 3,
+   "CN_EQUITY": 2,
+   "FX": 1
+  },
+  "week_ends_par_type": {
+   "CN_EQUITY": {
+    "count": 2,
+    "median": 13.0,
+    "max": 13,
+    "sum": 26
+   },
+   "COMMODITY": {
+    "count": 8,
+    "median": 39.5,
+    "max": 49,
+    "sum": 314
+   },
+   "EQUITY": {
+    "count": 204,
+    "median": 20.0,
+    "max": 42,
+    "sum": 3740
+   },
+   "FX": {
+    "count": 1,
+    "median": 8.0,
+    "max": 8,
+    "sum": 8
+   },
+   "HK_EQUITY": {
+    "count": 15,
+    "median": 14.0,
+    "max": 18,
+    "sum": 220
+   },
+   "INDEX": {
+    "count": 3,
+    "median": 283.0,
+    "max": 325,
+    "sum": 675
+   },
+   "KR_EQUITY": {
+    "count": 8,
+    "median": 14.0,
+    "max": 24,
+    "sum": 142
+   },
+   "PREMARKET": {
+    "count": 6,
+    "median": 8.0,
+    "max": 25,
+    "sum": 68
+   }
+  },
+  "cotations_par_mois": {
+   "2020-08": 1,
+   "2021-06": 1,
+   "2025-08": 1,
+   "2025-12": 1,
+   "2026-01": 4,
+   "2026-02": 7,
+   "2026-03": 7,
+   "2026-04": 12,
+   "2026-05": 28,
+   "2026-06": 51,
+   "2026-07": 39,
+   "2026-08": 30,
+   "2026-09": 33,
+   "2026-10": 23,
+   "2026-11": 9
+  }
+ },
+ "B_archives": {
+  "XAUUSDT": {
+   "klines_1h": {
+    "fichiers": 11,
+    "premier": "2025-12",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 11,
+    "premier": "2025-12",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 11,
+    "premier": "2025-12",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 11,
+    "premier": "2025-12",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 343,
+    "premier": "2025-12-11",
+    "dernier": "2026-11-18"
+   }
+  },
+  "XAGUSDT": {
+   "klines_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 316,
+    "premier": "2026-01-07",
+    "dernier": "2026-11-18"
+   }
+  },
+  "CLUSDT": {
+   "klines_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 232,
+    "premier": "2026-04-01",
+    "dernier": "2026-11-18"
+   }
+  },
+  "BZUSDT": {
+   "klines_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 232,
+    "premier": "2026-04-01",
+    "dernier": "2026-11-18"
+   }
+  },
+  "TSLAUSDT": {
+   "klines_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 10,
+    "premier": "2026-01",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 295,
+    "premier": "2026-01-28",
+    "dernier": "2026-11-18"
+   }
+  },
+  "NVDAUSDT": {
+   "klines_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 8,
+    "premier": "2026-03",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 238,
+    "premier": "2026-03-26",
+    "dernier": "2026-11-18"
+   }
+  },
+  "MSTRUSDT": {
+   "klines_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 283,
+    "premier": "2026-02-09",
+    "dernier": "2026-11-18"
+   }
+  },
+  "SPYUSDT": {
+   "klines_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 227,
+    "premier": "2026-04-06",
+    "dernier": "2026-11-18"
+   }
+  },
+  "QQQUSDT": {
+   "klines_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 7,
+    "premier": "2026-04",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 227,
+    "premier": "2026-04-06",
+    "dernier": "2026-11-18"
+   }
+  },
+  "COINUSDT": {
+   "klines_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "indice_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "marque_1h": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "financement": {
+    "fichiers": 9,
+    "premier": "2026-02",
+    "dernier": "2026-10"
+   },
+   "klines_1h_jour": {
+    "fichiers": 283,
+    "premier": "2026-02-09",
+    "dernier": "2026-11-18"
+   }
+  }
+ },
+ "C_indice_fermeture": {
+  "XAUUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-04-17",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 0,
+    "heures_contrat_avec_volume": 49
+   }
+  ],
+  "XAGUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-04-17",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 0,
+    "heures_contrat_avec_volume": 49
+   }
+  ],
+  "CLUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-04-17",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 0,
+    "heures_contrat_avec_volume": 49
+   }
+  ],
+  "BZUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 49,
+    "heures_contrat_avec_volume": 49
+   },
+   {
+    "vendredi": "2026-04-17",
+    "heures_indice": 49,
+    "heures_ou_l_indice_bouge": 0,
+    "heures_contrat_avec_volume": 49
+   }
+  ],
+  "TSLAUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ],
+  "NVDAUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ],
+  "MSTRUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ],
+  "SPYUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ],
+  "QQQUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ],
+  "COINUSDT": [
+   {
+    "vendredi": "2026-10-02",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-09",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-16",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-23",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-10-30",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-06",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   },
+   {
+    "vendredi": "2026-11-13",
+    "heures_indice": 65,
+    "heures_ou_l_indice_bouge": 65,
+    "heures_contrat_avec_volume": 65
+   }
+  ]
+ },
+ "D_liquidite": {
+  "XAUUSDT": {
+   "volume_horaire_median_semaine_usdt": 74215293,
+   "volume_horaire_median_week_end_usdt": 6746170,
+   "rapport_week_end_semaine": 0.091,
+   "ecart_affiche_jeudi_relatif": 2.6856812902487093e-06,
+   "heure_lecture_ecart": "2026-11-19T14:36:13Z"
+  },
+  "XAGUSDT": {
+   "volume_horaire_median_semaine_usdt": 27284322,
+   "volume_horaire_median_week_end_usdt": 1791263,
+   "rapport_week_end_semaine": 0.066,
+   "ecart_affiche_jeudi_relatif": 0.0002192982456139525,
+   "heure_lecture_ecart": "2026-11-19T14:36:14Z"
+  },
+  "CLUSDT": {
+   "volume_horaire_median_semaine_usdt": 36337373,
+   "volume_horaire_median_week_end_usdt": 3621614,
+   "rapport_week_end_semaine": 0.1,
+   "ecart_affiche_jeudi_relatif": 0.00011921793037683592,
+   "heure_lecture_ecart": "2026-11-19T14:36:15Z"
+  },
+  "BZUSDT": {
+   "volume_horaire_median_semaine_usdt": 21321474,
+   "volume_horaire_median_week_end_usdt": 1754474,
+   "rapport_week_end_semaine": 0.082,
+   "ecart_affiche_jeudi_relatif": 0.00011022927689596784,
+   "heure_lecture_ecart": "2026-11-19T14:36:16Z"
+  },
+  "TSLAUSDT": {
+   "volume_horaire_median_semaine_usdt": 3438877,
+   "volume_horaire_median_week_end_usdt": 332838,
+   "rapport_week_end_semaine": 0.097,
+   "ecart_affiche_jeudi_relatif": 5.080268238155661e-05,
+   "heure_lecture_ecart": "2026-11-19T14:36:17Z"
+  },
+  "NVDAUSDT": {
+   "volume_horaire_median_semaine_usdt": 7128095,
+   "volume_horaire_median_week_end_usdt": 786800,
+   "rapport_week_end_semaine": 0.11,
+   "ecart_affiche_jeudi_relatif": 6.352836541512197e-05,
+   "heure_lecture_ecart": "2026-11-19T14:36:19Z"
+  },
+  "MSTRUSDT": {
+   "volume_horaire_median_semaine_usdt": 7579562,
+   "volume_horaire_median_week_end_usdt": 1416686,
+   "rapport_week_end_semaine": 0.187,
+   "ecart_affiche_jeudi_relatif": 0.00010684902233126792,
+   "heure_lecture_ecart": "2026-11-19T14:36:19Z"
+  },
+  "SPYUSDT": {
+   "volume_horaire_median_semaine_usdt": 2638697,
+   "volume_horaire_median_week_end_usdt": 537028,
+   "rapport_week_end_semaine": 0.204,
+   "ecart_affiche_jeudi_relatif": 1.3508767189973625e-05,
+   "heure_lecture_ecart": "2026-11-19T14:36:20Z"
+  },
+  "QQQUSDT": {
+   "volume_horaire_median_semaine_usdt": 5783038,
+   "volume_horaire_median_week_end_usdt": 1153115,
+   "rapport_week_end_semaine": 0.199,
+   "ecart_affiche_jeudi_relatif": 1.4792024140675153e-05,
+   "heure_lecture_ecart": "2026-11-19T14:36:21Z"
+  },
+  "COINUSDT": {
+   "volume_horaire_median_semaine_usdt": 1352507,
+   "volume_horaire_median_week_end_usdt": 216014,
+   "rapport_week_end_semaine": 0.16,
+   "ecart_affiche_jeudi_relatif": 8.664009703696074e-05,
+   "heure_lecture_ecart": "2026-11-19T14:36:22Z"
+  }
+ },
+ "E_financement": {
+  "XAUUSDT": {
+   "versements": 358,
+   "intervalle_heures_median": 4.0,
+   "versements_le_week_end": 96,
+   "taux_absolu_median_semaine": 4.1315e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "XAGUSDT": {
+   "versements": 358,
+   "intervalle_heures_median": 4.0,
+   "versements_le_week_end": 96,
+   "taux_absolu_median_semaine": 4.0745000000000004e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "CLUSDT": {
+   "versements": 358,
+   "intervalle_heures_median": 4.0,
+   "versements_le_week_end": 96,
+   "taux_absolu_median_semaine": 3.3055e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "BZUSDT": {
+   "versements": 358,
+   "intervalle_heures_median": 4.0,
+   "versements_le_week_end": 96,
+   "taux_absolu_median_semaine": 5.897e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "TSLAUSDT": {
+   "versements": 179,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 0.0,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "NVDAUSDT": {
+   "versements": 179,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 8.979e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "MSTRUSDT": {
+   "versements": 179,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 6.472e-05,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "SPYUSDT": {
+   "versements": 179,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 0.0,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "QQQUSDT": {
+   "versements": 180,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 0.0,
+   "taux_absolu_median_week_end": 0.0
+  },
+  "COINUSDT": {
+   "versements": 179,
+   "intervalle_heures_median": 8.0,
+   "versements_le_week_end": 48,
+   "taux_absolu_median_semaine": 0.0,
+   "taux_absolu_median_week_end": 0.0
+  }
+ },
+ "F_decisions": {
+  "contrats_week_ends_total": 5193,
+  "par_type": {
+   "CN_EQUITY": 26,
+   "COMMODITY": 314,
+   "EQUITY": 3740,
+   "FX": 8,
+   "HK_EQUITY": 220,
+   "INDEX": 675,
+   "KR_EQUITY": 142,
+   "PREMARKET": 68
+  },
+  "matieres_premieres": [
+   {
+    "symbole": "XAUUSDT",
+    "cotation": "2025-12-11",
+    "week_ends": 49
+   },
+   {
+    "symbole": "XAGUSDT",
+    "cotation": "2026-01-07",
+    "week_ends": 45
+   },
+   {
+    "symbole": "XPTUSDT",
+    "cotation": "2026-01-30",
+    "week_ends": 42
+   },
+   {
+    "symbole": "XPDUSDT",
+    "cotation": "2026-01-30",
+    "week_ends": 42
+   },
+   {
+    "symbole": "COPPERUSDT",
+    "cotation": "2026-03-06",
+    "week_ends": 37
+   },
+   {
+    "symbole": "CLUSDT",
+    "cotation": "2026-04-01",
+    "week_ends": 33
+   },
+   {
+    "symbole": "BZUSDT",
+    "cotation": "2026-04-01",
+    "week_ends": 33
+   },
+   {
+    "symbole": "NATGASUSDT",
+    "cotation": "2026-04-01",
+    "week_ends": 33
+   }
+  ]
+ },
+ "appels": {
+  "total": 229,
+  "par_hote": {
+   "fapi.binance.com": 179,
+   "s3-ap-northeast-1.amazonaws.com": 50
+  },
+  "erreurs": []
+ },
+ "duree_s": 113.0
+}
