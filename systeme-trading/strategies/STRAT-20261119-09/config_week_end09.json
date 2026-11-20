@@ -26,7 +26,6 @@
         "NVDAUSDT",
         "QQQUSDT",
         "SNDKUSDT",
-        "SNXXUSDT",
         "SOXLUSDT",
         "SPCXUSDT",
         "SPYUSDT"
@@ -35,9 +34,14 @@
         "SOXSUSDT": "inverse de SOXL",
         "EWYUSDT": "marché coréen rouvert avant la décision",
         "KORUUSDT": "marché coréen rouvert avant la décision",
-        "SKHYUSDT": "marché coréen rouvert avant la décision"
+        "SKHYUSDT": "marché coréen rouvert avant la décision",
+        "SNXXUSDT": "Tradr 2X Long SNDK ETF : levier 2 sur SanDisk, doublon de SNDKUSDT (décision du 20/11/2026)"
       },
-      "source": "resultats/univers_20261119T145637Z.txt (seuil 0,5 M USDT, 8 week-ends du 25/09 au 13/11/2026), sans recalcul au gel"
+      "source": "resultats/univers_20261119T145637Z.txt (seuil 0,5 M USDT, 8 week-ends du 25/09 au 13/11/2026), sans recalcul au gel",
+      "natures_verifiees_le_20_11_2026": {
+        "SNXXUSDT": "Tradr 2X Long SNDK ETF, retiré",
+        "SPCXUSDT": "véhicule lié à SpaceX, conservé"
+      }
     },
     "temoins": [
       "BTCUSDT",
