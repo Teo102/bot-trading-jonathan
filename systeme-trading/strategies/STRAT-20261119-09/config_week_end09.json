@@ -1,8 +1,8 @@
 {
   "strategie": "STRAT-20261119-09",
   "hypothese": "H33",
-  "statut": "en_preparation",
-  "note": "Rien n'est figé. Le gel se fera par une ligne de journal après les décisions restantes. Aucun ordre, dry_run permanent, capital nul.",
+  "statut": "figee",
+  "note": "Figée le 23/11/2026 sur accord de Jonathan et Téo. Toute modification est interdite pendant le papier ; une variante serait un nouvel essai compté. Aucun ordre, dry_run permanent, capital nul.",
   "decide_le_19_11_2026": {
     "H_heures": 2,
     "m": 2,
@@ -65,10 +65,10 @@
     "glissement_entree": 0.001,
     "glissement_sortie": 0.0005,
     "glissement_stop": 0.003,
-    "couts_provisoires": true,
+    "couts_provisoires": false,
     "fenetre_signal_minutes": 30,
-    "premier_vendredi": null,
-    "note": "coûts à confirmer après les relevés du carnet des 21 au 23/11 ; premier vendredi fixé au gel"
+    "premier_vendredi": "2026-12-04",
+    "note": "coûts confirmés par les relevés du carnet des 21, 22 et 23/11/2026 (écart affiché de 0,03 % au plus sur l'univers) ; premier week-end compté : vendredi 04/12/2026 (27/11 exclu, séance courte)"
   },
   "precisions_de_regles_a_valider_au_gel": {
     "calendrier_mp_new_york": {
@@ -97,21 +97,22 @@
       "2027-09-06",
       "2027-12-24"
     ],
-    "feries_source": "[calendrier du NYSE de mémoire, à vérifier sur les pages officielles du NYSE et du CME avant le gel]",
-    "seances_courtes_a_trancher": [
-      "2026-11-27 (vendredi, clôture des actions à 13:00)",
-      "2027-11-26 (vendredi, clôture des actions à 13:00)"
-    ]
+    "feries_source": "page officielle du NYSE (Holidays & Trading Hours, nyse.com/markets/hours-calendars), lue le 23/11/2026 à 08:35 UTC ; liste identique à la proposition. Simplification déclarée : le calendrier du NYSE s'applique aussi aux matières premières (calendrier du CME non relu)",
+    "seances_courtes_exclues": [
+      "2026-11-27",
+      "2027-11-26"
+    ],
+    "seances_courtes_source": "même page du NYSE : clôture à 13:00 le vendredi après Thanksgiving ; week-end exclu d'avance, sans être compté"
   },
-  "a_decider_au_gel": {
-    "couts": "après les relevés du carnet des 21, 22 et 23/11/2026 ; base proposée : frais 0,05 % par côté, glissement 0,10 % à l'entrée, 0,05 % à la sortie, 0,30 % au stop",
+  "fige_le_23_11_2026": {
+    "couts": "frais 0,05 % par côté, glissement 0,10 % à l'entrée, 0,05 % à la sortie, 0,30 % au stop, financement réel",
     "series": [
       "base",
       "stressee (verdict)",
       "temoin_crypto",
       "couts_doubles"
     ],
-    "criteres_proposes": {
+    "criteres": {
       "duree_week_ends": 52,
       "point_etape_week_ends": 26,
       "arret_drawdown_stressee": 0.25,
@@ -123,9 +124,16 @@
       "part_max_d_un_week_end_du_gain": 0.25,
       "part_max_d_un_contrat_du_gain": 0.3
     },
-    "nature_a_verifier": [
-      "SNXXUSDT",
-      "SPCXUSDT"
-    ]
+    "verdict": "toutes les conditions requises sur la série stressée après 52 week-ends comptés ; point d'étape à 26 week-ends (net cumulé de la série stressée ≤ 0 → rejet) ; arrêt anticipé si le drawdown de la série stressée dépasse 25 %",
+    "resultat_positif_par_groupe": "positif sur chacun des deux groupes ou, à défaut, sur le groupe le plus fourni"
+  },
+  "gel": {
+    "date_utc": "2026-11-23T08:35:47Z",
+    "accord": "Jonathan et Téo, 23/11/2026",
+    "sha256_code": {
+      "paper_week_end09.py": "dd9752a9fab697787b3c0e157fa3f072e5136af1d1e0aa3c61a27cf610b70178",
+      "controle_week_end09.py": "625ce595db6caf0b02541cb96be14bf2353965bb3cc5be7c85dd3901ad46de54",
+      "run_week_end09.sh": "25f4a2bfa19682e9ac1f124bd4fd6127545d97db1a6ccf8c246754f707b5ad01"
+    }
   }
 }

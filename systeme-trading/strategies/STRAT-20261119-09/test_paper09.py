@@ -187,8 +187,12 @@ def test_week_end_ferie_exclu():
 
 
 def test_refus_si_configuration_non_figee():
-    r = subprocess.run([sys.executable, "-B", str(ICI / "paper_week_end09.py"), "--donnees", "/nonexistent", "--sorties", tempfile.mkdtemp()],
-                       capture_output=True, text=True, cwd=ICI)
+    c = json.loads((ICI / "config_week_end09.json").read_text())
+    c["statut"] = "en_preparation"
+    tmp = Path(tempfile.mkdtemp())
+    (tmp / "c.json").write_text(json.dumps(c))
+    r = subprocess.run([sys.executable, "-B", str(ICI / "paper_week_end09.py"), "--config", str(tmp / "c.json"),
+                        "--donnees", "/nonexistent", "--sorties", str(tmp / "s")], capture_output=True, text=True, cwd=ICI)
     assert r.returncode != 0 and "non figée" in r.stderr
 
 
@@ -199,6 +203,17 @@ def test_chercher_stop_ordre_du_temps():
     assert t == idx[2] and base == 98.0 and st == 0.5 * (98 + 95)
     t, base, st = pw.chercher_stop(b, -1, 102.5)
     assert t == idx[1] and base == 102.5 and st == 0.5 * (102.5 + 103)
+
+
+def test_seance_courte_exclue():
+    cfg, tmp = cfg_test()
+    cfg.feries, cfg.courtes = set(), {V}
+    f = Faux(MOUV)
+    pw.passage(cfg, f, tmp, CACT["sortie"] + dt.timedelta(hours=2), False)
+    J = pw.journaux(tmp)
+    assert J["signaux"].lire() == [] and J["semaines"].lire()[0]["exclu"] == "1" and f.demandes == []
+    cfg2, _ = cfg_test()
+    assert dt.date(2026, 11, 27) in cfg2.courtes and cfg2.exclu(dt.date(2026, 11, 27)) and not cfg2.exclu(dt.date(2026, 12, 4))
 
 
 if __name__ == "__main__":

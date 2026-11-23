@@ -56,7 +56,9 @@ class Config:
         assert int(d["H_heures"]) == 2 and int(d["N_sigma_rendements"]) == ctl.N_SIGMA, "H et N sont fixés dans le calendrier du contrôle"
         self.univers = {"mp": d["univers"]["matieres_premieres"], "act": d["univers"]["actions"],
                         "temoin_mp": d["temoins"], "temoin_act": d["temoins"]}
-        self.feries = {dt.date.fromisoformat(x) for x in c["precisions_de_regles_a_valider_au_gel"]["feries_proposes_vendredi_ou_lundi"]}
+        pr = c["precisions_de_regles_a_valider_au_gel"]
+        self.feries = {dt.date.fromisoformat(x) for x in pr["feries_proposes_vendredi_ou_lundi"]}
+        self.courtes = {dt.date.fromisoformat(x) for x in pr.get("seances_courtes_exclues", [])}   # vendredis à clôture avancée
         self.frais, self.g_entree, self.g_sortie, self.g_stop = (float(p[x]) for x in ("frais", "glissement_entree", "glissement_sortie", "glissement_stop"))
         self.fenetre = dt.timedelta(minutes=int(p["fenetre_signal_minutes"]))
         self.premier = dt.date.fromisoformat(p["premier_vendredi"]) if p.get("premier_vendredi") else None
@@ -64,7 +66,8 @@ class Config:
         self.grappe, self.max_grappe = set(pg.get("symboles", [])), int(pg.get("max_positions", self.K))
 
     def exclu(self, v):
-        return v in self.feries or (v + dt.timedelta(days=3)) in self.feries
+        """Week-end exclu d'avance : vendredi ou lundi férié, ou vendredi à séance courte (clôture avancée)."""
+        return v in self.feries or (v + dt.timedelta(days=3)) in self.feries or v in self.courtes
 
 
 def vendredis(premier, maintenant):
