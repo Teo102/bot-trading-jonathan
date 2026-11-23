@@ -1,0 +1,43 @@
+{
+ "genere_utc": "20261123T185331Z",
+ "bloc": "developpement 2021-2024",
+ "parametres": {
+  "z_court": 1.0,
+  "z_aile": 2.0,
+  "risque": 0.02
+ },
+ "resultats": {
+  "semaines": 209,
+  "semaines_avec_position": 203,
+  "net_annualise": -0.048005051549038204,
+  "sharpe_annualise": -1.2103109525743114,
+  "par_annee": {
+   "2021": -0.04535920944901728,
+   "2022": 0.026566118502615237,
+   "2023": -0.12005678780444688,
+   "2024": -0.0534331887816436
+  },
+  "net_annualise_couts_doubles": -0.060945552244015204,
+  "drawdown_max": 0.17350140309253204,
+  "part_max_d_une_semaine": null,
+  "pire_semaine": -0.020163282623216542,
+  "meilleure_semaine": 0.002112295092701354,
+  "semaines_a_perte_max": 6,
+  "taux_gagnant": 0.8029556650246306
+ },
+ "portes": {
+  "net_annualise_positif": false,
+  "sharpe_au_moins_1": false,
+  "3_annees_positives_sur_4": false,
+  "couts_doubles_positif": false,
+  "drawdown_au_plus_20pct": true,
+  "au_moins_150_semaines": true,
+  "aucune_semaine_plus_de_25pct": false
+ },
+ "verdict_E01": "rejetee",
+ "motifs": {
+  "position": 203,
+  "jambes_absentes": 5,
+  "credit_non_positif": 1
+ }
+}
