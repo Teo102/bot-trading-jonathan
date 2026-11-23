@@ -1,6 +1,6 @@
 # Règle du criblage de H20 (écart de financement Binance–Bybit), écrite avant tout calcul
 
-Écrite le 23/11/2026 par Claude, à la demande de Jonathan et Téo. **Statut : PROPOSÉE.** Aucune donnée de financement n'a été téléchargée ni lue pour ce criblage. La règle est poussée sur GitHub avant le premier calcul ; toute modification après le premier calcul est interdite (une variante serait un nouvel essai compté). Résultat de recherche : aucun ordre, aucune clé, capital nul.
+Écrite le 23/11/2026 par Claude, à la demande de Jonathan et Téo. **Statut : FIGÉE le 23/11/2026, sur accord de Jonathan et Téo (« Oui, lancer »), avant tout téléchargement de données.** Aucune donnée de financement n'a été téléchargée ni lue pour ce criblage. La règle est poussée sur GitHub avant le premier calcul ; toute modification après le premier calcul est interdite (une variante serait un nouvel essai compté). Résultat de recherche : aucun ordre, aucune clé, capital nul.
 
 ## 0. Ce que le criblage peut et ne peut pas dire
 
@@ -59,3 +59,16 @@ Sinon, H20 est écartée, avec le même statut que H10 et H31.
 2. Coûts preneur du verdict et capital à levier 1.
 3. Critères du § 5.
 4. Accès à Bybit depuis le pays de résidence de chacun [non vérifié] : même si le criblage passe, sans accès il n'y a pas de brique.
+
+## 8. Accord et précisions d'exécution (23/11/2026, avant tout téléchargement)
+
+Jonathan et Téo valident les seuils, le plafond, les coûts, le capital et les critères ci-dessus. L'accès à Bybit reste [non vérifié].
+
+Précisions écrites avant tout calcul, qui ne changent pas la règle :
+- **Volume des 30 jours** : mesuré sur le mois civil qui précède le début du trimestre (bougies journalières des archives mensuelles), soit les 28 à 31 jours précédents.
+- **Liste des symboles** : tous les perpétuels USDT de Binance présents dans les archives publiques, y compris les retirés. Un perpétuel est « commun » si le même symbole existe sur Bybit (appariement exact du nom). Les contrats nommés différemment sur les deux plateformes sont donc perdus [biais déclaré].
+- **Date de cotation** sur chaque plateforme : premier versement de financement connu.
+- **Fenêtre d'un versement** : un versement à l'instant T appartient à la fenêtre de 8 heures qui se termine en T (T moins une minute, arrondi à la fenêtre).
+- **Fin de trimestre** : une position dont la paire quitte l'univers au trimestre suivant est fermée à la fin du trimestre, avec ses frais de sortie.
+- **Fenêtre manquante** sur une plateforme pendant une position : la position est fermée à la dernière fenêtre complète.
+- Annualisation : somme des rendements du bloc divisée par sa durée en années, sans capitalisation.
