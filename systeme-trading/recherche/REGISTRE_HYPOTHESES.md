@@ -42,7 +42,7 @@ L'étape 1 est la plus rentable : elle réutilise des résultats déjà consomm�
 | H17 | Cotation au comptant d'un actif déjà coté en perpétuel | 02/11/2026 | 0 | tri du 12/11/2026 : affaiblie, non prioritaire (T4, T5) ; même famille d'événements que STRAT-06 | `recherche/TRI_TROISIEME_BRIQUE_20261112.md` |
 | H18 | Réservé | 02/11/2026 | — | — | — |
 | H19 | Réservé | 02/11/2026 | — | — | — |
-| H20 | Divergence de financement Binance–Bybit | 02/11/2026 | 0 | tri du 19/11/2026 : **affaiblie** (T2 et T6 conditionnels, T9 famille du portage écartée trois fois) ; historique public de financement de Bybit disponible sans clé ; criblage possible sur demande | `recherche/TRI_H20_H33_20261119.md` |
+| H20 | Divergence de financement Binance–Bybit | 02/11/2026 | 0 | tri du 19/11/2026 : **affaiblie** (T2 et T6 conditionnels, T9 famille du portage écartée trois fois) ; historique public de financement de Bybit disponible sans clé ; criblage possible sur demande ; **règle de criblage proposée le 23/11/2026, avant tout calcul** (financement seul, borne haute ; 30 perpétuels communs par trimestre ; entrée à 0,02 %/8 h, sortie à 0,005 % ; coûts preneur, capital à levier 1 ; critères bloc par bloc et hors meilleure année) ; en attente de l'accord de Jonathan et Téo | `recherche/TRI_H20_H33_20261119.md` ; `recherche/criblage_h20/REGLE_CRIBLAGE_H20.md` |
 | H21 | Après « graduation » pump.fun | 02/11/2026 | 0 | à trier, voisine de H09 (T9) | — |
 | H22 | Variables « smart money » centrées sur les tokens | 02/11/2026 | 0 | à trier, voisine de H06 close (T9, L5) | — |
 | H23 | Réservé | 02/11/2026 | — | — | — |
