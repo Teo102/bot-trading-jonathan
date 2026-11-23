@@ -60,6 +60,8 @@ class Config:
         self.frais, self.g_entree, self.g_sortie, self.g_stop = (float(p[x]) for x in ("frais", "glissement_entree", "glissement_sortie", "glissement_stop"))
         self.fenetre = dt.timedelta(minutes=int(p["fenetre_signal_minutes"]))
         self.premier = dt.date.fromisoformat(p["premier_vendredi"]) if p.get("premier_vendredi") else None
+        pg = d.get("plafond_grappe") or {}
+        self.grappe, self.max_grappe = set(pg.get("symboles", [])), int(pg.get("max_positions", self.K))
 
     def exclu(self, v):
         return v in self.feries or (v + dt.timedelta(days=3)) in self.feries
@@ -188,6 +190,21 @@ def places_libres(cfg, J, v, g):
     return cfg.K - pris
 
 
+def choisir(tri, places, grappe, max_grappe):
+    """Signaux retenus dans l'ordre de |M|/σ décroissant : au plus `places`, dont au plus `max_grappe` de la grappe.
+    Un signal de la grappe au-delà de son plafond est écarté et la place va au signal suivant hors grappe."""
+    retenus, n_grappe = {}, 0
+    for s, _ in tri:
+        if len(retenus) >= max(places, 0):
+            break
+        if s in grappe:
+            if n_grappe >= max_grappe:
+                continue
+            n_grappe += 1
+        retenus[s] = len(retenus) + 1
+    return retenus
+
+
 def ecrire_signaux(cfg, src, J, v, g, maintenant):
     cal = CAL[g]
     c = ctl.calendrier(v, cal)
@@ -199,7 +216,7 @@ def ecrire_signaux(cfg, src, J, v, g, maintenant):
             ev[s] = e
     places = places_libres(cfg, J, v, g)
     tri = sorted(((s, e["rapport"]) for s, e in ev.items() if e["signal"]), key=lambda x: (-x[1], x[0]))
-    retenus = {s: i + 1 for i, (s, _) in enumerate(tri[:max(places, 0)])}
+    retenus = choisir(tri, places, cfg.grappe if g == "act" else set(), cfg.max_grappe)
     ecrit = maintenant.strftime("%Y-%m-%dT%H:%M:%SZ")
     lignes = [{"vendredi": v, "groupe": g, "symbole": s, "ecrit_utc": ecrit, "p_cloture": _r(e["p_cloture"]),
                "p_decision": _r(e["p_decision"]), "M": _r(e["M"]), "sigma": _r(e["sigma"]), "rapport": _r(e["rapport"]),

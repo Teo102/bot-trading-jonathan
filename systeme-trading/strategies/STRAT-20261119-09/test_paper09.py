@@ -106,6 +106,16 @@ def test_plafond_matieres_d_abord():
     assert p["act"]["places"] == "0" and p["act"]["signaux"] == "2"
 
 
+def test_plafond_grappe():
+    tri = [("G1", 3.0), ("G2", 2.9), ("G3", 2.5), ("G4", 2.4), ("H1", 1.0), ("G5", 0.9), ("H2", 0.8), ("H3", 0.7)]
+    r = pw.choisir(tri, 6, {"G1", "G2", "G3", "G4", "G5"}, 3)
+    assert r == {"G1": 1, "G2": 2, "G3": 3, "H1": 4, "H2": 5, "H3": 6}
+    assert pw.choisir(tri, 2, {"G1", "G2", "G3", "G4", "G5"}, 3) == {"G1": 1, "G2": 2}
+    assert len(pw.choisir(tri, 6, set(), 3)) == 6                           # témoin et matières premières : pas de grappe
+    cfg, _ = cfg_test()
+    assert cfg.max_grappe == 3 and "NVDAUSDT" in cfg.grappe
+
+
 def test_position_sans_stop_et_couts():
     cfg, tmp = cfg_test()
     f = Faux(MOUV)

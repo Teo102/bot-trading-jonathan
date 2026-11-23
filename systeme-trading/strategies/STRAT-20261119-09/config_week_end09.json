@@ -46,7 +46,19 @@
     "temoins": [
       "BTCUSDT",
       "ETHUSDT"
-    ]
+    ],
+    "plafond_grappe": {
+      "symboles": [
+        "DRAMUSDT",
+        "INTCUSDT",
+        "MUUSDT",
+        "NVDAUSDT",
+        "SNDKUSDT",
+        "SOXLUSDT"
+      ],
+      "max_positions": 3,
+      "regle": "au plus 3 positions de la grappe semi-conducteurs et mémoire par week-end, parmi les 6 places ; les signaux de la grappe au-delà sont écartés et les places vont aux signaux suivants hors grappe, toujours par |M|/σ décroissant (décision du 23/11/2026)"
+    }
   },
   "parametres_papier": {
     "frais": 0.0005,
