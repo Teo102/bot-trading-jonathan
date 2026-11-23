@@ -180,6 +180,7 @@ def blocs_et_criteres(f: pd.DataFrame, p: pd.DataFrame, debut=DEBUT, fin=FIN):
         "4": total > 0 and crit["4_concentration"]["part_max_paire"] <= 0.30 and crit["4_concentration"]["part_max_mois"] <= 0.25,
         "5": len(p) >= 100,
     }
+    ok = {k: bool(v) for k, v in ok.items()}      # booléens Python (correctif d'affichage du 23/11, après le calcul)
     return blocs, crit, ok, {"net_total_capital": total, "net_annualise_total": total / ((fin - debut).days / 365.25)}
 
 
