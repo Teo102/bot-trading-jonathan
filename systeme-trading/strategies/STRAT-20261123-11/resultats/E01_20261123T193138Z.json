@@ -1,0 +1,198 @@
+{
+ "genere_utc": "20261123T193138Z",
+ "parametres": {
+  "fenetre": 30,
+  "cible": 0.5,
+  "cout": 0.0015
+ },
+ "donnees": {
+  "premier_jour": "2017-08-17",
+  "dernier_jour": "2023-12-31",
+  "jours": 2328
+ },
+ "blocs": {
+  "developpement": {
+   "pilote": {
+    "rendement_annuel_compose": 0.2540552757230412,
+    "volatilite": 0.5213798197907682,
+    "sharpe": 0.6999029779549375,
+    "baisse_max": 0.7197999403377432,
+    "rendement_total": 0.9721958413712861
+   },
+   "reference": {
+    "rendement_annuel_compose": 0.18300654165450392,
+    "volatilite": 0.8293868787318873,
+    "sharpe": 0.6335142155374979,
+    "baisse_max": 0.8781557723384363,
+    "rendement_total": 0.6556229520724337
+   },
+   "gain_sharpe": 0.06638876241743963,
+   "rotation_par_an": 3.662926371789592,
+   "couts_doubles": {
+    "pilote": {
+     "rendement_annuel_compose": 0.24738228894257364,
+     "volatilite": 0.5213833912194547,
+     "sharpe": 0.6896710676198591,
+     "baisse_max": 0.7209549056946247,
+     "rendement_total": 0.9408801580226072
+    },
+    "reference": {
+     "rendement_annuel_compose": 0.18024573015376588,
+     "volatilite": 0.8293797101224142,
+     "sharpe": 0.6306978287452762,
+     "baisse_max": 0.8784558106338639,
+     "rendement_total": 0.6440586777700612
+    }
+   },
+   "par_actif": {
+    "BTCUSDT": {
+     "pilote": {
+      "rendement_annuel_compose": 0.3113335207598751,
+      "volatilite": 0.5413818353781624,
+      "sharpe": 0.7787451397799691,
+      "baisse_max": 0.6407720649916357,
+      "rendement_total": 1.25496335593047
+     },
+     "detention": {
+      "rendement_annuel_compose": 0.29300110078166997,
+      "volatilite": 0.7612109573957343,
+      "sharpe": 0.730622770348718,
+      "baisse_max": 0.81184771458817,
+      "rendement_total": 1.161706278026903
+     },
+     "gain_sharpe": 0.04812236943125103
+    },
+    "ETHUSDT": {
+     "pilote": {
+      "rendement_annuel_compose": 0.15557506237599905,
+      "volatilite": 0.5543952951054086,
+      "sharpe": 0.540366112258233,
+      "baisse_max": 0.8010907587578389,
+      "rendement_total": 0.5431014638127889
+     },
+     "detention": {
+      "rendement_annuel_compose": -0.008266938027111093,
+      "volatilite": 0.9736684062283147,
+      "sharpe": 0.49453348034747935,
+      "baisse_max": 0.9396550481981527,
+      "rendement_total": -0.024596352269564803
+     },
+     "gain_sharpe": 0.045832631910753596
+    }
+   },
+   "par_annee": {
+    "2018": {
+     "pilote": -0.6334350791940324,
+     "reference": -0.7648375207666152
+    },
+    "2019": {
+     "pilote": 0.48472039406531753,
+     "reference": 0.36657195612773874
+    },
+    "2020": {
+     "pilote": 2.5397822739952485,
+     "reference": 3.91263400200794
+    }
+   },
+   "portes": {
+    "P1_gain_sharpe_au_moins_0_15": false,
+    "P2_baisse_max_au_plus_80pct": false,
+    "P3_rendement_positif": true,
+    "P4_gain_sharpe_couts_doubles_positif": true,
+    "P5_chaque_actif_gagne": true
+   }
+  },
+  "validation": {
+   "pilote": {
+    "rendement_annuel_compose": 0.21528577358925394,
+    "volatilite": 0.4833230831490206,
+    "sharpe": 0.6460791598531362,
+    "baisse_max": 0.6751775321825453,
+    "rendement_total": 0.7939207210104444
+   },
+   "reference": {
+    "rendement_annuel_compose": 0.32130316510538015,
+    "volatilite": 0.7129164105928403,
+    "sharpe": 0.7496831875301964,
+    "baisse_max": 0.7623961035485523,
+    "rendement_total": 1.3050264450844495
+   },
+   "gain_sharpe": -0.10360402767706012,
+   "rotation_par_an": 3.0151649567825505,
+   "couts_doubles": {
+    "pilote": {
+     "rendement_annuel_compose": 0.21022740803924278,
+     "volatilite": 0.4833045995636547,
+     "sharpe": 0.6374592981513347,
+     "baisse_max": 0.6768568085533955,
+     "rendement_total": 0.7716336464587767
+    },
+    "reference": {
+     "rendement_annuel_compose": 0.318965308793173,
+     "volatilite": 0.7128875589984276,
+     "sharpe": 0.7472057958782796,
+     "baisse_max": 0.7628181304748558,
+     "rendement_total": 1.2928239648138655
+    }
+   },
+   "par_actif": {
+    "BTCUSDT": {
+     "pilote": {
+      "rendement_annuel_compose": 0.10239724566993336,
+      "volatilite": 0.49359204638467297,
+      "sharpe": 0.4445250870403376,
+      "baisse_max": 0.7041902684963206,
+      "rendement_total": 0.3393632043283503
+     },
+     "detention": {
+      "rendement_annuel_compose": 0.12977844263657445,
+      "volatilite": 0.6486830705918267,
+      "sharpe": 0.5122673706051333,
+      "baisse_max": 0.7662925431645936,
+      "rendement_total": 0.4415664423018255
+     },
+     "gain_sharpe": -0.06774228356479567
+    },
+    "ETHUSDT": {
+     "pilote": {
+      "rendement_annuel_compose": 0.3099279198692655,
+      "volatilite": 0.5199678624706965,
+      "sharpe": 0.7791725093927019,
+      "baisse_max": 0.6499740105723306,
+      "rendement_total": 1.2460580197716542
+     },
+     "detention": {
+      "rendement_annuel_compose": 0.4633785135038462,
+      "volatilite": 0.8473870842829838,
+      "sharpe": 0.8741939117908049,
+      "baisse_max": 0.7930253453633336,
+      "rendement_total": 2.1305236586135403
+     },
+     "gain_sharpe": -0.09502140239810297
+    }
+   },
+   "par_annee": {
+    "2021": {
+     "pilote": 0.9655997575272088,
+     "reference": 1.9755933598087392
+    },
+    "2022": {
+     "pilote": -0.576227542579633,
+     "reference": -0.6609931688671504
+    },
+    "2023": {
+     "pilote": 1.1004284365614287,
+     "reference": 1.2129837014230453
+    }
+   },
+   "portes": {
+    "P1_gain_sharpe_au_moins_0_15": false,
+    "P2_baisse_max_au_plus_80pct": false,
+    "P3_rendement_positif": true,
+    "P4_gain_sharpe_couts_doubles_positif": false,
+    "P5_chaque_actif_gagne": false
+   }
+  }
+ },
+ "verdict": "rejetee"
+}
