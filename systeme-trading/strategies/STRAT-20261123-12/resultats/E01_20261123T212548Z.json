@@ -1,0 +1,65 @@
+{
+ "genere_utc": "20261123T212548Z",
+ "symboles_archives": 918,
+ "contrats_entres_dans_l_univers": 261,
+ "resultats": {
+  "developpement": {
+   "base": {
+    "semaines": 104,
+    "net_annualise": 0.37088828552341413,
+    "sharpe": 0.9102945736860971,
+    "baisse_max": 0.4309088164688527
+   },
+   "couts_doubles": {
+    "semaines": 104,
+    "net_annualise": 0.3454938439674274,
+    "sharpe": 0.848272505759104,
+    "baisse_max": 0.4465795059423977
+   },
+   "correlation_btc": 0.5774382587887549,
+   "brut_annualise": 0.45579543050589727,
+   "financement_annualise": -0.05951270342649628,
+   "couts_annualises": 0.025394441555986826
+  },
+  "validation": {
+   "base": {
+    "semaines": 78,
+    "net_annualise": -0.06741782860549271,
+    "sharpe": -0.3206192303753746,
+    "baisse_max": 0.2516176454954674
+   },
+   "couts_doubles": {
+    "semaines": 78,
+    "net_annualise": -0.09225700534127666,
+    "sharpe": -0.4388387286756996,
+    "baisse_max": 0.2700756997092769
+   },
+   "correlation_btc": 0.36141630820915527,
+   "brut_annualise": -0.007087867978823451,
+   "financement_annualise": -0.035490783890885357,
+   "couts_annualises": 0.02483917673578391
+  },
+  "par_annee": {
+   "2021": 1.0851092408664904,
+   "2022": -0.34333266981966204,
+   "2023": 0.015104584567758726,
+   "2024": -0.11623132747599774
+  },
+  "concentration": {
+   "part_max_contrat": 0.3117696337343182,
+   "contrat": "MKRUSDT",
+   "part_max_mois": 0.9441383918040506,
+   "mois": "2021-01"
+  },
+  "semaines_avec_position": 182
+ },
+ "portes": {
+  "P1_sharpe_0_8_chaque_bloc": false,
+  "P2_annees_positives_hors_meilleure": false,
+  "P3_couts_doubles_positifs": false,
+  "P4_correlation_btc_bornee": false,
+  "P5_concentration": false,
+  "P6_au_moins_120_semaines": true
+ },
+ "verdict_E01": "rejetee"
+}
